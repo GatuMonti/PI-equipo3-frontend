@@ -4,6 +4,10 @@
   padding: 0px 5px ;
   display: flex;
   flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 header {
