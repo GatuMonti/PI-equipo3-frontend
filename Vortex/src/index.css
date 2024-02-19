@@ -4,20 +4,20 @@
   padding: 0px 5px ;
   display: flex;
   flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 header {
   background-color: #6269d3;
-  position: fixed;  
-  top: 0; 
-  left: 0;
-  z-index: 1000;
+  width: 100%;  
   box-sizing: border-box; 
   text-align: left;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  
+  align-items: center;  
 }
 
 .logo {
@@ -65,7 +65,3 @@ body{
   background-color: #AC6ABA;
 }
 
-h1 {
-  background-color: aqua;
-  margin: 70px;
-}

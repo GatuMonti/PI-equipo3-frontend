@@ -1,31 +1,21 @@
 import { useState } from 'react'
 import React from 'react'
-import './App.css'
-import Header from './assets/components/navbar'
-import buscador from './assets/components/buscador'
+import Navbar from './assets/components/navbar'
+import Main from './assets/components/Main'
+import { Outlet } from 'react-router-dom'
+import styles from './assets/styles/App.module.css'
 
 function App() {
   
-
+  console.log("la aplicacion esta")
   return (
-    <div>
-      <Header/>
-      <main>
-        <section >
-          <h1>Bienvenido a Vortex</h1>
-          <p> 1 2 3 Probando</p>
-          
-        </section>
-        
-
-      </main>
+    <div className={styles.container}>  
+      <Navbar />
+      <Outlet />
       
-      <footer>
-      <p>&copy; 2024 Vortex</p>
-      </footer>
-
     </div>
-  )
+
+  );
 }
 
 export default App
