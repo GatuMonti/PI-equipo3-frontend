@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeCliente from "./assets/routes/HomeCliente.jsx"
 import ProductDetail from "./assets/routes/ProductDetail.jsx";
 import AlquilerDetail from "./assets/routes/AlquilerDetail.jsx";
-import ContextProvider from "./assets/components/util/global.context.jsx";
+
 import HomeAdministrador from './assets/routes/HomeAdministrador.jsx';
 import CrearUsuario from './assets/routes/CrearUsuario.jsx';
 import Loguin from './assets/routes/Loguin.jsx';
@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            {/*<ContextProvider> aqui abre el context provider cuando lo tengan listo al global context*/}
+            
                 <Routes>
                     <Route path="/" element={<App />}>
                         <Route index element={<Home />}/>
@@ -29,7 +29,7 @@ root.render(
                         <Route path="product_detail/:id" element={<ProductDetail />} />
                     </Route>
                 </Routes>
-            {/*</ContextProvider> aqui cierra el context provider*/}
+            
         </BrowserRouter>
     </React.StrictMode>
 );
