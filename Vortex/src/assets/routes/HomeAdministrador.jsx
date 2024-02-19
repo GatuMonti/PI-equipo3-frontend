@@ -1,7 +1,13 @@
+import Tabla from '../components/TableProducs'
+import Buscador from "../components/buscador"
+import styles from "../styles/HomeAdministrador.module.css"
 const HomeAdministrador = () => {
     
     return(
-        <h1> Home Administrador </h1>
+        <div className={styles.container}>            
+            <Buscador />
+            <Tabla/>
+        </div>
     )
 }
 

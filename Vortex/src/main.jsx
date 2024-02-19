@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeCliente from "./assets/routes/HomeCliente.jsx"
 import ProductDetail from "./assets/routes/ProductDetail.jsx";
 import AlquilerDetail from "./assets/routes/AlquilerDetail.jsx";
-
+import AgregarProducto from './assets/routes/AgregarProducto.jsx';
 import HomeAdministrador from './assets/routes/HomeAdministrador.jsx';
 import CrearUsuario from './assets/routes/CrearUsuario.jsx';
 import Loguin from './assets/routes/Loguin.jsx';
@@ -27,6 +27,7 @@ root.render(
                         <Route path="loguin" element={<Loguin />} />
                         <Route path="alquiler_detail/:id" element={<AlquilerDetail />} />
                         <Route path="product_detail/:id" element={<ProductDetail />} />
+                        <Route path="agregar_producto" element={<AgregarProducto />} />
                     </Route>
                 </Routes>
             
