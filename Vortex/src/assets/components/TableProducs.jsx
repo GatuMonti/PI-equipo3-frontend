@@ -2,14 +2,14 @@ import React from 'react';
 import CardTabla from './CardTabla';
 import styles from '../styles/TablaProductos.module.css'
 
-const TableProducts = () => {
+const TableProducts = ({productos, setFlag}) => {
   // Array con 10 elementos para generar las tarjetas
-  const products = Array.from({ length: 10 }, (_, index) => index);
+  const products = productos;
 
   return (
     <div className={styles.container}>
       {products.map((product, index) => (
-        <CardTabla key={index} name={`Zelda`} consola={`Nintendo DS`} />
+        <CardTabla key={index} name={product.name} consola={product.console} id={product.id} setFlag={setFlag}/>
       ))}
     </div>
   );

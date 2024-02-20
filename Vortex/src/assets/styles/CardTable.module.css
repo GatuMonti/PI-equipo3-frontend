@@ -1,37 +1,43 @@
 .card {
-    background-color: #ffffff; 
-    border: 1px solid #dddddd;
-    border-radius: 8px;     
-    display: flex; 
-    justify-content: space-between;
-    align-items: center; 
-    width: 50%;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px;
-    margin: 5px;
-    height: 35px;
+  background-color: #ffffff; 
+  border: 1px solid #dddddd;
+  border-radius: 8px;     
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px;
+  margin: 5px;
+  height: 35px;
 
-  }
-  
-  .cardContent {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .buttoContainer {
-    display: flex; 
-    flex-direction: column; 
-  }
-  
-  .button {
-    margin: 0px 2px;
-    padding: 5px 16px;     
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-  }
-  
-  .button:hover {
-    background-color: #0056b3; 
-  }
+}
+
+.cardContent {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardContent p{
+  width: 200px;
+}
+
+.buttoContainer {
+  display: flex; 
+  flex-direction: column; 
+}
+
+.button {
+  margin: 0px 2px;
+  padding: 5px 16px;     
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+.button:hover {
+  background-color: #0056b3; 
+}
+
+
   
