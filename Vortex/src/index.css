@@ -65,3 +65,158 @@ body{
   background-color: #AC6ABA;
 }
 
+/************************************Footer***********************************/
+.piePagina{
+  width: 100%;
+  height: 16vh;
+  background-color:#6269d3;
+  display: flex;
+  justify-content: space-around;
+}
+.derechos{
+  width: 15vw;
+  height: 8vh;
+  display: flex;
+  justify-content: space-around;
+  margin: 5vh 0vw 0vh 20vw;
+}
+.circuloFooter{
+  width: 30px;
+  height: 25px;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 1.5vh 0vw 0vh 0vw;
+  padding: 0.4vh 0vw 0vh 0vw;
+  text-align: center;
+  border-radius: 10vw;
+  border: solid 2px;
+}
+.mensajeFooter{
+  margin: 2.5vh 0vw 0vh 0vw;
+  font-size: 1.5vw;
+}
+.navegacionFooter{
+  width: 25vw;
+  height: 8vh;
+  margin: 6vh 15vw 0vh 0vw;
+}
+.bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
+  font-size: 3.5vw; 
+  margin: 0vh 2vw 0vh 0vw;
+ 
+}
+
+
+/***********************************Table****************************************/
+
+/***********************************Header****************************************/
+@media(max-width:900px){
+  .contenedorLogo{
+    width: 32vw;
+    height: 15vh;
+    flex-direction: column;
+    margin: 0vh 0vw 0vh 4vw;
+    justify-content:space-between;
+  }
+  .imagenLogo{
+    width: 22vw;
+    height: 12vh;
+    margin: 0vh 0vw 0vh 0vw;
+  }
+  .lema{
+    width: 40vw;
+    margin: 0vh 0vw 1vh 0vw;
+    text-align:left;
+    font-size: 3vw;
+  }
+  .botones{
+    width: 60vw;
+    height: 5vh;
+    margin: 4vh 5vw 0vh 2vw;
+  }
+  .crear-cuenta,.iniciar-sesion{
+    width: 20vw;
+    height: 4vh;
+    margin: 0.5vh 0vw 0vh 0vw;
+  }
+  
+  /************************************Footer***********************************/
+  
+  .derechos{
+    width: 30vw; 
+    margin: 5vh 0vw 0vh 10vw;
+  }
+  .circuloFooter{
+    width: 28px;
+    margin: 2.3vh 0vw 0vh 0vw;
+  }
+  .mensajeFooter{
+    width: 15vw; 
+    height: 3vh;
+    font-size: 2.5vw;
+    margin: 3vh 0vw 0vh 0vw;
+  }
+  .navegacionFooter{
+    width: 30vw;
+    height: 5vh;
+    margin: 6.5vh 10vw 0vh 0vw; 
+  }
+  .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
+    font-size: 5vw;
+    margin: 1vh 2vw 0vh 0vw;
+  }
+
+  /***********************************Home****************************************/
+
+  .img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres{
+    width: 12vw;
+  }
+}
+
+
+
+/***********************************Mobile****************************************/
+
+/***********************************Header****************************************/
+
+@media(max-width:480px){
+
+  .imagenLogo{
+    width: 30vw;
+    height: 10vh;
+    margin: 1vh 0vw 0vh 1vw;
+  }
+  .lema{
+    width: 52vw;
+    margin: 0vh 0vw 1vh -1vw;
+    text-align: center;
+    font-size: 4vw;
+  }
+  .crear-cuenta,.iniciar-sesion{
+    width: 25vw;
+  }
+
+  /************************************Footer***********************************/
+  .circuloFooter{
+    width: 18px;
+    height: 15px;
+    font-size: 3vw;
+    margin: 2.5vh 0vw 0vh 0vw;
+    padding: 0.2vh 0vw 0vh 0vw;
+  }
+  
+  .mensajeFooter{
+    width: 20vw; 
+    font-size: 3vw;
+    margin: 2.9vh 0vw 0vh 2vw;
+  }
+  .navegacionFooter{
+    height: 5vh;
+  }
+  .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
+    margin: 1vh 2vw 0vh 0vw;
+  }
+
+
+
+}
