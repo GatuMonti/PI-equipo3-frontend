@@ -2,18 +2,19 @@ import React from 'react';
 import axios from 'axios';
 import styles from '../styles/CardTable.module.css';
 
-const CardTabla = ({ name, consola, id, setFlag }) => {
+const CardTabla = ({ name, consola, id, cargarProductos}) => {
   
   const handleEliminar = () => {        
     axios.delete(`http://localhost:8080/products/delete-product/${id}`)
         .then(response => {                   
-            console.log(response.data);
-            setFlag(prevFlag => !prevFlag);
+            console.log(response.data); 
+            cargarProductos();           
         })
         .catch(error => console.error('Error, no se pudo eliminar el producto:', error));
 };
 
 return (
+  
   <div className={styles.card}>
     <div className={styles.cardContent}>
       <p>{name}</p>

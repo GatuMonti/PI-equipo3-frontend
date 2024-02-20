@@ -8,8 +8,6 @@ import CategoriasJuegos from "../components/CategoriasJuegos";
 
 const HomeAdministrador = () => {
   const [productos, setProductos] = useState([]);
-  const [flag, setFlag] = useState(false);
-  const [error, setError] = useState("")
   const [visible, setVisible] = useState({
     tabla: false,
     buscador: true,
@@ -18,30 +16,24 @@ const HomeAdministrador = () => {
   });
 
   const handleListarTodos = () => {
+    cargarProductos();
     setVisible({
       tabla: true,
       buscador: true,
       categorias: false,
       consolas: false,
     });
-
+  }
+const cargarProductos=()=>{
     axios
       .get("http://localhost:8080/products/list-products")
       .then((response) => {
-        setProductos(response.data);        
+        setProductos(response.data);
       })
       .catch((error) => console.error("Error al obtener productos:", error));
   };
 
-  useEffect(() => {
-    if (flag) {
-      handleListarTodos();
-      setFlag(false);
-    }
-  }, [flag]);
-  
-  useEffect(() => {
-    // Aquí puedes realizar alguna acción cada vez que productos cambie
+  useEffect(() => {    
     console.log("Productos han cambiado:", productos);
   }, [productos]);
 
@@ -85,14 +77,12 @@ const HomeAdministrador = () => {
             categoria={visible.consolas ? "consolas" : "categoria"}
             setProductos={setProductos}
             setVisible={setVisible}
-            setError={setError}
-            setFlag={setFlag}
           />
         )}
       </div>
       <div className={styles.buscadorContainer}>
         {visible.buscador && <Buscador />}
-        {visible.tabla && <Tabla productos={productos} setFlag={setFlag} error={error} />}
+        {visible.tabla && <Tabla productos={productos} cargarProductos={cargarProductos}/>}
       </div>
     </div>
   );
