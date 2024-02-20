@@ -17,10 +17,10 @@ const CategoriasJuegos = ({ categoria, setProductos, setVisible }) => {
     ];
   } else {
     arreglo = [
-      "Nintendo switch",
+      "Nintendo Switch",
       "Nintendo U",
-      "PlayStation 4",
-      "PlayStation 5",
+      "Play Station 4",
+      "Play Station 5",
       "X-Box One",
       "X-Box 360",
     ];
@@ -28,13 +28,25 @@ const CategoriasJuegos = ({ categoria, setProductos, setVisible }) => {
 
   const handleCategoria = (elemento) => {
     console.log(elemento);
-    axios
+    if(categoria==="categoria"){
+      axios
       .get("http://localhost:8080/products/search-category/" + elemento)
       .then((response) => {
-        setProductos(() => response.data);
-        setVisible((prevState) => ({ ...prevState, tabla: true }));
+        setProductos(() => response.data);       
       })
       .catch((error) => console.log(error));
+    }if (categoria==="consolas") {
+      axios
+      .get("http://localhost:8080/products/search-consola/" + elemento)
+      .then((response) => {
+        setProductos(() => response.data); 
+        console.log(response.data);       
+      })
+      .catch((error) => console.log(error));
+    } 
+
+    setVisible((prevState) => ({ ...prevState, tabla: true }))
+    
   };
 
   return arreglo.map((elemento, index) => (

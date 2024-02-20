@@ -23,8 +23,8 @@ const HomeAdministrador = () => {
       categorias: false,
       consolas: false,
     });
-  }
-const cargarProductos=()=>{
+  };
+  const cargarProductos = () => {
     axios
       .get("http://localhost:8080/products/list-products")
       .then((response) => {
@@ -33,8 +33,8 @@ const cargarProductos=()=>{
       .catch((error) => console.error("Error al obtener productos:", error));
   };
 
-  useEffect(() => {    
-    console.log("Productos han cambiado:", productos);
+  useEffect(() => {
+    
   }, [productos]);
 
   return (
@@ -82,7 +82,9 @@ const cargarProductos=()=>{
       </div>
       <div className={styles.buscadorContainer}>
         {visible.buscador && <Buscador />}
-        {visible.tabla && <Tabla productos={productos} cargarProductos={cargarProductos}/>}
+        {visible.tabla && (
+          <Tabla productos={productos} cargarProductos={cargarProductos} />
+        )}
       </div>
     </div>
   );
