@@ -1,0 +1,59 @@
+.contenedorPrincipal{
+    margin:100px;
+    display: flex;
+    justify-content: center; 
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    max-width: 350px;     
+}
+
+.fromContainer {    
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+    padding: 5px; 
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; 
+         
+}
+
+input{
+    width: 70%;
+    height: 5px;    
+    align-self: end;
+}
+textarea, select {
+    width: 80%; /* Ancho del 80% del contenedor */
+    height: 30px; /* Altura de 30px */
+    margin-left: auto; /* Empuja los elementos hacia el borde derecho */
+    margin-right: auto; /* Empuja los elementos hacia el borde izquierdo */
+}
+
+
+.inputContainer {
+    width: 100%;
+    display: flex;   
+    justify-content: space-between;   
+    margin-top: 10px;  
+}
+
+label {
+    width: 25%;
+    display: flex;
+    justify-self: center;    
+    padding-bottom: 10px; /* Ancho del label ajustable según tus necesidades */
+     /* Espacio entre el label y el input */
+}
+
+.inputContainerImgSecundaria{
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+       
+}
+.btnSubmit{
+    align-self: center;
+}

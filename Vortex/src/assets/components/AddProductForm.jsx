@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
+import styles from '../styles/AddProductoForm.module.css'
 
 const AddProductForm = () => {
   const [product, setProduct] = useState({
@@ -40,9 +42,13 @@ const AddProductForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.contenedorPrincipal}>
+      <Link to="/home_administrador">        <button>Atras</button>      </Link> 
+    
+    <div className={styles.container}>
       <h2>Agregar Producto</h2>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.fromContainer} onSubmit={handleSubmit}>      
+        <div className={styles.inputContainer}>
         <label htmlFor="productName">Nombre:</label>
         <input
           type="text"
@@ -50,12 +56,16 @@ const AddProductForm = () => {
           value={product.name}
           onChange={(e) => setProduct({ ...product, name: e.target.value })}
         />
+        </div>
+        <div className={styles.inputContainer}>
         <label htmlFor="description">Descripción:</label>
         <textarea
           id="description"
           value={product.description}
           onChange={(e) => setProduct({ ...product, description: e.target.value })}
         />
+        </div>
+        <div className={styles.inputContainer}>
         <label htmlFor="price">Precio:</label>
         <input
           type="number"
@@ -63,6 +73,8 @@ const AddProductForm = () => {
           value={product.price}
           onChange={(e) => setProduct({ ...product, price: e.target.value })}
         />
+        </div>
+        <div className={styles.inputContainer}>
         <label htmlFor="type">Tipo:</label>
         <select
           id="type"
@@ -73,8 +85,10 @@ const AddProductForm = () => {
           <option value="Consola">Consola</option>
           <option value="Juego">Juego</option>
         </select>
+        </div>
         {product.type === 'Juego' && (
           <>
+            <div className={styles.inputContainer}>
             <label htmlFor="console">Consola:</label>
             <select
               id="console"
@@ -89,6 +103,8 @@ const AddProductForm = () => {
               <option value="X-Box One">X-Box One</option>
               <option value="X-Box 360">X-Box 360</option>
             </select>
+            </div>
+            <div className={styles.inputContainer}>
             <label htmlFor="category">Categoría:</label>
             <select
               id="category"
@@ -106,10 +122,12 @@ const AddProductForm = () => {
               <option value="Retro">Retro</option>
               <option value="En Linea">En Línea</option>
             </select>
+            </div>
           </>
         )}
         {product.type === 'Consola' && (
-          <>
+          
+            <div className={styles.inputContainer}>
             <label htmlFor="console">Consola:</label>
             <select
               id="console"
@@ -124,17 +142,20 @@ const AddProductForm = () => {
               <option value="X-Box One">X-Box One</option>
               <option value="X-Box 360">X-Box 360</option>
             </select>
-          </>
+            </div>
+          
         )}
+        <div className={styles.inputContainer}>
          <label htmlFor="mainImage">Imagen Principal:</label>
         <input
           type="text"
           id="mainImage"
-          value={product.images[0]} // La imagen principal se almacena en la primera posición del arreglo
-          onChange={(e) => setProduct({ ...product, images: [e.target.value, ...product.images.slice(1)] })} // Actualizar el arreglo de imágenes manteniendo las otras imágenes
+          value={product.images[0]} 
+          onChange={(e) => setProduct({ ...product, images: [e.target.value, ...product.images.slice(1)] })} 
         />
-        {product.images[0] && <img src={product.images[0]} alt="Main" style={{ maxWidth: '200px' }} />} {/* Mostrar la imagen principal si hay una URL */}
-
+        {product.images[0] && <img src={product.images[0]} alt="Main" style={{ maxWidth: '200px' }} />} 
+        </div>
+        <div className={styles.inputContainerImgSecundaria}>
         <label>Imágenes Secundarias:</label>
         {product.images.slice(1).map((image, index) => (
           <input
@@ -144,8 +165,11 @@ const AddProductForm = () => {
             onChange={(e) => handleImageChange(index + 1, e.target.value)}
           />
         ))}
-        <button type="submit">Agregar Producto</button>
+        </div>
+        <button className={styles.btnSubmit} type="submit">Agregar Producto</button> 
+              
       </form>
+    </div>
     </div>
   );
 };
