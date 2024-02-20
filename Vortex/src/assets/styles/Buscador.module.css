@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: baseline;
   width: 100%;
   
@@ -18,16 +18,20 @@
 }
 
 .btnBuscar {
-  background-color: #007bff;    
+  background-color: rgba(98, 105, 211);    
   color: #fff;
   border: none;
   border-radius: 4px;
   padding: 8px;
   cursor: pointer;
   height: 100%;
+  border: 2px solid transparent;
 }
 
 .btnBuscar:hover {
-  background-color: #0056b3;
+  background-color: #e2e2e2;
+  border: 5px solid transparent;
+  border: 2px solid rgb(98, 105, 211);
+  color: rgb(98, 105, 211);
 }
   
