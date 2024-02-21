@@ -30,7 +30,7 @@
 .buttons {
     margin-left: auto; 
 }
-  
+
 .buttons button {
     
     border-radius: 50px;
@@ -59,12 +59,12 @@
 
     .burgerMenu{
         display: block;
-        padding-right: 10%;
+        padding-right: 20%;
     }
 
     .burgerMenu img{
-        width: 110px;
-        margin-left: 50%;
+        width: 65px;
+        margin-left: 150%;
         margin-top: 10%;
         padding: auto;
     }
