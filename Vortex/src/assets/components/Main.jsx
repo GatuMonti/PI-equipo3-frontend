@@ -1,18 +1,21 @@
 import Card from "./Card"
 import styles from "../styles/Main.module.css"
 import Slider from "./Slider"
-const Main = () =>{
-    let cardsARenderizar =  []; //Utilizo un arreglo hardcodeado para terminar el primer sprin, despues hay que hacer un map con los datos que se trae del back
-    for (let index = 0; index < 10; index++) {
-        cardsARenderizar[index] = <Card/>;
+import { useContextGlobal } from '../components/util/global.context'
+const Main = () =>{    
         
-    }
+    
+    const{state}=useContextGlobal()
     return (
         <main className={styles.container}>
             <Slider />
-            <div className={styles.cardsContainer}>
-            {cardsARenderizar}
-            </div>
+
+        {/*Renderizacion de productos*/ }
+
+        <div className={styles.contenedorProductos}>
+          <h1 className={styles.tituloProductos}>Los Mas Recomendados</h1>
+          {state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>)}
+        </div>
         </main>
     )
 }

@@ -1,19 +1,21 @@
-import { Link } from "react-router-dom";
-import styles from '../styles/Card.module.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import style from '../styles/Card.module.css'
 
+function Card({product}) {
 
-const Card = () => {
+    console.log(product.images)
+    
+
   return (
-    <Link className={styles.container} to= "/product_detail/1">        
-        <img
-                className={styles.img}
-                src="https://uvejuegos.com/img/caratulas/44926/zelda.jpg"
-                alt="Portada del juego"
-        />
-        <h3 className={styles.precio}>US$15</h3>      
-    </Link>
-  );
+    <div className={style.card}>
+        <Link to={"product_detail/:1"}>
+           <img className={style.imageProduct} src={product.images[0].imageUrl}alt="imagen del producto" />
+           <h2 className={style.nameProduct}>{product.name}</h2>
+        </Link>
+    </div>
+  )
 }
 
-export default Card; 
+export default Card
 
