@@ -1,0 +1,101 @@
+/*Estyoslos del Logo del Header*/
+.logo {
+    border-radius: 100%;    
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.logo p {
+    margin-top: 10px;
+}
+
+/* Efecto de pop-up al pasar el mouse */
+.logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de undimiento al hacer clic */
+.logo:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.buttons {
+    margin-left: auto; 
+}
+  
+.buttons button {
+    
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 10px;
+    background-color: #6269D3;
+    border: solid #AC6ABA 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 9px;
+    
+}
+
+/*Menu hamburguesa*/
+
+.burgerMenu{
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .buttons{display: none;}
+
+    .burgerMenu{
+        display: block;
+        padding-right: 10%;
+    }
+
+    .burgerMenu img{
+        width: 110px;
+        margin-left: 50%;
+        margin-top: 10%;
+        padding: auto;
+    }
+    .burgerMenu ul{
+        list-style: none;
+    }
+
+    .menuVisible {
+        background-color: #6269D3;
+        position: absolute;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 20px;
+        width: 100%;
+        margin: 0%;
+        padding: auto;
+    }
+    
+
+    .menuVisible a{
+        display: block;
+        padding: auto;
+        padding-bottom: 2%;
+        
+    }
+
+    .menuHiden{
+        display: none;
+    }
+   
+}
