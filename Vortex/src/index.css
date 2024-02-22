@@ -67,6 +67,7 @@ body{
 .piePagina{
   width: 100%;
   height: 16vh;
+  bottom: 0;  
   background-color:#6269d3;
   display: flex;
   justify-content: space-around;

@@ -10,11 +10,10 @@ function App() {
   
   console.log("la aplicacion esta")
   return (
-    <div className={styles.container}>  
+    <div className={styles.container}>        
       <Navbar />
       <Outlet />
-      <Footer />
-      
+      <Footer />      
     </div>
 
   );

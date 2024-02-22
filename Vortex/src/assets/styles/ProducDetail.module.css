@@ -1,12 +1,20 @@
+.contenedorDetail{    
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 80%;   
+    height: 84vh;
+}
 .container{
     display: flex;
-    
+    width: 100%;
+         
 }
 .imgContenedorPrincipal{
     display: flex;   
     justify-content: flex-start; 
-    width: 50%;
-    height: 50%;
+    width: 100%;     
+    flex-wrap: wrap;   
 }
 
 .imgContenedorSecundario{
@@ -14,23 +22,20 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;  
-    width: 100%;       
+    width: 50%;  
+    min-width: 320px;
+    flex-grow: 1;        
 }
 
 .imgPrincipal{
     width: 50%;  
-    height: 50%; 
-    flex-grow: 1; 
-    padding: 10px;  
-    border-radius: 20px;    
+    height: 100%; 
+    flex-grow: 1;        
 }
 
 .imgSecundarias{
-    width: 30%;    
-    height: 45%;        
-    flex-grow: 1;  
-    margin: 10px;   
-    border-radius: 20px;
+    width: 50%;    
+    height: 50%; 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
 }
 

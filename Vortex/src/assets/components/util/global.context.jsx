@@ -4,6 +4,7 @@ import axios from "axios";
 import reducer from './reducer';
 
 export const initialState={
+    producto:{},
     productos:[]
 }
 

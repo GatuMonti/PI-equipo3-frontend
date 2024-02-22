@@ -9,7 +9,7 @@ function Card({product}) {
 
   return (
     <div className={style.card}>
-        <Link to={"product_detail/:1"}>
+        <Link to={"product_detail/"+product.id}>
            <img className={style.imageProduct} src={product.images[0].imageUrl}alt="imagen del producto" />
            <h2 className={style.nameProduct}>{product.name}</h2>
         </Link>
