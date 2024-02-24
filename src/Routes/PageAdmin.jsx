@@ -35,6 +35,7 @@ const PageAdmin = () => {
             {estadosAdmin.goList && 
             <ListarProductAdmin/>
             }
+            
         </main>
        
 

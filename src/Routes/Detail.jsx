@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useContextGlobal } from '../components/Util/global.context';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Detail = () => {
 
@@ -24,7 +25,7 @@ const Detail = () => {
   console.log(state.producto)
   return (
     <div className='detalleProducto'>
-
+       <Link to={'/'}><button className='botonRegresar'>Atras</button></Link>
        <h3 className="tituloDetail">{state.producto?.name}</h3>
        
         

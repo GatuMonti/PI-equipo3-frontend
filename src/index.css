@@ -1,6 +1,6 @@
 *{
   margin: 0;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family:cursive;
 }
 /************************************Desktop***********************************/
 
@@ -259,17 +259,21 @@
   width: 20vw;
   height: 35vh;
   margin: 5vh 0vw 0vh 0vw;
+  background-color:#6269d3; 
+
 }
 .imageProduct{
   width: 19.8vw;
   height: 25vh;
+
 }
 .DescriptionProduct{
   height: 10vh;
   text-align: center;
   font-size: 1vw;
   color: #FFFFFF;
-  background-color:#6269d3; 
+  background-color:#6269d3;
+  margin: 1vh 0vw 0vh 0vw; 
 }
 a{
   text-decoration: none;
@@ -280,7 +284,21 @@ a{
   margin: 0;
   padding: 20vh 0vw 0vh 0vw;
   background-color: #AC6ABA;
-
+}
+.botonRegresar{
+  margin: 1vh 0vw 0vh 85vw;
+  width: 8vw;
+  height: 5vh;
+  background-color:#4867DB;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1vw;
+}
+.botonRegresar:hover{
+  background-color: #FFFFFF;
+  color: black  ;
+  width: 9vw;
 }
 .tituloDetail{
   width: 50vw;
@@ -419,9 +437,10 @@ a{
   display: flex;
   flex-wrap: wrap;
   width: 42vw;
-  height: 50vh;
-  margin: -50vh 0vw 0vh 30vw;
+  height: 55vh;
+  margin: -55vh 0vw 0vh 30vw;
   background-color:#FFFFFF;
+  border-radius: 5px;
 }
 
 .tituloFormulario{
@@ -441,6 +460,12 @@ a{
   border-radius: 5px;
   border: none;
 }
+.inputDescripcion{
+  width: 20vw;
+  height: 17%;
+  margin: 2vh 0vw 0vh 4vw;
+}
+
 .guardarProducto{
   width: 15vw;
   height: 8%;
@@ -459,9 +484,10 @@ a{
 .mensajeExitoso,.mensajeError{
   width: 30%;
   height: 6vh;
-  margin: 2vh 0vw 0vh 35vw;
+  margin: 2vh 0vw 0vh 37vw;
   text-align: center;
   color:green;
+  font-size: 2vw;
 }
 .mensajeError{
   color: red;
@@ -692,6 +718,7 @@ a{
   height: 5vh;
   text-align: center;
   font-size: 1.2vw;
+  margin: 1vh 0vw 0vh 0vw;
 }
 a{
   text-decoration: none;
@@ -702,6 +729,10 @@ a{
 .contenedorImagenesDetail{
   margin: 3vh 0vw 0vh 15vw;
   width: 80vw;
+}
+.botonRegresar{
+  width: 9vw;
+  font-size: 1.5vw;
 }
 .verMas{
   width: 9vw;
@@ -852,7 +883,7 @@ font-size: 1.5vw;
 .card{
   width: 50vw;
   height: 15vh;
-  margin: 3.5vh 0vw 0vh 0vw;
+  margin: 4vh 0vw 0vh 0vw;
 }
 .imageProduct{
   width: 50vw;
@@ -862,6 +893,7 @@ font-size: 1.5vw;
   height: 5vh;
   text-align: center;
   font-size: 2vw;
+  margin: 1vh 0vw 0vh 0vw;
 }
 a{
   text-decoration: none;
@@ -869,11 +901,16 @@ a{
 
 /***********************************Detail****************************************/
 
-
+.botonRegresar{
+  width: 15vw;
+  font-size: 2.5vw;
+  margin: 2vh 0vw 0vh 80vw;
+}
 .contenedorImagenesDetail{
   margin: 3vh 0vw 0vh 5vw;
   width: 90vw;
 }
+
 .imagen1Producto{
   width: 100%;
 }

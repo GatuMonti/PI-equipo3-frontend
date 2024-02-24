@@ -18,7 +18,18 @@ import Card from '../components/Card'
 
 const Home = () => {
 
+  
   const{state}=useContextGlobal()
+
+  //Funcion para revolver los elementos del array
+
+  const shuffleArray=(array)=> {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
     return (
     <main className="home">
@@ -103,7 +114,7 @@ const Home = () => {
 
         <div className="contenedorProductos">
           <h1 className="tituloProductos">Los Mas Recomendados</h1>
-          {state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>)}
+          {shuffleArray(state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>))}
         </div>
       </div>
        

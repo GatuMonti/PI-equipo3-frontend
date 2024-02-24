@@ -21,12 +21,13 @@ function ListarProductAdmin() {
       }
   };
 
+  
 
     return (
       <div className='listaAdmin'>
           <h2 className="titleListProducts">Listado de Productos</h2>
           <div className='contenedorListaProductos'>
-          {state.productos.map((producto, index) => (
+          {state.productos.reverse().map((producto, index) => (
               <div key={index} className="contenedorProductosAdmin">
                   {console.log(producto)}
                   <p className='listId'>ID: {producto.id}</p>
