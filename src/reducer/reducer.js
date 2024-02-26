@@ -6,7 +6,9 @@ const reducer = (state,action) => {
     case 'get_producto':
         return{...state,producto:action.payload}
     case 'delete_product':
-        return{...state,productos: state.productos.filter(producto => producto.id !== action.payload)}      
+        return{...state,productos: state.productos.filter(producto => producto.id !== action.payload)}  
+    case 'change_theme':
+        return{...state,theme:action.payload}           
     default:
         break;    
   }

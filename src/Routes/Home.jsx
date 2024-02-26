@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Importar los estilos de Bootst
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar los archivos JavaScript de Bootstrap
 import { useContextGlobal } from '../components/Util/global.context'
 import Card from '../components/Card'
+import Swal from 'sweetalert2'
 
 
 
@@ -31,6 +32,7 @@ const Home = () => {
     return array;
   }
 
+  
     return (
     <main className="home">
 
@@ -114,7 +116,7 @@ const Home = () => {
 
         <div className="contenedorProductos">
           <h1 className="tituloProductos">Los Mas Recomendados</h1>
-          {shuffleArray(state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>))}
+          { shuffleArray(state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>))}
         </div>
       </div>
        

@@ -2,6 +2,13 @@
   margin: 0;
   font-family:cursive;
 }
+.dark{
+  background-color: #12121296;
+  color: white;
+}
+.light{
+  background-color: #AC6ABA;
+}
 /************************************Desktop***********************************/
 
 /************************************Header***********************************/
@@ -38,7 +45,7 @@
 .botones{
   display: flex;
   justify-content: space-around;
-  width: 25vw;
+  width: 30vw;
   height: 5vh;
   margin: 5.5vh 5vw 0vh 0vw;
 }
@@ -60,6 +67,17 @@
 .iniciar-sesion:hover{
   background-color: #FFFFFF;
   color: black;
+}
+.themeLight,.themeDark{
+  width: 40px;
+  height: 95%;
+  border: none;
+  background-color:transparent;
+  border-radius: 5px;
+}
+.themeLight:hover,
+.themeDark:hover{
+  background-color: #FFFFFF;
 }
 
 /************************************Footer***********************************/
@@ -111,7 +129,6 @@
 .home{
   display: flex;
   flex-wrap: wrap;
-  background-color: #AC6ABA;
 }
 .contenedorCategorias{
   background-color: #4867DB;
@@ -283,7 +300,6 @@ a{
 .detalleProducto{
   margin: 0;
   padding: 20vh 0vw 0vh 0vw;
-  background-color: #AC6ABA;
 }
 .botonRegresar{
   margin: 1vh 0vw 0vh 85vw;
@@ -397,7 +413,6 @@ a{
 /***********************************Pagina-administrador****************************************/
 .pageAdmin{
   width: 100%;
-  background-color: #AC6ABA;
 }
 .panel{
   width: 80%;
@@ -405,7 +420,6 @@ a{
   display: flex;
   justify-content: space-around;
   align-items: center;
-
 }
 .vacio{
   height: 60vh;
@@ -438,7 +452,7 @@ a{
   flex-wrap: wrap;
   width: 42vw;
   height: 55vh;
-  margin: -55vh 0vw 0vh 30vw;
+  margin: -55vh 0vw 4vh 30vw;
   background-color:#FFFFFF;
   border-radius: 5px;
 }
@@ -481,7 +495,7 @@ a{
   width: 16vw;
   height: 9%;
 }
-.mensajeExitoso,.mensajeError{
+/* .mensajeExitoso,.mensajeError{
   width: 30%;
   height: 6vh;
   margin: 2vh 0vw 0vh 37vw;
@@ -491,7 +505,24 @@ a{
 }
 .mensajeError{
   color: red;
+} */
+
+.textFalla,.textExito{
+  color:#6269d3;
+  width: 25vw;
+  height: 55vh;
+  bottom:6vh;
+} 
+.textExito{
+  height: 57vh;
 }
+.textFallaServer{
+  color:#6269d3;
+  width: 25vw;
+  height: 57vh;
+  bottom:6vh;
+}
+
 
 /***********************************Listar-Producto-Administrador****************************************/
 .listaAdmin{
@@ -512,7 +543,8 @@ a{
   flex-direction: column;
   align-items: center;
   width: 80vw;
-  margin: 4vh 0vw 0vh 10vw;
+  margin: 10vh 0vw 37vh 10vw;
+  padding: 0vh 0vw 0vh 0vw;
   background-color: #FFFFFF;
   border-radius: 5px;
 }
@@ -521,7 +553,7 @@ a{
   width: 70vw;
     height: 10vh;
     display: flex;
-    margin: 4vh 0vw 2vh 0vw;
+    margin: 4vh 0vw 4vh 0vw;
     background-color:#6269d3;
     border-radius: 5px;
 
@@ -576,15 +608,19 @@ a{
     font-size: 3vw;
   }
   .botones{
-    width: 60vw;
+    width: 65vw;
     height: 5vh;
-    margin: 4vh 5vw 0vh 2vw;
+    margin: 4vh 5vw 0vh 0vw;
   }
   .crear-cuenta,.iniciar-sesion{
-    width: 20vw;
+    width: 22vw;
     height: 4vh;
     margin: 0.5vh 0vw 0vh 0vw;
     font-size: 2.9vw;
+  }
+  .themeLight,.themeDark{
+    height: 80%;
+    margin: 0.5vh 0vw 0vh 1vw;
   }
   
   /************************************Footer***********************************/
@@ -787,6 +823,7 @@ font-size: 1.5vw;
   .crear-cuenta,.iniciar-sesion{
     font-size: 3vw;
     width: 25vw;
+    margin: 0.5vh 0vw 0vh 2vw;
   }
 
   /************************************Footer***********************************/

@@ -5,7 +5,8 @@ import reducer from '../../reducer/reducer';
 
 export const initialState={
     producto:{},
-    productos:[]
+    productos:[],
+    theme:"light"
 }
 
 export const contextoGlobal=createContext();

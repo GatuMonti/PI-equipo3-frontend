@@ -1,7 +1,7 @@
 import { computeStyles } from '@popperjs/core'
 import React, { useState,useEffect } from 'react'
 import axios, { formToJSON } from 'axios'
-import ListarProductAdmin from './ListarProductAdmin'
+import Swal from 'sweetalert2'
 
 function FoormAddProduct() {
 
@@ -31,7 +31,7 @@ function FoormAddProduct() {
         const handleSubmit= async(e)=>{
             e.preventDefault()
             try{
-                if(productoNuevo.name==="" || productoNuevo.category==="" || productoNuevo.description==="" 
+                if(productoNuevo.name===""  || productoNuevo.description==="" 
                 || productoNuevo.price==="" ||productoNuevo.type==="" || productoNuevo.console==="" || productoNuevo.images[0].imageUrl==="" 
                 || productoNuevo.images[1].imageUrl==="" || productoNuevo.images[2].imageUrl==="" || productoNuevo.images[3].imageUrl==="" || productoNuevo.images[4].imageUrl===""){
                     setEstados((prevState)=>({
@@ -40,6 +40,17 @@ function FoormAddProduct() {
                         error:true,
                         message:"No pueden haber campos vacios",
                     }))
+                    Swal.fire({
+                        title: "Registro fallo",
+                        text: "Los campos con * son obligatorios",
+                        icon: "error",
+                        confirmButtonColor: "#ff00008f",
+                        confirmButtonText: "Aceptar",
+                        customClass: {
+                            popup:'textFalla'
+                        }
+                      });
+
                 }
                 else{
                     console.log(productoNuevo)
@@ -51,6 +62,19 @@ function FoormAddProduct() {
                         error:false,
                         message:"Registro correcto",
                     }));
+                    setTimeout(()=>{
+                        window.location.reload()
+                    },2000)
+                    Swal.fire({
+                        title: "Registrado",
+                        text: "El producto se registró correctamente",
+                        icon: "success",
+                        confirmButtonColor: "#008000a9",
+                        customClass: {
+                            popup:'textExito'
+                        }
+
+                    });
                     setProductoNuevo({
                         name:"",
                         category:"",
@@ -70,6 +94,30 @@ function FoormAddProduct() {
             }
             catch (error) {
                 console.error('Error:', error.message);
+                Swal.fire({
+                    title: "Error!",
+                    text: error.message,
+                    icon: "error",
+                    confirmButtonColor: "#ff00008f",
+                    customClass: {
+                        popup:'textFallaServer'
+                    }
+                });
+                setProductoNuevo({
+                    name:"",
+                    category:"",
+                    description:"",
+                    price:"",
+                    type:"",
+                    console:"",
+                    images:[
+                        {imageUrl:""},
+                        {imageUrl:""},
+                         {imageUrl:""},
+                         {imageUrl:""},
+                         {imageUrl:""}
+                    ] 
+                })
             }  
         }
 
@@ -114,7 +162,7 @@ function FoormAddProduct() {
     
         <form className="formularioAddProducto">
             <h3 className="tituloFormulario">Agregar Producto</h3>
-            <input className="inputName" placeholder="Nombre" value={productoNuevo.name} onChange={handleOnchangeName}/>
+            <input className="inputName" placeholder="Nombre *" value={productoNuevo.name} onChange={handleOnchangeName}/>
             <select className="inputCategoria" value={productoNuevo.category} onChange={handleOnchangeCategoria}>
                 <option value="">Categoria</option>
                 <option value="Deportes">Deportes</option>
@@ -124,27 +172,27 @@ function FoormAddProduct() {
                 <option value="Infantil">Infantil</option>
                 <option value="Pelea">Pelea</option>
             </select>  
-            <input className="inputPrecio" placeholder="Precio USD" value={productoNuevo.price} onChange={handleOnchangePrecio}/>
-            <input className="inputTipo" placeholder="Tipo" value={productoNuevo.type} onChange={handleOnchangeTipo}/>
+            <input className="inputPrecio" placeholder="Precio USD *" value={productoNuevo.price} onChange={handleOnchangePrecio}/>
+            <input className="inputTipo" placeholder="Tipo *" value={productoNuevo.type} onChange={handleOnchangeTipo}/>
             <select className="inputConsola" value={productoNuevo.console} onChange={handleOnchangeConsola}>
-                <option value="">Consola</option>
+                <option value="">Consola *</option>
                 <option value="PlayStation">PlayStation</option>
                 <option value="Xbox">Xbox</option>
                 <option value="Nintendo Switch">Nintendo Switch</option>
                 <option value="PC">PC</option>
             </select>            
-            <input className="inputImage1" placeholder="URL Image1" name='imageUrl'  value={productoNuevo.images[0].imageUrl} onChange={(e) => handleImageChange(0, e)}/>
-            <input className="inputImage2" placeholder="URL Image2" name='imageUrl' value={productoNuevo.images[1].imageUrl}onChange={(e) => handleImageChange(1, e)}/>
-            <input className="inputImage3" placeholder="URL Image3" name='imageUrl'value={productoNuevo.images[2].imageUrl} onChange={(e) => handleImageChange(2, e)}/>
-            <input className="inputImage4" placeholder="URL Image4" name='imageUrl' value={productoNuevo.images[3].imageUrl}onChange={(e) => handleImageChange(3, e)}/>
-            <input className="inputImage5" placeholder="URL Image5" name='imageUrl' value={productoNuevo.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)}/> 
-            <textarea className="inputDescripcion" placeholder="Descripcion" value={productoNuevo.description} onChange={handleOnchangeDescripcion}/>
+            <input className="inputImage1" placeholder="URL Image1 *" name='imageUrl'  value={productoNuevo.images[0].imageUrl} onChange={(e) => handleImageChange(0, e)}/>
+            <input className="inputImage2" placeholder="URL Image2 *" name='imageUrl' value={productoNuevo.images[1].imageUrl}onChange={(e) => handleImageChange(1, e)}/>
+            <input className="inputImage3" placeholder="URL Image3 *" name='imageUrl'value={productoNuevo.images[2].imageUrl} onChange={(e) => handleImageChange(2, e)}/>
+            <input className="inputImage4" placeholder="URL Image4 *" name='imageUrl' value={productoNuevo.images[3].imageUrl}onChange={(e) => handleImageChange(3, e)}/>
+            <input className="inputImage5" placeholder="URL Image5 *" name='imageUrl' value={productoNuevo.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)}/> 
+            <textarea className="inputDescripcion" placeholder="Descripcion *" value={productoNuevo.description} onChange={handleOnchangeDescripcion}/>
 
              <button  onClick={handleSubmit}className='guardarProducto'>Grabar</button>
         </form> 
     
       
-        {estados.validacion ?<h3 className='mensajeExitoso'>{estados.message}</h3> :<h3 className='mensajeError'>{estados.message}</h3> }
+        {/* {estados.validacion ?<h3 className='mensajeExitoso'>{estados.message}</h3> :<h3 className='mensajeError'>{estados.message}</h3> } */}
        
     </div>
   ) 

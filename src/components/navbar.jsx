@@ -2,9 +2,11 @@ import React from "react";
 import logo from '../Images/Logo.png'
 import { Link } from 'react-router-dom'
 import { useState} from "react";
+import { useContextGlobal } from "./Util/global.context";
 
 const navbar = () => {
 
+    const{state,dispatch}=useContextGlobal()
     
     const [userRole, setUserRole] = useState(localStorage.getItem("role") || 'user');
 
@@ -16,6 +18,11 @@ const navbar = () => {
     const handleCerrarSesionAdmin = () => {
         localStorage.setItem("role", 'user');
         setUserRole('user');
+    }
+
+    const handleTheme=(e)=>{
+        const newTheme= state.theme==="light" ? state.theme="dark" : state.theme="light";
+        dispatch({type: 'change_theme', payload:newTheme})
     }
 
 
@@ -37,7 +44,9 @@ const navbar = () => {
                 </>
 
                 )}
+                {state.theme==="light" ? <button onClick={handleTheme} className="themeDark">🌙</button> : <button onClick={handleTheme} className="themeLight">☀️</button>}
                
+
             </div>
             
         </header>
