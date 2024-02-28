@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    width: 50%;
+    
+  }
+  
+  .input {
+    width: 80%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 4px;    
+  }
+  
+  .btnBuscar {
+    background-color: #007bff;    
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .btnBuscar:hover {
+    background-color: #0056b3;
+  }
+  
