@@ -35,8 +35,8 @@ const navbar = () => {
             <div className="botones">
                 { userRole !='admin' ?(
                 <>
-                <button className="crear-cuenta">Crear cuenta</button>
-                <Link to={'/pageAdmin/'} > <button onClick={handleInicioAdmin} className="iniciar-sesion">Iniciar sesión</button></Link>
+                <Link to={'/signup'} > <button className="crear-cuenta">Crear cuenta</button></Link>
+                <Link to={'/loguin'} > <button onClick={handleInicioAdmin} className="iniciar-sesion">Iniciar sesión</button></Link>
                 </>):(
                 <>
                
