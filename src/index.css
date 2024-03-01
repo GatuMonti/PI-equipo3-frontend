@@ -378,13 +378,13 @@ a{
   font-weight: 900;
 }
 .categoriaProducto{
-  width: 6.5vw;
+  width: 18vw;
   color: #FFFFFF;
-  border-bottom: 2px solid #FFFFFF;
   font-size: 1.5vw;
   margin: 1vh 0vw 0vh 2vw;
 
 }
+
 .descripcionProducto,.precioProducto{
   color: #FFFFFF;
   font-size: 1.5vw;
@@ -465,10 +465,10 @@ a{
   color:#6269d3;
   font-weight: bold;
 }
-.inputName,.inputCategoria,.inputDescripcion,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5{
-  width: 10vw;
+.inputName,.inputCategoria,.inputDescripcion,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
+  width: 11vw;
   height: 6%;
-  margin: 2vh 0vw 0vh 3vw;
+  margin: 2vh 0vw 0vh 2.5vw;
   background-color:rgba(128, 128, 128, 0.568);
   text-align: center;
   border-radius: 5px;
@@ -477,13 +477,13 @@ a{
 .inputDescripcion{
   width: 20vw;
   height: 17%;
-  margin: 2vh 0vw 0vh 4vw;
+  margin: 2vh 0vw 0vh 2vw;
 }
 
 .guardarProducto{
   width: 15vw;
   height: 8%;
-  margin: 2vh 0vw 0vh 13vw;
+  margin: 1vh 0vw 1vh 13vw;
   background-color:#6269d3;
   border-radius: 5px;
   border: none;
@@ -580,6 +580,96 @@ a{
   border-radius: 5px;
 
 }
+
+/***********************************Editar-Producto-Administrador****************************************/
+
+/************Caracteristicas del producto******************/
+
+.pageEditar{
+  margin: 0;
+}
+.botonAtrasEditar{
+  width: 8vw;
+  height: 5vh;
+  background-color:#4867DB;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1vw;
+  margin: 20vh 0vw 0vh 80vw;
+}
+.botonAtrasEditar:hover{
+  background-color: #FFFFFF;
+  color: black  ;
+  width: 9vw;
+}
+.tituloEditar{
+  width: 25vw;
+  font-weight:100;
+  color:#0e41f7;
+  margin: 0vh 0vw 4vh 2vw;
+}
+.contenedorActualizar{
+  display: flex;
+  width: 100%;
+}
+.contenedorEditar{
+  width: 40%;
+  margin: 0vh 0vw 3vh 2vw;
+}
+
+.idEditar,.nameEditar,.typeEditar,.categoriaEditar,.descripcionEditar,.precioEditar,.consolaEditar,.idImagen,.urlImagen,.idProductoImagen,.idCarateristica,.nameCaracteristica,.descripcionCaracteristica{
+  color:#0e41f7;
+  font-size: 1.2vw;
+}
+.contenedorEditar span{
+  color:rgba(0, 0, 0, 0.705);
+}
+
+/************Formulario actualizar producto******************/
+
+
+.formularioActualizarProducto{
+  display: flex;
+  flex-wrap: wrap;
+  width: 50vw;
+  height: 90vh;
+  margin: 4vh 0vw 5vh 4vw;
+  padding: 0vh 0vw 2vh 0vw;
+  background-color:#FFFFFF;
+  border-radius: 5px;
+}
+.inputActualizar,.inputActualizarDescripcion,.inputCaracteristica{
+  width: 12vw;
+  height: 6%;
+  margin: 2vh 0vw 0vh 3.5vw;
+  background-color:rgba(128, 128, 128, 0.568);
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+}
+.inputActualizarDescripcion{
+  width: 40%;
+  height: 13%;
+  margin: 2vh 0vw 0vh 4vw;
+}
+.botonActualizar{
+  width: 15vw;
+  height: 8%;
+  margin: 4vh 0vw 0vh 5vw;
+  background-color:#6269d3;
+  border-radius: 5px;
+  border: none;
+  color:#FFFFFF;
+  font-size: 1vw;
+}
+.botonActualizar:hover{
+  width: 16 vw;
+  height: 9%;
+}
+
+
+
 
 
 

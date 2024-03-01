@@ -62,8 +62,7 @@ function ListarProductAdmin() {
                   {console.log(producto)}
                   <p className='listId'>ID: {producto.id}</p>
                   <p className='listName'>Nombre: <span>{producto.name}</span></p>
-                  <p className='listCategoria'>Categoria: {producto.category}</p>
-                  <p className='listTipo'>Tipo: {producto.type}</p>
+                  <p className='listCategoria'>Categoria: {producto.category ? producto.category.title : 'Sin categoría'}</p>                  <p className='listTipo'>Tipo: {producto.type}</p>
                   <img className="imageProductListAdmin" src={producto.images[0].imageUrl} alt="imageProductAdmin" /> 
                   
                   <Link to={'/editProduct/' + producto.id}><button className="botonEditar">🖋️</button></Link>

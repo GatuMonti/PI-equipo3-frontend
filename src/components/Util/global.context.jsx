@@ -35,3 +35,4 @@ const ContextProvider=({children})=>{
 export default ContextProvider
 
 export const useContextGlobal=()=> useContext(contextoGlobal)
+

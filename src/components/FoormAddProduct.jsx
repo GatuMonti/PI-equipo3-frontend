@@ -2,13 +2,15 @@ import { computeStyles } from '@popperjs/core'
 import React, { useState,useEffect } from 'react'
 import axios, { formToJSON } from 'axios'
 import Swal from 'sweetalert2'
+import { useContextGlobal } from './Util/global.context'
 
 function FoormAddProduct() {
 
-
     const [productoNuevo, setProductoNuevo]=useState({
             name:"",
-            category:"",
+            category:{
+                id:""
+            },
             description:"",
             price:"",
             type:"",
@@ -19,13 +21,18 @@ function FoormAddProduct() {
                  {imageUrl:""},
                  {imageUrl:""},
                  {imageUrl:""}
-            ] 
-        })
+                ],
+            characteristics: [
+                {
+                 id:""
+                }
+                
+            ]        
+            })
 
      const[estados,setEstados]=useState({
         validacion:false,
         error:false,
-        message:"",
      })
      
         const handleSubmit= async(e)=>{
@@ -38,7 +45,6 @@ function FoormAddProduct() {
                         ...prevState,
                         validacion:false,
                         error:true,
-                        message:"No pueden haber campos vacios",
                     }))
                     Swal.fire({
                         title: "Registro fallo",
@@ -60,7 +66,6 @@ function FoormAddProduct() {
                         ...prevState,
                         validacion:true,
                         error:false,
-                        message:"Registro correcto",
                     }));
                     setTimeout(()=>{
                         window.location.reload()
@@ -77,7 +82,9 @@ function FoormAddProduct() {
                     });
                     setProductoNuevo({
                         name:"",
-                        category:"",
+                        category:{
+                            id:""
+                        },
                         description:"",
                         price:"",
                         type:"",
@@ -88,7 +95,13 @@ function FoormAddProduct() {
                              {imageUrl:""},
                              {imageUrl:""},
                              {imageUrl:""}
-                        ] 
+                            ],
+                        characteristics: [
+                            {
+                             id:""
+                            }
+                           
+                        ]        
                     })
                 }
             }
@@ -105,7 +118,9 @@ function FoormAddProduct() {
                 });
                 setProductoNuevo({
                     name:"",
-                    category:"",
+                    category:{
+                        id:""
+                    },
                     description:"",
                     price:"",
                     type:"",
@@ -116,45 +131,60 @@ function FoormAddProduct() {
                          {imageUrl:""},
                          {imageUrl:""},
                          {imageUrl:""}
-                    ] 
+                        ],
+                    characteristics: [
+                        {
+                         id:""
+                        }
+                        
+                    ]        
                 })
             }  
         }
 
         const handleOnchangeName=(e)=> {
             setProductoNuevo((prevState) => ({ ...prevState, name: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false,message:""})
+            setEstados({validacion:false, error:false})
         }
         const handleOnchangeCategoria=(e)=>{
-            setProductoNuevo((prevState) => ({ ...prevState, category: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false,message:""})
+            setProductoNuevo((prevState) => ({ ...prevState, category:{id: e.target.value.trimStart() }}))
+            setEstados({validacion:false, error:false})
         } 
         const handleOnchangeDescripcion=(e)=>{
             setProductoNuevo((prevState) => ({ ...prevState, description: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false,message:""})
+            setEstados({validacion:false, error:false})
         } 
         const handleOnchangePrecio=(e)=> {
             setProductoNuevo((prevState) => ({ ...prevState, price: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false,message:""})
+            setEstados({validacion:false, error:false})
         }
         const handleOnchangeTipo=(e)=> {
             setProductoNuevo((prevState) => ({ ...prevState, type: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false,message:""})
+            setEstados({validacion:false, error:false})
         }
         const handleOnchangeConsola=(e)=> {
             setProductoNuevo((prevState) => ({ ...prevState, console: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false,message:""})
+            setEstados({validacion:false, error:false})
         }
 
         
          const handleImageChange = (index, e) => {
-            setEstados({validacion:true, error:false,message:""})
+            setEstados({validacion:true, error:false})
              const { name, value } = e.target;
              const imagesCopy = [...productoNuevo.images];
              imagesCopy[index] = { ...imagesCopy[index], [name]: value.trimStart() };
              setProductoNuevo(prevState => ({ ...prevState, images: imagesCopy }));
          };
 
+
+         const handleCaracteristicaChange = (index, e) => {
+            const { value } = e.target;
+            const characteristicsCopy = [...productoNuevo.characteristics];
+            characteristicsCopy[index] = { id: value.trimStart() };
+            setProductoNuevo(prevState => ({ ...prevState, characteristics: characteristicsCopy }));
+        };
+
+        
        
 
   return (
@@ -163,15 +193,8 @@ function FoormAddProduct() {
         <form className="formularioAddProducto">
             <h3 className="tituloFormulario">Agregar Producto</h3>
             <input className="inputName" placeholder="Nombre *" value={productoNuevo.name} onChange={handleOnchangeName}/>
-            <select className="inputCategoria" value={productoNuevo.category} onChange={handleOnchangeCategoria}>
-                <option value="">Categoria</option>
-                <option value="Deportes">Deportes</option>
-                <option value="Aventura">Aventura</option>
-                <option value="Accion">Accion</option>
-                <option value="Terror">Terror</option>
-                <option value="Infantil">Infantil</option>
-                <option value="Pelea">Pelea</option>
-            </select>  
+            <input className="inputCategoria" placeholder="Id categoria " value={productoNuevo.category.id} onChange={handleOnchangeCategoria}/>
+               
             <input className="inputPrecio" placeholder="Precio USD *" value={productoNuevo.price} onChange={handleOnchangePrecio}/>
             <input className="inputTipo" placeholder="Tipo *" value={productoNuevo.type} onChange={handleOnchangeTipo}/>
             <select className="inputConsola" value={productoNuevo.console} onChange={handleOnchangeConsola}>
@@ -186,13 +209,13 @@ function FoormAddProduct() {
             <input className="inputImage3" placeholder="URL Image3 *" name='imageUrl'value={productoNuevo.images[2].imageUrl} onChange={(e) => handleImageChange(2, e)}/>
             <input className="inputImage4" placeholder="URL Image4 *" name='imageUrl' value={productoNuevo.images[3].imageUrl}onChange={(e) => handleImageChange(3, e)}/>
             <input className="inputImage5" placeholder="URL Image5 *" name='imageUrl' value={productoNuevo.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)}/> 
+            
+            <input className="inputCaracteristicaAdd" placeholder="IdCaracterística " value={productoNuevo.characteristics[0].id} onChange={(e) => handleCaracteristicaChange(0, e)} />
             <textarea className="inputDescripcion" placeholder="Descripcion *" value={productoNuevo.description} onChange={handleOnchangeDescripcion}/>
-
              <button  onClick={handleSubmit}className='guardarProducto'>Grabar</button>
         </form> 
     
       
-        {/* {estados.validacion ?<h3 className='mensajeExitoso'>{estados.message}</h3> :<h3 className='mensajeError'>{estados.message}</h3> } */}
        
     </div>
   ) 
