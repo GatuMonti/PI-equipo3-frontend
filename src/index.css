@@ -1,6 +1,6 @@
 *{
-  margin: 0;
-  font-family:cursive;
+  margin: auto;
+  font-family:Arial, Helvetica, sans-serif;
 }
 .dark{
   background-color: #12121296;
@@ -17,8 +17,8 @@
   height: 14vh;
   background-color: #6269d3;
   display: flex;
-  justify-content: space-between;
   position: fixed;
+  justify-content: space-between;
   z-index: 1000;
   margin: 0vh 0vw 0vh 0vw;
 }
@@ -29,16 +29,13 @@
   margin: 0vh 0vw 0vh 4vw;
 }
 .imagenLogo{
-  width: 7vw;
+  width: auto;
   height: 12vh;
 }
 .imagenLogo:hover{
   width: 7.5vw;
   height: 12.5vh;
 }
-
-
-
 
 .lema{
   margin: 5vh 0vw 0vh 0vw;
@@ -51,18 +48,20 @@
   display: flex;
   justify-content: space-around;
   width: 30vw;
+  padding: 3px;
   height: 5vh;
-  margin: 5.5vh 5vw 0vh 0vw;
+  margin: 0vw 5vw 0vh 0vw;
+  text-align: justify;
 }
 .crear-cuenta,.iniciar-sesion{
-  width: 10vw;
-  height: 5vh;
+  
   background-color: #AC6ABA;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-weight: 500;
   font-size: 1vw;
+  text-align: center;
 
 }
 .crear-cuenta:hover{
@@ -127,6 +126,8 @@
   margin: 0vh 2vw 0vh 0vw;
  
 }
+/***********************************Loggin****************************************/
+
 
 /***********************************Home****************************************/
 
@@ -178,6 +179,11 @@
   width: 14vw;
 }
 /********************Buscador****************/
+.buscadorContainer{
+  display: flex;
+  background-color: #12121296;
+  padding: 80px;
+}
 
 .contenedorDos{
   width: 80%;
@@ -187,40 +193,48 @@
   align-items: center;
 }
 .formularioBuscador{
-  width: 25vw;
-  height: 5vh;
+  width: 50%;
+  height: 50px;
   margin: 20vh 0vw 0vh 2vw;
-  background-color: #D9D9D9;
+  background-color: #FFFFFF;
+  color: #0a37db;
+  box-shadow: 2px;
   display: flex;
   justify-content: space-between;
   border-radius: 5vw;
 }
 .inputSearch{
-  width: 15vw;
-  height: 3vh;
+  width: 50%;
+  height: 35px;
   text-align: center;
   border: none;
+  color: #0a37db;
+  box-shadow: #4867DB;
+  gap: 2em;
   font-size: 1.2vw;
-  margin: 1vh 0vw 0vh 3vw;
-  background-color: #D9D9D9;
+  margin: 1vh 0vw -4vw 1vw;
+  background-color: #FFFFFF;
 }
 .inputSearch:focus{
   outline: none;
 }
 .botonBuscar{
-  width: 3vw;
-  height: 3vh;
-  border: none;
-  margin: 1vh 1vw 0vh 0vw;
+  width: 5%;
+  display: flex;
+  height: auto;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
   cursor: pointer;
-  background-color: #D9D9D9;
+  background-color: #FFFFFF;
+  color: #4867DB;
 }
 
 
 /********************Carrusel****************/
 
 .container{
-  width: 800px;
+  width: 100%;
   height: auto;
   padding: 20px;
     border-radius: 15px;
@@ -235,6 +249,7 @@
   align-items: center;
   margin-top: 2rem;
   background: #dde5f4;
+  
 }
 
 
@@ -451,16 +466,15 @@ a{
   color:#6269d3;
   font-weight: bold;
 }
-.inputName,.inputCategoria,.inputDescripcion,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
-  width: 11vw;
+.inputName,.inputCategoria,.inputDescripcion,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5{
+  width: 10vw;
   height: 6%;
-  margin: 2vh 0vw 0vh 2.5vw;
+  margin: 2vh 0vw 0vh 3vw;
   background-color:rgba(128, 128, 128, 0.568);
   text-align: center;
   border-radius: 5px;
   border: none;
 }
-
 .inputDescripcion{
   width: 20vw;
   height: 17%;
@@ -566,94 +580,6 @@ a{
   border: none;
   border-radius: 5px;
 
-}
-
-/***********************************Editar-Producto-Administrador****************************************/
-
-/************Caracteristicas del producto******************/
-
-.pageEditar{
-  margin: 0;
-}
-.botonAtrasEditar{
-  width: 8vw;
-  height: 5vh;
-  background-color:#4867DB;
-  border-radius: 5px;
-  border: none;
-  color: #FFFFFF;
-  font-size: 1vw;
-  margin: 20vh 0vw 0vh 80vw;
-}
-.botonAtrasEditar:hover{
-  background-color: #FFFFFF;
-  color: black  ;
-  width: 9vw;
-}
-.tituloEditar{
-  width: 25vw;
-  font-weight:100;
-  color:#0e41f7;
-  margin: 0vh 0vw 4vh 2vw;
-}
-.contenedorActualizar{
-  display: flex;
-  width: 100%;
-}
-.contenedorEditar{
-  width: 40%;
-  margin: 0vh 0vw 3vh 2vw;
-}
-
-.idEditar,.nameEditar,.typeEditar,.categoriaEditar,.descripcionEditar,.precioEditar,.consolaEditar,.idImagen,.urlImagen,.idProductoImagen,.idCarateristica,.nameCaracteristica,.descripcionCaracteristica{
-  color:#0e41f7;
-  font-size: 1.2vw;
-}
-.contenedorEditar span{
-  color:rgba(0, 0, 0, 0.705);
-}
-
-
-/************Formulario actualizar producto******************/
-
-
-.formularioActualizarProducto{
-  display: flex;
-  flex-wrap: wrap;
-  width: 50vw;
-  height: 90vh;
-  margin: 4vh 0vw 5vh 4vw;
-  padding: 0vh 0vw 2vh 0vw;
-  background-color:#FFFFFF;
-  border-radius: 5px;
-}
-.inputActualizar,.inputActualizarDescripcion,.inputCaracteristica{
-  width: 12vw;
-  height: 6%;
-  margin: 2vh 0vw 0vh 3.5vw;
-  background-color:rgba(128, 128, 128, 0.568);
-  text-align: center;
-  border-radius: 5px;
-  border: none;
-}
-.inputActualizarDescripcion{
-  width: 40%;
-  height: 13%;
-  margin: 2vh 0vw 0vh 4vw;
-}
-.botonActualizar{
-  width: 15vw;
-  height: 8%;
-  margin: 4vh 0vw 0vh 5vw;
-  background-color:#6269d3;
-  border-radius: 5px;
-  border: none;
-  color:#FFFFFF;
-  font-size: 1vw;
-}
-.botonActualizar:hover{
-  width: 16 vw;
-  height: 9%;
 }
 
 
@@ -777,34 +703,6 @@ a{
 }
 .bx-search-alt{
   font-size: 4vw;
-}
-
-/********************Carrusel****************/
-
-.contenedorCarrusel{
-  width: 60vw;
-  height: 25vh;
-  margin: 4vh 0vw 0vh 0vw;
-}
-.tituloCarrusel{
-  font-size: 3vw;
-  margin: 0vh 0vw 0vh 14vw;
-}
-#carouselExampleIndicators{
-  width: 40vw;
-  height: 15vh;
-  margin: 0vh 0vw 5vh 0vw;
-}
-.carousel-indicators{
-  margin: 0vh 0vw -4vh 15vw;
-}
-.carousel-inner{
-  height: 15vh;
-  margin: 1vh 0vw 0vh 0vw;
-
-}
-.carousel-control-prev,.carousel-control-next{
-  margin: 8vh 0vw 0vh 0vw;
 }
 
 /********************Productos****************/
@@ -967,20 +865,6 @@ font-size: 1.5vw;
 .bx-search-alt{
   font-size: 5vw;
 }
-
-/********************Carrusel****************/
-
-.contenedorCarrusel{
-  width: 50vw;
-  margin: 4vh 0vw 0vh 0vw;
-}
-.tituloCarrusel{
-  font-size: 4vw;
-  margin: 0vh 0vw 0vh 12vw;
-  color: #FFFFFF;
-}
-
-
 
 /********************Productos****************/
 
