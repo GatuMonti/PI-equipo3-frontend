@@ -1,6 +1,6 @@
 *{
   margin: 0;
-  font-family:cursive;
+  font-family:Arial, Helvetica, sans-serif;
 }
 .dark{
   background-color: #12121296;
@@ -29,11 +29,12 @@
   margin: 0vh 0vw 0vh 4vw;
 }
 .imagenLogo{
-  width: 13vw;
-  height: 13vh;
+  margin-top: 3px;
+  width: auto;
+  height: 14vh;
 }
 .imagenLogo:hover{
-  width: 13.5vw;
+  width: auto;
   height: 13.5vh;
 }
 .lema{
@@ -80,48 +81,54 @@
   background-color: #FFFFFF;
 }
 
-/************************************Footer***********************************/
-.piePagina{
-  width: 100%;
-  height: 16vh;
-  background-color:#6269d3;
-  display: flex;
-  justify-content: space-around;
-  margin: 0vh 0vw 0vh 0vw;
 
+/************************************Footer***********************************/
+
+
+.footer{
+  background-color:#6269d3;
+  padding:30px 0px;
+  font-family: 'Play', sans-serif;
+  text-align:center;
+  
+  }
+
+
+.footer .row{
+    padding: 5px;
+    margin:1% 0%;
+    margin-bottom: 0px;
+    color:#D9D9D9;
+    font-size:0.8em;
+ }
+
+.footer .row a{
+  display:inline-block;
+  text-decoration:none;
+  color: #FFFFFF;
+  transition:0.5s;
 }
-.derechos{
-  width: 15vw;
-  height: 8vh;
-  display: flex;
-  justify-content: space-around;
-  margin: 5vh 0vw 0vh 20vw;
+
+.footer .row a:hover{
+    color:#5e5e5e;
+    }
+    
+.footer .row ul{
+    width:100%;
 }
-.circuloFooter{
-  width: 30px;
-  height: 30px;
-  font-size: 15px;
-  font-weight: 900;
-  margin: 2vh 0vw 0vh 0vw;
-  padding: 0.4vh 0vw 0vh 0vw;
-  text-align: center;
-  border-radius: 10vw;
-  border: solid 2px;
+    
+.footer .row ul li{
+    display:inline-block;
+    direction: row;
+    margin:0px 30px;
 }
-.mensajeFooter{
-  margin: 2.5vh 0vw 0vh 0vw;
-  font-size: 1.5vw;
+    
+.footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
 }
-.navegacionFooter{
-  width: 25vw;
-  height: 8vh;
-  margin: 6vh 15vw 0vh 0vw;
-}
-.bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
-  font-size: 3.5vw; 
-  margin: 0vh 2vw 0vh 0vw;
- 
-}
+
+
 
 /***********************************Home****************************************/
 
@@ -185,7 +192,7 @@
   width: 25vw;
   height: 5vh;
   margin: 20vh 0vw 0vh 0vw;
-  background-color: #D9D9D9;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   border-radius: 5vw;
@@ -197,7 +204,7 @@
   border: none;
   font-size: 1.2vw;
   margin: 1vh 0vw 0vh 3vw;
-  background-color: #D9D9D9;
+  background-color: #FFFFFF;
 }
 .inputSearch:focus{
   outline: none;
@@ -208,52 +215,29 @@
   border: none;
   margin: 1vh 1vw 0vh 0vw;
   cursor: pointer;
-  background-color: #D9D9D9;
+  background-color: #FFFFFF;
 }
 
 
 /********************Carrusel****************/
 
-.contenedorCarrusel{
-  width: 25vw;
-  height: 24vh;
-  background-color: #6269d3;
-  border-radius: 10px;
-  margin: 6vh 0vw 0vh 0vw;
+.container{
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  border-radius: 15px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+       -ms-user-select: none;
+        user-select: none;
+  overflow-y: hidden;
   display: flex;
+   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: sticky;
-  z-index: 0;
-}
-.tituloCarrusel{
-  margin: 0vh 0vw 0vh 5vw;
-  color: #FFFFFF;
-}
-
-#carouselExampleIndicators{
-  width: 15vw;
-  height: 20vh;
-  z-index: 0;
-
-}
-.carousel-indicators{
-  width: 50px;
-  margin: 0vh 0vw 0vh 6vw;
-}
-
-.carousel-inner{
-  height: 18vh;
-  margin: 0vh 0vw 2vh 0vw;
-}
-.carousel-item img {
-  height: 15vh; 
-  border-radius: 10px; 
-  margin: 1vh 0vw 0vh 0vw;
-
-}
-.carousel-control-next,.carousel-control-prev{
-  margin: 4vh 0vw 0vh 0vw;
+  margin-top: 2rem;
+  background: #dde5f4;
+  
 }
 
 /********************Productos****************/
@@ -276,7 +260,7 @@
   width: 20vw;
   height: 35vh;
   margin: 5vh 0vw 0vh 0vw;
-  background-color:#6269d3; 
+  background-color:#FFFFFF; 
 
 }
 .imageProduct{
@@ -288,8 +272,8 @@
   height: 10vh;
   text-align: center;
   font-size: 1vw;
-  color: #FFFFFF;
-  background-color:#6269d3;
+  color: #4867DB;
+  background-color:#FFFFFF;
   margin: 1vh 0vw 0vh 0vw; 
 }
 a{
@@ -418,94 +402,164 @@ a{
 }
 
 .formRegister{
+  font-family: "Arial";
+    margin-bottom: 10px;
+    margin-left: 30%;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    overflow-y: hidden;
+    display:inline-flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #dde5f4;
+    height: auto;
+    width: 40%;
+    box-shadow: 5px 5px 15px black;
+}
+.bannerRegister{
+  width: 100%;
+    height: auto;
+    padding:0px ;
+    border-radius: 5px;
+}
+
+.etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
+  background: #f1f7fe;
+  margin: auto;
+  margin-top: 1.5rem;
+  width: 80%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  width: 25vw;
-  height: 60%;
-  background-color:#4867DB;
-  margin: 7vh 0vw 5vh 40vw;
-  border-radius: 10px;
-}
-.titleFormRegister{
-  width: 40%;
-  text-align: center;
-  margin: 1vh 0vw 0vh 7vw;
-  font-size: 2vw;
-  color: #FFFFFF;
-}
-.etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
-  color:#FFFFFF;
-  margin: 1vh 0vw 1vh 4vw;
+  border-radius: 30px;
+  box-shadow: 0;
+  gap: 1rem;
 }
 .inputUserName,.inputPassword,.inputNameRegister,.inputApellido,.inputEmail{
-  width: 16vw;
-  margin: 0vh 0vw 0vh 4vw;
-  border-radius: 5px;
-  border: none;
+  align-content: end;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 .crearCuenta{
-  width: 10vw;
-  height: 5vh;
-  border-radius: 5px;
-  border: none;
-  margin: 2vh 0vw 2vh 7.5vw;
-  background-color: #AC6ABA;
-  color: #FFFFFF;
+  padding: 16px;
+    width: 10rem;
+    margin: auto;
+    margin-top: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .crearCuenta:hover{
-  background-color: #FFFFFF;
-  color: black;
-  width: 11vw;
-  height: 6vh;
+  background-color: #0056b3;
 }
 
 /************Formulario Login******************/
 
 .pageFormLogin{
+  width: 100%;
   height: 100%;
   padding: 20vh 0vw 10vh 0vw;
 }
 .formLogin{
-  display: flex;
-  flex-direction: column;
-  width: 25vw;
-  height: 70%;
-  margin: 20vh 0vw 16vh 37vw;
-  background-color:#4867DB;
-  border-radius: 10px;
+  font-family: "Arial";
+    margin-bottom: 10px;
+    margin-left: 30%;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    overflow-y: hidden;
+    display:inline-flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #dde5f4;
+    height: auto;
+    width: 40%;
+    box-shadow: 5px 5px 15px black;
 }
+.banner{
+  width: 100%;
+    height: auto;
+    padding:0px ;
+    border-radius: 5px;
+}
+.logoLoguin{
+  margin-top: -3em;
+}
+
+
 .titleFormLogin{
-  width: 40%;
   text-align: center;
-  margin: 2vh 0vw 0vh 7vw;
-  font-size: 2vw;
-  color: #FFFFFF;
+  margin-bottom: 20px;
 }
 .etiquetaUserNameLogin,.etiquetaPasswordLogin{
-  color:#FFFFFF;
-  margin: 1vh 0vw 1vh 4vw;
+  background: #f1f7fe;
+    margin: auto;
+    margin-top: 1.5rem;
+    width: 80%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0;
+    gap: 1rem;
 }
 .inputUserNameLogin,.inputPasswordLogin{
-  width: 16vw;
-  margin: 0vh 0vw 0vh 4vw;
-  border-radius: 5px;
-  border: none;
+  align-content: end;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
 }
 .botonLogin{
-  width: 10vw;
-  height: 5vh;
-  border-radius: 5px;
-  border: none;
-  margin: 3vh 0vw 2vh 7.5vw;
-  background-color: #AC6ABA;
-  color: #FFFFFF;
+  padding: 16px;
+    width: 10rem;
+    margin: auto;
+    margin-top: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .botonLogin:hover{
-  background-color: #FFFFFF;
-  color: black;
-  width: 11vw;
-  height: 6vh;
+  background-color: #0056b3;
 
+}
+
+.footerLoguin{
+  display: flex;
+    padding: 12px;
+    margin-top: 0.5rem;
+    font-size: 0.7em;
+    color: #5e5e5e;
+    gap: 14em;
+}
+
+.footerLoguin span{
+  cursor: pointer;
 }
 
 
@@ -551,9 +605,9 @@ a{
 .formularioAddProducto{
   display: flex;
   flex-wrap: wrap;
-  width: 42vw;
+  width: 60%;
   height: 55vh;
-  margin: -55vh 0vw 4vh 30vw;
+  margin: -55vh 0vw 4vh 20vw;
   background-color:#FFFFFF;
   border-radius: 5px;
 }
@@ -1059,9 +1113,7 @@ font-size: 1.5vw;
   margin: 2vh 0vw 0vh 11vw;
   font-size: 3vw;
 }
-.etiquetaUserNameLogin,.etiquetaPasswordLogin{
-  margin: 2vh 0vw 1vh 8vw;
-}
+
 .inputUserNameLogin,.inputPasswordLogin{
   width: 20vw;
   margin: 0vh 0vw 0vh 8vw;
@@ -1289,24 +1341,21 @@ font-size: 2.5vw;
 /************Formulario Login******************/
 
 .formLogin{
-  width: 70vw;
-  margin: 20vh 0vw 16vh 16vw;
+  width: 80vw;
+  margin: 10vh 0vw 10vh 10vw;
 }
 .titleFormLogin{
-  margin: 2vh 0vw 0vh 22vw;
+  margin: 2vh 0vw 0vh 0vw;
   font-size: 5vw;
 }
-.etiquetaUserNameLogin,.etiquetaPasswordLogin{
-  margin: 2vh 0vw 1vh 15vw;
-  font-size: 4.5vw;
-}
+
 .inputUserNameLogin,.inputPasswordLogin{
   width: 40vw;
-  margin: 0vh 0vw 0vh 15vw;
+  margin: 0vh 0vw 0vh 0vw;
 }
 .botonLogin{
   width: 20vw;
-  margin: 3vh 0vw 2vh 24vw;
+  margin: 3vh 0vw 2vh 0vw;
   font-size: 4vw;
 }
 .botonLogin:hover{

@@ -14,6 +14,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar los archivos Jav
 import { useContextGlobal } from '../components/Util/global.context'
 import Card from '../components/Card'
 import Swal from 'sweetalert2'
+import Slider from '../components/slider'
 
 
 
@@ -83,35 +84,7 @@ const Home = () => {
 
         {/*Carrusel*/}
 
-        <div className='contenedorCarrusel'>
-          <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel" data-interval="1000" >
-            <h5 className="tituloCarrusel">Populares</h5>
-            <div className="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img src={callDutty} className="d-block w-100" alt="callDutty" />
-              </div>
-              <div className="carousel-item">
-                <img src={messi} className="d-block w-100" alt="messi" />
-              </div>
-              <div className="carousel-item">
-                <img src={embape} className="d-block w-100" alt="embape" />
-              </div>
-            </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span className="carousel-control-next-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
+        <Slider></Slider>
 
         {/*Renderizacion de productos*/ }
 

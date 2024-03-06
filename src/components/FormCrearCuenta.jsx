@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {useNavigate} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 const FormCrearCuenta = () => {
@@ -141,19 +142,39 @@ const FormCrearCuenta = () => {
     return (
         <div className='pageFormCrearcuenta'>
             
+            
                 <form className='formRegister'>
-                    <h2 className="titleFormRegister">Registro</h2>
-                    <label className='etiquetaUserName'>Email *</label>
-                    <input className='inputUserName' value={usuarioRegistrar.username} onChange={handleChangeUserName}/>
-                    <label className='etiquetaPassword'>Password *</label>
-                    <input placeholder="Minimo 4 caracteres"className='inputPassword' value={usuarioRegistrar.password} onChange={handleChangePassword}/>
-                    <label className='etiquetaName'>Nombre *</label>
-                    <input className='inputNameRegister' value={usuarioRegistrar.nombre} onChange={handleChangeFirstName}/>
-                    <label className='etiquetaApellido'>Apellido *</label>
-                    <input className="inputApellido" value={usuarioRegistrar.apellido} onChange={handleChangeLastName}/>
-                    <label className='etiquetaEmail'>Direccion *</label>
-                    <input className='inputEmail'value={usuarioRegistrar.direccion} onChange={handleChangeEmail}/>
+                <img className='bannerRegister' src='../src/Images/2.jpg'/>
+                <img className='logoLoguin' src='../src/Images/fondoblanco.png'/>
+                    <h2 className="titleFormLoguin">Bienvenido a Vortex Games</h2>
+                    <div className='etiquetaUserName'>
+                        <label >Email *</label>
+                        <input className='inputUserName' value={usuarioRegistrar.username} onChange={handleChangeUserName}/>
+
+                    </div>
+                    <div className='etiquetaPassword'>
+                        <label> Contraseña *</label>
+                     <input placeholder="Minimo 4 caracteres"className='inputPassword' type='password' value={usuarioRegistrar.password} onChange={handleChangePassword}/>
+
+                    </div>
+                    <div className='etiquetaName'>
+                        <label> Nombre *</label>
+                        <input className='inputNameRegister' value={usuarioRegistrar.nombre} onChange={handleChangeFirstName}/>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div className='etiquetaApellido'>
+                        <label >Apellido *</label>
+                        <input className="inputApellido" value={usuarioRegistrar.apellido} onChange={handleChangeLastName}/>     
+                    </div>
+                    <div className='etiquetaEmail'>
+                        <label >Dirección *</label>
+                        <input className='inputEmail'value={usuarioRegistrar.direccion} onChange={handleChangeEmail}/>
+                    </div>
+                    
                     <button className="crearCuenta"  onClick={handleSubmitRegister}>Crear Cuenta</button>
+                    <div className='footerLoguin'><Link to={'/FormLogin/'}> <span> Iniciar sesion </span> </Link> <span>¿Olvidaste tu contraseña?</span></div>
                 </form> 
 
 

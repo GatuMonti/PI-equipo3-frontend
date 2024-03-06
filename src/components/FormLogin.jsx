@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -25,6 +26,7 @@ const FormLogin = () => {
 // };
 
  // Función para decodificar el token JWT
+
 function parseJwt (token) {
      var base64Url = token.split('.')[1];
       var base64 = base64Url.replace('-', '+').replace('_', '/'); 
@@ -126,16 +128,30 @@ function parseJwt (token) {
 
   return (
     <div className='pageFormLogin'>
-       <form className='formLogin'>
-                    <h2 className="titleFormLogin">Login</h2>
-                    <label className='etiquetaUserNameLogin'>Email *</label>
-                    <input className='inputUserNameLogin' value={usuarioAutenticar.username} onChange={handleChangeUserNameLogin}/>
-                    <label className='etiquetaPasswordLogin'>Password *</label>
-                    <input placeholder="Minimo 4 caracteres"className='inputPasswordLogin' value={usuarioAutenticar.password} onChange={handleChangePasswordLogin}/>
-                    <button className="botonLogin"  onClick={handleSubmitLogin}>Entrar</button>
-        </form> 
+    <form className='formLogin'>
+    <img className="banner"src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/07/ea-sports-fc-24-todo-sabemos-sucesor-fifa-24-3084248.jpg?tf=3840x"/>
+    <img className='logoLoguin' src='../src/Images/fondoblanco.png'/>
+                 
+                 <h2 className="titleFormLogin">Iniciar sesión en Vortex</h2>
+                 
+                 <div className='etiquetaUserNameLogin'>
+                    <label >Email </label>
+                      <input className='inputUserNameLogin' value={usuarioAutenticar.username} onChange={handleChangeUserNameLogin}/>
+                 </div>
+                
+                 <div className='etiquetaPasswordLogin'>
+                 <label >Contraseña </label>
+                 <input type='password' placeholder="Al menos 4 caracteres"className='inputPasswordLogin' value={usuarioAutenticar.password} onChange={handleChangePasswordLogin}/>
 
-    </div>
+                 </div>
+                 
+                 
+                 <button className="botonLogin"  onClick={handleSubmitLogin}>Entrar</button>
+                 <div className='footerLoguin'><Link to={'/FormCrearCuenta/'}> <span> Registar usuario </span> </Link> <span>¿Olvidaste tu contraseña?</span></div>
+     </form> 
+     
+
+ </div>
   )
 }
 
