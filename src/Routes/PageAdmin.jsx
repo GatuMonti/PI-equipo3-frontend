@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import FoormAddProduct from '../components/FoormAddProduct'
 import ListarProductAdmin from '../components/ListarProductAdmin'
+import { Link } from 'react-router-dom' //Importamos Link para poder darle navegacion al boton de Categorias
+
 
 const PageAdmin = () => {
-    console.log(localStorage.getItem("role"))
 
 
     const [estadosAdmin, setEstadosAdmin]=useState({
@@ -26,8 +27,10 @@ const PageAdmin = () => {
            <div className="panel">
              <button onClick={handleAddProduct} className="agregarProducto">Agregar Producto</button>
              <button onClick={handleListProducts}className="ListarProductos">Listar Productos</button>
-             <button className="ListarCategorias">Listar Categorias</button>
-             <button className="actualizarProducto">XXXXXXXXX</button>
+             {/*Cambiamos el nombre del boton de Listar Categorias a Panel de Categorias, tambien agregamos la ruta */}
+             <Link to="panelCategorias" className='actualizarProducto' style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}> Panel de Categorias</Link>
+              {/*Agregamos el boton paraa ir al panel de caracteristicas */}
+             <Link to="panelCaracteristicas" className='actualizarProducto' style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}> Panel de Caracteristicas</Link>
             </div>
             <div className='vacio'></div>
             {estadosAdmin.goAddProduct &&

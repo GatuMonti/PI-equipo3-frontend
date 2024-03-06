@@ -22,6 +22,7 @@ const Home = () => {
   
   const{state}=useContextGlobal()
 
+
   //Funcion para revolver los elementos del array
 
   const shuffleArray=(array)=> {

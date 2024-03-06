@@ -44,9 +44,7 @@ const [productoActualizar, setProductoActualizar] = useState({
     {  imageUrl: "" },
     {  imageUrl: ""}
   ],
-  characteristics: [
-    { id: "", name: "", description: "" }
-  ]
+  characteristics: []
 });
 
 const[estados,setEstados]=useState({
@@ -115,9 +113,7 @@ const handleSubmit= async(e)=>{
               {  imageUrl: "" },
               {  imageUrl: ""}
             ],
-           characteristics: [
-              { id: "", name: "", description: "" }
-           ]
+           characteristics: []
           })
       }
   }
@@ -249,9 +245,9 @@ const handleCaracteristicaChange = (index, e) => {
           <input className="inputActualizar" placeholder="URL Image4 *" name='imageUrl' value={productoActualizar.images[3].imageUrl} onChange={(e) => handleImageChange(3, e)} />
           <input className="inputActualizar" placeholder="URL Image5 *" name='imageUrl' value={productoActualizar.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)} />
          
-          <input className="inputCaracteristica" placeholder="IdCaracterística *" name='id' value={productoActualizar.characteristics[0].id} onChange={(e) => handleCaracteristicaChange(0, e)} />
-          <input className="inputCaracteristica" placeholder="NameCaracterística *" name='name' value={productoActualizar.characteristics[0].name} onChange={(e) => handleCaracteristicaChange(0, e)} />
-          <input className="inputCaracteristica" placeholder="Descrip Caract *" name='description' value={productoActualizar.characteristics[0].description} onChange={(e) => handleCaracteristicaChange(0, e)} />
+          <input className="inputCaracteristica" placeholder="IdCaracterística " name='id' value={productoActualizar.characteristics.length > 0 ? productoActualizar.characteristics[0].id : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />
+          <input className="inputCaracteristica" placeholder="NameCaracterística " name='name' value={productoActualizar.characteristics.length > 0 ? productoActualizar.characteristics[0].name : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />
+          <input className="inputCaracteristica" placeholder="Descrip Caract " name='description' value={productoActualizar.characteristics.length > 0 ? productoActualizar.characteristics[0].description : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />
 
           <textarea className="inputActualizarDescripcion" placeholder="Descripcion *" value={productoActualizar.description} onChange={handleOnchangeDescripcion} />
 

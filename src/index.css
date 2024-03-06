@@ -302,7 +302,7 @@ a{
   padding: 20vh 0vw 0vh 0vw;
 }
 .botonRegresar{
-  margin: 1vh 0vw 0vh 85vw;
+  margin: 1vh 0vw 0vh 80vw;
   width: 8vw;
   height: 5vh;
   background-color:#4867DB;
@@ -409,6 +409,107 @@ a{
   color: black  ;
   width: 9vw;
 }
+
+/************Formulario crear cuenta******************/
+
+.pageFormCrearcuenta{
+  height: 100%;
+  padding: 20vh 0vw 10vh 0vw;
+}
+
+.formRegister{
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: 60%;
+  background-color:#4867DB;
+  margin: 7vh 0vw 5vh 40vw;
+  border-radius: 10px;
+}
+.titleFormRegister{
+  width: 40%;
+  text-align: center;
+  margin: 1vh 0vw 0vh 7vw;
+  font-size: 2vw;
+  color: #FFFFFF;
+}
+.etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
+  color:#FFFFFF;
+  margin: 1vh 0vw 1vh 4vw;
+}
+.inputUserName,.inputPassword,.inputNameRegister,.inputApellido,.inputEmail{
+  width: 16vw;
+  margin: 0vh 0vw 0vh 4vw;
+  border-radius: 5px;
+  border: none;
+}
+.crearCuenta{
+  width: 10vw;
+  height: 5vh;
+  border-radius: 5px;
+  border: none;
+  margin: 2vh 0vw 2vh 7.5vw;
+  background-color: #AC6ABA;
+  color: #FFFFFF;
+}
+.crearCuenta:hover{
+  background-color: #FFFFFF;
+  color: black;
+  width: 11vw;
+  height: 6vh;
+}
+
+/************Formulario Login******************/
+
+.pageFormLogin{
+  height: 100%;
+  padding: 20vh 0vw 10vh 0vw;
+}
+.formLogin{
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: 70%;
+  margin: 20vh 0vw 16vh 37vw;
+  background-color:#4867DB;
+  border-radius: 10px;
+}
+.titleFormLogin{
+  width: 40%;
+  text-align: center;
+  margin: 2vh 0vw 0vh 7vw;
+  font-size: 2vw;
+  color: #FFFFFF;
+}
+.etiquetaUserNameLogin,.etiquetaPasswordLogin{
+  color:#FFFFFF;
+  margin: 1vh 0vw 1vh 4vw;
+}
+.inputUserNameLogin,.inputPasswordLogin{
+  width: 16vw;
+  margin: 0vh 0vw 0vh 4vw;
+  border-radius: 5px;
+  border: none;
+}
+.botonLogin{
+  width: 10vw;
+  height: 5vh;
+  border-radius: 5px;
+  border: none;
+  margin: 3vh 0vw 2vh 7.5vw;
+  background-color: #AC6ABA;
+  color: #FFFFFF;
+}
+.botonLogin:hover{
+  background-color: #FFFFFF;
+  color: black;
+  width: 11vw;
+  height: 6vh;
+
+}
+
+
+
 
 /***********************************Pagina-administrador****************************************/
 .pageAdmin{
@@ -578,7 +679,6 @@ a{
   margin: 2vh 2vw 0vh 2vw;
   border: none;
   border-radius: 5px;
-
 }
 
 /***********************************Editar-Producto-Administrador****************************************/
@@ -648,6 +748,9 @@ a{
   border-radius: 5px;
   border: none;
 }
+.inputCaracteristica{
+  height: 6vh;
+}
 .inputActualizarDescripcion{
   width: 40%;
   height: 13%;
@@ -664,12 +767,47 @@ a{
   font-size: 1vw;
 }
 .botonActualizar:hover{
-  width: 16 vw;
+  width: 16vw;
   height: 9%;
 }
 
+/**********************************Panel Categorias y caracteristicas***********************************************/
+.panelCategorias, .panelCaracteristicas{
+  padding: 20vh;    
+  min-height: 84vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0vh 9vw 0vh 0vw;
 
-
+}
+.tituloCategoriasAdmin,.tituloCaracteristicasAdmin{
+  margin: 2vh 0vw 0vh 0vw;
+  color: #4867DB;
+}
+.botonRegresarPageAdmin{
+  margin: 1vh 0vw 0vh 77vw;
+  width: 8vw;
+  height: 5vh;
+  background-color:#4867DB;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1vw;
+}
+.botonRegresarPageAdmin:hover{
+  background-color: #FFFFFF;
+  color: black  ;
+  width: 9vw;
+}
+.btn-primary{
+  background-color:#4867DB;
+  border: none;
+}
+.btn-primary:hover{
+  background-color:#FFFFFF;
+  color: rgba(0, 0, 0, 0.733);
+}
 
 
 
@@ -884,6 +1022,61 @@ width: 9vw;
 font-size: 1.5vw;
 }
 
+/************Formulario crear cuenta******************/
+
+.formRegister{
+  width: 40vw;
+  margin: 7vh 0vw 5vh 30vw;
+}
+.titleFormRegister{
+  margin: 1vh 0vw 0vh 12vw;
+  font-size: 2.5vw;
+}
+.etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
+  margin: 1vh 0vw 1vh 8vw;
+}
+.inputUserName,.inputPassword,.inputNameRegister,.inputApellido,.inputEmail{
+  width: 25vw;
+  margin: 0vh 0vw 0vh 8vw;
+}
+.crearCuenta{
+  width: 20vw;
+  height: 5vh;
+  margin: 2vh 0vw 2vh 10vw;
+}
+.crearCuenta:hover{
+  width: 21vw;
+}
+
+/************Formulario Login******************/
+
+.formLogin{
+  width: 35vw;
+  margin: 20vh 0vw 16vh 34vw;
+}
+.titleFormLogin{
+  width: 40%;
+  margin: 2vh 0vw 0vh 11vw;
+  font-size: 3vw;
+}
+.etiquetaUserNameLogin,.etiquetaPasswordLogin{
+  margin: 2vh 0vw 1vh 8vw;
+}
+.inputUserNameLogin,.inputPasswordLogin{
+  width: 20vw;
+  margin: 0vh 0vw 0vh 8vw;
+}
+.botonLogin{
+  width: 15vw;
+  margin: 3vh 0vw 2vh 10vw;
+}
+.botonLogin:hover{
+  width: 16vw;
+
+}
+
+
+
 /***********************************Pagina-administrador****************************************/
 
   .pageAdmin{
@@ -1067,6 +1260,61 @@ margin: 2vh 0vw 0vh 12vw;
 width: 15vw;
 font-size: 2.5vw;
 }
+
+/************Formulario crear cuenta******************/
+
+.formRegister{
+  width: 70vw;
+  margin: 7vh 0vw 5vh 15vw;
+}
+.titleFormRegister{
+  margin: 2vh 0vw 0vh 22vw;
+  font-size: 4vw;
+}
+.etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
+  margin: 1vh 0vw 1vh 11vw;
+}
+.inputUserName,.inputPassword,.inputNameRegister,.inputApellido,.inputEmail{
+  width: 50vw;
+  margin: 0vh 0vw 0vh 11vw;
+}
+.crearCuenta{
+  width: 30vw;
+  margin: 2vh 0vw 2vh 20vw;
+}
+.crearCuenta:hover{
+  width: 31vw;
+}
+
+/************Formulario Login******************/
+
+.formLogin{
+  width: 70vw;
+  margin: 20vh 0vw 16vh 16vw;
+}
+.titleFormLogin{
+  margin: 2vh 0vw 0vh 22vw;
+  font-size: 5vw;
+}
+.etiquetaUserNameLogin,.etiquetaPasswordLogin{
+  margin: 2vh 0vw 1vh 15vw;
+  font-size: 4.5vw;
+}
+.inputUserNameLogin,.inputPasswordLogin{
+  width: 40vw;
+  margin: 0vh 0vw 0vh 15vw;
+}
+.botonLogin{
+  width: 20vw;
+  margin: 3vh 0vw 2vh 24vw;
+  font-size: 4vw;
+}
+.botonLogin:hover{
+  width: 21vw;
+
+}
+
+
 
 /***********************************Pagina-administrador****************************************/
 

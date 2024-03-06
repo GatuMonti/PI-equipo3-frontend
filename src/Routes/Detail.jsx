@@ -14,6 +14,8 @@ const Detail = () => {
   
   console.log(params.id)
 
+  const rolEnLocalStore=localStorage.getItem('userRole')
+
 
   useEffect(()=>{
     axios(endPointDetail)
@@ -59,7 +61,8 @@ const Detail = () => {
            <h3 className="precioProducto">Precio:<span>{state.producto.price} USD</span></h3>
         </div>
         <div className="contenedorComprar">
-          <button className='botonComprar'>Comprar</button>
+          {rolEnLocalStore !=null && <button className='botonComprar'>Comprar</button>}
+          
         </div>
           
      

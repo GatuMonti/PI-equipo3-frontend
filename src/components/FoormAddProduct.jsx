@@ -1,4 +1,4 @@
-import { computeStyles } from '@popperjs/core'
+
 import React, { useState,useEffect } from 'react'
 import axios, { formToJSON } from 'axios'
 import Swal from 'sweetalert2'
@@ -22,12 +22,7 @@ function FoormAddProduct() {
                  {imageUrl:""},
                  {imageUrl:""}
                 ],
-            characteristics: [
-                {
-                 id:""
-                }
-                
-            ]        
+            characteristics: []        
             })
 
      const[estados,setEstados]=useState({
@@ -96,12 +91,7 @@ function FoormAddProduct() {
                              {imageUrl:""},
                              {imageUrl:""}
                             ],
-                        characteristics: [
-                            {
-                             id:""
-                            }
-                           
-                        ]        
+                        characteristics: []        
                     })
                 }
             }
@@ -132,12 +122,7 @@ function FoormAddProduct() {
                          {imageUrl:""},
                          {imageUrl:""}
                         ],
-                    characteristics: [
-                        {
-                         id:""
-                        }
-                        
-                    ]        
+                    characteristics: []        
                 })
             }  
         }
@@ -210,7 +195,7 @@ function FoormAddProduct() {
             <input className="inputImage4" placeholder="URL Image4 *" name='imageUrl' value={productoNuevo.images[3].imageUrl}onChange={(e) => handleImageChange(3, e)}/>
             <input className="inputImage5" placeholder="URL Image5 *" name='imageUrl' value={productoNuevo.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)}/> 
             
-            <input className="inputCaracteristicaAdd" placeholder="IdCaracterística " value={productoNuevo.characteristics[0].id} onChange={(e) => handleCaracteristicaChange(0, e)} />
+            <input className="inputCaracteristicaAdd" placeholder="IdCaracterística " value={productoNuevo.characteristics.length > 0 ? productoNuevo.characteristics[0].id : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />            
             <textarea className="inputDescripcion" placeholder="Descripcion *" value={productoNuevo.description} onChange={handleOnchangeDescripcion}/>
              <button  onClick={handleSubmit}className='guardarProducto'>Grabar</button>
         </form> 
