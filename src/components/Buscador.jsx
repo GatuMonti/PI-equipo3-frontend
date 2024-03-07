@@ -11,15 +11,17 @@ function buscador({ onSearch }) {
 
 
       return (
-        <section className="buscador">
-          <input
-            type="text"
-            placeholder="Buscador..."
-            value={searchTerm}
-            onChange={handleSearchChange}
-          />
+        <div className='buscadorContainer'>
+          <section className="buscador">
+            <input
+             type="text"
+             placeholder="Buscador..."
+             value={searchTerm}
+             onChange={handleSearchChange}
+            />
          
-        </section>
+          </section>
+        </div>
       );
     }      
 

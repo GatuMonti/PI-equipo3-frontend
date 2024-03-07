@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 const reducer = (state, action) => {
     switch (action.type) {
       case 'get_productos':
@@ -41,3 +42,21 @@ const reducer = (state, action) => {
     
   
   
+=======
+const reducer = (state,action) => {
+  switch(action.type){
+    case 'get_productos':
+        return{...state,productos:action.payload}
+    case 'get_producto':
+        return{...state,producto:action.payload}
+    case 'delete_product':
+        return{...state,productos: state.productos.filter(producto => producto.id !== action.payload)}  
+    case 'change_theme':
+        return{...state,theme:action.payload}           
+    default:
+        break;    
+  }
+}
+
+export default reducer
+>>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
