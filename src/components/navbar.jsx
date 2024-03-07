@@ -3,6 +3,7 @@ import logo from '../Images/Logo.png'
 import { Link } from 'react-router-dom'
 import { useState} from "react";
 import { useContextGlobal } from "./Util/global.context";
+import CardUsuario from './CardUsuario/CardUsuario'
 
 const navbar = () => {
 
@@ -11,14 +12,7 @@ const navbar = () => {
     
     const [userRole, setUserRole] = useState(localStorage.getItem("userRole")  );
 
-    console.log({userRole})
-
-
-
-    const handleCerrarSesionAdmin = () => {
-        localStorage.clear()
-        setUserRole(null)  
-    }
+    console.log({userRole})   
 
     
 
@@ -35,22 +29,16 @@ const navbar = () => {
           <h3 className="lema">Explora, juega y disfruta</h3>
         </div>
         <div className="botones">
+        {state.theme === "light" ? <button onClick={handleTheme} className="themeDark">🌙</button> : <button onClick={handleTheme} className="themeLight">☀️</button>}
           {userRole === null ? (
             <>
               <Link to={'/FormCrearCuenta'}><button className="crear-cuenta">Crear cuenta</button></Link>
               <Link to={'/FormLogin/'}><button  className="iniciar-sesion">Iniciar sesión</button></Link>
             </>
-          ) : (
-            userRole === "ADMIN" ? (
-              <>
-                <Link to={'/'}><button onClick={handleCerrarSesionAdmin} className="iniciar-sesion">Cerrar Sesión</button></Link>
-                <Link to={'/pageAdmin'}><button  className="iniciar-sesion">Administar</button></Link>
-              </>
-            ) : (
-              <Link to={'/'}><button onClick={handleCerrarSesionAdmin} className="iniciar-sesion">Cerrar Sesión</button></Link>
-            )
+          ) : (                       
+          <CardUsuario userRole={userRole} setUserRole={setUserRole}/> //<---- Eliminar el lin de cerrar secion y poner el componente de card              
           )}
-          {state.theme === "light" ? <button onClick={handleTheme} className="themeDark">🌙</button> : <button onClick={handleTheme} className="themeLight">☀️</button>}
+          
         </div>
       </header>   
     );

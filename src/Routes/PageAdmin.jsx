@@ -31,6 +31,7 @@ const PageAdmin = () => {
              <Link to="panelCategorias" className='actualizarProducto' style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}> Panel de Categorias</Link>
               {/*Agregamos el boton paraa ir al panel de caracteristicas */}
              <Link to="panelCaracteristicas" className='actualizarProducto' style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}> Panel de Caracteristicas</Link>
+             <Link to="panelUsuarios" className='actualizarProducto' style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}> Panel de Usuarios</Link>
             </div>
             <div className='vacio'></div>
             {estadosAdmin.goAddProduct &&

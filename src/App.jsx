@@ -12,6 +12,8 @@ import FormCrearCuenta from './components/FormCrearCuenta'
 import FormLogin from './components/FormLogin'
 import PanelCaracteristicas from './Routes/PanelCaracteristicas'
 import PanelCategorias from './Routes/PanelCategorias'
+import PanelDetallesUsuario from './Routes/PanelDetallesUsuario'
+import PanelUsuarios from './Routes/PanelUsuarios'
 
 function App() {
   
@@ -31,8 +33,8 @@ function App() {
            <Route path='/FormLogin/' element={<FormLogin/>}/>
            <Route path='/pageAdmin/panelCaracteristicas' element={<PanelCaracteristicas/>}/> {/*----Ruta al panel de caracteristicas*/}
            <Route path='pageAdmin/panelCategorias' element={<PanelCategorias/>}/> {/*<---Ruta al panel de categorias*/}
-
-
+           <Route path='/pageDetallesUsuario' element={<PanelDetallesUsuario/>}/>
+           <Route path="/pageAdmin/panelUsuarios" element={<PanelUsuarios/>}/>
          </Routes>
          <Footer/>
 

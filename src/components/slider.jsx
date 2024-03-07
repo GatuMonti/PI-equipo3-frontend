@@ -71,7 +71,7 @@ const Slider = (props) => {
 
   return (
     <div className="container">
-        <h2>Most Populars</h2>
+        <h2>Mas Populares</h2>
         <Carousel
         activeIndex={activeIndex}
         next={next}
