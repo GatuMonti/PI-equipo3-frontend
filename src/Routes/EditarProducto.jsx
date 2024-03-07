@@ -44,13 +44,7 @@ const [productoActualizar, setProductoActualizar] = useState({
     {  imageUrl: "" },
     {  imageUrl: ""}
   ],
-<<<<<<< HEAD
   characteristics: []
-=======
-  characteristics: [
-    
-  ]
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
 });
 
 const[estados,setEstados]=useState({
@@ -119,13 +113,7 @@ const handleSubmit= async(e)=>{
               {  imageUrl: "" },
               {  imageUrl: ""}
             ],
-<<<<<<< HEAD
            characteristics: []
-=======
-           characteristics: [
-             
-           ]
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
           })
       }
   }
@@ -152,17 +140,10 @@ const handleOnchangeName=(e)=> {
   setProductoActualizar((prevState) => ({ ...prevState, name: e.target.value.trimStart() }))
   setEstados({validacion:false, error:false})
 }
-<<<<<<< HEAD
 const handleOnchangeCategoriaId=(e)=>{
   setProductoActualizar((prevState) => ({ ...prevState, category:{id: e.target.value.trimStart() }}))
   setEstados({validacion:false, error:false})
 } 
-=======
-const handleOnchangeCategoria = (event) => {
-  const categoryId = event.target.value;
-  setProductoNuevo({ ...productoNuevo, category: categoryId ? { id: categoryId } : null });
-};
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
 const handleOnchangeDescripcion=(e)=>{
   setProductoActualizar((prevState) => ({ ...prevState, description: e.target.value.trimStart() }))
   setEstados({validacion:false, error:false})
@@ -248,11 +229,7 @@ const handleCaracteristicaChange = (index, e) => {
           <input className="inputActualizar" placeholder="Nombre *" value={productoActualizar.name} onChange={handleOnchangeName} />
           <input className="inputActualizar" placeholder="Tipo *" value={productoActualizar.type} onChange={handleOnchangeTipo} />
 
-<<<<<<< HEAD
           <input className="inputActualizar" placeholder="Id Categoria " value={productoActualizar.category.id} onChange={handleOnchangeCategoriaId}/>
-=======
-          <input className="inputCategoria" placeholder="Id categoria" value={productoActualizar.category ? productoActualizar.category.id : ''} onChange={handleOnchangeCategoria} />
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
           <input className="inputActualizar" placeholder="Precio USD *" value={productoActualizar.price} onChange={handleOnchangePrecio} />
           <select className="inputActualizar" value={productoActualizar.console} onChange={handleOnchangeConsola}>
             <option value="">Consola *</option>
@@ -271,11 +248,7 @@ const handleCaracteristicaChange = (index, e) => {
           <input className="inputCaracteristica" placeholder="IdCaracterística " name='id' value={productoActualizar.characteristics.length > 0 ? productoActualizar.characteristics[0].id : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />
           <input className="inputCaracteristica" placeholder="NameCaracterística " name='name' value={productoActualizar.characteristics.length > 0 ? productoActualizar.characteristics[0].name : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />
           <input className="inputCaracteristica" placeholder="Descrip Caract " name='description' value={productoActualizar.characteristics.length > 0 ? productoActualizar.characteristics[0].description : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />
-<<<<<<< HEAD
 
-=======
-          
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
           <textarea className="inputActualizarDescripcion" placeholder="Descripcion *" value={productoActualizar.description} onChange={handleOnchangeDescripcion} />
 
           <button onClick={handleSubmit} className='botonActualizar'>Actualizar</button>

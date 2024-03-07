@@ -14,11 +14,8 @@ const Detail = () => {
   
   console.log(params.id)
 
-<<<<<<< HEAD
   const rolEnLocalStore=localStorage.getItem('userRole')
 
-=======
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
 
   useEffect(()=>{
     axios(endPointDetail)
@@ -59,21 +56,13 @@ const Detail = () => {
 
        <div className="contenedorDetalles">
            <h2 className="tituloDetallesDeProducto">Detalles principales</h2>
-<<<<<<< HEAD
            <h3 className="categoriaProducto">Categoria:<span>{state.producto.category? state.producto.category.title : "Sin categoria"}</span></h3>
-=======
-           <h3 className="categoriaProducto">Categoria:<span>{state.producto.category}</span></h3>
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
            <h3 className="descripcionProducto">Descripcion:<span>{state.producto.description}</span></h3>
            <h3 className="precioProducto">Precio:<span>{state.producto.price} USD</span></h3>
         </div>
         <div className="contenedorComprar">
-<<<<<<< HEAD
           {rolEnLocalStore !=null && <button className='botonComprar'>Comprar</button>}
           
-=======
-          <button className='botonComprar'>Comprar</button>
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
         </div>
           
      

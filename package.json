@@ -12,17 +12,12 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "axios": "^1.6.7",
-<<<<<<< HEAD
+
     "bootstrap": "^5.3.3",
     "msw": "^0.47.3",
     "react-bootstrap": "^2.10.1",
     "react-router-dom": "^6.22.2",
-=======
-    "bootstrap": "^5.3.2",
-    "msw": "^0.47.3",
-    "react-bootstrap": "^2.10.1",
-    "react-router-dom": "^6.22.1",
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
+
     "reactstrap": "^9.2.2",
     "sweetalert2": "^11.10.5"
   },

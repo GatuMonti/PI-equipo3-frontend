@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { createContext,useContext,useEffect, useState } from "react";
-=======
-import { createContext,useContext,useEffect } from "react";
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
 import { useReducer} from "react";
 import axios from "axios";
 import reducer from '../../reducer/reducer';
@@ -10,11 +6,8 @@ import reducer from '../../reducer/reducer';
 export const initialState={
     producto:{},
     productos:[],
-<<<<<<< HEAD
     categorias:[], //Se guarda el listado de categorias
     caracteristicas:[],
-=======
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
     theme:"light"
 }
 
@@ -23,7 +16,6 @@ export const contextoGlobal=createContext();
 const ContextProvider=({children})=>{
 
     const [state,dispatch]=useReducer(reducer,initialState)
-<<<<<<< HEAD
     const [updatingCategories, setUpdatingCategories] = useState(false);//Gatu: Estados para poder actualizar el arreglo cada ves que se modifique y hacer que se renderice
     const [updatingCaracteristics, setUpdatingCaracteristics] = useState(false);
 
@@ -31,17 +23,12 @@ const ContextProvider=({children})=>{
     const endPointProducts="http://localhost:8080/products/list-products";
     const endPointCategias="http://localhost:8080/categorias/listar-categorias";
     const endPointCaracteristicas = "http://localhost:8080/characteristics/list-characteristics";
-=======
-
-    const endPointProducts="http://localhost:8080/products/list-products";
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
 
     useEffect(()=>{
         axios(endPointProducts)
         .then(res=> dispatch({type: 'get_productos', payload:res.data},console.log(res.data)))
     },[])
 
-<<<<<<< HEAD
   //Gatu: Logica que actualiza automaticamente el arreglo de categorias y lo renderiza cuando hay algun cambio en el mismo
   useEffect(() => {
     if (!updatingCategories) {
@@ -74,9 +61,6 @@ const updateCaracteristics = () => {
     setUpdatingCaracteristics(true);
 };
 //-------------------------------------------------------------------------------------------------------------------------
-=======
-
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
     return(
         <contextoGlobal.Provider value={{
             state,dispatch
@@ -88,9 +72,4 @@ const updateCaracteristics = () => {
 
 export default ContextProvider
 
-<<<<<<< HEAD
 export const useContextGlobal=()=> useContext(contextoGlobal)
-
-=======
-export const useContextGlobal=()=> useContext(contextoGlobal)
->>>>>>> 0b05361760545396a0674289e0d51b3252a3ee1b
