@@ -1,7 +1,8 @@
 .container{
     display: flex;
     flex-direction: column;
-    width: 165px;
+    
+    margin-top: -30px;
 }
 .dropdownToggle{
     display: flex;
@@ -10,28 +11,29 @@
     align-items: end;
 }
 .cardUsuario {
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border: 2px solid rgba(128, 0, 128, 0.63);
-  border-radius: 50px 5px 0px 50px;
   cursor: pointer;  
   margin-bottom: -1vh;
   z-index: 1;
-  background-color:rgb(209, 204, 214);
+  
+  color: aliceblue;
 }
 .imageContainer{
-    margin-left: -3px;
+    margin-left: 10px;
+    max-width: 90%;
+    max-height: 80%;
 }  
 .userInfo {
-  margin: 10px;   
+  margin: 20px;   
 }
 .dropdownMenu {  
   width: 70%; 
    
 }  
 .cerrarSesion {
-    background-color: rgb(161, 29, 29) !important;
+    background-color: #4867DB !important;
     color: white !important;
 }

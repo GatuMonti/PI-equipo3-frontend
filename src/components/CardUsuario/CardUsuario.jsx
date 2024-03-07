@@ -17,7 +17,8 @@ const CardUsuario = ({ userRole, setUserRole }) => {
 }
 
   return (
-    <Dropdown show={showMenu} onToggle={toggleMenu} className={styles.container}>
+    <div className={styles.container}>
+      <Dropdown show={showMenu} onToggle={toggleMenu} >
       <Dropdown.Toggle as="div" id="dropdown-basic" className={styles.dropdownToggle}>
         <div className={styles.cardUsuario} onClick={toggleMenu}>
           <Avatar name={localStorage.getItem("nombre")+" "+localStorage.getItem("apellido")} round={true} className={styles.imageContainer} />
@@ -36,6 +37,9 @@ const CardUsuario = ({ userRole, setUserRole }) => {
         <Dropdown.Item href="/" onClick={handleCerrarSesionAdmin} className={styles.cerrarSesion}>Cerrar Sesion</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
+
+    </div>
+    
   );
 };
 
