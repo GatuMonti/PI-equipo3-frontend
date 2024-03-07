@@ -394,6 +394,23 @@ a{
   width: 9vw;
 }
 
+.contenedorMostrarCaracteristicas{
+  width: 50vw;
+  height: 22vh;
+  display: flex;
+  margin: 2vh 0vw 0vh 10vw;
+  flex-wrap: wrap;
+  color: #FFFFFF;
+  background-color:#6269d3;
+  justify-content: space-around;
+
+}
+.tituloMostarCaracteristicas{
+  width: 100%;
+  text-align: center;
+  margin: 2vh 0vw 3vh 0vw;
+}
+
 /************Formulario crear cuenta******************/
 
 .pageFormCrearcuenta{
@@ -669,7 +686,7 @@ a{
   bottom:6vh;
 } 
 .textExito{
-  height: 57vh;
+  height: 65vh;
 }
 .textFallaServer{
   color:#6269d3;
@@ -1098,6 +1115,10 @@ margin: 2vh 0vw 0vh 12vw;
 .botonComprar{
 width: 9vw;
 font-size: 1.5vw;
+}
+
+.contenedorMostrarCaracteristicas{
+  height: 30vh;
 }
 
 /************Formulario crear cuenta******************/

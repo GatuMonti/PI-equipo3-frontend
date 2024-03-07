@@ -79,7 +79,7 @@ const FormCrearCuenta = () => {
                 console.log(response)
                 Swal.fire({
                     title: "Registrado",
-                    text: "El usuario ha sido registrado",
+                    text: "El usuario ha sido registrado, se a enviado un mail a"+usuarioRegistrar.username,
                     icon: "success",
                     confirmButtonColor: "#008000a9",
                     customClass: {

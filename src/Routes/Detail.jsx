@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import Avatar from 'react-avatar';
 import { useParams } from 'react-router-dom';
 import { useContextGlobal } from '../components/Util/global.context';
 import axios from 'axios';
@@ -16,6 +17,19 @@ const Detail = () => {
 
   const rolEnLocalStore=localStorage.getItem('userRole')
 
+  const[State, setState]=useState({
+    showFeatures:false,
+    cambiarBoton:false
+  })
+
+ 
+const handleMostarMas=()=>{
+  setState({ ...State, showFeatures: true, cambiarBoton: true });
+}
+
+const handleOcultar=()=>{
+  setState({ ...State, showFeatures: false, cambiarBoton: false });
+}
 
   useEffect(()=>{
     axios(endPointDetail)
@@ -25,6 +39,8 @@ const Detail = () => {
 
 
   console.log(state.producto)
+
+
   return (
     <div className='detalleProducto'>
        <Link to={'/'}><button className='botonRegresar'>Atras</button></Link>
@@ -51,8 +67,16 @@ const Detail = () => {
            </div>
            
        </div>
+      {!State.cambiarBoton  ? <button onClick={handleMostarMas} className='verMas'>ver mas</button> :<button onClick={handleOcultar} className='verMas'>Ocultar</button>}
       
-       <button className='verMas'>ver mas</button>
+       {State.showFeatures && 
+       <div className="contenedorMostrarCaracteristicas">
+        <h2 className="tituloMostarCaracteristicas">¡Caracteristicas Especiales!</h2>
+        {state.producto.characteristics.map((caracteristica)=>{
+          return<p  className="nombreCaracteristicas"><Avatar name={caracteristica.name}textMarginRatio='.15' font-size='2px' size="30" round={true}/>{caracteristica.name}</p>
+        })}
+       </div>
+       }
 
        <div className="contenedorDetalles">
            <h2 className="tituloDetallesDeProducto">Detalles principales</h2>
@@ -64,16 +88,7 @@ const Detail = () => {
           {rolEnLocalStore !=null && <button className='botonComprar'>Comprar</button>}
           
         </div>
-          
-     
-     
-
-
-
-
-
-
-    </div>
+    </div>
   )
 }
 
