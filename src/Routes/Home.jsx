@@ -45,27 +45,26 @@ const Home = () => {
 
   const handleBusquedaCategoria = (e) => {
     e.preventDefault();
-    {
-      state.productos.map((producto) => {
-        if (producto.category.title !== estadosNuevos.categoriaSeleccionada) {
-          setStateNuevos({ ...estadosNuevos, buscar: false });
-        }
-      });
-      axios
-        .get(
-          `http://localhost:8080/products/search-category/${estadosNuevos.categoriaSeleccionada}`
-        )
-        .then((response) => {
-          setStateNuevos({
-            ...estadosNuevos,
-            productosDeUnaCategoria: response.data,
-            buscar: true,
+    state.productos.map((producto) => {
+      if (producto.category?.title === estadosNuevos.categoriaSeleccionada) {
+        axios
+          .get(
+            `http://localhost:8080/products/search-category/${estadosNuevos.categoriaSeleccionada}`
+          )
+          .then((response) => {
+            setStateNuevos({
+              ...estadosNuevos,
+              productosDeUnaCategoria: response.data,
+              buscar: true,
+            });
+          })
+          .catch((error) => {
+            console.error("Error al obtener los productos:", error);
           });
-        })
-        .catch((error) => {
-          console.error("Error al obtener los productos:", error);
-        });
-    }
+        return; // Salir del bucle map
+      }
+      setStateNuevos({ ...estadosNuevos, buscar: false });
+    });
   };
 
   return (
