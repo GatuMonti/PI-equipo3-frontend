@@ -665,12 +665,18 @@ a{
   border-radius: 5px;
   border: none;
 }
+
+.inputCategoria{
+  margin: 2vh 0vw 0vh 3.5vw;
+  width: 12vw;
+
+}
 .contenedorCaracteristicaCheckbox{
   display: flex;
   flex-wrap: wrap;
   width: 38vw;
   min-height: 15vh;
-  margin: 0vh 0vw 0vh 1.8vw;
+  margin: 0vh 0vw 0vh 7vw;
   padding: 0vh 0vw 2vh 0vw;
   border-radius: 5px;
   background-color:rgba(128, 128, 128, 0.568);
@@ -860,6 +866,7 @@ a{
   background-color:#FFFFFF;
   border-radius: 5px;
 }
+
 .inputActualizar,.inputActualizarDescripcion,.inputCaracteristica{
   width: 12vw;
   height: 6%;
@@ -869,9 +876,11 @@ a{
   border-radius: 5px;
   border: none;
 }
+
 .inputCaracteristica{
   height: 6vh;
 }
+
 .inputActualizarDescripcion{
   width: 40%;
   height: 13%;
