@@ -1,79 +1,79 @@
-import React, {useState} from 'react'
-import callDutty from '../Images/callDutty.png'
-import avowed from '../Images/Avowed.png'
-import RedHead from '../Images/Redhead.png'
-import theLastOf from '../Images/thelastOf.png'
-import embape from '../Images/embape.png'
-import messi from '../Images/mesi.png'
-import oso from '../Images/imageOso.png'
-import outlast from '../Images/outLast.png'
-import cards from '../Images/card.png'
-import sonic from '../Images/imageSonic.png'
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importar los estilos de Bootstrap
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar los archivos JavaScript de Bootstrap
-import { useContextGlobal } from '../components/Util/global.context'
-import Card from '../components/Card'
-import Swal from 'sweetalert2'
-import Slider from '../components/slider'
-import axios from 'axios'
-
-
+import React, { useState } from "react";
+import callDutty from "../Images/callDutty.png";
+import avowed from "../Images/Avowed.png";
+import RedHead from "../Images/Redhead.png";
+import theLastOf from "../Images/thelastOf.png";
+import embape from "../Images/embape.png";
+import messi from "../Images/mesi.png";
+import oso from "../Images/imageOso.png";
+import outlast from "../Images/outLast.png";
+import cards from "../Images/card.png";
+import sonic from "../Images/imageSonic.png";
+import "bootstrap/dist/css/bootstrap.min.css"; // Importar los estilos de Bootstrap
+import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Importar los archivos JavaScript de Bootstrap
+import { useContextGlobal } from "../components/Util/global.context";
+import Card from "../components/Card";
+import Swal from "sweetalert2";
+import Slider from "../components/slider";
+import axios from "axios";
 
 const Home = () => {
-
-  
-  const{state}=useContextGlobal()
-
+  const { state } = useContextGlobal();
 
   //Funcion para revolver los elementos del array
 
-  const shuffleArray=(array)=> {
+  const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-  }
+  };
 
-  const[estadosNuevos, setStateNuevos]=useState({
-    productosDeUnaCategoria:[],
-    buscar:false,
-    categoriaSeleccionada:""
-  })
-
-  
-
+  const [estadosNuevos, setStateNuevos] = useState({
+    productosDeUnaCategoria: [],
+    buscar: false,
+    categoriaSeleccionada: "",
+  });
 
   const handleChangeCategoria = (event) => {
-    setStateNuevos(prevState => ({
+    setStateNuevos((prevState) => ({
       ...prevState,
-      categoriaSeleccionada: event.target.value
+      categoriaSeleccionada: event.target.value,
     }));
   };
 
-
   const handleBusquedaCategoria = (e) => {
     e.preventDefault();
-    axios.get(`http://localhost:8080/products/search-category/${estadosNuevos.categoriaSeleccionada}`)
-      .then(response => {
-        console.log(response.data)
-        setStateNuevos({ ...estadosNuevos, productosDeUnaCategoria: response.data, buscar: true });
-      })
-      .catch(error => {
-        console.error('Error al obtener los productos:', error);
+    {
+      state.productos.map((producto) => {
+        if (producto.category.title !== estadosNuevos.categoriaSeleccionada) {
+          setStateNuevos({ ...estadosNuevos, buscar: false });
+        }
       });
+      axios
+        .get(
+          `http://localhost:8080/products/search-category/${estadosNuevos.categoriaSeleccionada}`
+        )
+        .then((response) => {
+          setStateNuevos({
+            ...estadosNuevos,
+            productosDeUnaCategoria: response.data,
+            buscar: true,
+          });
+        })
+        .catch((error) => {
+          console.error("Error al obtener los productos:", error);
+        });
+    }
   };
 
-
-
-  
-    return (
+  return (
     <main className="home">
-
       {/*Categorias*/}
 
       <div className="contenedorCategorias">
-        <h2 className='tituloCategorias'>Categorias</h2>
+        <h2 className="tituloCategorias">Categorias</h2>
         <div className="categoriaUno">
           <h3 className="tituloCategoriaUno">Accion</h3>
           <img src={callDutty} alt="callDutty" className="img1CategoriaUno" />
@@ -103,51 +103,56 @@ const Home = () => {
           <img src={oso} alt="redHead" className="img1CategoriaCinco" />
           <img src={outlast} alt="theLastOf" className="img2CategoriaCinco" />
         </div>
-        </div>
+      </div>
 
       <div className="contenedorDos">
-
-      <form className="formularioBuscador">
-
-
-      <select  onChange={handleChangeCategoria}className='inputSearch'>
-          <option value="">Categoría</option>
-          {state.categorias.slice(1).map((categoria, index) => (
-          <option key={index} value={categoria.title}>{categoria.title}</option>
+        <form className="formularioBuscador">
+          <select onChange={handleChangeCategoria} className="inputSearch">
+            <option value="">Categoría</option>
+            {state.categorias.slice(1).map((categoria, index) => (
+              <option key={index} value={categoria.title}>
+                {categoria.title}
+              </option>
             ))}
-      </select>
+          </select>
 
-  <button  className="botonBuscar">
-    <i onClick={handleBusquedaCategoria} className="bx bx-search-alt"></i>
-  </button>
-</form>
-
-
+          <button className="botonBuscar">
+            <i
+              onClick={handleBusquedaCategoria}
+              className="bx bx-search-alt"
+            ></i>
+          </button>
+        </form>
 
         {/*Carrusel*/}
 
         <Slider></Slider>
 
-        {/*Renderizacion de productos*/ }
+        {/*Renderizacion de productos*/}
 
-        {!estadosNuevos.buscar ?  
-        <div className="contenedorProductos">
-          <h1 className="tituloProductos">Los Mas Recomendados</h1>
-          { shuffleArray(state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>))}
-        </div>
-        : 
-        <div className="contenedorProductos">
-        <h1 className="tituloProductos">Los Mas Recomendados</h1>
-        {estadosNuevos.productosDeUnaCategoria.map((producto)=><Card product={producto} key={producto.id}/>)}
+        {!estadosNuevos.buscar ? (
+          <div className="contenedorProductos">
+            <h1 className="tituloProductos">Los Mas Recomendados</h1>
+            {shuffleArray(
+              state.productos
+                .slice(-10)
+                .reverse()
+                .map((producto) => (
+                  <Card product={producto} key={producto.id} />
+                ))
+            )}
+          </div>
+        ) : (
+          <div className="contenedorProductos">
+            <h1 className="tituloProductos">Los Mas Recomendados</h1>
+            {estadosNuevos.productosDeUnaCategoria.map((producto) => (
+              <Card product={producto} key={producto.id} />
+            ))}
+          </div>
+        )}
       </div>
-        }
-      </div>
-       
-        
-
-      
     </main>
   );
-}
+};
 
-export default Home
+export default Home;
