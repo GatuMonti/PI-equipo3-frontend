@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import callDutty from '../Images/callDutty.png'
 import avowed from '../Images/Avowed.png'
 import RedHead from '../Images/Redhead.png'
@@ -15,6 +15,7 @@ import { useContextGlobal } from '../components/Util/global.context'
 import Card from '../components/Card'
 import Swal from 'sweetalert2'
 import Slider from '../components/slider'
+import axios from 'axios'
 
 
 
@@ -34,6 +35,37 @@ const Home = () => {
     return array;
   }
 
+  const[estadosNuevos, setStateNuevos]=useState({
+    productosDeUnaCategoria:[],
+    buscar:false,
+    categoriaSeleccionada:""
+  })
+
+  
+
+
+  const handleChangeCategoria = (event) => {
+    setStateNuevos(prevState => ({
+      ...prevState,
+      categoriaSeleccionada: event.target.value
+    }));
+  };
+
+
+  const handleBusquedaCategoria = (e) => {
+    e.preventDefault();
+    axios.get(`http://localhost:8080/products/search-category/${estadosNuevos.categoriaSeleccionada}`)
+      .then(response => {
+        console.log(response.data)
+        setStateNuevos({ ...estadosNuevos, productosDeUnaCategoria: response.data, buscar: true });
+      })
+      .catch(error => {
+        console.error('Error al obtener los productos:', error);
+      });
+  };
+
+
+
   
     return (
     <main className="home">
@@ -45,56 +77,52 @@ const Home = () => {
         <div className="categoriaUno">
           <h3 className="tituloCategoriaUno">Accion</h3>
           <img src={callDutty} alt="callDutty" className="img1CategoriaUno" />
-          
+          <img src={avowed} alt="avowed" className="img2CategoriaUno" />
         </div>
 
         <div className="categoriaDos">
-          <h3 className="tituloCategoriaDos">Aventuras</h3>
+          <h3 className="tituloCategoriaDos">Aventura</h3>
           <img src={RedHead} alt="redHead" className="img1CategoriaDos" />
-          
-        </div>
-
-        <div className="categoriaCinco">
-          <h3 className="tituloCategoriaCinco">Carreras</h3>
-          
-          <img src={cards} alt="theLastOf" className="img2CategoriaCinco" />
+          <img src={theLastOf} alt="theLastOf" className="img2CategoriaDos" />
         </div>
 
         <div className="categoriaTres">
           <h3 className="tituloCategoriaTres">Deportes</h3>
-          
+          <img src={embape} alt="embape" className="img1CategoriaTres" />
           <img src={messi} alt="mesi" className="img2CategoriaTres" />
         </div>
 
         <div className="categoriaCuatro">
           <h3 className="tituloCategoriaCuatro">Infantil</h3>
-          
+          <img src={cards} alt="callDutty" className="img1CategoriaCuatro" />
           <img src={sonic} alt="avowed" className="img2CategoriaCuatro" />
         </div>
 
         <div className="categoriaCinco">
           <h3 className="tituloCategoriaCinco">Terror</h3>
-          
+          <img src={oso} alt="redHead" className="img1CategoriaCinco" />
           <img src={outlast} alt="theLastOf" className="img2CategoriaCinco" />
         </div>
-
-        <div className="categoriaCinco">
-          <h3 className="tituloCategoriaCinco">Historico</h3>
-          
-          <img src={theLastOf} alt="theLastOf" className="img2CategoriaCinco" />
-        </div>
-
         </div>
 
       <div className="contenedorDos">
 
-        <form className="formularioBuscador">
-          <input type="text" className="inputSearch" placeholder="Buscar" />
-          <button className="botonBuscar">
-            <i className="bx bx-search-alt"></i>
-          </button>
-        </form>
-        
+      <form className="formularioBuscador">
+
+
+      <select  onChange={handleChangeCategoria}className='inputSearch'>
+          <option value="">Categoría</option>
+          {state.categorias.slice(1).map((categoria, index) => (
+          <option key={index} value={categoria.title}>{categoria.title}</option>
+            ))}
+      </select>
+
+  <button  className="botonBuscar">
+    <i onClick={handleBusquedaCategoria} className="bx bx-search-alt"></i>
+  </button>
+</form>
+
+
 
         {/*Carrusel*/}
 
@@ -102,10 +130,17 @@ const Home = () => {
 
         {/*Renderizacion de productos*/ }
 
+        {!estadosNuevos.buscar ?  
         <div className="contenedorProductos">
-          <h1 className="tituloProductos"><b>Recomendados para ti</b></h1>
+          <h1 className="tituloProductos">Los Mas Recomendados</h1>
           { shuffleArray(state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>))}
         </div>
+        : 
+        <div className="contenedorProductos">
+        <h1 className="tituloProductos">Los Mas Recomendados</h1>
+        {estadosNuevos.productosDeUnaCategoria.map((producto)=><Card product={producto} key={producto.id}/>)}
+      </div>
+        }
       </div>
        
         

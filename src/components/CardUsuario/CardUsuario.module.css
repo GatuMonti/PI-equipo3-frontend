@@ -22,9 +22,9 @@
   color: aliceblue;
 }
 .imageContainer{
-    margin-right: 5px;
-    max-width: 80%;
-    max-height: 70%;
+    margin-left: 10px;
+    max-width: 90%;
+    max-height: 80%;
 }  
 .userInfo {
   margin: 20px;   

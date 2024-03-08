@@ -1,10 +1,11 @@
-
 import React, { useState,useEffect } from 'react'
 import axios, { formToJSON } from 'axios'
 import Swal from 'sweetalert2'
 import { useContextGlobal } from './Util/global.context'
 
 function FoormAddProduct() {
+
+    const{state}=useContextGlobal()
 
     const [productoNuevo, setProductoNuevo]=useState({
             name:"",
@@ -22,13 +23,10 @@ function FoormAddProduct() {
                  {imageUrl:""},
                  {imageUrl:""}
                 ],
-            characteristics: []        
+            characteristics: [
+            ]        
             })
 
-     const[estados,setEstados]=useState({
-        validacion:false,
-        error:false,
-     })
      
         const handleSubmit= async(e)=>{
             e.preventDefault()
@@ -36,11 +34,6 @@ function FoormAddProduct() {
                 if(productoNuevo.name===""  || productoNuevo.description==="" 
                 || productoNuevo.price==="" ||productoNuevo.type==="" || productoNuevo.console==="" || productoNuevo.images[0].imageUrl==="" 
                 || productoNuevo.images[1].imageUrl==="" || productoNuevo.images[2].imageUrl==="" || productoNuevo.images[3].imageUrl==="" || productoNuevo.images[4].imageUrl===""){
-                    setEstados((prevState)=>({
-                        ...prevState,
-                        validacion:false,
-                        error:true,
-                    }))
                     Swal.fire({
                         title: "Registro fallo",
                         text: "Los campos con * son obligatorios",
@@ -57,11 +50,6 @@ function FoormAddProduct() {
                     console.log(productoNuevo)
                     const response = await axios.post('http://localhost:8080/products/add-product', productoNuevo);
                     console.log(response);
-                    setEstados((prevState)=>({
-                        ...prevState,
-                        validacion:true,
-                        error:false,
-                    }));
                     setTimeout(()=>{
                         window.location.reload()
                     },2000)
@@ -129,32 +117,37 @@ function FoormAddProduct() {
 
         const handleOnchangeName=(e)=> {
             setProductoNuevo((prevState) => ({ ...prevState, name: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false})
         }
-        const handleOnchangeCategoria=(e)=>{
-            setProductoNuevo((prevState) => ({ ...prevState, category:{id: e.target.value.trimStart() }}))
-            setEstados({validacion:false, error:false})
-        } 
+         const handleOnchangeCategoria=(e)=>{
+              setProductoNuevo((prevState) => ({ ...prevState, category:{id: e.target.value.trimStart() }}))
+         } 
+
+        //  const handleOnchangeCategoria = (e) => {
+        //      const categoryId = e.target.value;
+        //      setProductoNuevo(prevState => ({
+        //          ...prevState,
+        //          category: {
+        //              id: categoryId
+        //          }
+        //      }));
+        //  };
+
+        
         const handleOnchangeDescripcion=(e)=>{
             setProductoNuevo((prevState) => ({ ...prevState, description: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false})
         } 
         const handleOnchangePrecio=(e)=> {
             setProductoNuevo((prevState) => ({ ...prevState, price: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false})
         }
         const handleOnchangeTipo=(e)=> {
             setProductoNuevo((prevState) => ({ ...prevState, type: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false})
         }
         const handleOnchangeConsola=(e)=> {
             setProductoNuevo((prevState) => ({ ...prevState, console: e.target.value.trimStart() }))
-            setEstados({validacion:false, error:false})
         }
 
         
          const handleImageChange = (index, e) => {
-            setEstados({validacion:true, error:false})
              const { name, value } = e.target;
              const imagesCopy = [...productoNuevo.images];
              imagesCopy[index] = { ...imagesCopy[index], [name]: value.trimStart() };
@@ -162,15 +155,28 @@ function FoormAddProduct() {
          };
 
 
-         const handleCaracteristicaChange = (index, e) => {
-            const { value } = e.target;
-            const characteristicsCopy = [...productoNuevo.characteristics];
-            characteristicsCopy[index] = { id: value.trimStart() };
-            setProductoNuevo(prevState => ({ ...prevState, characteristics: characteristicsCopy }));
-        };
+        //  const handleCaracteristicaChange = (index, e) => {
+        //     const { value } = e.target;
+        //     const characteristicsCopy = [...productoNuevo.characteristics];
+        //     characteristicsCopy[index] = { id: value.trimStart() };
+        //     setProductoNuevo(prevState => ({ ...prevState, characteristics: characteristicsCopy }));
+        // };
 
-        
-       
+
+        const handleCheckboxChange = (e) => {
+            const { value, checked } = e.target;
+            let updatedCharacteristics;
+                
+            if (checked) {
+                  // Si el checkbox está marcado, agregamos la característica al estado productoNuevo
+                updatedCharacteristics = [...productoNuevo.characteristics, {id:value}];
+            } else {
+                 // Si el checkbox está desmarcado, filtramos la característica del estado productoNuevo
+                updatedCharacteristics = productoNuevo.characteristics.filter((char) => char !== value);
+            }
+    
+            setProductoNuevo(prevState => ({ ...prevState, characteristics: updatedCharacteristics }));
+        };
 
   return (
     <div>
@@ -178,8 +184,23 @@ function FoormAddProduct() {
         <form className="formularioAddProducto">
             <h3 className="tituloFormulario">Agregar Producto</h3>
             <input className="inputName" placeholder="Nombre *" value={productoNuevo.name} onChange={handleOnchangeName}/>
-            <input className="inputCategoria" placeholder="Id categoria " value={productoNuevo.category.id} onChange={handleOnchangeCategoria}/>
+            
+             {/*Otro input*/}
+            {/* <input className="inputCategoria" placeholder="Id categoria " value={productoNuevo.category.id} onChange={handleOnchangeCategoria}/> */}
                
+            <select onChange={handleOnchangeCategoria}className='inputCategoria'>
+                <option  value="">Categoría</option>
+                {state.categorias.slice(1).map((categoria, index) => (
+                <option key={index} value={categoria.id}>{categoria.title}</option>
+                
+
+                 ))}
+            
+            </select>
+            {console.log(productoNuevo)}
+
+
+
             <input className="inputPrecio" placeholder="Precio USD *" value={productoNuevo.price} onChange={handleOnchangePrecio}/>
             <input className="inputTipo" placeholder="Tipo *" value={productoNuevo.type} onChange={handleOnchangeTipo}/>
             <select className="inputConsola" value={productoNuevo.console} onChange={handleOnchangeConsola}>
@@ -194,9 +215,19 @@ function FoormAddProduct() {
             <input className="inputImage3" placeholder="URL Image3 *" name='imageUrl'value={productoNuevo.images[2].imageUrl} onChange={(e) => handleImageChange(2, e)}/>
             <input className="inputImage4" placeholder="URL Image4 *" name='imageUrl' value={productoNuevo.images[3].imageUrl}onChange={(e) => handleImageChange(3, e)}/>
             <input className="inputImage5" placeholder="URL Image5 *" name='imageUrl' value={productoNuevo.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)}/> 
-            
-            <input className="inputCaracteristicaAdd" placeholder="IdCaracterística " value={productoNuevo.characteristics.length > 0 ? productoNuevo.characteristics[0].id : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />            
             <textarea className="inputDescripcion" placeholder="Descripcion *" value={productoNuevo.description} onChange={handleOnchangeDescripcion}/>
+
+            {/* <input className="inputCaracteristicaAdd" placeholder="IdCaracterística " value={productoNuevo.characteristics.length > 0 ? productoNuevo.characteristics[0].id : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />             */}
+           
+           <div className="contenedorCaracteristicaCheckbox">
+                <h5 className="tituloCheckbox">Caracteristicas</h5>
+                {state.caracteristicas.map((caracteristica, index)=>(
+                    <label className='contenedorCheckbox' key={index}>
+                        <input className='inputCheckbox' type="checkbox" value={caracteristica.id} onChange={handleCheckboxChange} />
+                        <span className="nombreCaracteristica">{caracteristica.name}</span>
+                    </label>
+                ))}
+           </div>
              <button  onClick={handleSubmit}className='guardarProducto'>Grabar</button>
         </form> 
     
