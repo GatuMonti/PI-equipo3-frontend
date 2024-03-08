@@ -45,32 +45,45 @@ const Home = () => {
         <div className="categoriaUno">
           <h3 className="tituloCategoriaUno">Accion</h3>
           <img src={callDutty} alt="callDutty" className="img1CategoriaUno" />
-          <img src={avowed} alt="avowed" className="img2CategoriaUno" />
+          
         </div>
 
         <div className="categoriaDos">
-          <h3 className="tituloCategoriaDos">Aventura</h3>
+          <h3 className="tituloCategoriaDos">Aventuras</h3>
           <img src={RedHead} alt="redHead" className="img1CategoriaDos" />
-          <img src={theLastOf} alt="theLastOf" className="img2CategoriaDos" />
+          
+        </div>
+
+        <div className="categoriaCinco">
+          <h3 className="tituloCategoriaCinco">Carreras</h3>
+          
+          <img src={cards} alt="theLastOf" className="img2CategoriaCinco" />
         </div>
 
         <div className="categoriaTres">
           <h3 className="tituloCategoriaTres">Deportes</h3>
-          <img src={embape} alt="embape" className="img1CategoriaTres" />
+          
           <img src={messi} alt="mesi" className="img2CategoriaTres" />
         </div>
 
         <div className="categoriaCuatro">
           <h3 className="tituloCategoriaCuatro">Infantil</h3>
-          <img src={cards} alt="callDutty" className="img1CategoriaCuatro" />
+          
           <img src={sonic} alt="avowed" className="img2CategoriaCuatro" />
         </div>
 
         <div className="categoriaCinco">
           <h3 className="tituloCategoriaCinco">Terror</h3>
-          <img src={oso} alt="redHead" className="img1CategoriaCinco" />
+          
           <img src={outlast} alt="theLastOf" className="img2CategoriaCinco" />
         </div>
+
+        <div className="categoriaCinco">
+          <h3 className="tituloCategoriaCinco">Historico</h3>
+          
+          <img src={theLastOf} alt="theLastOf" className="img2CategoriaCinco" />
+        </div>
+
         </div>
 
       <div className="contenedorDos">
@@ -81,6 +94,7 @@ const Home = () => {
             <i className="bx bx-search-alt"></i>
           </button>
         </form>
+        
 
         {/*Carrusel*/}
 
@@ -89,7 +103,7 @@ const Home = () => {
         {/*Renderizacion de productos*/ }
 
         <div className="contenedorProductos">
-          <h1 className="tituloProductos">Los Mas Recomendados</h1>
+          <h1 className="tituloProductos"><b>Recomendados para ti</b></h1>
           { shuffleArray(state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>))}
         </div>
       </div>

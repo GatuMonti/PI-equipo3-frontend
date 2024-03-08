@@ -123,7 +123,7 @@
 }
 
 .footer .row a:hover{
-    color:#5e5e5e;
+    color:black;
     }
     
 .footer .row ul{
@@ -151,7 +151,7 @@
   flex-wrap: wrap;
 }
 .contenedorCategorias{
-  background-color: #4867DB;
+  background-color: black;
   display: flex;
   flex-direction: column;
   width: 15vw;
@@ -162,6 +162,7 @@
   text-align: center;
   margin: 3vh 0vw 0vh 0vw;
   font-weight: 600;
+  color: white;
 }
 .categoriaUno, .categoriaDos,.categoriaTres,.categoriaCuatro,.categoriaCinco{
   display: flex;
@@ -202,7 +203,7 @@
   align-items: center;
 }
 .formularioBuscador{
-  width: 25vw;
+  width: 80%;
   height: 5vh;
   margin: 20vh 0vw 0vh 0vw;
   background-color: #FFFFFF;
@@ -249,7 +250,8 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-  background: #dde5f4;
+  background: white;
+  color:black;
   
 }
 
@@ -260,38 +262,49 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 3vh 0vw 4vh 0vw;
-  width: 50vw;
+  width: 100%;
 }
 .tituloProductos{
   width: 100%;
-  height: 5vh;
-  text-align: center;
+  
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
   font-size: 2vw;
-  color: #FFFFFF;
+  
 }
 .card{
   width: 20vw;
-  height: 20vw;
+  height: auto;
   padding: 5px;
-  margin: 5vh 0vw 0vh 0vw;
-  background-color:#FFFFFF; 
-  box-shadow: (2px 2px 8px 10px) #5e5e5e;
-  border-radius: 5px;
-
-}
-.imageProduct{
-  width: 100%;
-  height: 25vh;
-
-}
-.DescriptionProduct{
-  height: 10vh;
-  text-align: center;
-  font-size: 1vw;
-  color: #4867DB;
   background-color:#FFFFFF;
-  margin: 1vh 0vw 0vh 0vw; 
+  color:black;
+  box-shadow: (8px 8px 8px 10px) black;
+  margin-top: 2vw;
+  
 }
+.tituloProducto  {
+  margin-top: 5px;
+  color: black;
+}
+.priceProduct{
+  color: black;
+}
+
+.card :hover{
+  color: #AC6ABA;
+  
+}
+
+.imageProduct{
+  width: 90%;
+  height: 25vh;
+  margin-left: 1vw;
+  
+
+}
+
 a{
   text-decoration: none;
 }
@@ -971,29 +984,7 @@ a{
   
   /************************************Footer***********************************/
   
-  .derechos{
-    width: 30vw; 
-    margin: 5vh 0vw 0vh 10vw;
-  }
-  .circuloFooter{
-    width: 28px;
-    margin: 2.3vh 0vw 0vh 0vw;
-  }
-  .mensajeFooter{
-    width: 15vw; 
-    height: 3vh;
-    font-size: 2.5vw;
-    margin: 3vh 0vw 0vh 0vw;
-  }
-  .navegacionFooter{
-    width: 30vw;
-    height: 5vh;
-    margin: 6.5vh 10vw 0vh 0vw; 
-  }
-  .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
-    font-size: 5vw;
-    margin: 1vh 2vw 0vh 0vw;
-  }
+  
 
   /***********************************Home****************************************/
   
@@ -1030,12 +1021,12 @@ a{
 
 /********************Buscador****************/
 .contenedorDos{
-  width: 65%;
+  width: 100%;
   margin: 0vh 0vw 0vh 2vw;
 }
 
 .formularioBuscador{
-  width: 40vw;
+  width: 100%;
   margin: 20vh 0vw 0vh 0vw;
 
 }
@@ -1230,25 +1221,9 @@ font-size: 1.5vw;
   }
 
   /************************************Footer***********************************/
-  .circuloFooter{
-    width: 17px;
-    height: 15px;
-    font-size: 1.5vw;
-    margin: 3vh 0vw 0vh 0vw;
-    padding: 0.2vh 0vw 0vh 0vw;
-  }
   
-  .mensajeFooter{
-    width: 20vw; 
-    font-size: 3vw;
-    margin: 2.9vh 0vw 0vh 2vw;
-  }
-  .navegacionFooter{
-    height: 5vh;
-  }
-  .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
-    margin: 1vh 2vw 0vh 0vw;
-  }
+
+
 
 /************************************Home***********************************/ 
 
