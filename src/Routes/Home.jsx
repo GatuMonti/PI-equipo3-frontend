@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import callDutty from '../Images/callDutty.png'
 import avowed from '../Images/Avowed.png'
 import RedHead from '../Images/Redhead.png'
@@ -13,15 +13,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Importar los estilos de Bootst
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar los archivos JavaScript de Bootstrap
 import { useContextGlobal } from '../components/Util/global.context'
 import Card from '../components/Card'
-import Swal from 'sweetalert2'
-
-
+import axios from 'axios'
 
 const Home = () => {
 
-  
   const{state}=useContextGlobal()
-
 
   //Funcion para revolver los elementos del array
 
@@ -33,6 +29,53 @@ const Home = () => {
     return array;
   }
 
+  const[estadosNuevos, setStateNuevos]=useState({
+    productosDeUnaCategoria:[],
+    buscar:false,
+    categoriaSeleccionada:""
+  })
+
+  const handleChangeCategoria = (event) => {
+    setStateNuevos(prevState => ({
+      ...prevState,
+      categoriaSeleccionada: event.target.value
+    }));
+  };
+
+  // const handleBusquedaCategoria = (e) => {
+  //   e.preventDefault();
+  //   axios.get(`http://localhost:8080/products/search-category/${estadosNuevos.categoriaSeleccionada}`)
+  //     .then(response => {
+  //       console.log(response.data)
+  //       setStateNuevos({ ...estadosNuevos, productosDeUnaCategoria: response.data, buscar: true });
+  //     })
+  //     .catch(error => {
+  //       console.error('Error al obtener los productos:', error);
+  //     });
+  // };
+  // console.log(estadosNuevos.categoriaSeleccionada)
+  // console.log(estadosNuevos.buscar)
+  // console.log(estadosNuevos.productosDeUnaCategoria)
+
+  console.log(state.productos)
+  const handleBusquedaCategoria = (e) => {
+    e.preventDefault();
+      state.productos.map((producto) => {
+        if (producto.category?.title === estadosNuevos.categoriaSeleccionada) {
+          axios.get(`http://localhost:8080/products/search-category/${estadosNuevos.categoriaSeleccionada}`)
+            .then((response) => {
+              setStateNuevos({...estadosNuevos, productosDeUnaCategoria: response.data, buscar: true});
+            })
+            .catch((error) => {
+              console.error("Error al obtener los productos:", error);
+            });
+          return; // Salir del bucle map
+        }
+        setStateNuevos({ ...estadosNuevos, buscar: false });
+      });
+     
+    
+  };
   
     return (
     <main className="home">
@@ -75,9 +118,17 @@ const Home = () => {
       <div className="contenedorDos">
 
         <form className="formularioBuscador">
-          <input type="text" className="inputSearch" placeholder="Buscar" />
-          <button className="botonBuscar">
-            <i className="bx bx-search-alt"></i>
+
+
+        <select  onChange={handleChangeCategoria}className='inputSearch'>
+          <option value="">Categoría</option>
+          {state.categorias.slice(1).map((categoria, index) => (
+          <option key={index} value={categoria.title}>{categoria.title}</option>
+           ))}
+        </select>
+
+          <button  className="botonBuscar">
+            <i onClick={handleBusquedaCategoria} className="bx bx-search-alt"></i>
           </button>
         </form>
 
@@ -115,17 +166,31 @@ const Home = () => {
 
         {/*Renderizacion de productos*/ }
 
+        {!estadosNuevos.buscar ?  
         <div className="contenedorProductos">
           <h1 className="tituloProductos">Los Mas Recomendados</h1>
           { shuffleArray(state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>))}
         </div>
+        : 
+        <div className="contenedorProductos">
+        <h1 className="tituloProductos">{estadosNuevos.categoriaSeleccionada}</h1>
+        {estadosNuevos.productosDeUnaCategoria.map((producto)=><Card product={producto} key={producto.id}/>)}
+      </div>
+        }
+
+        
+       
       </div>
        
-        
-
-      
     </main>
   );
 }
 
 export default Home
+
+
+
+
+
+
+

@@ -16,6 +16,7 @@ export const contextoGlobal=createContext();
 const ContextProvider=({children})=>{
 
     const [state,dispatch]=useReducer(reducer,initialState)
+    const [updatingProductos, setUpdatingProductos] = useState(false)
     const [updatingCategories, setUpdatingCategories] = useState(false);//Gatu: Estados para poder actualizar el arreglo cada ves que se modifique y hacer que se renderice
     const [updatingCaracteristics, setUpdatingCaracteristics] = useState(false);
 
@@ -25,9 +26,19 @@ const ContextProvider=({children})=>{
     const endPointCaracteristicas = "http://localhost:8080/characteristics/list-characteristics";
 
     useEffect(()=>{
-        axios(endPointProducts)
-        .then(res=> dispatch({type: 'get_productos', payload:res.data},console.log(res.data)))
-    },[])
+        if(!updatingProductos){
+            axios(endPointProducts)
+            .then(res=> dispatch({type: 'get_productos', payload:res.data},console.log(res.data)))
+        }
+        else{
+            setUpdatingProductos(false)
+        }
+      
+    },[updatingProductos])
+
+    const updateProductos = () => {
+        setUpdatingProductos(true);
+    };
 
   //Gatu: Logica que actualiza automaticamente el arreglo de categorias y lo renderiza cuando hay algun cambio en el mismo
   useEffect(() => {

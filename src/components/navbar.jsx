@@ -3,6 +3,8 @@ import logo from '../Images/Logo.png'
 import { Link } from 'react-router-dom'
 import { useState} from "react";
 import { useContextGlobal } from "./Util/global.context";
+import avatar from '../Images/avatar.jpg'
+import { useNavigate } from "react-router-dom";
 
 const navbar = () => {
 
@@ -10,6 +12,9 @@ const navbar = () => {
 
     
     const [userRole, setUserRole] = useState(localStorage.getItem("userRole")  );
+
+    const navigate = useNavigate();
+
 
     console.log({userRole})
 
@@ -27,14 +32,35 @@ const navbar = () => {
         dispatch({type: 'change_theme', payload:newTheme})
     }
 
+    const handleLogo=()=>{
+      navigate('/');
+    }
+
 
     return (
         <header className="Header">
         <div className="contenedorLogo">
-          <Link to={'/'} className='logo'><img  className='imagenLogo' src={logo} alt="logo" /></Link>
+          <Link to={'/'} onClick={handleLogo} className='logo'><img  className='imagenLogo' src={logo} alt="logo" /></Link>
           <h3 className="lema">Explora, juega y disfruta</h3>
         </div>
+      
+        <div className="contenedorAvatar">
+             <img className="imageAvatar" src={avatar} alt="avatar" />
+             <p className="nombreAvatar">
+              {localStorage.getItem('nombre') ? localStorage.getItem('nombre').charAt(0) : ''}
+              {localStorage.getItem('apellido') ? localStorage.getItem('apellido').charAt(0) : ''}
+            </p>
+            {localStorage.length !=0 && (
+                 <div className="userInfo">
+                      <p className="infoUserAvatar"> {localStorage.getItem('nombre')} {localStorage.getItem('apellido')} Rol: {localStorage.getItem('userRole')}</p>
+                </div>
+            )} 
+           
+        </div>
+        
+       
         <div className="botones">
+          
           {userRole === null ? (
             <>
               <Link to={'/FormCrearCuenta'}><button className="crear-cuenta">Crear cuenta</button></Link>

@@ -4,6 +4,7 @@ import { useContextGlobal } from '../components/Util/global.context'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 
 const EditarProducto = () => {
 
@@ -11,16 +12,49 @@ const EditarProducto = () => {
 
   const {state,dispatch}=useContextGlobal()
 
+  const navigate = useNavigate();
+
   const endPointDetail=`http://localhost:8080/products/search-id/${params.id}`
 
   console.log(params.id)
 
-  useEffect(()=>{
-    axios(endPointDetail)
-    .then(res => dispatch({ type: 'get_producto', payload: res.data }))
-    .catch(error => console.error("Error fetching product details:", error));
+//   useEffect(()=>{
+//      const response= axios(endPointDetail)
+//     .then( res => dispatch({ type: 'get_producto', payload: res.data }))
+//     .catch(error => console.error("Error fetching product details:", error));
+
+// }, [endPointDetail, dispatch]);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await axios(endPointDetail);
+      dispatch({ type: 'get_producto', payload: response.data });
+      console.log(response.data);
+      setProductoActualizar((prevState)=>({
+        ...prevState,
+        id:response.data.id,
+       name:response.data.name,
+       description:response.data.description,
+       price:response.data.price,
+       console:response.data.console,
+       images:response.data.images,
+       type:response.data.type,
+      }))
+      console.log(productoActualizar)
+    } catch (error) {
+      console.error("Error fetching product details:", error);
+    }
+  };
+
+  fetchData();
 }, [endPointDetail, dispatch]);
 
+// setEstados((prevState)=>({
+//   ...prevState,
+//   validacion:false,
+//   error:true,
+// }))
 
 /***************Logica formulario***********/
 
@@ -29,9 +63,7 @@ const [productoActualizar, setProductoActualizar] = useState({
   id: "",
   name: "",
   category: {
-    id: "",
-    title: "",
-    description: ""
+    id: ""
   },
   description: "",
   price: "",
@@ -46,6 +78,9 @@ const [productoActualizar, setProductoActualizar] = useState({
   ],
   characteristics: []
 });
+
+
+
 
 const[estados,setEstados]=useState({
 validacion:false,
@@ -94,13 +129,16 @@ const handleSubmit= async(e)=>{
               }
 
           });
+          setTimeout(() => {
+            navigate('/pageAdmin/');
+            window.location.reload()
+          }, 2000);
           setProductoActualizar({
             id: "",
             name: "",
             category: {
-              id: "",
-              title: "",
-              description: ""
+              id: ""
+        
              },
             description: "",
             price: "",
@@ -132,18 +170,18 @@ const handleSubmit= async(e)=>{
 }  
 
 const handleOnchangeId=(e)=>{
-  setProductoActualizar((prevState) => ({ ...prevState, id: e.target.value.trimStart() }))
   setEstados({validacion:false, error:false})
 }
 
-const handleOnchangeName=(e)=> {
+const handleCambioName=(e)=> {
   setProductoActualizar((prevState) => ({ ...prevState, name: e.target.value.trimStart() }))
   setEstados({validacion:false, error:false})
 }
-const handleOnchangeCategoriaId=(e)=>{
+
+
+const handleOnchangeCategoria=(e)=>{
   setProductoActualizar((prevState) => ({ ...prevState, category:{id: e.target.value.trimStart() }}))
-  setEstados({validacion:false, error:false})
-} 
+}
 const handleOnchangeDescripcion=(e)=>{
   setProductoActualizar((prevState) => ({ ...prevState, description: e.target.value.trimStart() }))
   setEstados({validacion:false, error:false})
@@ -170,12 +208,25 @@ const handleImageChange = (index, e) => {
    setProductoActualizar(prevState => ({ ...prevState, images: imagesCopy }));
 };
 
-const handleCaracteristicaChange = (index, e) => {
-  const { value,name } = e.target;
-  const characteristicsCopy = [...productoActualizar.characteristics];
-  characteristicsCopy[index] = { ...characteristicsCopy[index], [name]: value.trimStart() };
-  setProductoActualizar(prevState => ({ ...prevState, characteristics: characteristicsCopy }));
+
+const handleCheckboxChange = (e) => {
+  const { value, checked } = e.target;
+
+  // Dividir la cadena del value en dos valores
+  const [id, name,description] = value.split('-');
+
+  let updatedCharacteristics;
+
+  if (checked) {
+      updatedCharacteristics = [...productoActualizar.characteristics, { id, name, description }];
+  } else {
+      updatedCharacteristics = productoActualizar.characteristics.filter((char) => char.id !== id);
+  }
+
+  setProductoActualizar((prevState) => ({ ...prevState, characteristics: updatedCharacteristics }));
 };
+
+
 
 
   return (
@@ -193,7 +244,6 @@ const handleCaracteristicaChange = (index, e) => {
           <h5 className="categoriaEditar">Titulo Categoria:<span> {state.producto.category? state.producto.category.title:"Sin categoria"}</span></h5>
 
           <h5 className="categoriaEditar">Descripcion Categoria:<span> {state.producto.category? state.producto.category.description:"Sin categoria"}</span></h5>
-          {/* <h5 className="categoriaEditar">ImagenCategoria:<span> {state.producto.category.image? state.producto.category.image.imageUrl:"Sin imagen"}</span></h5> */}
 
           <h5 className="descripcionEditar">Descripcion Producto:<span> {state.producto.description}</span></h5>
           <h5 className="precioEditar">Precio USD:<span> {state.producto.price} </span></h5>
@@ -217,19 +267,32 @@ const handleCaracteristicaChange = (index, e) => {
 
          ))}
 
-
         </div>
-
-
-
 
         <form className="formularioActualizarProducto">
           <h3 className="tituloFormulario">Actualizar Producto</h3>
           <input className="inputActualizar" placeholder="Id *" value={productoActualizar.id} onChange={handleOnchangeId} />
-          <input className="inputActualizar" placeholder="Nombre *" value={productoActualizar.name} onChange={handleOnchangeName} />
+         
+         
+          <input className="inputActualizar" placeholder="Nombre *" value={productoActualizar.name} onChange={handleCambioName} />
           <input className="inputActualizar" placeholder="Tipo *" value={productoActualizar.type} onChange={handleOnchangeTipo} />
 
-          <input className="inputActualizar" placeholder="Id Categoria " value={productoActualizar.category.id} onChange={handleOnchangeCategoriaId}/>
+          
+          <select onChange={handleOnchangeCategoria}className='inputCategoria'>
+                <option  value="">Categoria</option>
+                {state.categorias.slice(1).map((categoria, index) => (
+                <option key={index} value={categoria.id}>{categoria.title}</option>
+                
+               
+                 ))}
+            
+            </select>
+          
+            {console.log(productoActualizar.characteristics)}
+          
+          
+          
+          
           <input className="inputActualizar" placeholder="Precio USD *" value={productoActualizar.price} onChange={handleOnchangePrecio} />
           <select className="inputActualizar" value={productoActualizar.console} onChange={handleOnchangeConsola}>
             <option value="">Consola *</option>
@@ -245,9 +308,21 @@ const handleCaracteristicaChange = (index, e) => {
           <input className="inputActualizar" placeholder="URL Image4 *" name='imageUrl' value={productoActualizar.images[3].imageUrl} onChange={(e) => handleImageChange(3, e)} />
           <input className="inputActualizar" placeholder="URL Image5 *" name='imageUrl' value={productoActualizar.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)} />
          
-          <input className="inputCaracteristica" placeholder="IdCaracterística " name='id' value={productoActualizar.characteristics.length > 0 ? productoActualizar.characteristics[0].id : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />
-          <input className="inputCaracteristica" placeholder="NameCaracterística " name='name' value={productoActualizar.characteristics.length > 0 ? productoActualizar.characteristics[0].name : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />
-          <input className="inputCaracteristica" placeholder="Descrip Caract " name='description' value={productoActualizar.characteristics.length > 0 ? productoActualizar.characteristics[0].description : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />
+          
+          {console.log(productoActualizar.characteristics)}
+          
+          <div className="contenedorCaracteristicaCheckbox">
+                <h5 className="tituloCheckbox">Caracteristicas</h5>
+                {state.caracteristicas.map((caracteristica, index)=>(
+                    <label className='contenedorCheckbox' key={index}>
+                        <input className='inputCheckbox' type="checkbox" value={`${caracteristica.id}-${caracteristica.name}-${caracteristica.description}`} onChange={handleCheckboxChange} />
+                        <span className="nombreCaracteristica">{caracteristica.name}</span>
+
+                    </label>
+                ))}
+
+           </div>
+
 
           <textarea className="inputActualizarDescripcion" placeholder="Descripcion *" value={productoActualizar.description} onChange={handleOnchangeDescripcion} />
 

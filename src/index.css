@@ -80,6 +80,41 @@
   background-color: #FFFFFF;
 }
 
+.contenedorAvatar{
+  width: 5vw;
+  height: 9vh;
+  margin: 3vh 0vw 0vh 17vw;
+  border-radius: 5vw;
+  background-color: #AC6ABA;
+}
+.imageAvatar{
+  width: 3vw;
+  height: 5vh;
+  margin: 1vh 0vw 0vh 0.9vw;
+  border-radius: 60%;
+
+}
+.nombreAvatar{
+  color: #FFFFFF;
+  font-size: 1vw;
+  margin: 0vh 0vw 3vh 1.8vw;
+
+}
+.userInfo{
+  width: 14vw;
+  height: 10vh;
+  background-color:#AC6ABA;
+  text-align: center;
+  display: none;
+  color: #FFFFFF;
+  margin: -12vh 0vw 0vh -15vw; /* Ajusta el margen según tus necesidades */
+  padding: 1vh 1vw; /* Ajusta el padding según tus necesidades */
+}
+.contenedorAvatar:hover .userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
 /************************************Footer***********************************/
 .piePagina{
   width: 100%;
@@ -182,7 +217,6 @@
   align-items: center;
 }
 .formularioBuscador{
-  width: 25vw;
   height: 5vh;
   margin: 20vh 0vw 0vh 0vw;
   background-color: #D9D9D9;
@@ -410,6 +444,28 @@ a{
   width: 9vw;
 }
 
+.contenedorMostrarCaracteristicas{
+  width: 50vw;
+  height: 38vh;
+  display: flex;
+  margin: 2vh 0vw 0vh 10vw;
+  flex-wrap: wrap;
+  color: #FFFFFF;
+  background-color:#6269d3;
+  justify-content: space-around;
+
+}
+.tituloMostarCaracteristicas{
+  width: 100%;
+  text-align: center;
+  margin: 2vh 0vw 3vh 0vw;
+}
+.nombreCaracteristicas{
+  width: 20vw;
+  margin: 0vh 0vw 0vh 3vw;
+}
+
+
 /************Formulario crear cuenta******************/
 
 .pageFormCrearcuenta{
@@ -525,7 +581,7 @@ a{
 .vacio{
   height: 60vh;
 }
-.agregarProducto,.ListarProductos,.ListarCategorias,.actualizarProducto{
+.agregarProducto,.ListarProductos,.ListarCategorias,.actualizarProducto,.ListarUsuarios{
   width: 15%;
   height: 5vh;
   margin: 20vh 0vw 2vh 0vw;
@@ -552,7 +608,8 @@ a{
   display: flex;
   flex-wrap: wrap;
   width: 42vw;
-  height: 55vh;
+  min-height: 100vh;
+  height: auto;
   margin: -55vh 0vw 4vh 30vw;
   background-color:#FFFFFF;
   border-radius: 5px;
@@ -569,22 +626,55 @@ a{
 .inputName,.inputCategoria,.inputDescripcion,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
   width: 11vw;
   height: 6%;
-  margin: 2vh 0vw 0vh 2.5vw;
+  margin: 0vh 0vw 0vh 2.5vw;
   background-color:rgba(128, 128, 128, 0.568);
   text-align: center;
   border-radius: 5px;
   border: none;
 }
-.inputDescripcion{
-  width: 20vw;
-  height: 17%;
-  margin: 2vh 0vw 0vh 2vw;
+.contenedorCaracteristicaCheckbox{
+  display: flex;
+  flex-wrap: wrap;
+  width: 38vw;
+  min-height: 15vh;
+  margin: 0vh 0vw 0vh 1.8vw;
+  padding: 0vh 0vw 2vh 0vw;
+  border-radius: 5px;
+  background-color:rgba(128, 128, 128, 0.568);
+
+}
+.tituloCheckbox{
+  width: 100%;
+  height: 18%;
+  text-align: center;
+  font-size: 1.2vw;
+  font-weight: 500;
+  margin: 2vh 0vw 0vh 0vw;
 }
 
-.guardarProducto{
+.contenedorCheckbox{
+  display: flex;
+  justify-content:space-between;
+  margin: 2vh 0vw 0vh 1vw;
+}
+.inputCheckbox{
+  width: 5vw;
+  height: 3vh;
+  margin: 0vh 0vw 0vh -1.5vw;
+}
+.nombreCaracteristica{
+  margin: 0vh 0vw 0vh -1.5vw;
+}
+.inputDescripcion{
+  width: 20vw;
+  height: 12vh;
+  margin: 0vh 0vw 0vh 4vw;
+}
+
+.guardarProducto{ 
   width: 15vw;
-  height: 8%;
-  margin: 1vh 0vw 1vh 13vw;
+  height: 5vh;
+  margin: 2.5vh 0vw 0vh 13vw;
   background-color:#6269d3;
   border-radius: 5px;
   border: none;
@@ -592,9 +682,8 @@ a{
   font-size: 1vw;
 }
 .guardarProducto:hover{
-  color: rgba(0, 0, 0, 0.692);
   width: 16vw;
-  height: 9%;
+  height: 6vh;
 }
 /* .mensajeExitoso,.mensajeError{
   width: 30%;
@@ -615,7 +704,7 @@ a{
   bottom:6vh;
 } 
 .textExito{
-  height: 57vh;
+  height: 65vh;
 }
 .textFallaServer{
   color:#6269d3;
@@ -730,19 +819,28 @@ a{
 
 
 .formularioActualizarProducto{
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   width: 50vw;
   height: 90vh;
   margin: 4vh 0vw 5vh 4vw;
   padding: 0vh 0vw 2vh 0vw;
   background-color:#FFFFFF;
+  border-radius: 5px; */
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 42vw;
+  min-height: 100vh;
+  height: 90vh;
+  margin: 4vh 0vw 5vh 8vw;
+  background-color:#FFFFFF;
   border-radius: 5px;
 }
 .inputActualizar,.inputActualizarDescripcion,.inputCaracteristica{
-  width: 12vw;
+  width: 11vw;
   height: 6%;
-  margin: 2vh 0vw 0vh 3.5vw;
+  margin: 0vh 0vw 0vh 2.5vw;
   background-color:rgba(128, 128, 128, 0.568);
   text-align: center;
   border-radius: 5px;
@@ -759,7 +857,7 @@ a{
 .botonActualizar{
   width: 15vw;
   height: 8%;
-  margin: 4vh 0vw 0vh 5vw;
+  margin: 4vh 0vw 0vh 3vw;
   background-color:#6269d3;
   border-radius: 5px;
   border: none;
@@ -809,6 +907,8 @@ a{
   color: rgba(0, 0, 0, 0.733);
 }
 
+/**********************************Listar usuarios***********************************************/
+
 
 
 
@@ -849,6 +949,21 @@ a{
   .themeLight,.themeDark{
     height: 80%;
     margin: 0.5vh 0vw 0vh 1vw;
+  }
+  .contenedorAvatar{
+    width: 10vw;
+    height: 10vh;
+    margin: 3vh 0vw 0vh -5vw;
+    background-color: transparent;
+  }
+  .imageAvatar{
+    width: 5vw;
+    margin: 0vh 0vw 0vh 2vw;
+  
+  }
+  .nombreAvatar{
+    font-size: 3vw;
+    margin: 0vh 0vw 3vh 3vw;
   }
   
   /************************************Footer***********************************/
@@ -1021,6 +1136,21 @@ margin: 2vh 0vw 0vh 12vw;
 width: 9vw;
 font-size: 1.5vw;
 }
+.botonComprar{
+width: 9vw;
+font-size: 1.5vw;
+}
+.contenedorMostrarCaracteristicas{
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: auto;
+  margin: 2vh 0vw 0vh 10vw;
+}
+.nombreCaracteristicas{
+  margin: 0vh 0vw 1vh 0vw;
+  width: 27vw;
+  }
 
 /************Formulario crear cuenta******************/
 
@@ -1244,6 +1374,9 @@ a{
   width: 15vw;
   margin: 54vh 0vw 0vh 80vw;
   font-size: 2.5vw;
+}
+.verMas:hover{
+  width: 10.5vw;
 }
 .tituloDetallesDeProducto{
   font-size: 3vw;

@@ -42,6 +42,10 @@ const AgregarCaracteristicaButton = () => {
                 text: 'La característica se ha agregado exitosamente',
                 icon: 'success'
             });
+            setCaracteristicaData({
+                name: '',
+                description: ''
+            })
         } catch (error) {
             console.error('Error al agregar la característica:', error.message);
             Swal.fire({

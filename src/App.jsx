@@ -13,6 +13,7 @@ import FormLogin from './components/FormLogin'
 import PanelCaracteristicas from './Routes/PanelCaracteristicas'
 import PanelCategorias from './Routes/PanelCategorias'
 
+
 function App() {
   
   const {state}=useContextGlobal()
