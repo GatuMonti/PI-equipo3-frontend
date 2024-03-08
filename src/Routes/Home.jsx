@@ -143,7 +143,7 @@ const Home = () => {
           </div>
         ) : (
           <div className="contenedorProductos">
-            <h1 className="tituloProductos">Los Mas Recomendados</h1>
+            <h1 className="tituloProductos">{estadosNuevos.categoriaSeleccionada}</h1>
             {estadosNuevos.productosDeUnaCategoria.map((producto) => (
               <Card product={producto} key={producto.id} />
             ))}

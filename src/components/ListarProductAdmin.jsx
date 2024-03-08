@@ -13,6 +13,9 @@ function ListarProductAdmin() {
 
     const endPointDeleteProduct=`http://localhost:8080/products/delete-product/`
 
+    useEffect(()=>{
+
+    },[])
 
     const handleDelete = (id) => {
       try {

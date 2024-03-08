@@ -4,6 +4,7 @@ import { useContextGlobal } from '../components/Util/global.context'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 
 const EditarProducto = () => {
 
@@ -11,31 +12,43 @@ const EditarProducto = () => {
 
   const {state,dispatch}=useContextGlobal()
 
+  const navigate = useNavigate();
+
   const endPointDetail=`http://localhost:8080/products/search-id/${params.id}`
 
   console.log(params.id)
 
-  useEffect(()=>{
-     const response= axios(endPointDetail)
-    .then( res => dispatch({ type: 'get_producto', payload: res.data }))
-    .catch(error => console.error("Error fetching product details:", error));
+//   useEffect(()=>{
+//      const response= axios(endPointDetail)
+//     .then( res => dispatch({ type: 'get_producto', payload: res.data }))
+//     .catch(error => console.error("Error fetching product details:", error));
 
-}, [endPointDetail, dispatch]);
-
-// useEffect(() => {
-//   const fetchData = async () => {
-//     try {
-//       const response = await axios(endPointDetail);
-//       dispatch({ type: 'get_producto', payload: response.data });
-//       console.log(response.data);
-//       setProductoActualizar(response.data)  
-//     } catch (error) {
-//       console.error("Error fetching product details:", error);
-//     }
-//   };
-
-//   fetchData();
 // }, [endPointDetail, dispatch]);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await axios(endPointDetail);
+      dispatch({ type: 'get_producto', payload: response.data });
+      console.log(response.data);
+      setProductoActualizar((prevState)=>({
+        ...prevState,
+        id:response.data.id,
+       name:response.data.name,
+       description:response.data.description,
+       price:response.data.price,
+       console:response.data.console,
+       images:response.data.images,
+       type:response.data.type,
+      }))
+      console.log(productoActualizar)
+    } catch (error) {
+      console.error("Error fetching product details:", error);
+    }
+  };
+
+  fetchData();
+}, [endPointDetail, dispatch]);
 
 
 
@@ -112,6 +125,10 @@ const handleSubmit= async(e)=>{
               }
 
           });
+          setTimeout(() => {
+            navigate('/pageAdmin/');
+            window.location.reload()
+          }, 2000);
           setProductoActualizar({
             id: "",
             name: "",
@@ -148,8 +165,7 @@ const handleSubmit= async(e)=>{
   }  
 }  
 
-const handleOnchangeId=(e)=>{
-  setProductoActualizar((prevState) => ({ ...prevState, id: e.target.value.trimStart() }))
+const handleOnchangeId=(e)=>{  
   setEstados({validacion:false, error:false})
 }
 
@@ -213,10 +229,12 @@ const handleCheckboxChange = (e) => {
     <div className='pageEditar'>
 
       <Link to={'/pageAdmin/'} ><button className='botonAtrasEditar'>Atras</button></Link>
-      <h2 className="tituloEditar">Detalles del producto</h2>
+      
 
       <div className="contenedorActualizar">
 
+        {/* 
+        <h2 className="tituloEditar">Detalles del producto</h2>
         <div className="contenedorEditar">
           <h5 className="idEditar">Id:<span> {state.producto.id}</span></h5>
           <h5 className="nameEditar">Nombre:<span> {state.producto.name}</span></h5>
@@ -247,17 +265,29 @@ const handleCheckboxChange = (e) => {
 
          ))}
 
-        </div>
+        </div> */}
 
         <form className="formularioActualizarProducto">
-          <h3 className="tituloFormulario">Actualizar Producto</h3>
-          <input className="inputActualizar" placeholder="Id *" value={productoActualizar.id} onChange={handleOnchangeId} />
-         
-         
-          <input className="inputActualizar" placeholder="Nombre *" value={productoActualizar.name} onChange={handleCambioName} />
-          <input className="inputActualizar" placeholder="Tipo *" value={productoActualizar.type} onChange={handleOnchangeTipo} />
-
           
+          <h3 className="tituloFormulario">Actualizar Producto</h3>
+
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Id</label>
+          <input className="inputActualizar" placeholder="Id *" value={productoActualizar.id} onChange={handleOnchangeId} />
+          </div>
+
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Nombre</label>
+          <input className="inputActualizar" placeholder="Nombre *" value={productoActualizar.name} onChange={handleCambioName} />
+          </div>
+
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Tipo</label>
+          <input className="inputActualizar" placeholder="Tipo *" value={productoActualizar.type} onChange={handleOnchangeTipo} />
+          </div>
+          
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Categoria</label>
           <select onChange={handleOnchangeCategoria}className='inputCategoria'>
                 <option  value="">Categoría</option>
                 {state.categorias.slice(1).map((categoria, index) => (
@@ -266,14 +296,19 @@ const handleCheckboxChange = (e) => {
                
                  ))}
             
-            </select>
+          </select>
+          </div>
           
-            {console.log(productoActualizar.characteristics)}
+                     
           
           
-          
-          
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Precio</label>
           <input className="inputActualizar" placeholder="Precio USD *" value={productoActualizar.price} onChange={handleOnchangePrecio} />
+          </div>
+            
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Consola</label>
           <select className="inputActualizar" value={productoActualizar.console} onChange={handleOnchangeConsola}>
             <option value="">Consola *</option>
             <option value="PlayStation">PlayStation</option>
@@ -281,13 +316,32 @@ const handleCheckboxChange = (e) => {
             <option value="Nintendo Switch">Nintendo Switch</option>
             <option value="PC">PC</option>
           </select>
+          </div>
 
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Url Img</label>
           <input className="inputActualizar" placeholder="URL Image1 *" name='imageUrl' value={productoActualizar.images[0].imageUrl} onChange={(e) => handleImageChange(0, e)} />
+          </div>
+
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Url Img</label>
           <input className="inputActualizar" placeholder="URL Image2 *" name='imageUrl' value={productoActualizar.images[1].imageUrl} onChange={(e) => handleImageChange(1, e)} />
+          </div>
+
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Url Img</label>
           <input className="inputActualizar" placeholder="URL Image3 *" name='imageUrl' value={productoActualizar.images[2].imageUrl} onChange={(e) => handleImageChange(2, e)} />
+          </div>
+
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Url Img</label>
           <input className="inputActualizar" placeholder="URL Image4 *" name='imageUrl' value={productoActualizar.images[3].imageUrl} onChange={(e) => handleImageChange(3, e)} />
+          </div>
+
+          <div className="contenedorDeInput">
+          <label className="labelActualizarProducto">Url Img</label>
           <input className="inputActualizar" placeholder="URL Image5 *" name='imageUrl' value={productoActualizar.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)} />
-         
+          </div>
           
           {console.log(productoActualizar.characteristics)}
           
@@ -302,10 +356,10 @@ const handleCheckboxChange = (e) => {
                 ))}
 
            </div>
-
-
+           <div className="contenedorDeInputDescription">
+           <label className="labelActualizarProducto">Descripcion</label>
           <textarea className="inputActualizarDescripcion" placeholder="Descripcion *" value={productoActualizar.description} onChange={handleOnchangeDescripcion} />
-
+          </div>
           <button onClick={handleSubmit} className='botonActualizar'>Actualizar</button>
         </form>
 
