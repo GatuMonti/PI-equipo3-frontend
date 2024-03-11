@@ -4,6 +4,9 @@ import Swal from 'sweetalert2';
 import { useContextGlobal } from './Util/global.context';
 
 const AgregarCategoriaButton = () => {
+
+    const{state}=useContextGlobal()
+
     const { dispatch } = useContextGlobal();
     const [showForm, setShowForm] = useState(false);
     const [categoriaData, setCategoriaData] = useState({
@@ -34,25 +37,16 @@ const AgregarCategoriaButton = () => {
         e.preventDefault();
 
         // Verifica si el título y la descripción están vacíos
-        if (!categoriaData.title || !categoriaData.description) {
+        if (!categoriaData.title || !categoriaData.description || !categoriaData.image.imageUrl) {
             Swal.fire({
                 title: 'Error',
-                text: 'Debe ingresar un título y una descripción',
+                text: 'Todos lo campos son obligatorios',
                 icon: 'error'
             });
             return; // Detiene el envío del formulario si el título o la descripción están vacíos
         }
+      
 
-        // Verifica si el campo imageUrl está vacío
-        if (!categoriaData.image.imageUrl) {
-            Swal.fire({
-                title: 'Error',
-                text: 'Debe proporcionar una URL de imagen',
-                icon: 'error'
-            });
-            return; // Detiene el envío del formulario si el campo imageUrl está vacío
-        }
-        
         try {
             const response = await axios.post('http://localhost:8080/categorias/add-categoria', categoriaData);
             dispatch({ type: 'agregar_categoria', payload: response.data });
@@ -62,13 +56,25 @@ const AgregarCategoriaButton = () => {
                 text: 'La categoría se ha agregado exitosamente',
                 icon: 'success'
             });
+            setCategoriaData({
+                title: '',
+                description: '',
+                image: { imageUrl: '' } 
+            })
+
         } catch (error) {
             console.error('Error al agregar la categoría:', error.message);
-            Swal.fire({
-                title: 'Error',
-                text: 'Hubo un error al agregar la categoría',
-                icon: 'error'
-            });
+            {state.categorias.map((categoria)=>{
+                if(categoria.title===categoriaData.title || categoria.image.imageUrl===categoriaData.image.imageUrl){
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Datos ya existentes en la base de datos',
+                        icon: 'error'
+                    });
+                    return; // Detiene el envío del formulario si el título o la descripción están vacíos
+                }
+                
+            })}
         }
     };
 

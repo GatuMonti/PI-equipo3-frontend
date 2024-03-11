@@ -190,9 +190,19 @@
   color: #FFFFFF;
   font-size: 1.2vw;
 }
+.tituloCategoriaUno:hover,
+.tituloCategoriaDos:hover,
+.tituloCategoriaTres:hover,
+.tituloCategoriaCuatro:hover,
+.tituloCategoriaCinco:hover{
+  font-size: 1.6vw;
+}
+
+
+
 .img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres,.img1CategoriaCuatro,.img2CategoriaCuatro,.img1CategoriaCinco,.img2CategoriaCinco{
   width: 13vw;
-  height: 15vh;
+  height: 17vh;
   margin: 3vh 0vw 2vh 0vw;
 }
 .img1CategoriaUno:hover,
@@ -249,19 +259,19 @@
 /********************Carrusel****************/
 
 .contenedorCarrusel{
-  width: 25vw;
-  height: 24vh;
+  width: 32vw;
+  height: 40vh;
   background-color: #6269d3;
   border-radius: 10px;
   margin: 6vh 0vw 0vh 0vw;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: sticky; */
   z-index: 0;
 }
 .tituloCarrusel{
-  margin: 0vh 0vw 0vh 5vw;
+  margin: 2vh 0vw 0vh 12.5vw;
   color: #FFFFFF;
 }
 
@@ -269,25 +279,33 @@
   width: 15vw;
   height: 20vh;
   z-index: 0;
-
 }
 .carousel-indicators{
-  width: 50px;
-  margin: 0vh 0vw 0vh 6vw;
+  /* width: 50px;
+  margin: 0vh 0vw -18vh 15vw; */
+  display: none;
 }
 
 .carousel-inner{
-  height: 18vh;
-  margin: 0vh 0vw 2vh 0vw;
+  width: 28vw;
+  height: 28vh;
+  margin: 2.5vh 0vw 0vh 2vw;
+  border-radius: 10px; 
 }
 .carousel-item img {
-  height: 15vh; 
+  width: 30vw;
+  height: 30vh;
   border-radius: 10px; 
-  margin: 1vh 0vw 0vh 0vw;
-
 }
-.carousel-control-next,.carousel-control-prev{
-  margin: 4vh 0vw 0vh 0vw;
+.imageCarrusel{
+  width: 2vw;
+}
+.carousel-control-next{
+  width: 9vw;
+  margin: 20vh -20.5vw 0vh 0vw;
+  }
+.carousel-control-prev{
+  margin: 20vh 0vw 0vh 0vw;
 }
 
 /********************Productos****************/
@@ -329,6 +347,20 @@
 a{
   text-decoration: none;
 }
+.botonesPaginado{
+  margin: 4vh 0vw 0vh 0vw;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+}
+.botonPaginadoAtras,.botonPaginadoAdelante{
+  width: 5vw;
+  margin: 0vh 0vw 0vh 1vw;
+  border-radius: 5px;
+  border: none;
+  background-color: #6269d3;
+}
+
 
 /***********************************Detail****************************************/
 .detalleProducto{
@@ -570,6 +602,7 @@ a{
 /***********************************Pagina-administrador****************************************/
 .pageAdmin{
   width: 100%;
+  
 }
 .panel{
   width: 80%;
@@ -909,8 +942,59 @@ a{
 
 /**********************************Listar usuarios***********************************************/
 
+.contenedorListadoUsuario{
+  background-color:#FFFFFF;
+  margin: -50vh 0vw 30vh 13vw;
+  width: 75vw;
+  height: 60vh;
+  border-radius: 8px;
+  padding: 2vh 0vw 0vh 0vw;
+}
+.tituloUsuarios{
+  text-align: center;
+  margin: 0vh 0vw 2vh 0vw;
+  border-radius: 8px;
+  color:#4867DB;
+  font-size: 2vw;
+}
 
-
+.contenedorDataUsuario{
+  display: flex;
+  background-color:#4867DB;
+  width: 69vw;
+  height: 11vh;
+  margin: 4vh 0vw 0vh 3vw;
+  border-radius: 5px;
+}
+.dataUsuario,.dataUsuarioName,.dataUsuarioNombre,.dataUsuarioApellido,.dataUsuarioRol{
+  width: 6svw;
+  height: 4vh;
+  margin: 3vh 0vw 0vh 1vw;
+  text-align: center;
+  color: #ffffffce;
+}
+.dataUsuarioName{
+  width: 15vw;
+  height: 7vh;
+  margin: 3vh 0vw 0vh 1vw;
+}
+.dataUsuarioNombre,.dataUsuarioApellido,.dataUsuarioRol{
+  width: 12vw;
+}
+.botonCambioUsuario{
+  width: 5.5vw;
+  height: 5vh;
+  margin: 2.8vh 1vw 0vh 0vw;
+  font-size: 0.9vw;
+  border-radius: 5px;
+  background-color: #AC6ABA;
+  border: none;
+  color: #FFFFFF;
+}
+.botonCambioUsuario:hover{
+    background-color: #FFFFFF;
+    color: rgb(0, 0, 0);
+}
 
 
 /***********************************Table****************************************/
@@ -964,6 +1048,11 @@ a{
   .nombreAvatar{
     font-size: 3vw;
     margin: 0vh 0vw 3vh 3vw;
+  }
+  .userInfo{
+    width: 16vw;
+    height: 10vh;
+    font-size: 2.2vw;
   }
   
   /************************************Footer***********************************/
@@ -1050,29 +1139,31 @@ a{
 /********************Carrusel****************/
 
 .contenedorCarrusel{
-  width: 60vw;
+  width: 50vw;
   height: 25vh;
   margin: 4vh 0vw 0vh 0vw;
 }
 .tituloCarrusel{
   font-size: 3vw;
-  margin: 0vh 0vw 0vh 14vw;
+  margin: 1vh 0vw 0vh 18vw;
 }
 #carouselExampleIndicators{
   width: 40vw;
   height: 15vh;
   margin: 0vh 0vw 5vh 0vw;
 }
-.carousel-indicators{
-  margin: 0vh 0vw -4vh 15vw;
-}
+
 .carousel-inner{
-  height: 15vh;
-  margin: 1vh 0vw 0vh 0vw;
+  width: 44vw;
+  height: 17vh;
+  margin: 1vh 0vw 0vh 3vw;
 
 }
-.carousel-control-prev,.carousel-control-next{
-  margin: 8vh 0vw 0vh 0vw;
+.carousel-control-prev{
+  margin: 10vh 0vw 0vh -1.5vw;
+}
+.carousel-control-next{
+  margin: 10vh -13vw 0vh 0vw;
 }
 
 /********************Productos****************/
@@ -1101,6 +1192,10 @@ a{
 }
 a{
   text-decoration: none;
+}
+
+.botonPaginadoAtras,.botonPaginadoAdelante{
+  width: 10vw;
 }
 
 /***********************************Detail****************************************/
@@ -1149,7 +1244,7 @@ font-size: 1.5vw;
 }
 .nombreCaracteristicas{
   margin: 0vh 0vw 1vh 0vw;
-  width: 27vw;
+  width: 35vw;
   }
 
 /************Formulario crear cuenta******************/
@@ -1212,6 +1307,9 @@ font-size: 1.5vw;
   .pageAdmin{
     display: none;
   }
+  .panelCategorias, .panelCaracteristicas{
+    display:none;
+  }
 
 
 }
@@ -1237,6 +1335,9 @@ font-size: 1.5vw;
     font-size: 3vw;
     width: 25vw;
     margin: 0.5vh 0vw 0vh 2vw;
+  }
+  .contenedorAvatar{
+    display: none;
   }
 
   /************************************Footer***********************************/
@@ -1309,13 +1410,24 @@ font-size: 1.5vw;
 /********************Carrusel****************/
 
 .contenedorCarrusel{
-  width: 50vw;
+  width: 58vw;
   margin: 4vh 0vw 0vh 0vw;
 }
 .tituloCarrusel{
   font-size: 4vw;
-  margin: 0vh 0vw 0vh 12vw;
+  margin: 1vh 0vw 0vh 20vw;
   color: #FFFFFF;
+}
+.carousel-inner{
+  height: 17.5vh;
+  margin: 1vh 0vw 0vh 7vw;
+
+}
+.carousel-control-prev{
+  margin: 10vh 0vw 0vh -0.5vw;
+}
+.carousel-control-next{
+  margin: 10vh -18.5vw 0vh 0vw;
 }
 
 
@@ -1348,6 +1460,10 @@ font-size: 1.5vw;
 a{
   text-decoration: none;
 }
+.botonPaginadoAtras,.botonPaginadoAdelante{
+  width: 11vw;
+}
+
 
 /***********************************Detail****************************************/
 

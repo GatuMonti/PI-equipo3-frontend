@@ -4,6 +4,9 @@ import Swal from 'sweetalert2';
 import { useContextGlobal } from './Util/global.context';
 
 const AgregarCaracteristicaButton = () => {
+
+    const {state}=useContextGlobal()
+
     const { dispatch } = useContextGlobal();
     const [showForm, setShowForm] = useState(false);
     const [caracteristicaData, setCaracteristicaData] = useState({
@@ -48,11 +51,15 @@ const AgregarCaracteristicaButton = () => {
             })
         } catch (error) {
             console.error('Error al agregar la característica:', error.message);
-            Swal.fire({
-                title: 'Error',
-                text: 'Hubo un error al agregar la característica',
-                icon: 'error'
-            });
+            {state.caracteristicas.map((caract)=>{
+                if(caract.name===caracteristicaData.name){
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'La caracteristica ya existe',
+                        icon: 'error'
+                    });
+                }
+            })}
         }
     };
 

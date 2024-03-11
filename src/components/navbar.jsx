@@ -33,7 +33,11 @@ const navbar = () => {
     }
 
     const handleLogo=()=>{
+      useEffect(()=>{
+
+      },[])
       navigate('/');
+     
     }
 
 

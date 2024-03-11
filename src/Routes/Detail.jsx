@@ -78,9 +78,9 @@ const handleOcultar=()=>{
 
        <div className="contenedorDetalles">
            <h2 className="tituloDetallesDeProducto">Detalles principales</h2>
-           <h3 className="categoriaProducto">Categoria:<span>{state.producto.category? state.producto.category.title : "Sin categoria"}</span></h3>
-           <h3 className="descripcionProducto">Descripcion:<span>{state.producto.description}</span></h3>
-           <h3 className="precioProducto">Precio:<span>{state.producto.price} USD</span></h3>
+           <h3 className="categoriaProducto">Categoria: <span>{state.producto.category? state.producto.category.title : "Sin categoria"}</span></h3>
+           <h3 className="descripcionProducto">Descripcion: <span>{state.producto.description}</span></h3>
+           <h3 className="precioProducto">Precio: <span>{state.producto.price} USD</span></h3>
         </div>
         <div className="contenedorComprar">
           {rolEnLocalStore !=null && <button className='botonComprar'>Comprar</button>}
