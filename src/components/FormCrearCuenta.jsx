@@ -23,7 +23,7 @@ const FormCrearCuenta = () => {
         e.preventDefault()
         const regexSoloLetras = /^[A-Za-z]+$/;
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        const regexPassword = /^.{8,}$/; //Minimo 8 caracteres
+        const regexPassword = /^.{8,}$/; //Minimo 4 caracteres
         try {
            if(usuarioRegistrar.username.trim()==="" || usuarioRegistrar.password.trim()==="" || usuarioRegistrar.nombre.trim()==="" || usuarioRegistrar.apellido.trim()==="" || usuarioRegistrar.direccion.trim()===""){
             Swal.fire({
@@ -146,7 +146,7 @@ const FormCrearCuenta = () => {
                     <label className='etiquetaUserName'>Email *</label>
                     <input className='inputUserName' value={usuarioRegistrar.username} onChange={handleChangeUserName}/>
                     <label className='etiquetaPassword'>Password *</label>
-                    <input placeholder="Minimo 4 caracteres"className='inputPassword' value={usuarioRegistrar.password} onChange={handleChangePassword}/>
+                    <input placeholder="Minimo 8 caracteres"className='inputPassword' value={usuarioRegistrar.password} onChange={handleChangePassword}/>
                     <label className='etiquetaName'>Nombre *</label>
                     <input className='inputNameRegister' value={usuarioRegistrar.nombre} onChange={handleChangeFirstName}/>
                     <label className='etiquetaApellido'>Apellido *</label>

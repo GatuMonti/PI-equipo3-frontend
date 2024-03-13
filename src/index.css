@@ -252,7 +252,11 @@
   border: none;
   margin: 1vh 1vw 0vh 0vw;
   cursor: pointer;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
+
+}
+.bx-search-alt{
+  color:#c133dd;
 }
 
 
@@ -803,6 +807,13 @@ a{
   border-radius: 5px;
 }
 
+.botonesPaginadoListProductos{
+  margin: -30vh 0vw 7vh 0vw;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+}
+
 /***********************************Editar-Producto-Administrador****************************************/
 
 /************Caracteristicas del producto******************/
@@ -946,9 +957,9 @@ a{
   background-color:#FFFFFF;
   margin: -50vh 0vw 30vh 13vw;
   width: 75vw;
-  height: 60vh;
+  height: auto;
   border-radius: 8px;
-  padding: 2vh 0vw 0vh 0vw;
+  padding: 2vh 0vw 5vh 0vw;
 }
 .tituloUsuarios{
   text-align: center;
