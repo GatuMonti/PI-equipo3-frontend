@@ -26,8 +26,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="row">
-              Vortex Copyright © 2024 - All rights reserved
+          <div className="roww">
+              <p>Vortex Copyright © 2024 - All rights reserved</p>
           </div>
         </div>
                   

@@ -131,7 +131,7 @@ const Home = () => {
 
         {!estadosNuevos.buscar ? (
           <div className="contenedorProductos">
-            <h1 className="tituloProductos">Los Mas Recomendados</h1>
+            <h1 className="tituloProductos"><b>Los Mas Recomendados</b></h1>
             {shuffleArray(
               state.productos
                 .slice(-10)
