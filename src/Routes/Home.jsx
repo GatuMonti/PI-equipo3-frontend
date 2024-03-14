@@ -16,9 +16,12 @@ import Card from "../components/Card";
 import Swal from "sweetalert2";
 import Slider from "../components/slider";
 import axios from "axios";
+import { Pagination, Button } from 'react-bootstrap';
 
 const Home = () => {
   const { state } = useContextGlobal();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(5);
 
   //Funcion para revolver los elementos del array
 
@@ -66,6 +69,14 @@ const Home = () => {
       setStateNuevos({ ...estadosNuevos, buscar: false });
     });
   };
+
+  // Logica para la paginacion    
+  let currentProducts = [];
+  if (state.productos.length > 0) {
+      const indexOfLastProductos = currentPage * productsPerPage;
+      const indexOfFirstProductos = indexOfLastProductos - productsPerPage;
+      currentProducts = state.productos.slice(indexOfFirstProductos, indexOfLastProductos);
+  }
 
   return (
     <main className="home">
@@ -149,6 +160,17 @@ const Home = () => {
             ))}
           </div>
         )}
+          <div>
+            {state.productos.length > 0 && (
+                <Pagination>
+                    {Array.from({ length: Math.ceil(state.productos.length / productsPerPage) }).map((_, index) => (
+                        <Pagination.Item key={index} onClick={() => setCurrentPage(index + 1)} active={index + 1 === currentPage}>
+                            {index + 1}
+                        </Pagination.Item>
+                    ))}
+                </Pagination>
+            )}
+          </div>
       </div>
     </main>
   );
