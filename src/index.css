@@ -7,7 +7,7 @@
   
 }
 .light{
-  background-color: #AC6ABA;
+  background-color: white;
 }
 /************************************Desktop***********************************/
 
@@ -57,10 +57,11 @@
 .crear-cuenta{
   width: 10vw;
   height: 5vh;
-  background-color: #FFFFFF;
-  border-radius: 5px;
+  background-color: #6269d3;
+  border-radius: 10px;
+  border-color: #FFFFFF;
   border: none;
-  color: #AC6ABA;
+  color: #FFFFFF;
   font-weight: 500;
   font-size: 1vw;
 
@@ -68,21 +69,22 @@
 .iniciar-sesion{
   width: 10vw;
   height: 5vh;
-  background-color: #AC6ABA;
+  background-color: #FFFFFF;
   border-radius: 5px;
   border: none;
-  color: #FFFFFF;
+  color: #0C1029;
   font-weight: 500;
   font-size: 1vw;
 
 }
 .crear-cuenta:hover{
-  background-color: #AC6ABA;
   color: black;
+  
 }
 .iniciar-sesion:hover{
-  background-color: #FFFFFF;
-  color: black;
+  background-color: #AC6AB4;
+  color: white;
+  
 }
 .themeLight,.themeDark{
   width: 40px;
@@ -126,7 +128,7 @@
 }
 
 .footer .row a:hover{
-    color:#5e5e5e;
+    color:black;
     }
     
 .footer .row ul{
@@ -143,7 +145,10 @@
     font-size:2em;
     margin:0% 1%;
 }
-
+ .roww{
+  color:#D9D9D9;
+  font-size: 11px;
+ }
 
 
 /***********************************Home****************************************/
@@ -208,7 +213,7 @@
   width: 25vw;
   height: 5vh;
   margin: 20vh 0vw 0vh 0vw;
-  background-color: #FFFFFF;
+  background-color: #6269D3;
   display: flex;
   justify-content: space-between;
   border-radius: 5vw;
@@ -220,7 +225,7 @@
   border: none;
   font-size: 1.2vw;
   margin: 1vh 0vw 0vh 3vw;
-  background-color: #FFFFFF;
+  background-color: #6269D3;
 }
 .inputSearch:focus{
   outline: none;
@@ -252,9 +257,13 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-  background: #dde5f4;
-  
+  background: #AC6AB4;
+  color: #FFFFFF;
 }
+
+
+
+
 
 /********************Productos****************/
 
@@ -263,38 +272,48 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 3vh 0vw 4vh 0vw;
-  width: 50vw;
+  width: 100%;
 }
 .tituloProductos{
   width: 100%;
-  height: 5vh;
-  text-align: center;
-  font-size: 2vw;
-  color: #FFFFFF;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  font-size: 3vw;
+  
 }
 .card{
   width: 20vw;
-  height: 20vw;
+  height: auto;
   padding: 5px;
-  margin: 5vh 0vw 0vh 0vw;
-  background-color:#FFFFFF; 
-  box-shadow: (2px 2px 8px 10px) #5e5e5e;
-  border-radius: 5px;
-
-}
-.imageProduct{
-  width: 100%;
-  height: 25vh;
-
-}
-.DescriptionProduct{
-  height: 10vh;
-  text-align: center;
-  font-size: 1vw;
-  color: #4867DB;
   background-color:#FFFFFF;
-  margin: 1vh 0vw 0vh 0vw; 
+  color:black;
+  box-shadow: (8px 8px 8px 10px) black;
+  margin-top: 2vw;
+  
 }
+.tituloProducto  {
+  margin-top: 5px;
+  color: black;
+}
+.priceProduct{
+  color: black;
+}
+
+.card :hover{
+  color: #AC6ABA;
+  
+}
+
+.imageProduct{
+  width: 90%;
+  height: 25vh;
+  margin-left: 1vw;
+  
+
+}
+
 a{
   text-decoration: none;
 }
@@ -316,9 +335,9 @@ a{
   font-size: 1vw;
 }
 .botonRegresar:hover{
-  background-color: #FFFFFF;
+  background-color: gray;
   color: black  ;
-  width: 9vw;
+
 }
 .tituloDetail{
   width: 50vw;
@@ -359,9 +378,9 @@ a{
   font-size: 1vw;
 }
 .verMas:hover{
-  background-color: #FFFFFF;
+  background-color: gray;
   color: black  ;
-  width: 9vw;
+
 }
 
 .contenedorDetalles{
@@ -374,7 +393,7 @@ a{
     background-color:#4867DB;
     text-align: center;
     font-size: 1.9vw;
-    color: #FFFFFF;
+    color: black;
 }
 .tituloDetallesDeProducto:hover{
   background-color: #FFFFFF;
@@ -390,7 +409,7 @@ a{
 }
 
 .descripcionProducto,.precioProducto{
-  color: #FFFFFF;
+  color: black;
   font-size: 1.5vw;
   margin: 1vh 0vw 0vh 2vw;
 }
@@ -441,7 +460,7 @@ a{
 .formRegister{
   font-family: "Arial";
     margin-bottom: 10px;
-    margin-left: 30%;
+    margin-left: 35%;
     margin-top: 10px;
     padding: 15px;
     border-radius: 15px;
@@ -456,9 +475,13 @@ a{
     justify-content: center;
     align-items: center;
     background: #dde5f4;
-    height: auto;
-    width: 40%;
+    
+    width: 30%;
+    height: 30%;
     box-shadow: 5px 5px 15px black;
+}
+.titleFormLoguin{
+  font-size: 2vw;
 }
 .bannerRegister{
   width: 100%;
@@ -470,12 +493,12 @@ a{
 .etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
   background: #f1f7fe;
   margin: auto;
-  margin-top: 1.5rem;
-  width: 80%;
-  padding: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1.3rem;
   display: flex;
   flex-direction: column;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0;
   gap: 1rem;
 }
@@ -488,7 +511,7 @@ a{
   font-size: 16px;
 }
 .crearCuenta{
-  padding: 16px;
+  padding: 10px;
     width: 10rem;
     margin: auto;
     margin-top: 1rem;
@@ -514,7 +537,7 @@ a{
 .formLogin{
   font-family: "Arial";
     margin-bottom: 10px;
-    margin-left: 30%;
+    margin-left: 35%;
     margin-top: 10px;
     padding: 15px;
     border-radius: 15px;
@@ -529,8 +552,9 @@ a{
     justify-content: center;
     align-items: center;
     background: #dde5f4;
-    height: auto;
-    width: 40%;
+    
+    width: 30%;
+    height: 30%;
     box-shadow: 5px 5px 15px black;
 }
 .banner{
@@ -551,12 +575,12 @@ a{
 .etiquetaUserNameLogin,.etiquetaPasswordLogin{
   background: #f1f7fe;
     margin: auto;
-    margin-top: 1.5rem;
-    width: 80%;
-    padding: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: 0;
     gap: 1rem;
 }
@@ -569,7 +593,7 @@ a{
     font-size: 16px;
 }
 .botonLogin{
-  padding: 16px;
+  padding: 10px;
     width: 10rem;
     margin: auto;
     margin-top: 1rem;
@@ -588,11 +612,11 @@ a{
 
 .footerLoguin{
   display: flex;
-    padding: 12px;
+    padding: 7px;
     margin-top: 0.5rem;
     font-size: 0.7em;
     color: #5e5e5e;
-    gap: 14em;
+    gap: 1em;
 }
 
 .footerLoguin span{
@@ -605,6 +629,7 @@ a{
 /***********************************Pagina-administrador****************************************/
 .pageAdmin{
   width: 100%;
+  background-image: url('/src/Images/24.jpg')
 }
 .panel{
   width: 80%;
@@ -640,50 +665,71 @@ a{
 /***********************************Formulario****************************************/
 
 .formularioAddProducto{
-  display: flex;
+  font-family: "Arial";
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-top: -25%;
+  border-radius: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
   flex-wrap: wrap;
-  width: 42vw;
-  min-height: 100vh;
+  background: #dde5f4;
+  width: 80%;
   height: auto;
-  margin: -55vh 0vw 4vh 30vw;
-  background-color:#FFFFFF;
-  border-radius: 5px;
+  box-shadow: 5px 5px 15px black;
 }
 
 .tituloFormulario{
   width: 100%;
-  font-size: 1.5vw;
+  padding: 10px;
+  font-size: 2vw;
   text-align: center;
   margin: 4vh 0vw 1vh 0vw;
   color:#6269d3;
   font-weight: bold;
 }
-.inputName,.inputCategoria,.inputDescripcion,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
-  width: 11vw;
-  height: 6%;
-  margin: 0vh 0vw 0vh 2.5vw;
-  background-color:rgba(128, 128, 128, 0.568);
-  text-align: center;
-  border-radius: 5px;
-  border: none;
+.inputDescripcion, .inputCategoria, .inputName,.inputCategoria,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
+  background: #f1f7fe;
+    margin: auto;
+    margin-top: 1rem;
+    margin-left: 10px;
+    margin-bottom: 1rem;
+    width: 30%;
+    padding: 1rem;   
+    border-radius: 20px;
+    box-shadow: 0;
+    
 }
 
-.inputCategoria{
-  height: 30px;
-  margin: 0vh 0vw 0vh 0vw;
-  width: 12vw;
-
+.inputDescripcion{
+  background: #f1f7fe;
+    margin: auto;
+    margin-top: 1rem;
+    margin-left: 10px;
+    margin-bottom: 1rem;
+    width: 50%;
+    padding: 1rem;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0;
 }
+
+
+
 .contenedorCaracteristicaCheckbox{
   display: flex;
   flex-wrap: wrap;
   width: 40vw;
+  
   min-height: 15vh;
   margin-bottom: 2vh;
   margin: 0vh 0vw 2vh 2.5vw;  
   padding-bottom: 1vh;
   border-radius: 5px;
-  background-color:rgba(128, 128, 128, 0.568);
+  background-color:#f1f7fe;
 
 }
 .tituloCheckbox{
@@ -696,6 +742,7 @@ a{
 
 .contenedorCheckbox{
   display: flex;  
+  margin-left: 30%;
   width: 15vw ;
   justify-content:flex-start;
   align-items: center;
@@ -710,26 +757,24 @@ a{
   margin: 0vh 0vw 0vh 0vw;
   font-size: 1.25vw;
 }
-.inputDescripcion{
-  width: 20vw;
-  height: 12vh;
-  margin: 0vh 0vw 0vh 4vw;
-}
 
 .guardarProducto{
-  width: 15vw;
-  height: 5vh;
-  margin: 2.5vh 0vw 0vh 13vw;
-  background-color:#6269d3;
-  border-radius: 5px;
-  border: none;
-  color:#FFFFFF;
-  font-size: 1vw;
+  padding: 8px;
+    width: 10rem;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 40%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .guardarProducto:hover{
-  color: rgba(0, 0, 0, 0.692);
-  width: 16vw;
-  height: 9%;
+  background-color: #0056b3;
 }
 /* .mensajeExitoso,.mensajeError{
   width: 30%;
@@ -833,14 +878,14 @@ a{
   background-color:#4867DB;
   border-radius: 5px;
   border: none;
-  color: #FFFFFF;
+  color: black;
   font-size: 1vw;
   margin: 20vh 0vw 0vh 80vw;
 }
 .botonAtrasEditar:hover{
-  background-color: #FFFFFF;
+  background-color: gray;
   color: black  ;
-  width: 9vw;
+
 }
 .tituloEditar{
   width: 25vw;
@@ -978,9 +1023,9 @@ a{
   font-size: 1vw;
 }
 .botonRegresarPageAdmin:hover{
-  background-color: #FFFFFF;
+  background-color: gray;
   color: black  ;
-  width: 9vw;
+  
 }
 .btn-primary{
   background-color:#4867DB;
@@ -998,6 +1043,7 @@ a{
   flex-direction: column;
   align-items: center;
   margin: 0vh 9vw 0vh 0vw;
+  
 }
 
 /**** Card del Navbar****/
