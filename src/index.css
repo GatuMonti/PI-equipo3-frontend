@@ -279,40 +279,43 @@
   width: 100%;
   padding: 10px;
   background-color: white;
-  color: black;
+  color: #4867DB;
   border-radius: 5px;
   font-size: 3vw;
-  
+  text-align: center;
 }
 .card{
   width: 20vw;
   height: auto;
   padding: 5px;
-  background-color:#FFFFFF;
+  background-color: #AC6AB4;
   color:black;
   box-shadow: (8px 8px 8px 10px) black;
   margin-top: 2vw;
-  
+  border-color: #0056b3;
+  border-width: 0.3vh;
+  transition: transform 0.3s ease;
 }
-.tituloProducto  {
-  margin-top: 5px;
-  color: black;
-}
-.priceProduct{
-  color: black;
+.card:hover {
+  transform: scale(1.05); 
 }
 
-.card :hover{
-  color: #AC6ABA;
-  
+.tituloProducto  {
+  margin-top: 5px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+}
+.DescriptionProduct{
+  color: white;
+  text-align: center;
 }
 
 .imageProduct{
   width: 90%;
   height: 25vh;
   margin-left: 1vw;
-  
-
+  border-radius: 1vh;
 }
 
 a{
