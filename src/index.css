@@ -305,20 +305,56 @@ a{
   padding: 20vh 0vw 0vh 0vw;
 }
 .botonRegresar{
-  margin: 1vh 0vw 0vh 80vw;
-  width: 8vw;
+  display: inline-block;
+  position: relative;
+  left: 75vw;
+  width: 10vw;
   height: 5vh;
   background-color:#4867DB;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
+  text-align: center;
+  line-height: 5vh;
 }
 .botonRegresar:hover{
   background-color: #FFFFFF;
   color: black  ;
-  width: 9vw;
+  width: 10vw;
 }
+
+
+.contenedorFavorito {
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  left: 25vw;
+  padding: 4px;
+
+}
+
+.bx-heart {
+  color: black;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.bx-heart:hover {
+  color: red;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.bx.bxs-heart {
+  color: red;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+
+
 .tituloDetail{
   width: 50vw;
   margin: 0vh 0vw 0vh 25vw;

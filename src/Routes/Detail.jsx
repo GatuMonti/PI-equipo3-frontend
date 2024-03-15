@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useContextGlobal } from '../components/Util/global.context';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import 'boxicons/css/boxicons.min.css';
 
 const Detail = () => {
 
@@ -17,11 +18,18 @@ const Detail = () => {
 
   const rolEnLocalStore=localStorage.getItem('userRole')
 
+  const [esFavorito, setEsFavorito] = useState(false);
+
+  const toggleFavorito = () => {
+    setEsFavorito(!esFavorito);
+  };
+
   const[State, setState]=useState({
     showFeatures:false,
     cambiarBoton:false
   })
 
+  
  
 const handleMostarMas=()=>{
   setState({ ...State, showFeatures: true, cambiarBoton: true });
@@ -41,12 +49,16 @@ const handleOcultar=()=>{
   console.log(state.producto)
 
 
+
   return (
     <div className='detalleProducto'>
-       <Link to={'/'}><button className='botonRegresar'>Atras</button></Link>
+       <Link to={'/'}className='botonRegresar'>Atras</Link>
        <h3 className="tituloDetail">{state.producto?.name}</h3>
        
-        
+       <div onClick={toggleFavorito} className='contenedorFavorito'>
+        <i className={`bx ${esFavorito ? 'bxs-heart' : 'bx-heart'}`}></i>
+      </div>
+
        <div className="contenedorImagenesDetail">
           {state.producto && state.producto.images && state.producto.images.length > 0 && (
             <img className='imagen1Producto' src={state.producto.images[0].imageUrl} alt="imagen1" />
@@ -88,7 +100,7 @@ const handleOcultar=()=>{
           {rolEnLocalStore !=null && <button className='botonComprar'>Comprar</button>}
           
         </div>
-    </div>
+  </div>
   )
 }
 
