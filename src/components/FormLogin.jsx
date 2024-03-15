@@ -62,7 +62,7 @@ function parseJwt (token) {
             else if(!regexPassword.test(usuarioAutenticar.password)){
                 Swal.fire({
                     title: "Registro fallo",
-                    text: "La contraseña debe contener minimo 4 caracteres",
+                    text: "La contraseña debe contener minimo 8 caracteres",
                     icon: "error",
                     confirmButtonColor: "#ff00008f",
                     confirmButtonText: "Aceptar",
@@ -104,21 +104,34 @@ function parseJwt (token) {
                     password:""
                 })
             }
-        } catch (error) {
-            console.error('Error:', error.message);
-            Swal.fire({
-                title: "Error!",
-                text: error.message,
-                icon: "error",
-                confirmButtonColor: "#ff00008f",
-                customClass: {
-                    popup:'textFallaServer'
-                }
-            });
+        }  catch (error) {
+            if (error.response.status === 403) {
+                Swal.fire({
+                    title: "Error",
+                    text: "El correo electrónico o la contraseña son incorrectos",
+                    icon: "error",
+                    confirmButtonColor: "#ff00008f",
+                    customClass: {
+                        popup: 'textFallaServer'
+                    }
+                });
+            } else {
+                console.error('Error:', error.message);
+                Swal.fire({
+                    title: "Error",
+                    text: error.message,
+                    icon: "error",
+                    confirmButtonColor: "#ff00008f",
+                    customClass: {
+                        popup: 'textFallaServer'
+                    }
+                });
+            }
+
             setUsuarioAutenticar({
-                username:"",
-                password:""
-            })
+                username: "",
+                password: ""
+            });
         }
     }
 
@@ -141,7 +154,7 @@ function parseJwt (token) {
                 
                  <div className='etiquetaPasswordLogin'>
                  <label >Contraseña </label>
-                 <input type='password' placeholder="Al menos 4 caracteres"className='inputPasswordLogin' value={usuarioAutenticar.password} onChange={handleChangePasswordLogin}/>
+                 <input type='password' placeholder="Al menos 8 caracteres"className='inputPasswordLogin' value={usuarioAutenticar.password} onChange={handleChangePasswordLogin}/>
 
                  </div>
                  

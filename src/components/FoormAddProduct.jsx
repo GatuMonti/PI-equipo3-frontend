@@ -84,6 +84,17 @@ function FoormAddProduct() {
                 }
             }
             catch (error) {
+                if (error.response.status===400){
+                    Swal.fire({
+                        title: "Error",
+                        text: "El juego ya se encuentra registrado",
+                        icon: "error",
+                        confirmButtonColor: "#ff00008f",
+                        customClass: {
+                            popup: 'textFallaServer'
+                        }
+                    });
+                }else{
                 console.error('Error:', error.message);
                 Swal.fire({
                     title: "Error!",
@@ -94,6 +105,7 @@ function FoormAddProduct() {
                         popup:'textFallaServer'
                     }
                 });
+            }
                 setProductoNuevo({
                     name:"",
                     category:{

@@ -154,7 +154,7 @@ const FormCrearCuenta = () => {
                     </div>
                     <div className='etiquetaPassword'>
                         <label> Contraseña *</label>
-                     <input placeholder="Minimo 4 caracteres"className='inputPassword' type='password' value={usuarioRegistrar.password} onChange={handleChangePassword}/>
+                     <input placeholder="Minimo 8 caracteres"className='inputPassword' type='password' value={usuarioRegistrar.password} onChange={handleChangePassword}/>
 
                     </div>
                     <div className='etiquetaName'>
