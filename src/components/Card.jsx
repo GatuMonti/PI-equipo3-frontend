@@ -17,7 +17,7 @@ function Card({product}) {
     <div className='card'>
         <Link to={'/Detail/' + product.id}>
            <img className="imageProduct" src={product.images[0].imageUrl}alt="imagen del producto" />
-           <h5 className='tituloProducto'> {product.name} </h5>
+           <h4 className='tituloProducto'> {product.name} </h4>
            <p className="DescriptionProduct">{trimmedDescription}</p>
         </Link>
     </div>
