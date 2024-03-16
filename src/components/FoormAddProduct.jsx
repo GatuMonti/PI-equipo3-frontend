@@ -155,12 +155,7 @@ function FoormAddProduct() {
          };
 
 
-        //  const handleCaracteristicaChange = (index, e) => {
-        //     const { value } = e.target;
-        //     const characteristicsCopy = [...productoNuevo.characteristics];
-        //     characteristicsCopy[index] = { id: value.trimStart() };
-        //     setProductoNuevo(prevState => ({ ...prevState, characteristics: characteristicsCopy }));
-        // };
+    
 
 
         const handleCheckboxChange = (e) => {

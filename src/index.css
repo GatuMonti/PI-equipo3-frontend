@@ -203,36 +203,193 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
+
+.contenedorBuscador{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  background-color: #DAC9DF;
+  margin: 0vh 7vw 0vh 0vw;
+  border-radius: 20px;
+}
+
 .formularioBuscador{
-  width: 25vw;
   height: 5vh;
-  margin: 20vh 0vw 0vh 0vw;
-  background-color: #FFFFFF;
+  width: 40vh;
+  margin: 20vh 2vw 0.5vh 0vw;
   display: flex;
   justify-content: space-between;
   border-radius: 5vw;
+
+  
+
 }
 .inputSearch{
   width: 15vw;
   height: 3vh;
   text-align: center;
   border: none;
-  font-size: 1.2vw;
-  margin: 1vh 0vw 0vh 3vw;
-  background-color: #FFFFFF;
+  font-size: 1.1vw;
+  margin: 0vh 0vw 0vh 3vw;
+  cursor: pointer;
+  background-color: #AC6ABA;
+   border-radius: 8px;
+   border-style: none;
+   box-sizing: border-box;
+   color: #FFFFFF;
+   cursor: pointer;
+   display: inline-block;
+   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   font-weight: 500;
+   height: 35px;
+   line-height: 20px;
+   list-style: none;
+   outline: none;
+   position: relative;
+   text-align: center;
+   text-decoration: none;
+   transition: color 100ms;
+   vertical-align: baseline;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
 }
+
+.inputSearchBuscador{
+  width: 7vw;
+  height: 4.2vh;
+  text-align: center;
+  border: none;
+  font-size: 1vw;
+  margin: 0vh 2vw 1vh 0vw;
+  background-color: #AC6ABA;
+   border-radius: 8px;
+   border-style: none;
+   box-sizing: border-box;
+   color: #FFFFFF;
+   display: inline-block;
+   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 14.5px;
+   font-weight: 500;
+   line-height: 20px;
+   list-style: none;
+   outline: none;
+   position: relative;
+   text-align: center;
+   text-decoration: none;
+   transition: color 100ms;
+   vertical-align: baseline;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+}
+
+.inputSearchBuscador::placeholder {
+  color: white;
+}
+
+.bx.bx-calendar {
+  font-size: 3.5vh;
+  margin:  0vh 0.4vw 0vh 0vw;
+}
+
+
+.calendarioInicio {
+  height: 5vh;
+  margin: 0.50vh 7vw 0vh 0vw;
+  display: flex;
+  justify-content: space-between;
+  
+  
+}
+
+.calendarioFinalizacion{  
+  height: 3.8vh;
+  margin: 0vh 2vw 0vh 1vw;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+ 
+}
+
 .inputSearch:focus{
   outline: none;
 }
+
+.botonBuscarFecha{
+  width: 5vw;
+  height: 4vh;
+  border: none;
+  margin: 0vh 0vw 0vh 0vw;
+  cursor: pointer;
+  background-color: #AC6ABA;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+
 .botonBuscar{
   width: 3vw;
   height: 3vh;
   border: none;
   margin: 1vh 1vw 0vh 0vw;
   cursor: pointer;
-  background-color: #FFFFFF;
-}
+   background-color: #AC6ABA;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .botonBuscar:hover,
+  .botonBuscar:focus {
+    background-color: #F082AC;
+  }
+ 
+
 
 
 /********************Carrusel****************/
@@ -253,6 +410,7 @@
   align-items: center;
   margin-top: 2rem;
   background: #dde5f4;
+  
   
 }
 
@@ -1137,6 +1295,8 @@ a{
   width: 30vw;
   font-size: 2.5vw;
 }
+
+
 .botonBuscar{
   margin: 1vh 3vw 0vh 0vw;
 }
@@ -1146,31 +1306,10 @@ a{
 
 /********************Carrusel****************/
 
-.contenedorCarrusel{
-  width: 60vw;
-  height: 60vw;
-  margin: 4vh 0vw 0vh 0vw;
+.carousel-control-next, .izq{
+  margin: 0vh 5vw 0vh 10vw;
 }
-.tituloCarrusel{
-  font-size: 3vw;
-  margin: 0vh 0vw 0vh 14vw;
-}
-#carouselExampleIndicators{
-  width: 40vw;
-  height: 15vh;
-  margin: 0vh 0vw 5vh 0vw;
-}
-.carousel-indicators{
-  margin: 0vh 0vw -4vh 15vw;
-}
-.carousel-inner{
-  height: 15vh;
-  margin: 1vh 0vw 0vh 0vw;
 
-}
-.carousel-control-prev,.carousel-control-next{
-  margin: 8vh 0vw 0vh 0vw;
-}
 
 /********************Productos****************/
 

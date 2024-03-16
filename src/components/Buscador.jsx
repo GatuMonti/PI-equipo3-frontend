@@ -26,4 +26,3 @@ function buscador({ onSearch }) {
     }      
 
     export default buscador;
-    
