@@ -1,101 +1,33 @@
-*{
+* {
   margin: 0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.dark{
+
+.dark {
   background-color: black;
   color: #FFFFFF;
-  
 }
-.light{
+
+.light {
   background-color: white;
 }
+
 /************************************Desktop***********************************/
 
 /*Comentario de prueba de commit Marco Y Edu*/
 
 /************************************Header***********************************/
-.Header{
-  width: 100%;
-  height: 18vh;
-  background-color: #6269d3;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  z-index: 1000;
-  margin: 0vh 0vw 0vh 0vw;
-}
-.contenedorLogo{
-  width: 38vw;
-  height: 10vh;
-  display: flex;
-  margin: 0vh 0vw 0vh 4vw;
-}
-.imagenLogo{
-  margin-top: 3px;
-  width: auto;
-  height: 14vh;
-}
-.imagenLogo:hover{
-  width: auto;
-  height: 13.5vh;
-}
-.lema{
-  margin: 6vh 0vw 0vh 0vw;
- color: #FFFFFF;
- font-weight: 500;
- font-size: 1.5vw;
-}
-.botones{
-  display: flex;
-  justify-content: center;
-  
-  margin-right: 10px;
-  width: 20vw;
-  height: 5vh;
-  margin: 5.5vh 5vw 0vh 0vw;
-}
-.crear-cuenta{
-  width: 10vw;
-  height: 5vh;
-  background-color: #6269d3;
-  border-radius: 10px;
-  border-color: #FFFFFF;
-  border: none;
-  color: #FFFFFF;
-  font-weight: 500;
-  font-size: 1vw;
-
-}
-.iniciar-sesion{
-  width: 10vw;
-  height: 5vh;
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  border: none;
-  color: #0C1029;
-  font-weight: 500;
-  font-size: 1vw;
-
-}
-.crear-cuenta:hover{
-  color: black;
-  
-}
-.iniciar-sesion:hover{
-  background-color: #AC6AB4;
-  color: white;
-  
-}
-.themeLight,.themeDark{
+.themeLight,
+.themeDark {
   width: 40px;
   height: 95%;
   border: none;
-  background-color:transparent;
+  background-color: transparent;
   border-radius: 5px;
 }
+
 .themeLight:hover,
-.themeDark:hover{
+.themeDark:hover {
   background-color: #FFFFFF;
 }
 
@@ -104,91 +36,66 @@
 /************************************Footer***********************************/
 
 
-.footer{
-  background-color:#6269d3;
-  padding:30px 0px;
-  font-family: 'Play', sans-serif;
-  text-align:center;
-  
-  }
-
-
-.footer .row{
-    padding: 5px;
-    margin:1% 0%;
-    margin-bottom: 0px;
-    color:#D9D9D9;
-    font-size:0.8em;
- }
-
-.footer .row a{
-  display:inline-block;
-  text-decoration:none;
-  color: #FFFFFF;
-  transition:0.5s;
-}
-
-.footer .row a:hover{
-    color:black;
-    }
-    
-.footer .row ul{
-    width:100%;
-}
-    
-.footer .row ul li{
-    display:inline-block;
-    direction: row;
-    margin:0px 30px;
-}
-    
-.footer .row a i{
-    font-size:2em;
-    margin:0% 1%;
-}
- .roww{
-  color:#D9D9D9;
-  font-size: 11px;
- }
-
-
 /***********************************Home****************************************/
 
 /********************Categorias****************/
-.home{
+.home {
   display: flex;
   flex-wrap: wrap;
 }
-.contenedorCategorias{
+
+.contenedorCategorias {
   background-color: #4867DB;
   display: flex;
   flex-direction: column;
   width: 15vw;
   margin: 15vh 0vw 0vh 0vw;
 }
-.tituloCategorias{
+
+.tituloCategorias {
   font-size: 2vw;
   text-align: center;
   margin: 3vh 0vw 0vh 0vw;
   font-weight: 600;
 }
-.categoriaUno, .categoriaDos,.categoriaTres,.categoriaCuatro,.categoriaCinco{
+
+.categoriaUno,
+.categoriaDos,
+.categoriaTres,
+.categoriaCuatro,
+.categoriaCinco {
   display: flex;
   flex-direction: column;
   width: 13vw;
   align-items: center;
   margin: 5vh 0vw 0vh 1vw;
 }
-.tituloCategoriaUno,.tituloCategoriaDos,.tituloCategoriaTres,.tituloCategoriaCuatro,.tituloCategoriaCinco{
+
+.tituloCategoriaUno,
+.tituloCategoriaDos,
+.tituloCategoriaTres,
+.tituloCategoriaCuatro,
+.tituloCategoriaCinco {
   margin: 0vh 0vw 0vh 0vw;
   color: #FFFFFF;
   font-size: 1.2vw;
 }
-.img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres,.img1CategoriaCuatro,.img2CategoriaCuatro,.img1CategoriaCinco,.img2CategoriaCinco{
+
+.img1CategoriaUno,
+.img2CategoriaUno,
+.img1CategoriaDos,
+.img2CategoriaDos,
+.img1CategoriaTres,
+.img2CategoriaTres,
+.img1CategoriaCuatro,
+.img2CategoriaCuatro,
+.img1CategoriaCinco,
+.img2CategoriaCinco {
   width: 13vw;
   height: 15vh;
   margin: 3vh 0vw 2vh 0vw;
 }
+
 .img1CategoriaUno:hover,
 .img2CategoriaUno:hover,
 .img1CategoriaDos:hover,
@@ -201,29 +108,30 @@
 .img2CategoriaCinco:hover {
   width: 14vw;
 }
+
 /********************Buscador****************/
 
-.contenedorDos{
+.contenedorDos {
   width: 80%;
   margin: 10vh 1vw 0vh 3.5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
 
-.contenedorBuscador{
+.contenedorBuscador {
   width: 78%;
   height: 70px;
   display: flex;
   flex-direction: row;
-  
+
   background-color: #DAC9DF;
   margin: 10vh 0vw 0vh 0vw;
   border-radius: 20px;
 }
 
-.formularioBuscador{
+.formularioBuscador {
   height: 5vh;
   width: 40vh;
   margin: 16px 2vw 0.5vh 0vw;
@@ -231,10 +139,11 @@
   justify-content: space-between;
   border-radius: 8px;
 
-  
+
 
 }
-.inputSearch{
+
+.inputSearch {
   width: 10vw;
   height: auto;
   text-align: center;
@@ -244,32 +153,32 @@
   cursor: pointer;
   background-color: #FFFFFF;
   color: black;
-   border-radius: 8px;
-   border-style: none;
-   box-sizing: border-box;
-   color: black;
-   cursor: pointer;
-   display: inline-block;
-   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size: 14px;
-   font-weight: 500;
-   height: 35px;
-   line-height: 20px;
-   list-style: none;
-   outline: none;
-   position: relative;
-   text-align: center;
-   text-decoration: none;
-   transition: color 100ms;
-   vertical-align: baseline;
-   user-select: none;
-   -webkit-user-select: none;
-   touch-action: manipulation;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 35px;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 
 
-.inputSearchBuscador{
+.inputSearchBuscador {
   width: 150px;
   height: 33px;
   text-align: center;
@@ -277,23 +186,23 @@
   font-size: 1vw;
   margin: 16px 2vw 0.5vh 0vw;
   background-color: #FFFFFF;
-   border-radius: 8px;
-   border-style: none;
-   box-sizing: border-box;
-   color: black;
-   display: inline-block;
-   font-size: 14.5px;
-   font-weight: 500;
-   line-height: 20px;
-   list-style: none;
-   outline: none;
-   position: relative;
-   text-align: center;
-   transition: color 100ms;
-   vertical-align: baseline;
-   user-select: none;
-   -webkit-user-select: none;
-   touch-action: manipulation;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: black;
+  display: inline-block;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .inputSearchBuscador::placeholder {
@@ -301,8 +210,8 @@
 }
 
 .inputSearchBuscador:focus {
-  border:  solid black;
-  
+  border: solid black;
+
 }
 
 
@@ -319,24 +228,24 @@
   display: flex;
   border-radius: 8px;
   font-size: 12px;
-  
+
 }
 
-.calendarioFinalizacion{  
+.calendarioFinalizacion {
   width: 130px;
   height: 33px;
   margin: 8px 0.3vw 0vh 0vw;
   display: flex;
   border-radius: 8px;
-  
- 
+
+
 }
 
-.inputSearch:focus{
+.inputSearch:focus {
   outline: none;
 }
 
-.botonBuscarFecha{
+.botonBuscarFecha {
   height: 33px;
   width: auto;
   border: none;
@@ -355,7 +264,7 @@
   line-height: 20px;
   list-style: none;
   outline: none;
-  
+
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -372,59 +281,59 @@
   background-color: #F082AC;
 }
 
-.botonBuscar{
+.botonBuscar {
   width: 3vw;
   height: 3vh;
   border: none;
   margin: 1vh 1vw 0vh 0vw;
   cursor: pointer;
-   background-color: #AC6ABA;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    height: 35px;
-    line-height: 20px;
-    list-style: none;
-    margin: 0;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
+  background-color: #AC6ABA;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 35px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
-  .botonBuscar:hover,
-  .botonBuscar:focus {
-    background-color: #F082AC;
-  }
- 
+.botonBuscar:hover,
+.botonBuscar:focus {
+  background-color: #F082AC;
+}
+
 
 
 /********************Carrusel****************/
 
-.container{
+.container {
   width: 100%;
   height: auto;
   padding: 20px;
   border-radius: 20px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-       -ms-user-select: none;
-        user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   overflow-y: hidden;
   display: flex;
-   flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
@@ -440,14 +349,15 @@
 
 /********************Productos****************/
 
-.contenedorProductos{
+.contenedorProductos {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 3vh 0vw 4vh 0vw;
   width: 75%;
 }
-.tituloProductos{
+
+.tituloProductos {
   width: 100%;
   padding: 10px;
   background-color: white;
@@ -456,131 +366,149 @@
   font-size: 3vw;
   text-align: center;
 }
-.card{
+
+.card {
   width: 20vw;
   height: auto;
   padding: 5px;
   background-color: #AC6AB4;
-  color:black;
+  color: black;
   box-shadow: (8px 8px 8px 10px) black;
   margin-top: 2vw;
   border-color: #0056b3;
   border-width: 0.3vh;
   transition: transform 0.3s ease;
 }
+
 .card:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
-.precioProducto{
+.precioProducto {
   text-align: left;
 }
 
-.tituloProducto  {
+.tituloProducto {
   margin-top: 5px;
   color: white;
   text-align: center;
   font-weight: 700;
 }
-.DescriptionProduct{
+
+.DescriptionProduct {
   color: white;
   text-align: center;
 }
 
-.imageProduct{
+.imageProduct {
   width: 90%;
   height: 25vh;
   margin-left: 1vw;
   border-radius: 1vh;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
 
 /***********************************Detail****************************************/
-.detalleProducto{
+.detalleProducto {
   margin: 0;
   padding: 20vh 0vw 0vh 0vw;
 }
-.botonRegresar{
+
+.botonRegresar {
   margin: 1vh 0vw 0vh 80vw;
   width: 8vw;
   height: 5vh;
-  background-color:#4867DB;
+  background-color: #4867DB;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
 }
-.botonRegresar:hover{
+
+.botonRegresar:hover {
   background-color: gray;
-  color: black  ;
+  color: black;
 
 }
-.tituloDetail{
+
+.tituloDetail {
   width: 50vw;
   margin: 0vh 0vw 0vh 25vw;
-  color:#0a37db;
-  font-weight: bold ;
+  color: #0a37db;
+  font-weight: bold;
   text-align: center;
 }
-.contenedorImagenesDetail{
+
+.contenedorImagenesDetail {
   margin: 3vh 0vw 0vh 25vw;
   display: flex;
   flex-wrap: wrap;
   width: 50vw;
   height: 50vh;
 }
-.imagen1Producto{
+
+.imagen1Producto {
   width: 50%;
   height: 100%;
 }
-.contenedor4imagenes{
+
+.contenedor4imagenes {
   width: 50%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
 }
-.imagen2Producto,.imagen3Producto,.imagen4Producto,.imagen5Producto{
-    width: 50%;
-    height: 50%;
+
+.imagen2Producto,
+.imagen3Producto,
+.imagen4Producto,
+.imagen5Producto {
+  width: 50%;
+  height: 50%;
 }
-.verMas{
+
+.verMas {
   width: 8vw;
   height: 5vh;
-  background-color:#4867DB;
+  background-color: #4867DB;
   margin: 3vh 0vw 0vh 65vw;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
 }
-.verMas:hover{
+
+.verMas:hover {
   background-color: gray;
-  color: black  ;
+  color: black;
 
 }
 
-.contenedorDetalles{
+.contenedorDetalles {
   width: 50vw;
   display: flex;
   flex-direction: column;
   margin: 2vh 0vw 0vh 10vw;
 }
-.tituloDetallesDeProducto{
-    background-color:#4867DB;
-    text-align: center;
-    font-size: 1.9vw;
-    color: black;
+
+.tituloDetallesDeProducto {
+  background-color: #4867DB;
+  text-align: center;
+  font-size: 1.9vw;
+  color: black;
 }
-.tituloDetallesDeProducto:hover{
+
+.tituloDetallesDeProducto:hover {
   background-color: #FFFFFF;
   color: #AC6ABA;
   font-weight: 900;
 }
-.categoriaProducto{
+
+.categoriaProducto {
   width: 18vw;
   color: #FFFFFF;
   font-size: 1.5vw;
@@ -588,116 +516,103 @@ a{
 
 }
 
-.descripcionProducto,.precioProducto{
+.descripcionProducto,
+.precioProducto {
   color: black;
   font-size: 1.5vw;
   margin: 1vh 0vw 0vh 2vw;
 }
-.contenedorComprar{
+
+.contenedorComprar {
   width: 20vw;
   height: 25vh;
   margin: 2vh 0vw 0vh 12vw;
 }
-.botonComprar{
+
+.botonComprar {
   width: 8vw;
   height: 5vh;
-  background-color:#4867DB;
+  background-color: #4867DB;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
 }
-.botonComprar:hover{
+
+.botonComprar:hover {
   background-color: #FFFFFF;
-  color: black  ;
+  color: black;
   width: 9vw;
 }
 
-.contenedorMostrarCaracteristicas{
+.contenedorMostrarCaracteristicas {
   width: 50vw;
   height: 22vh;
   display: flex;
   margin: 2vh 0vw 0vh 10vw;
   flex-wrap: wrap;
   color: #FFFFFF;
-  background-color:#6269d3;
+  background-color: #6269d3;
   justify-content: space-around;
 
 }
-.tituloMostarCaracteristicas{
+
+.tituloMostarCaracteristicas {
   width: 100%;
   text-align: center;
-  margin: 2vh 0vw 3vh 0vw;
+  margin: 2vh 0vw 3vh 0vw;
 }
 
 /************Politicas******************/
 
 
-.espacePoliticas{
-  color: #FFFFFF;
-}
-
-.politicasTitle{
-  width: 100%;
-  margin-top: 15vh;
-  text-align: center;
-  color:#6269d3;
-  text-decoration: underline;
-}
-
-.politicas{
-  display: flex;
-  margin: 1vh 5vh 2vh 5vh;
-  
-}
-.politica{
-  justify-content: center;
-  text-align: left;
-  margin: 10vh 14vh 8vh 10px;
-  list-style-type: none;
-}
-
 /************Formulario crear cuenta******************/
 
-.pageFormCrearcuenta{
+.pageFormCrearcuenta {
   height: 100%;
   padding: 20vh 0vw 10vh 0vw;
 }
 
-.formRegister{
+.formRegister {
   font-family: "Arial";
-    margin-bottom: 10px;
-    margin-left: 35%;
-    margin-top: 10px;
-    padding: 15px;
-    border-radius: 15px;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    overflow-y: hidden;
-    display:inline-flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #dde5f4;
-    
-    width: 30%;
-    height: 30%;
-    box-shadow: 5px 5px 15px black;
-}
-.titleFormLoguin{
-  font-size: 2vw;
-}
-.bannerRegister{
-  width: 100%;
-    height: auto;
-    padding:0px ;
-    border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: 35%;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-y: hidden;
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #dde5f4;
+
+  width: 30%;
+  height: 30%;
+  box-shadow: 5px 5px 15px black;
 }
 
-.etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
+.titleFormLoguin {
+  font-size: 2vw;
+}
+
+.bannerRegister {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  border-radius: 5px;
+}
+
+.etiquetaUserName,
+.etiquetaPassword,
+.etiquetaName,
+.etiquetaApellido,
+.etiquetaEmail {
   background: #f1f7fe;
   margin: auto;
   margin-top: 1rem;
@@ -709,7 +624,12 @@ a{
   box-shadow: 0;
   gap: 1rem;
 }
-.inputUserName,.inputPassword,.inputNameRegister,.inputApellido,.inputEmail{
+
+.inputUserName,
+.inputPassword,
+.inputNameRegister,
+.inputApellido,
+.inputEmail {
   align-content: end;
   padding: 10px;
   margin-bottom: 16px;
@@ -717,116 +637,127 @@ a{
   border-radius: 4px;
   font-size: 16px;
 }
-.crearCuenta{
+
+.crearCuenta {
   padding: 10px;
-    width: 10rem;
-    margin: auto;
-    margin-top: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 10rem;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.crearCuenta:hover{
+
+.crearCuenta:hover {
   background-color: #0056b3;
 }
 
 /************Formulario Login******************/
 
-.pageFormLogin{
+.pageFormLogin {
   width: 100%;
   height: 100%;
   padding: 20vh 0vw 10vh 0vw;
 }
-.formLogin{
+
+.formLogin {
   font-family: "Arial";
-    margin-bottom: 10px;
-    margin-left: 35%;
-    margin-top: 10px;
-    padding: 15px;
-    border-radius: 15px;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    overflow-y: hidden;
-    display:inline-flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #dde5f4;
-    
-    width: 30%;
-    height: 30%;
-    box-shadow: 5px 5px 15px black;
+  margin-bottom: 10px;
+  margin-left: 35%;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-y: hidden;
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #dde5f4;
+
+  width: 30%;
+  height: 30%;
+  box-shadow: 5px 5px 15px black;
 }
-.banner{
+
+.banner {
   width: 100%;
-    height: auto;
-    padding:0px ;
-    border-radius: 5px;
+  height: auto;
+  padding: 0px;
+  border-radius: 5px;
 }
-.logoLoguin{
+
+.logoLoguin {
   margin-top: -3em;
 }
 
 
-.titleFormLogin{
+.titleFormLogin {
   text-align: center;
   margin-bottom: 20px;
 }
-.etiquetaUserNameLogin,.etiquetaPasswordLogin{
+
+.etiquetaUserNameLogin,
+.etiquetaPasswordLogin {
   background: #f1f7fe;
-    margin: auto;
-    margin-top: 1rem;
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    box-shadow: 0;
-    gap: 1rem;
+  margin: auto;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0;
+  gap: 1rem;
 }
-.inputUserNameLogin,.inputPasswordLogin{
+
+.inputUserNameLogin,
+.inputPasswordLogin {
   align-content: end;
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-.botonLogin{
   padding: 10px;
-    width: 10rem;
-    margin: auto;
-    margin-top: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
-.botonLogin:hover{
+
+.botonLogin {
+  padding: 10px;
+  width: 10rem;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botonLogin:hover {
   background-color: #0056b3;
 
 }
 
-.footerLoguin{
+.footerLoguin {
   display: flex;
-    padding: 7px;
-    margin-top: 0.5rem;
-    font-size: 0.7em;
-    color: #5e5e5e;
-    gap: 1em;
+  padding: 7px;
+  margin-top: 0.5rem;
+  font-size: 0.7em;
+  color: #5e5e5e;
+  gap: 1em;
 }
 
-.footerLoguin span{
+.footerLoguin span {
   cursor: pointer;
 }
 
@@ -834,193 +765,255 @@ a{
 
 
 /***********************************Pagina-administrador****************************************/
-.pageAdmin{
+.pageAdmin {
   width: 100%;
-  background-image: url('/src/Images/24.jpg')
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/src/Images/24.jpg');
 }
-.panel{
+
+.panel {
   width: 80%;
-  margin: 0vh 0vw 0vh 10vw;
+  margin: 16vh 0vw 0vh 10vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.vacio{
-  height: 60vh;
-}
-.agregarProducto,.ListarProductos,.ListarCategorias,.actualizarProducto{
+
+.agregarProducto,
+.ListarProductos,
+.ListarCategorias,
+.actualizarProducto {
   width: 15%;
   height: auto;
-  margin: 20vh 0vw 0vh 0vw;
-  background-color:#6269d3;
+  background-color: #6269d3;
   color: #FFFFFF;
   border: none;
   border-radius: 5px;
   font-size: 1vw;
-  
+
 }
+
 .agregarProducto:hover,
 .ListarProductos:hover,
 .ListarCategorias:hover,
-.actualizarProducto:hover{
+.actualizarProducto:hover {
   color: rgba(0, 0, 0, 0.692);
-  width: 16%;
+  width: 15%;
   height: auto;
   background-color: #FFFFFF;
+  box-shadow: 5px 5px 15px rgb(78, 77, 77);
 }
 
-/***********************************Formulario****************************************/
+/********************************************************************************************/
+/***********************************Formulario Add PRoduct***********************************/
+/********************************************************************************************/
 
-.formularioAddProducto{
-  font-family: "Arial";
-  margin-bottom: 0;
-  margin-left: 13%;
-  margin-top: -25%;
-  border-radius: 15px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  
-  flex-wrap: wrap;
-  background: #dde5f4;
-  width: 75%;
-  height: auto;
-  box-shadow: 5px 5px 15px black;
-}
 
-.tituloFormulario{
+/******Form General***********************/
+
+.divAddProduct {
   width: 100%;
-  padding: 8px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formularioAddProducto {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 550px;
+  height: 500px;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+  border-radius: 15px;
+  user-select: none;
+  background: #dde5f4;
+  box-shadow: 5px 5px 15px black;
+  
+}
+
+.tituloFormulario {
+  margin-bottom: 20px;
   font-size: 2vw;
   text-align: center;
-  margin: 4vh 0vw 1vh 0vw;
-  color:#6269d3;
+  color: #6269d3;
   font-weight: bold;
 }
- .inputCategoria, .inputName,.inputCategoria,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
-  background: #f1f7fe;
-    margin-top: 1rem;
-    margin-left: 10px;
-    margin-bottom: 1rem;
-    width: 30%;
-    display: inline-flex;
-    padding: 0.4rem;   
-    border-radius: 20px;
-    border: none;
-    
-    
-}
 
-.inputDescripcion{
-  background: #f1f7fe;
-    margin-top: 1rem;
-    margin-left: 10px;
-    margin-bottom: -1rem;
-    width: 30%;
-    padding: 0.4rem;
-    border-radius: 20px;
-    box-shadow: 0;
-    border: none;
-}
 
-.contenedorCaracteristicaCheckbox{
-  flex-direction:column ;
-  width: 80%;
-  height: auto;
-  margin-bottom: 2vh;
-  margin: 0vh 0vw 2vh 15vh;  
-  padding-bottom: 1vh;
-  border-radius: 15px;
-  background-color:#f1f7fe;
-
-}
-.tituloCheckbox{
-  width: 100%;  
-  text-align: center;
-  font-size: 2vw;
-  font-weight: 500;
-  margin: 2vh 0vw 0vh 0vw;  
-}
-
-.contenedorCheckbox{
-  display: wrap;  
-  margin-left: 30%;
-  width: 100% ;
-  justify-content:center;
+.contenedorInputDatos {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-    
-}
-.inputCheckbox{
-  width: 5w;
-  height: 3vh;
-  margin: 0.5vh 0vw 0vh 0vw;
-}
-.nombreCaracteristica{
-  margin: 0vh 0vw 0vh 0vw;
-  font-size: 1.25vw;
+  justify-content:space-between;
 }
 
-.guardarProducto{
-  padding: 8px;
-    width: 10rem;
-    margin: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 70vh;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.contenedorInputImgText {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items:start;
+  flex: 1;
 }
-.guardarProducto:hover{
+
+.inputCategoria,
+.inputName,
+.inputCategoria,
+.inputPrecio,
+.inputTipo,
+.inputConsola,
+.inputImage1,
+.inputImage2,
+.inputImage3,
+.inputImage4,
+.inputImage5,
+.inputCaracteristicaAdd {
+  padding-left: 5px;  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px;
+  background: #f1f7fe;
+  border-radius: 10px;
+  font-size: small;
+  width: 160px;
+  box-shadow: .2px .2px 1px black;
+  border: none;
+  
+}
+
+.contenedorInputDatos ::placeholder{
+  font-size: small;
+  width: 100%;
+  padding: 10px 10px;
+} 
+
+.contenedorInputImgText ::placeholder{
+  font-size: small;
+  width: 100%;
+  padding: 10px 10px;
+} 
+
+.formularioAddProducto select{
+  font-size: small;
+  color: rgb(97, 94, 94);
+  padding-left: 5px;
+}
+
+.inputDescripcion {
+  font-size: small;
+  margin: 5px;
+  padding: 10px;
+  background: #f1f7fe;
+  width:280px;
+  height:124px;
+  border-radius: 10px;
+  box-shadow: .2px .2px 1px black;
+  border: none;
+  overflow: hidden;
+  
+}
+
+.contenedorCaracteristicas {
+  margin: 20px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background-color: #f1f7fe;
+  flex: 1;
+}
+
+.contenedorCaracteristicaCheckbox {
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  border-radius: 15px;
+  background-color: #f1f7fe;
+}
+
+.tituloCheckbox {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size:larger;
+  font-weight: 500;
+}
+
+.contenedorCheckbox {
+  display: flex;
+  font-size: small;
+  color: rgb(97, 94, 94);
+}
+
+.inputCheckbox {
+  font-size: small;
+ margin-right: 4px ;
+}
+
+.nombreCaracteristica {
+  font-size: small;
+}
+.guardarProducto {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.guardarProducto:hover {
   background-color: #0056b3;
 }
-/* .mensajeExitoso,.mensajeError{
-  width: 30%;
-  height: 6vh;
-  margin: 2vh 0vw 0vh 37vw;
-  text-align: center;
-  color:green;
-  font-size: 2vw;
-}
-.mensajeError{
-  color: red;
-} */
 
-.textFalla,.textExito{
-  color:#6269d3;
+
+.textFalla,
+.textExito {
+  color: #6269d3;
   width: 25vw;
   height: 55vh;
-  bottom:6vh;
-} 
-.textExito{
+  bottom: 6vh;
+}
+
+.textExito {
   height: 65vh;
 }
-.textFallaServer{
-  color:#6269d3;
+
+.textFallaServer {
+  color: #6269d3;
   width: 25vw;
   height: 57vh;
-  bottom:6vh;
+  bottom: 6vh;
 }
+
 /***********************************Listar-Producto-Administrador****************************************/
-.listaAdmin{
+.listaAdmin {
   margin: -55vh 0vw -37vh 0vw;
 }
-.titleListProducts{
-  color:#4867DB;
+
+.titleListProducts {
+  color: #4867DB;
   font-weight: 600;
   width: 25vw;
   margin: 3vh 0vw 0vh 39vw;
   font-size: 1.8vw;
   text-align: center;
   background-color: #FFFFFF;
-  
+
 }
-.contenedorListaProductos{
+
+.contenedorListaProductos {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1031,16 +1024,20 @@ a{
   border-radius: 5px;
 }
 
-.contenedorProductosAdmin{
+.contenedorProductosAdmin {
   width: 70vw;
-    height: 10vh;
-    display: flex;
-    margin: 4vh 0vw 4vh 0vw;
-    background-color:#6269d3;
-    border-radius: 5px;
+  height: 10vh;
+  display: flex;
+  margin: 4vh 0vw 4vh 0vw;
+  background-color: #6269d3;
+  border-radius: 5px;
 
 }
-.listId,.listName,.listCategoria,.listTipo{
+
+.listId,
+.listName,
+.listCategoria,
+.listTipo {
   width: 15vw;
   height: 4vh;
   margin: 3.5vh 0vw 0vh 1vw;
@@ -1049,12 +1046,15 @@ a{
   font-size: 1.1vw;
   line-height: 1vw;
 }
-.imageProductListAdmin{
+
+.imageProductListAdmin {
   width: 6vw;
   height: 6vh;
   margin: 2vh 0vw 0vh 2vw;
 }
-.botonEditar,.botonEliminar{
+
+.botonEditar,
+.botonEliminar {
   width: 4vw;
   height: 6vh;
   margin: 2vh 2vw 0vh 2vw;
@@ -1066,192 +1066,226 @@ a{
 
 /************Caracteristicas del producto******************/
 
-.pageEditar{
+.pageEditar {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
 
-  
+
 }
-.botonAtrasEditar{
+
+.botonAtrasEditar {
   width: 8vw;
   height: 5vh;
-  background-color:#4867DB;
+  background-color: #4867DB;
   border-radius: 5px;
   border: none;
   color: black;
   font-size: 1vw;
   margin: 20vh 0vw 0vh 80vw;
 }
-.botonAtrasEditar:hover{
+
+.botonAtrasEditar:hover {
   background-color: gray;
-  color: black  ;
+  color: black;
 
 }
-.tituloEditar{
+
+.tituloEditar {
   width: 25vw;
-  font-weight:100;
-  color:#0e41f7;
+  font-weight: 100;
+  color: #0e41f7;
   margin: 0vh 0vw 4vh 2vw;
 }
-.contenedorActualizar{
+
+.contenedorActualizar {
   display: flex;
   width: 50%;
 }
-.contenedorEditar{
+
+.contenedorEditar {
   width: 40%;
   margin: 0vh 0vw 3vh 2vw;
 }
 
-.idEditar,.nameEditar,.typeEditar,.categoriaEditar,.descripcionEditar,.precioEditar,.consolaEditar,.idImagen,.urlImagen,.idProductoImagen,.idCarateristica,.nameCaracteristica,.descripcionCaracteristica{
-  color:#0e41f7;
+.idEditar,
+.nameEditar,
+.typeEditar,
+.categoriaEditar,
+.descripcionEditar,
+.precioEditar,
+.consolaEditar,
+.idImagen,
+.urlImagen,
+.idProductoImagen,
+.idCarateristica,
+.nameCaracteristica,
+.descripcionCaracteristica {
+  color: #0e41f7;
   font-size: 1.2vw;
 }
-.contenedorEditar span{
-  color:rgba(0, 0, 0, 0.705);
+
+.contenedorEditar span {
+  color: rgba(0, 0, 0, 0.705);
 }
 
 /************Formulario actualizar producto******************/
 
 
-.formularioActualizarProducto{
+.formularioActualizarProducto {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 60vw;
   height: 90vh;
   margin-bottom: 2vh;
-  padding:0vh 1.1vw 0vw 0vh;
-  
-  background-color:#FFFFFF;
+  padding: 0vh 1.1vw 0vw 0vh;
+
+  background-color: #FFFFFF;
   border-radius: 5px;
 }
 
-.inputActualizar,.inputActualizarDescripcion,.inputCaracteristica{
+.inputActualizar,
+.inputActualizarDescripcion,
+.inputCaracteristica {
   width: 12vw;
-  height: 30px;  
-  background-color:rgba(128, 128, 128, 0.568);
+  height: 30px;
+  background-color: rgba(128, 128, 128, 0.568);
   text-align: center;
   border-radius: 5px;
   border: none;
   font-size: 1.5vh;
 }
-.contenedorDeInput, .contenedorDeInputDescription{  
+
+.contenedorDeInput,
+.contenedorDeInputDescription {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   margin: -20px 0px 0px 2vw;
   flex-wrap: wrap;
   width: 14vw;
   height: 8vh;
 }
 
-.inputCaracteristica{
+.inputCaracteristica {
   height: 6vh;
 }
-.contenedorDeInputDescription{
+
+.contenedorDeInputDescription {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 50%;
   height: 10vh;
   margin: 0vh 0vw 0vh 3vw;
-  
+
 }
 
-.inputActualizarDescripcion{  
+.inputActualizarDescripcion {
   width: 100%;
   height: 70%;
   margin: 0vh 0vw 0vh 0vw;
   font-size: 1.25vh;
 }
-.botonActualizar{
+
+.botonActualizar {
   width: 10vw;
   height: 8%;
   margin: 2.75vh 0vw 0vh 2vw;
-  background-color:#6269d3;
-  border-radius: 5px;
-  border: none;
-  color:#FFFFFF;
-  font-size: 1vw;
-}
-.botonActualizar:hover{
-  width: 16vw;
-  height: 9%;
-}
-
-.labelActualizarProducto{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center; 
-  width: auto;     
-}
-
-.labelActualizarProducto input, .labelActualizarProducto select{
-  height: auto;
-}
-
-.labelActualizarProducto textArea{  
-  height: 100%;
-  width: 40vw;  
-}
-
-
-
-/**********************************Panel Categorias y caracteristicas***********************************************/
-.panelCategorias, .panelCaracteristicas{
-  padding: 20vh;    
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0vh 9vw 0vh 0vw;
-  
-
-}
-.tituloCategoriasAdmin,.tituloCaracteristicasAdmin{
-  margin: 2vh 0vw 0vh 0vw;
-  color: #4867DB;
-}
-.botonRegresarPageAdmin{
-  margin: 1vh 0vw 0vh 77vw;
-  width: 8vw;
-  height: 5vh;
-  background-color:#4867DB;
+  background-color: #6269d3;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
 }
-.botonRegresarPageAdmin:hover{
-  background-color: gray;
-  color: black  ;
-  
+
+.botonActualizar:hover {
+  width: 16vw;
+  height: 9%;
 }
-.btn-primary{
-  background-color:#4867DB;
-  border: none;
+
+.labelActualizarProducto {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: auto;
 }
-.btn-primary:hover{
-  background-color: gray;
-  color: rgba(0, 0, 0, 0.733);
+
+.labelActualizarProducto input,
+.labelActualizarProducto select {
+  height: auto;
 }
-/********************************Panel de Usuario********************************/
-.panelUsuarios{
-  height: 84vh;
-  padding-top: 20vh;  
+
+.labelActualizarProducto textArea {
+  height: 100%;
+  width: 40vw;
+}
+
+
+
+/**********************************Panel Categorias y caracteristicas***********************************************/
+.panelCategorias,
+.panelCaracteristicas {
+  padding: 20vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0vh 9vw 0vh 0vw;
-  
+
+
+}
+
+.tituloCategoriasAdmin,
+.tituloCaracteristicasAdmin {
+  margin: 2vh 0vw 0vh 0vw;
+  color: #4867DB;
+}
+
+.botonRegresarPageAdmin {
+  margin: 1vh 0vw 0vh 77vw;
+  width: 8vw;
+  height: 5vh;
+  background-color: #4867DB;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1vw;
+}
+
+.botonRegresarPageAdmin:hover {
+  background-color: gray;
+  color: black;
+
+}
+
+.btn-primary {
+  background-color: #4867DB;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: gray;
+  color: rgba(0, 0, 0, 0.733);
+}
+
+/********************************Panel de Usuario********************************/
+.panelUsuarios {
+  height: 84vh;
+  padding-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0vh 9vw 0vh 0vw;
+
 }
 
 /**** Card del Navbar****/
-.panelDetallesDeUsuario{  
+.panelDetallesDeUsuario {
   width: 100%;
   height: auto;
   padding-top: 18vh;
@@ -1261,16 +1295,17 @@ a{
   align-items: center;
 }
 
-.detallesDeUsuario{
-  background-color:#D9D9D9;
+.detallesDeUsuario {
+  background-color: #D9D9D9;
   padding: 20px;
   width: 25%;
   margin-top: 10px;
   border-radius: 5px;
 }
-.avatarUser{
+
+.avatarUser {
   margin-bottom: 10px;
- 
+
 }
 
 
@@ -1279,272 +1314,346 @@ a{
 /***********************************Table****************************************/
 
 /***********************************Header****************************************/
-@media(max-width:900px){
-  .contenedorLogo{
+@media(max-width:900px) {
+  .contenedorLogo {
     width: 32vw;
     height: 15vh;
     flex-direction: column;
     margin: 0vh 0vw 0vh 4vw;
-    justify-content:space-between;
+    justify-content: space-between;
   }
-  .imagenLogo{
+
+  .imagenLogo {
     width: 22vw;
     height: 10vh;
     margin: 0vh 0vw -0.5vh 0vw;
   }
-  .lema{
+
+  .lema {
     width: 40vw;
     margin: 0vh 0vw 1vh 0vw;
-    text-align:left;
+    text-align: left;
     font-size: 3vw;
   }
-  .botones{
+
+  .botones {
     width: 65vw;
     height: 5vh;
     margin: 4vh 5vw 0vh 0vw;
   }
-  .crear-cuenta,.iniciar-sesion{
+
+  .crear-cuenta,
+  .iniciar-sesion {
     width: 22vw;
     height: 4vh;
     margin: 0.5vh 0vw 0vh 0vw;
     font-size: 2.9vw;
   }
-  .themeLight,.themeDark{
+
+  .themeLight,
+  .themeDark {
     height: 80%;
     margin: 0.5vh 0vw 0vh 1vw;
   }
-  
+
   /************************************Footer***********************************/
-  
-  .derechos{
-    width: 30vw; 
+
+  .derechos {
+    width: 30vw;
     margin: 5vh 0vw 0vh 10vw;
   }
-  .circuloFooter{
+
+  .circuloFooter {
     width: 28px;
     margin: 2.3vh 0vw 0vh 0vw;
   }
-  .mensajeFooter{
-    width: 15vw; 
+
+  .mensajeFooter {
+    width: 15vw;
     height: 3vh;
     font-size: 2.5vw;
     margin: 3vh 0vw 0vh 0vw;
   }
-  .navegacionFooter{
+
+  .navegacionFooter {
     width: 30vw;
     height: 5vh;
-    margin: 6.5vh 10vw 0vh 0vw; 
+    margin: 6.5vh 10vw 0vh 0vw;
   }
-  .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
+
+  .bx.bxl-facebook-circle,
+  .bxl-whatsapp,
+  .bxl-instagram,
+  .bxl-twitter {
     font-size: 5vw;
     margin: 1vh 2vw 0vh 0vw;
   }
 
   /***********************************Home****************************************/
-  
+
   /********************Categorias****************/
 
-  .contenedorCategorias{
+  .contenedorCategorias {
     width: 30vw;
   }
-  .tituloCategorias{
+
+  .tituloCategorias {
     font-size: 3vw;
   }
-  .categoriaUno, .categoriaDos,.categoriaTres,.categoriaCuatro,.categoriaCinco{   
-     width: 28vw;
+
+  .categoriaUno,
+  .categoriaDos,
+  .categoriaTres,
+  .categoriaCuatro,
+  .categoriaCinco {
+    width: 28vw;
     margin: 2vh 0vw 0vh 1vw;
   }
 
-  .tituloCategoriaUno,.tituloCategoriaDos,.tituloCategoriaTres,.tituloCategoriaCuatro,.tituloCategoriaCinco{
+  .tituloCategoriaUno,
+  .tituloCategoriaDos,
+  .tituloCategoriaTres,
+  .tituloCategoriaCuatro,
+  .tituloCategoriaCinco {
     font-size: 2.5vw;
   }
-  .img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres,.img1CategoriaCuatro,.img2CategoriaCuatro,.img1CategoriaCinco,.img2CategoriaCinco{
+
+  .img1CategoriaUno,
+  .img2CategoriaUno,
+  .img1CategoriaDos,
+  .img2CategoriaDos,
+  .img1CategoriaTres,
+  .img2CategoriaTres,
+  .img1CategoriaCuatro,
+  .img2CategoriaCuatro,
+  .img1CategoriaCinco,
+  .img2CategoriaCinco {
     width: 26vw;
     height: 15vh;
     margin: 1vh 0vw 0vh 0vw;
   }
+
   .img1CategoriaUno:hover,
-.img2CategoriaUno:hover,
-.img1CategoriaDos:hover,
-.img2CategoriaDos:hover,
-.img1CategoriaTres:hover,
-.img2CategoriaTres:hover {
-  width: 18vw;
-  height: 11vh;
-}
+  .img2CategoriaUno:hover,
+  .img1CategoriaDos:hover,
+  .img2CategoriaDos:hover,
+  .img1CategoriaTres:hover,
+  .img2CategoriaTres:hover {
+    width: 18vw;
+    height: 11vh;
+  }
 
-/********************Buscador****************/
-.contenedorDos{
-  width: 65%;
-  margin: 0vh 0vw 0vh 2vw;
-}
+  /********************Buscador****************/
+  .contenedorDos {
+    width: 65%;
+    margin: 0vh 0vw 0vh 2vw;
+  }
 
-.formularioBuscador{
-  width: 40vw;
-  margin: 20vh 0vw 0vh 0vw;
+  .formularioBuscador {
+    width: 40vw;
+    margin: 20vh 0vw 0vh 0vw;
 
-}
-.inputSearch{
-  width: 30vw;
-  font-size: 2.5vw;
-}
-.botonBuscar{
-  margin: 1vh 3vw 0vh 0vw;
-}
-.bx-search-alt{
-  font-size: 4vw;
-}
+  }
 
-/********************Carrusel****************/
+  .inputSearch {
+    width: 30vw;
+    font-size: 2.5vw;
+  }
 
-.contenedorCarrusel{
-  width: 60vw;
-  height: 60vw;
-  margin: 4vh 0vw 0vh 0vw;
-}
-.tituloCarrusel{
-  font-size: 3vw;
-  margin: 0vh 0vw 0vh 14vw;
-}
-#carouselExampleIndicators{
-  width: 40vw;
-  height: 15vh;
-  margin: 0vh 0vw 5vh 0vw;
-}
-.carousel-indicators{
-  margin: 0vh 0vw -4vh 15vw;
-}
-.carousel-inner{
-  height: 15vh;
-  margin: 1vh 0vw 0vh 0vw;
+  .botonBuscar {
+    margin: 1vh 3vw 0vh 0vw;
+  }
 
-}
-.carousel-control-prev,.carousel-control-next{
-  margin: 8vh 0vw 0vh 0vw;
-}
+  .bx-search-alt {
+    font-size: 4vw;
+  }
 
-/********************Productos****************/
+  /********************Carrusel****************/
 
-.contenedorProductos{
-  margin: 0vh 0vw 4vh 0vw;
-  width: 65vw;
-}
-.tituloProductos{
-  font-size: 4vw;
-  margin: 6vh 0vw 0vh 0vw;
-}
-.card{
-  width: 28vw;
-  height: 14%;
-}
-.imageProduct{
-  width: 28vw;
-  height: 15vh;
-}
-.DescriptionProduct{
-  height: 5vh;
-  text-align: center;
-  font-size: 1.2vw;
-  margin: 1vh 0vw 0vh 0vw;
-}
-a{
-  text-decoration: none;
-}
+  .contenedorCarrusel {
+    width: 60vw;
+    height: 60vw;
+    margin: 4vh 0vw 0vh 0vw;
+  }
 
-/***********************************Detail****************************************/
+  .tituloCarrusel {
+    font-size: 3vw;
+    margin: 0vh 0vw 0vh 14vw;
+  }
 
-.contenedorImagenesDetail{
-  margin: 3vh 0vw 0vh 15vw;
-  width: 80vw;
-}
-.botonRegresar{
-  width: 9vw;
-  font-size: 1.5vw;
-}
-.verMas{
-  width: 9vw;
-  margin: 3vh 0vw 0vh 85vw;
-  font-size: 1.5vw;
-}
-.tituloDetallesDeProducto{
-  background-color:#4867DB;
-  text-align: center;
-  font-size: 2.5vw;
-  color: #FFFFFF;
-}
-.categoriaProducto,.descripcionProducto,.precioProducto{
-font-size: 2vw;
-}
-.contenedorComprar{
-width: 20vw;
-height: 25vh;
-margin: 2vh 0vw 0vh 12vw;
-}
-.botonComprar{
-width: 9vw;
-font-size: 1.5vw;
-}
+  #carouselExampleIndicators {
+    width: 40vw;
+    height: 15vh;
+    margin: 0vh 0vw 5vh 0vw;
+  }
 
-.contenedorMostrarCaracteristicas{
-  height: 30vh;
-}
+  .carousel-indicators {
+    margin: 0vh 0vw -4vh 15vw;
+  }
 
-/************Formulario crear cuenta******************/
+  .carousel-inner {
+    height: 15vh;
+    margin: 1vh 0vw 0vh 0vw;
 
-.formRegister{
-  width: 40vw;
-  margin: 7vh 0vw 5vh 30vw;
-}
-.titleFormRegister{
-  margin: 1vh 0vw 0vh 12vw;
-  font-size: 2.5vw;
-}
-.etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
-  margin: 1vh 0vw 1vh 8vw;
-}
-.inputUserName,.inputPassword,.inputNameRegister,.inputApellido,.inputEmail{
-  width: 25vw;
-  margin: 0vh 0vw 0vh 8vw;
-}
-.crearCuenta{
-  width: 20vw;
-  height: 5vh;
-  margin: 2vh 0vw 2vh 10vw;
-}
-.crearCuenta:hover{
-  width: 21vw;
-}
+  }
 
-/************Formulario Login******************/
+  .carousel-control-prev,
+  .carousel-control-next {
+    margin: 8vh 0vw 0vh 0vw;
+  }
 
-.formLogin{
-  width: 35vw;
-  margin: 20vh 0vw 16vh 34vw;
-}
-.titleFormLogin{
-  width: 40%;
-  margin: 2vh 0vw 0vh 11vw;
-  font-size: 3vw;
-}
+  /********************Productos****************/
 
-.inputUserNameLogin,.inputPasswordLogin{
-  width: 20vw;
-  margin: 0vh 0vw 0vh 8vw;
-}
-.botonLogin{
-  width: 15vw;
-  margin: 3vh 0vw 2vh 10vw;
-}
-.botonLogin:hover{
-  width: 16vw;
+  .contenedorProductos {
+    margin: 0vh 0vw 4vh 0vw;
+    width: 65vw;
+  }
 
-}
+  .tituloProductos {
+    font-size: 4vw;
+    margin: 6vh 0vw 0vh 0vw;
+  }
+
+  .card {
+    width: 28vw;
+    height: 14%;
+  }
+
+  .imageProduct {
+    width: 28vw;
+    height: 15vh;
+  }
+
+  .DescriptionProduct {
+    height: 5vh;
+    text-align: center;
+    font-size: 1.2vw;
+    margin: 1vh 0vw 0vh 0vw;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /***********************************Detail****************************************/
+
+  .contenedorImagenesDetail {
+    margin: 3vh 0vw 0vh 15vw;
+    width: 80vw;
+  }
+
+  .botonRegresar {
+    width: 9vw;
+    font-size: 1.5vw;
+  }
+
+  .verMas {
+    width: 9vw;
+    margin: 3vh 0vw 0vh 85vw;
+    font-size: 1.5vw;
+  }
+
+  .tituloDetallesDeProducto {
+    background-color: #4867DB;
+    text-align: center;
+    font-size: 2.5vw;
+    color: #FFFFFF;
+  }
+
+  .categoriaProducto,
+  .descripcionProducto,
+  .precioProducto {
+    font-size: 2vw;
+  }
+
+  .contenedorComprar {
+    width: 20vw;
+    height: 25vh;
+    margin: 2vh 0vw 0vh 12vw;
+  }
+
+  .botonComprar {
+    width: 9vw;
+    font-size: 1.5vw;
+  }
+
+  .contenedorMostrarCaracteristicas {
+    height: 30vh;
+  }
+
+  /************Formulario crear cuenta******************/
+
+  .formRegister {
+    width: 40vw;
+    margin: 7vh 0vw 5vh 30vw;
+  }
+
+  .titleFormRegister {
+    margin: 1vh 0vw 0vh 12vw;
+    font-size: 2.5vw;
+  }
+
+  .etiquetaUserName,
+  .etiquetaPassword,
+  .etiquetaName,
+  .etiquetaApellido,
+  .etiquetaEmail {
+    margin: 1vh 0vw 1vh 8vw;
+  }
+
+  .inputUserName,
+  .inputPassword,
+  .inputNameRegister,
+  .inputApellido,
+  .inputEmail {
+    width: 25vw;
+    margin: 0vh 0vw 0vh 8vw;
+  }
+
+  .crearCuenta {
+    width: 20vw;
+    height: 5vh;
+    margin: 2vh 0vw 2vh 10vw;
+  }
+
+  .crearCuenta:hover {
+    width: 21vw;
+  }
+
+  /************Formulario Login******************/
+
+  .formLogin {
+    width: 35vw;
+    margin: 20vh 0vw 16vh 34vw;
+  }
+
+  .titleFormLogin {
+    width: 40%;
+    margin: 2vh 0vw 0vh 11vw;
+    font-size: 3vw;
+  }
+
+  .inputUserNameLogin,
+  .inputPasswordLogin {
+    width: 20vw;
+    margin: 0vh 0vw 0vh 8vw;
+  }
+
+  .botonLogin {
+    width: 15vw;
+    margin: 3vh 0vw 2vh 10vw;
+  }
+
+  .botonLogin:hover {
+    width: 16vw;
+
+  }
 
 
 
-/***********************************Pagina-administrador****************************************/
+  /***********************************Pagina-administrador****************************************/
 
-  .pageAdmin{
+  .pageAdmin {
     display: none;
   }
 
@@ -1555,245 +1664,295 @@ font-size: 1.5vw;
 
 /***********************************Header****************************************/
 
-@media(max-width:480px){
+@media(max-width:480px) {
 
-  .imagenLogo{
+  .imagenLogo {
     width: 30vw;
     height: 8vh;
     margin: 0vh 0vw 0vh 1vw;
   }
-  .lema{
+
+  .lema {
     width: 52vw;
     margin: 0vh 0vw 1vh -1vw;
     text-align: center;
     font-size: 4vw;
   }
-  .crear-cuenta,.iniciar-sesion{
+
+  .crear-cuenta,
+  .iniciar-sesion {
     font-size: 3vw;
     width: 25vw;
     margin: 0.5vh 0vw 0vh 2vw;
   }
 
   /************************************Footer***********************************/
-  .circuloFooter{
+  .circuloFooter {
     width: 17px;
     height: 15px;
     font-size: 1.5vw;
     margin: 3vh 0vw 0vh 0vw;
     padding: 0.2vh 0vw 0vh 0vw;
   }
-  
-  .mensajeFooter{
-    width: 20vw; 
+
+  .mensajeFooter {
+    width: 20vw;
     font-size: 3vw;
     margin: 2.9vh 0vw 0vh 2vw;
   }
-  .navegacionFooter{
+
+  .navegacionFooter {
     height: 5vh;
   }
-  .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
+
+  .bx.bxl-facebook-circle,
+  .bxl-whatsapp,
+  .bxl-instagram,
+  .bxl-twitter {
     margin: 1vh 2vw 0vh 0vw;
   }
 
-/************************************Home***********************************/ 
+  /************************************Home***********************************/
 
- /********************Categorias****************/
+  /********************Categorias****************/
 
- .contenedorCategorias{
-  width: 35vw;
-}
+  .contenedorCategorias {
+    width: 35vw;
+  }
 
-.categoriaUno, .categoriaDos,.categoriaTres,.categoriaCuatro,.categoriaCinco{   
-  width: 32vw;
-  margin: 4vh 0vw 0vh 1.5vw;
-}
+  .categoriaUno,
+  .categoriaDos,
+  .categoriaTres,
+  .categoriaCuatro,
+  .categoriaCinco {
+    width: 32vw;
+    margin: 4vh 0vw 0vh 1.5vw;
+  }
 
-.img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres,.img1CategoriaCuatro,.img2CategoriaCuatro,.img1CategoriaCinco,.img2CategoriaCinco{
-  width: 30vw;
-  height: 18vh;
-  margin: 2vh 0vw 0vh 0vw;
-}
-
-
-
-/********************Buscador****************/
-.contenedorDos{
-  width: 60%;
-  margin: 0vh 0vw 0vh 2vw;
-}
-.formularioBuscador{
-  width: 55vw;
-  height: 4vh;
-  margin: 20vh 0vw 0vh 0vw;
-}
-.inputSearch{
-  width: 40vw;
-  height: 3vh;
-  font-size: 3.5vw;
-  margin: 0.5vh 0vw 0vh 5vw;
-}
-.botonBuscar{
-  width: 5vw;
-  height: 3vh;
-  margin: 0.7vh 3vw 0vh 0vw;
-}
-.bx-search-alt{
-  font-size: 5vw;
-}
-
-/********************Carrusel****************/
-
-.contenedorCarrusel{
-  width: 50vw;
-  height: 50vw;
-  margin: 4vh 0vw 0vh 0vw;
-}
-.tituloCarrusel{
-  font-size: 4vw;
-  margin: 0vh 0vw 0vh 12vw;
-  color: #FFFFFF;
-}
+  .img1CategoriaUno,
+  .img2CategoriaUno,
+  .img1CategoriaDos,
+  .img2CategoriaDos,
+  .img1CategoriaTres,
+  .img2CategoriaTres,
+  .img1CategoriaCuatro,
+  .img2CategoriaCuatro,
+  .img1CategoriaCinco,
+  .img2CategoriaCinco {
+    width: 30vw;
+    height: 18vh;
+    margin: 2vh 0vw 0vh 0vw;
+  }
 
 
 
-/********************Productos****************/
+  /********************Buscador****************/
+  .contenedorDos {
+    width: 60%;
+    margin: 0vh 0vw 0vh 2vw;
+  }
 
-.contenedorProductos{
-  width: 60vw;
-  margin: 0vh 0vw 4vh 0vw;
-}
-.tituloProductos{
-  font-size: 4vw;
-  margin: 4vh 0vw 0vh 0vw;
-}
-.card{
-  width: 50vw;
-  height: 15vh;
-  margin: 4vh 0vw 0vh 0vw;
-}
-.imageProduct{
-  width: 50vw;
-  height: 10vh;
-}
-.DescriptionProduct{
-  height: 5vh;
-  text-align: center;
-  font-size: 2vw;
-  margin: 1vh 0vw 0vh 0vw;
-}
-a{
-  text-decoration: none;
-}
+  .formularioBuscador {
+    width: 55vw;
+    height: 4vh;
+    margin: 20vh 0vw 0vh 0vw;
+  }
 
-/***********************************Detail****************************************/
+  .inputSearch {
+    width: 40vw;
+    height: 3vh;
+    font-size: 3.5vw;
+    margin: 0.5vh 0vw 0vh 5vw;
+  }
 
-.botonRegresar{
-  width: 15vw;
-  font-size: 2.5vw;
-  margin: 2vh 0vw 0vh 80vw;
-}
-.contenedorImagenesDetail{
-  margin: 3vh 0vw 0vh 5vw;
-  width: 90vw;
-}
+  .botonBuscar {
+    width: 5vw;
+    height: 3vh;
+    margin: 0.7vh 3vw 0vh 0vw;
+  }
 
-.imagen1Producto{
-  width: 100%;
-}
-.contenedor4imagenes{
-  width: 100%;
-}
-.imagen2Producto,.imagen3Producto,.imagen4Producto,.imagen5Producto{
+  .bx-search-alt {
+    font-size: 5vw;
+  }
+
+  /********************Carrusel****************/
+
+  .contenedorCarrusel {
+    width: 50vw;
+    height: 50vw;
+    margin: 4vh 0vw 0vh 0vw;
+  }
+
+  .tituloCarrusel {
+    font-size: 4vw;
+    margin: 0vh 0vw 0vh 12vw;
+    color: #FFFFFF;
+  }
+
+
+
+  /********************Productos****************/
+
+  .contenedorProductos {
+    width: 60vw;
+    margin: 0vh 0vw 4vh 0vw;
+  }
+
+  .tituloProductos {
+    font-size: 4vw;
+    margin: 4vh 0vw 0vh 0vw;
+  }
+
+  .card {
+    width: 50vw;
+    height: 15vh;
+    margin: 4vh 0vw 0vh 0vw;
+  }
+
+  .imageProduct {
+    width: 50vw;
+    height: 10vh;
+  }
+
+  .DescriptionProduct {
+    height: 5vh;
+    text-align: center;
+    font-size: 2vw;
+    margin: 1vh 0vw 0vh 0vw;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /***********************************Detail****************************************/
+
+  .botonRegresar {
+    width: 15vw;
+    font-size: 2.5vw;
+    margin: 2vh 0vw 0vh 80vw;
+  }
+
+  .contenedorImagenesDetail {
+    margin: 3vh 0vw 0vh 5vw;
+    width: 90vw;
+  }
+
+  .imagen1Producto {
+    width: 100%;
+  }
+
+  .contenedor4imagenes {
+    width: 100%;
+  }
+
+  .imagen2Producto,
+  .imagen3Producto,
+  .imagen4Producto,
+  .imagen5Producto {
     width: 50%;
+  }
+
+  .verMas {
+    width: 15vw;
+    margin: 54vh 0vw 0vh 80vw;
+    font-size: 2.5vw;
+  }
+
+  .tituloDetallesDeProducto {
+    font-size: 3vw;
+  }
+
+  .categoriaProducto,
+  .descripcionProducto,
+  .precioProducto {
+    font-size: 3vw;
+  }
+
+  .contenedorComprar {
+    width: 50vw;
+    height: 25vh;
+    margin: 2vh 0vw 0vh 12vw;
+  }
+
+  .botonComprar {
+    width: 15vw;
+    font-size: 2.5vw;
+  }
+
+  /************Formulario crear cuenta******************/
+
+  .formRegister {
+    width: 70vw;
+    margin: 7vh 0vw 5vh 15vw;
+  }
+
+  .titleFormRegister {
+    margin: 2vh 0vw 0vh 22vw;
+    font-size: 4vw;
+  }
+
+  .etiquetaUserName,
+  .etiquetaPassword,
+  .etiquetaName,
+  .etiquetaApellido,
+  .etiquetaEmail {
+    margin: 1vh 0vw 1vh 11vw;
+  }
+
+  .inputUserName,
+  .inputPassword,
+  .inputNameRegister,
+  .inputApellido,
+  .inputEmail {
+    width: 50vw;
+    margin: 0vh 0vw 0vh 11vw;
+  }
+
+  .crearCuenta {
+    width: 30vw;
+    margin: 2vh 0vw 2vh 20vw;
+  }
+
+  .crearCuenta:hover {
+    width: 31vw;
+  }
+
+  /************Formulario Login******************/
+
+  .formLogin {
+    width: 80vw;
+    margin: 10vh 0vw 10vh 10vw;
+  }
+
+  .titleFormLogin {
+    margin: 2vh 0vw 0vh 0vw;
+    font-size: 5vw;
+  }
+
+  .inputUserNameLogin,
+  .inputPasswordLogin {
+    width: 40vw;
+    margin: 0vh 0vw 0vh 0vw;
+  }
+
+  .botonLogin {
+    width: 20vw;
+    margin: 3vh 0vw 2vh 0vw;
+    font-size: 4vw;
+  }
+
+  .botonLogin:hover {
+    width: 21vw;
+
+  }
+
+
+
+  /***********************************Pagina-administrador****************************************/
+
+  .pageAdmin {
+    display: none;
+  }
+
 }
-.verMas{
-  width: 15vw;
-  margin: 54vh 0vw 0vh 80vw;
-  font-size: 2.5vw;
-}
-.tituloDetallesDeProducto{
-  font-size: 3vw;
-}
-.categoriaProducto,.descripcionProducto,.precioProducto{
-font-size: 3vw;
-}
-.contenedorComprar{
-width: 50vw;
-height: 25vh;
-margin: 2vh 0vw 0vh 12vw;
-}
-.botonComprar{
-width: 15vw;
-font-size: 2.5vw;
-}
-
-/************Formulario crear cuenta******************/
-
-.formRegister{
-  width: 70vw;
-  margin: 7vh 0vw 5vh 15vw;
-}
-.titleFormRegister{
-  margin: 2vh 0vw 0vh 22vw;
-  font-size: 4vw;
-}
-.etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
-  margin: 1vh 0vw 1vh 11vw;
-}
-.inputUserName,.inputPassword,.inputNameRegister,.inputApellido,.inputEmail{
-  width: 50vw;
-  margin: 0vh 0vw 0vh 11vw;
-}
-.crearCuenta{
-  width: 30vw;
-  margin: 2vh 0vw 2vh 20vw;
-}
-.crearCuenta:hover{
-  width: 31vw;
-}
-
-/************Formulario Login******************/
-
-.formLogin{
-  width: 80vw;
-  margin: 10vh 0vw 10vh 10vw;
-}
-.titleFormLogin{
-  margin: 2vh 0vw 0vh 0vw;
-  font-size: 5vw;
-}
-
-.inputUserNameLogin,.inputPasswordLogin{
-  width: 40vw;
-  margin: 0vh 0vw 0vh 0vw;
-}
-.botonLogin{
-  width: 20vw;
-  margin: 3vh 0vw 2vh 0vw;
-  font-size: 4vw;
-}
-.botonLogin:hover{
-  width: 21vw;
-
-}
-
-
-
-/***********************************Pagina-administrador****************************************/
-
-.pageAdmin{
-  display: none;
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-

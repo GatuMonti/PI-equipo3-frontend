@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import FoormAddProduct from '../components/FoormAddProduct'
+import FoormAddProduct from '../components/AgregarProducto/FoormAddProduct'
 import ListarProductAdmin from '../components/ListarProductAdmin'
 import { Link } from 'react-router-dom' //Importamos Link para poder darle navegacion al boton de Categorias
 
@@ -33,7 +33,6 @@ const PageAdmin = () => {
              <Link to="panelCaracteristicas" className='actualizarProducto' style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}> Panel de Caracteristicas</Link>
              <Link to="panelUsuarios" className='actualizarProducto' style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}> Panel de Usuarios</Link>
             </div>
-            <div className='vacio'></div>
             {estadosAdmin.goAddProduct &&
                 <FoormAddProduct/>
             }
