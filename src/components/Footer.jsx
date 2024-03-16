@@ -1,3 +1,6 @@
+import Ract from 'react'
+import {Link} from 'react-router-dom'
+
 const Footer = () => {
   return (
     <div>
@@ -5,10 +8,10 @@ const Footer = () => {
         <div className="footer">
           <div class="row">
             <ul>
-              <li><a href="#"><i className='bx bxl-facebook-circle'></i></a></li>
-              <li><a href="#"><i className='bx bxl-whatsapp'></i></a></li>
-              <li><a href="#"><i className='bx bxl-instagram'></i></a></li>
-              <li><a href="#"><i className='bx bxl-twitter'></i></a></li>
+              <li><a href="https://www.facebook.com/" target="_blank"><i className='bx bxl-facebook-circle'></i></a></li>
+              <li><a href="https://web.whatsapp.com/" target="_blank"><i className='bx bxl-whatsapp'></i></a></li>
+              <li><a href="https://www.instagram.com/" target="_blank"><i className='bx bxl-instagram'></i></a></li>
+              <li><a href="https://twitter.com/home" target="_blank"><i className='bx bxl-twitter'></i></a></li>
             </ul>
             
             
@@ -21,7 +24,7 @@ const Footer = () => {
               <li><a href="#">Contactanos</a></li>
               <li><a href="#">Nuestros servicios</a></li>
               <li><a href="#">Politicas de privacidad</a></li>
-              <li><a href="#">Terminos y condiciones</a></li>
+              <li><Link to={'/terminosycondiciones'}>Terminos y condiciones</Link></li>
               <li><a href="#">Career</a></li>
             </ul>
           </div>

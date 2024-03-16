@@ -14,6 +14,7 @@ import PanelCaracteristicas from './Routes/PanelCaracteristicas'
 import PanelCategorias from './Routes/PanelCategorias'
 import PanelDetallesUsuario from './Routes/PanelDetallesUsuario'
 import PanelUsuarios from './Routes/PanelUsuarios'
+import Politicas from './components/Politicas'
 
 function App() {
   
@@ -35,6 +36,7 @@ function App() {
            <Route path='pageAdmin/panelCategorias' element={<PanelCategorias/>}/> {/*<---Ruta al panel de categorias*/}
            <Route path='/pageDetallesUsuario' element={<PanelDetallesUsuario/>}/>
            <Route path="/pageAdmin/panelUsuarios" element={<PanelUsuarios/>}/>
+           <Route path='/terminosycondiciones' element={<Politicas/>}/>
          </Routes>
          <Footer/>
 

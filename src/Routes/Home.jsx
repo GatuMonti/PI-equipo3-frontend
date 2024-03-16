@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import callDutty from "../Images/callDutty.png";
 import avowed from "../Images/Avowed.png";
 import RedHead from "../Images/Redhead.png";
@@ -9,22 +11,29 @@ import oso from "../Images/imageOso.png";
 import outlast from "../Images/outLast.png";
 import cards from "../Images/card.png";
 import sonic from "../Images/imageSonic.png";
-import "bootstrap/dist/css/bootstrap.min.css"; // Importar los estilos de Bootstrap
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Importar los archivos JavaScript de Bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { useContextGlobal } from "../components/Util/global.context";
 import Card from "../components/Card";
 import Swal from "sweetalert2";
 import Slider from "../components/slider";
 import axios from "axios";
-import { Pagination, Button } from 'react-bootstrap';
+import { format } from 'date-fns';
 
 const Home = () => {
   const { state } = useContextGlobal();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(5);
+  const [estadosNuevos, setStateNuevos] = useState({
+    productosDeUnaCategoria: [],
+    buscar: false,
+    categoriaSeleccionada: "",
+  });
 
-  //Funcion para revolver los elementos del array
+  const [estadosFechas, setStateFechas] = useState({
+    inicio: null,
+    fin: null,
+  });
 
+  // Función para revolver los elementos del array
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -32,12 +41,6 @@ const Home = () => {
     }
     return array;
   };
-
-  const [estadosNuevos, setStateNuevos] = useState({
-    productosDeUnaCategoria: [],
-    buscar: false,
-    categoriaSeleccionada: "",
-  });
 
   const handleChangeCategoria = (event) => {
     setStateNuevos((prevState) => ({
@@ -48,40 +51,88 @@ const Home = () => {
 
   const handleBusquedaCategoria = (e) => {
     e.preventDefault();
-    state.productos.map((producto) => {
-      if (producto.category?.title === estadosNuevos.categoriaSeleccionada) {
-        axios
-          .get(
-            `http://localhost:8080/products/search-category/${estadosNuevos.categoriaSeleccionada}`
-          )
-          .then((response) => {
-            setStateNuevos({
-              ...estadosNuevos,
-              productosDeUnaCategoria: response.data,
-              buscar: true,
-            });
-          })
-          .catch((error) => {
-            console.error("Error al obtener los productos:", error);
-          });
-        return; // Salir del bucle map
-      }
-      setStateNuevos({ ...estadosNuevos, buscar: false });
+    const { categoriaSeleccionada} = estadosNuevos;
+
+    if (!categoriaSeleccionada) {
+      // Realizar validaciones adicionales según sea necesario
+      return;
+    }
+
+    axios
+      .get(`http://localhost:8080/products/search-category/${categoriaSeleccionada}`, {
+    
+      })
+      .then((response) => {
+        setStateNuevos({
+          ...estadosNuevos,
+          productosDeUnaCategoria: response.data,
+        });
+      })
+      .catch((error) => {
+        console.error("Error al obtener los productos:", error);
+      });
+  };
+
+ 
+  
+  const manejarCambioFechaInicio = (fecha) => {
+    const fechaFormateada = format(fecha, 'yyyy-MM-dd');
+    setStateFechas({
+        ...estadosFechas,
+        inicio: fechaFormateada
+    });
+};
+
+const manejarCambioFechaFin = (fecha) => {
+  const fechaFormateada = format(fecha, 'yyyy-MM-dd');
+  setStateFechas({
+        ...estadosFechas,
+        fin: fechaFormateada
+    });
+};
+
+
+  const handleRealizarBusqueda = (e) => {
+    e.preventDefault();
+    console.log(estadosFechas)
+    
+    axios
+    .post(`http://localhost:8080/booking/list-productos-disponibles`, estadosFechas)
+    .then((response) => {
+      setStateFechas({
+        ...estadosFechas,
+        fin: null, inicio: null
+        })
+      console.log(response)
+    })
+    .catch((error) => {
+      console.error("Error al obtener los productos disponibles:", error);
     });
   };
 
-  // Logica para la paginacion    
-  let currentProducts = [];
-  if (state.productos.length > 0) {
-      const indexOfLastProductos = currentPage * productsPerPage;
-      const indexOfFirstProductos = indexOfLastProductos - productsPerPage;
-      currentProducts = state.productos.slice(indexOfFirstProductos, indexOfLastProductos);
+
+  // BUSCADOR:
+/*
+  const [productoBuscado, setProductoBuscado] = useState('');
+  const [productos, setProductos] = useState();
+
+  const onChange = (evento) => {
+    const producto = evento.target.value;
+    setProductoBuscado(producto);
   }
+
+  const getProducts = async () => {
+    const url `http://localhost:8080/products/list-products`;
+    const response = await fetch(url);
+    const data = await responde.json();
+    console.log(data)
+  }
+
+  getProducts()
+*/
 
   return (
     <main className="home">
-      {/*Categorias*/}
-
       <div className="contenedorCategorias">
         <h2 className="tituloCategorias">Categorias</h2>
         <div className="categoriaUno">
@@ -116,8 +167,11 @@ const Home = () => {
       </div>
 
       <div className="contenedorDos">
-        <form className="formularioBuscador">
-          <select onChange={handleChangeCategoria} className="inputSearch">
+      <div className="contenedorBuscador">
+
+      <form className="formularioBuscador">
+
+      <select onChange={handleChangeCategoria} className="inputSearch">
             <option value="">Categoría</option>
             {state.categorias.slice(1).map((categoria, index) => (
               <option key={index} value={categoria.title}>
@@ -126,51 +180,76 @@ const Home = () => {
             ))}
           </select>
 
-          <button className="botonBuscar">
-            <i
-              onClick={handleBusquedaCategoria}
-              className="bx bx-search-alt"
-            ></i>
+          <button className="botonBuscar" onClick={handleBusquedaCategoria}>
+            <i className="bx bx-search-alt"></i>
           </button>
-        </form>
+          </form>
+  
+          <input
+            type="text"
+            className="inputSearchBuscador"
+            placeholder="Buscar un juego ..."
+            
+            onChange={() => setStateNuevos({ ...estadosNuevos,  })}
+          />
+          <form className="calendarioInicio">
+          <i className="bx bx-calendar"></i>
+            
+            <DatePicker className= "calendarioInicio"
+              selected={estadosFechas.inicio}
+              onChange={manejarCambioFechaInicio}
+              dateFormat="yyyy-MM-dd" 
+              placeholderText="Fecha de Inicio"
+              type="date"
+              name={estadosFechas.inicio} 
+              value={estadosFechas.inicio}  
+            />
+            
 
-        {/*Carrusel*/}
+          <DatePicker className= "calendarioFinalizacion"
+              selected={estadosFechas.fin}
+              onChange={manejarCambioFechaFin}
+              dateFormat="yyyy-MM-dd" 
+              placeholderText="Fecha de Finalización"
+              type="date"
+              value={estadosFechas.fin}
+              name={estadosFechas.fin}  
+            />
 
-        <Slider></Slider>
+             
 
-        {/*Renderizacion de productos*/}
-
-        {!estadosNuevos.buscar ? (
-          <div className="contenedorProductos">
-            <h1 className="tituloProductos"><b>Los Mas Recomendados</b></h1>
-            {shuffleArray(
-              state.productos
-                .slice(-10)
-                .reverse()
-                .map((producto) => (
-                  <Card product={producto} key={producto.id} />
-                ))
-            )}
+          <button className="botonBuscarFecha" onClick={handleRealizarBusqueda}> Buscar </button>
+    
+          </form>
+          
+          
           </div>
-        ) : (
-          <div className="contenedorProductos">
-            <h1 className="tituloProductos">{estadosNuevos.categoriaSeleccionada}</h1>
-            {estadosNuevos.productosDeUnaCategoria.map((producto) => (
-              <Card product={producto} key={producto.id} />
-            ))}
-          </div>
-        )}
-          <div>
-            {state.productos.length > 0 && (
-                <Pagination>
-                    {Array.from({ length: Math.ceil(state.productos.length / productsPerPage) }).map((_, index) => (
-                        <Pagination.Item key={index} onClick={() => setCurrentPage(index + 1)} active={index + 1 === currentPage}>
-                            {index + 1}
-                        </Pagination.Item>
-                    ))}
-                </Pagination>
-            )}
-          </div>
+
+          <Slider></Slider>
+      
+      
+       {estadosNuevos.buscar ? (
+        <div className="contenedorProductos">
+        <h1 className="tituloProductos">Productos Disponibles</h1>
+        {estadosNuevos.productosDeUnaCategoria.map((producto) => (
+        <Card product={producto} key={producto.id} />
+        ))}
+      </div>
+
+      ) : (
+      
+      <div className="contenedorProductos">
+      <h1 className="tituloProductos">Los Mas Recomendados</h1>
+      {shuffleArray(
+        state.productos
+        .slice(-10)
+        .reverse()
+        .map((producto) => (
+          <Card product={producto} key={producto.id} />
+        ))
+    )}
+  </div>
+)}
       </div>
     </main>
   );

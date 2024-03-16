@@ -3,7 +3,8 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 .dark{
-  background-color: #12121296;
+  background-color: black;
+  color: #FFFFFF;
   
 }
 .light{
@@ -204,41 +205,210 @@
 
 .contenedorDos{
   width: 80%;
-  margin: 0vh 0vw 0vh 2.5vw;
+  margin: 10vh 1vw 0vh 3.5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1vw;
+  
 }
+
+.contenedorBuscador{
+  width: 78%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  
+  background-color: #DAC9DF;
+  margin: 10vh 0vw 0vh 0vw;
+  border-radius: 20px;
+}
+
 .formularioBuscador{
-  width: 25vw;
   height: 5vh;
-  margin: 20vh 0vw 0vh 0vw;
-  background-color: #6269D3;
+  width: 40vh;
+  margin: 16px 2vw 0.5vh 0vw;
   display: flex;
   justify-content: space-between;
-  border-radius: 5vw;
+  border-radius: 8px;
+
+  
+
 }
 .inputSearch{
-  width: 15vw;
-  height: 3vh;
+  width: 10vw;
+  height: auto;
   text-align: center;
   border: none;
-  font-size: 1.2vw;
-  margin: 1vh 0vw 0vh 3vw;
-  background-color: #6269D3;
+  font-size: 1.1vw;
+  margin: 0vh 0vw 0vh 5vw;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: black;
+   border-radius: 8px;
+   border-style: none;
+   box-sizing: border-box;
+   color: black;
+   cursor: pointer;
+   display: inline-block;
+   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   font-weight: 500;
+   height: 35px;
+   line-height: 20px;
+   list-style: none;
+   outline: none;
+   position: relative;
+   text-align: center;
+   text-decoration: none;
+   transition: color 100ms;
+   vertical-align: baseline;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
 }
+
+
+
+.inputSearchBuscador{
+  width: 150px;
+  height: 33px;
+  text-align: center;
+  border: none;
+  font-size: 1vw;
+  margin: 16px 2vw 0.5vh 0vw;
+  background-color: #FFFFFF;
+   border-radius: 8px;
+   border-style: none;
+   box-sizing: border-box;
+   color: black;
+   display: inline-block;
+   font-size: 14.5px;
+   font-weight: 500;
+   line-height: 20px;
+   list-style: none;
+   outline: none;
+   position: relative;
+   text-align: center;
+   transition: color 100ms;
+   vertical-align: baseline;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+}
+
+.inputSearchBuscador::placeholder {
+  color: black;
+}
+
+.inputSearchBuscador:focus {
+  border:  solid black;
+  
+}
+
+
+.bx.bx-calendar {
+  font-size: 3.7vh;
+  margin: 8px 0vw 0vh 0vw;
+}
+
+
+.calendarioInicio {
+  width: 130px;
+  height: 33px;
+  margin: 8px 0.5vw 0vh 0vw;
+  display: flex;
+  border-radius: 8px;
+  font-size: 12px;
+  
+}
+
+.calendarioFinalizacion{  
+  width: 130px;
+  height: 33px;
+  margin: 8px 0.3vw 0vh 0vw;
+  display: flex;
+  border-radius: 8px;
+  
+ 
+}
+
 .inputSearch:focus{
   outline: none;
 }
+
+.botonBuscarFecha{
+  height: 33px;
+  width: auto;
+  border: none;
+  margin: 8px 0.3vw 0vh 0vw;
+  cursor: pointer;
+  background-color: #AC6ABA;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+.botonBuscarFecha:hover,
+.botonBuscarFecha:focus {
+  background-color: #F082AC;
+}
+
 .botonBuscar{
   width: 3vw;
   height: 3vh;
   border: none;
   margin: 1vh 1vw 0vh 0vw;
   cursor: pointer;
-  background-color: #FFFFFF;
-}
+   background-color: #AC6ABA;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .botonBuscar:hover,
+  .botonBuscar:focus {
+    background-color: #F082AC;
+  }
+ 
 
 
 /********************Carrusel****************/
@@ -247,7 +417,7 @@
   width: 100%;
   height: auto;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 20px;
       -webkit-user-select: none;
       -moz-user-select: none;
        -ms-user-select: none;
@@ -258,6 +428,8 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  margin-left: 0px;
+  margin-right: 2px;
   background: #AC6AB4;
   color: #FFFFFF;
 }
@@ -273,7 +445,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 3vh 0vw 4vh 0vw;
-  width: 100%;
+  width: 75%;
 }
 .tituloProductos{
   width: 100%;
@@ -456,6 +628,33 @@ a{
   width: 100%;
   text-align: center;
   margin: 2vh 0vw 3vh 0vw;
+}
+
+/************Politicas******************/
+
+
+.espacePoliticas{
+  color: #FFFFFF;
+}
+
+.politicasTitle{
+  width: 100%;
+  margin-top: 15vh;
+  text-align: center;
+  color:#6269d3;
+  text-decoration: underline;
+}
+
+.politicas{
+  display: flex;
+  margin: 1vh 5vh 2vh 5vh;
+  
+}
+.politica{
+  justify-content: center;
+  text-align: left;
+  margin: 10vh 14vh 8vh 10px;
+  list-style-type: none;
 }
 
 /************Formulario crear cuenta******************/
@@ -674,7 +873,7 @@ a{
 
 .formularioAddProducto{
   font-family: "Arial";
-  margin-bottom: 0%;
+  margin-bottom: 0;
   margin-left: 13%;
   margin-top: -25%;
   border-radius: 15px;
@@ -708,7 +907,8 @@ a{
     display: inline-flex;
     padding: 0.4rem;   
     border-radius: 20px;
-    box-shadow: 0;
+    border: none;
+    
     
 }
 
@@ -719,23 +919,19 @@ a{
     margin-bottom: -1rem;
     width: 30%;
     padding: 0.4rem;
-    
     border-radius: 20px;
     box-shadow: 0;
+    border: none;
 }
 
-
-
 .contenedorCaracteristicaCheckbox{
-  display: flex;
-  flex-wrap: wrap;
-  width: 40vw;
-  
-  min-height: 15vh;
+  flex-direction:column ;
+  width: 80%;
+  height: auto;
   margin-bottom: 2vh;
-  margin: 0vh 0vw 2vh 2.5vw;  
+  margin: 0vh 0vw 2vh 15vh;  
   padding-bottom: 1vh;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color:#f1f7fe;
 
 }
@@ -748,17 +944,17 @@ a{
 }
 
 .contenedorCheckbox{
-  display: flex;  
+  display: wrap;  
   margin-left: 30%;
-  width: 15vw ;
-  justify-content:flex-start;
+  width: 100% ;
+  justify-content:center;
   align-items: center;
     
 }
 .inputCheckbox{
-  width: 5vw;
+  width: 5w;
   height: 3vh;
-  margin: 0vh 0vw 0vh 0vw;
+  margin: 0.5vh 0vw 0vh 0vw;
 }
 .nombreCaracteristica{
   margin: 0vh 0vw 0vh 0vw;
@@ -771,7 +967,7 @@ a{
     margin: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-left: 40%;
+    margin-left: 70vh;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -812,7 +1008,7 @@ a{
 }
 /***********************************Listar-Producto-Administrador****************************************/
 .listaAdmin{
-  margin: -55vh 0vw 0vh 0vw;
+  margin: -55vh 0vw -37vh 0vw;
 }
 .titleListProducts{
   color:#4867DB;
@@ -822,7 +1018,7 @@ a{
   font-size: 1.8vw;
   text-align: center;
   background-color: #FFFFFF;
-  border-radius: 5px;
+  
 }
 .contenedorListaProductos{
   display: flex;
