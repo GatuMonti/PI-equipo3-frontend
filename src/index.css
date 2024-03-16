@@ -785,14 +785,13 @@ a {
 .ListarProductos,
 .ListarCategorias,
 .actualizarProducto {
-  width: 15%;
-  height: auto;
+  width: 180px;
+  height: 30px;
   background-color: #6269d3;
   color: #FFFFFF;
   border: none;
   border-radius: 5px;
-  font-size: 1vw;
-
+  font-size: 14px;
 }
 
 .agregarProducto:hover,
@@ -800,8 +799,8 @@ a {
 .ListarCategorias:hover,
 .actualizarProducto:hover {
   color: rgba(0, 0, 0, 0.692);
-  width: 15%;
-  height: auto;
+  width: 180px;
+  height: 25px;
   background-color: #FFFFFF;
   box-shadow: 5px 5px 15px rgb(78, 77, 77);
 }
