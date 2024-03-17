@@ -110,26 +110,37 @@ const manejarCambioFechaFin = (fecha) => {
     });
   };
 
+  
 
   // BUSCADOR:
-/*
-  const [productoBuscado, setProductoBuscado] = useState('');
+
+ 
+  
+
+  const [valorInput, setValorInput] = useState();
   const [productos, setProductos] = useState();
+  
 
   const onChange = (evento) => {
-    const producto = evento.target.value;
-    setProductoBuscado(producto);
+    const valor = evento.target.value;
+    setValorInput(valor);
   }
 
-  const getProducts = async () => {
-    const url `http://localhost:8080/products/list-products`;
+
+  const getProducts = async (query) => {
+    const url = `http://localhost:8080/products/search-category/${query}` 
     const response = await fetch(url);
-    const data = await responde.json();
-    console.log(data)
+    const data = await response.json();
+    return data
   }
 
-  getProducts()
-*/
+  const onSubmit = async (evento) => {
+    evento.preventDefault()
+    const productos = await getProducts(valorInput)
+    setProductos(productos)
+
+  }
+
 
   return (
     <main className="home">
@@ -167,12 +178,12 @@ const manejarCambioFechaFin = (fecha) => {
       </div>
 
       <div className="contenedorDos">
-      <div className="contenedorBuscador">
+      <div className="barraBuscador">
 
       <form className="formularioBuscador">
 
       <select onChange={handleChangeCategoria} className="inputSearch">
-            <option value="">Categoría</option>
+            <option value=""> Filtra por categoría</option>
             {state.categorias.slice(1).map((categoria, index) => (
               <option key={index} value={categoria.title}>
                 {categoria.title}
@@ -184,14 +195,21 @@ const manejarCambioFechaFin = (fecha) => {
             <i className="bx bx-search-alt"></i>
           </button>
           </form>
+
+          <form onSubmit={onSubmit}>
+              <input
+                type="text"
+                className="inputSearchBuscador"
+                placeholder="Buscar un juego ..."
+                value={valorInput}
+                //onChange={onChange}
+                onChange={(productos) => setStateNuevos({ ...estadosNuevos,  })}
+              />
+
+          </form>
   
-          <input
-            type="text"
-            className="inputSearchBuscador"
-            placeholder="Buscar un juego ..."
-            
-            onChange={() => setStateNuevos({ ...estadosNuevos,  })}
-          />
+
+          
           <form className="calendarioInicio">
           <i className="bx bx-calendar"></i>
             

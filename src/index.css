@@ -12,7 +12,7 @@
 }
 /************************************Desktop***********************************/
 
-/*Comentario de prueba de commit Marco Y Edu*/
+
 
 /************************************Header***********************************/
 .Header{
@@ -157,7 +157,7 @@
 /********************Categorias****************/
 .home{
   display: flex;
-  flex-wrap: wrap;
+  
 }
 .contenedorCategorias{
   background-color: #4867DB;
@@ -212,8 +212,8 @@
   
 }
 
-.contenedorBuscador{
-  width: 78%;
+.barraBuscador{
+  width: 80%;
   height: 70px;
   display: flex;
   flex-direction: row;
@@ -288,7 +288,7 @@
    list-style: none;
    outline: none;
    position: relative;
-   text-align: center;
+   text-align: left;
    transition: color 100ms;
    vertical-align: baseline;
    user-select: none;
@@ -470,10 +470,6 @@
 }
 .card:hover {
   transform: scale(1.05); 
-}
-
-.precioProducto{
-  text-align: left;
 }
 
 .tituloProducto  {
@@ -871,6 +867,16 @@ a{
 
 /***********************************Formulario****************************************/
 
+.tituloFormulario{
+  width: 100%;
+  padding: 8px;
+  font-size: 2vw;
+  text-align: center;
+  margin: 4vh 0vw 1vh 0vw;
+  color:#6269d3;
+  font-weight: bold;
+}
+
 .formularioAddProducto{
   font-family: "Arial";
   margin-bottom: 0;
@@ -889,16 +895,8 @@ a{
   box-shadow: 5px 5px 15px black;
 }
 
-.tituloFormulario{
-  width: 100%;
-  padding: 8px;
-  font-size: 2vw;
-  text-align: center;
-  margin: 4vh 0vw 1vh 0vw;
-  color:#6269d3;
-  font-weight: bold;
-}
- .inputCategoria, .inputName,.inputCategoria,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
+
+ .inputCategoria, .inputName,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
   background: #f1f7fe;
     margin-top: 1rem;
     margin-left: 10px;
@@ -914,10 +912,8 @@ a{
 
 .inputDescripcion{
   background: #f1f7fe;
-    margin-top: 1rem;
-    margin-left: 10px;
-    margin-bottom: -1rem;
-    width: 30%;
+  margin: 1rem 15vw 2vh 15vh;  
+    width: 80%;
     padding: 0.4rem;
     border-radius: 20px;
     box-shadow: 0;
@@ -929,10 +925,11 @@ a{
   width: 80%;
   height: auto;
   margin-bottom: 2vh;
-  margin: 0vh 0vw 2vh 15vh;  
+  margin: 1rem 0vw 2vh 15vh;  
   padding-bottom: 1vh;
   border-radius: 15px;
   background-color:#f1f7fe;
+  flex-wrap: wrap;
 
 }
 .tituloCheckbox{
@@ -1066,43 +1063,29 @@ a{
 
 /************Caracteristicas del producto******************/
 
-.pageEditar{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-around;
-  align-items: center;
 
-  
-}
 .botonAtrasEditar{
+  margin: 25vh 0vw 0vh 80vw;
   width: 8vw;
   height: 5vh;
   background-color:#4867DB;
   border-radius: 5px;
   border: none;
-  color: black;
+  color: #FFFFFF;
   font-size: 1vw;
-  margin: 20vh 0vw 0vh 80vw;
 }
 .botonAtrasEditar:hover{
   background-color: gray;
   color: black  ;
 
 }
-.tituloEditar{
-  width: 25vw;
-  font-weight:100;
-  color:#0e41f7;
-  margin: 0vh 0vw 4vh 2vw;
-}
-.contenedorActualizar{
-  display: flex;
-  width: 50%;
-}
+
 .contenedorEditar{
   width: 40%;
   margin: 0vh 0vw 3vh 2vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .idEditar,.nameEditar,.typeEditar,.categoriaEditar,.descripcionEditar,.precioEditar,.consolaEditar,.idImagen,.urlImagen,.idProductoImagen,.idCarateristica,.nameCaracteristica,.descripcionCaracteristica{
@@ -1115,89 +1098,91 @@ a{
 
 /************Formulario actualizar producto******************/
 
+.pageEditar{
+  width: 100%;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+
+}
+
+.inputDescripcion{
+  background: #f1f7fe;
+  margin: 1rem 15vw 1vh 15vh;  
+    width: 80%;
+    padding: 0.4rem;
+    border-radius: 20px;
+    box-shadow: 0;
+    border: none;
+}
 
 .formularioActualizarProducto{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 60vw;
-  height: 90vh;
-  margin-bottom: 2vh;
-  padding:0vh 1.1vw 0vw 0vh;
+  font-family: "Arial";
+  margin-bottom: 0;
+  margin-left: 10%;
+  margin-top: 5%;
+  border-radius: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   
-  background-color:#FFFFFF;
-  border-radius: 5px;
+  flex-direction: row;
+  background: #dde5f4;
+  width: 80%;
+  height: auto;
+  box-shadow: 5px 5px 15px black;
+  justify-content: center;
+  
 }
 
-.inputActualizar,.inputActualizarDescripcion,.inputCaracteristica{
-  width: 12vw;
-  height: 30px;  
-  background-color:rgba(128, 128, 128, 0.568);
-  text-align: center;
-  border-radius: 5px;
-  border: none;
-  font-size: 1.5vh;
-}
-.contenedorDeInput, .contenedorDeInputDescription{  
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-  margin: -20px 0px 0px 2vw;
-  flex-wrap: wrap;
-  width: 14vw;
-  height: 8vh;
+.inputActualizar,.inputActualizarDescripcion,.inputCaracteristica .inputCategoriaEdit{
+  background: #FFFFFF;
+    margin-top: 1rem;
+    margin-left: 10px;
+    margin-bottom: 1rem;
+    width: 60%;
+    display: inline-flex;
+    padding: 0.4rem;   
+    border-radius: 20px;
+    border: none;
+    
+    
 }
 
-.inputCaracteristica{
-  height: 6vh;
-}
-.contenedorDeInputDescription{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 50%;
-  height: 10vh;
-  margin: 0vh 0vw 0vh 3vw;
+.inputActualizarDescripcion{
+  padding: 10px;
+  position: relative;
   
 }
 
 .inputActualizarDescripcion{  
-  width: 100%;
-  height: 70%;
+  width: 80%;
+  height: auto;
   margin: 0vh 0vw 0vh 0vw;
-  font-size: 1.25vh;
+  font-size: 15pxh;
+  display: inline-flex;
 }
 .botonActualizar{
-  width: 10vw;
-  height: 8%;
-  margin: 2.75vh 0vw 0vh 2vw;
-  background-color:#6269d3;
-  border-radius: 5px;
-  border: none;
-  color:#FFFFFF;
-  font-size: 1vw;
+  padding: 8px;
+    width: 10rem;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 70vh;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .botonActualizar:hover{
-  width: 16vw;
-  height: 9%;
+  background-color: #0056b3;
 }
 
-.labelActualizarProducto{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center; 
-  width: auto;     
-}
 
-.labelActualizarProducto input, .labelActualizarProducto select{
-  height: auto;
-}
 
-.labelActualizarProducto textArea{  
-  height: 100%;
-  width: 40vw;  
-}
 
 
 

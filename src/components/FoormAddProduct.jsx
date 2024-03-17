@@ -197,9 +197,7 @@ function FoormAddProduct() {
             <h3 className="tituloFormulario">Agregar Producto</h3>
             <input className="inputName" placeholder="Nombre *" value={productoNuevo.name} onChange={handleOnchangeName}/>
             
-             {/*Otro input*/}
-            {/* <input className="inputCategoria" placeholder="Id categoria " value={productoNuevo.category.id} onChange={handleOnchangeCategoria}/> */}
-               
+           
             <select onChange={handleOnchangeCategoria}className='inputCategoria'>
                 <option  value="">Categoría</option>
                 {state.categorias.slice(1).map((categoria, index) => (

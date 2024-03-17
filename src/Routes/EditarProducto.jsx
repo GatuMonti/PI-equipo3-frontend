@@ -233,62 +233,28 @@ const handleCheckboxChange = (e) => {
 
       <div className="contenedorActualizar">
 
-        {/* 
-        <h2 className="tituloEditar">Detalles del producto</h2>
-        <div className="contenedorEditar">
-          <h5 className="idEditar">Id:<span> {state.producto.id}</span></h5>
-          <h5 className="nameEditar">Nombre:<span> {state.producto.name}</span></h5>
-          <h5 className="categoriaEditar">Id Categoria:<span> {state.producto.category? state.producto.category.id:"Sin categoria"}</span></h5>
-          <h5 className="categoriaEditar">Titulo Categoria:<span> {state.producto.category? state.producto.category.title:"Sin categoria"}</span></h5>
-
-          <h5 className="categoriaEditar">Descripcion Categoria:<span> {state.producto.category? state.producto.category.description:"Sin categoria"}</span></h5>
-
-          <h5 className="descripcionEditar">Descripcion Producto:<span> {state.producto.description}</span></h5>
-          <h5 className="precioEditar">Precio USD:<span> {state.producto.price} </span></h5>
-          <h5 className="typeEditar">Tipo:<span> {state.producto.type}</span></h5>
-          <h5 className="consolaEditar">Consola:<span> {state.producto.console}</span></h5>
-          {state.producto.images && state.producto.images.map((image, index) => (
-            <div key={image.id}>
-              <h5 className='idImagen'>IdImagen{index + 1}:<span> {image.id}</span></h5>
-              <h5 className='urlImagen'>UrlImagen{index + 1}:<span>{image.imageUrl}</span> </h5>
-              <h5 className='idProductoImagen'>Id del producto asociado a la imagen{index + 1}:<span> {image.product}</span> </h5>
-            </div>
-          
-          ))}
-
-         {state.producto.characteristics && state.producto.characteristics.map((caracteristica, index)=>(
-            <div key= {caracteristica.id}>
-              <h5 className='idCarateristica'>Id Carateristica{index + 1}:<span> {caracteristica.id}</span></h5>
-              <h5 className='nameCaracteristica'>Nombre caracteristica{index + 1}:<span>{caracteristica.name}</span> </h5>
-              <h5 className='descripcionCaracteristica'>Descripcion caracteristica{index + 1}:<span> {caracteristica.description}</span> </h5>
-            </div>
-
-         ))}
-
-        </div> */}
-
         <form className="formularioActualizarProducto">
           
           <h3 className="tituloFormulario">Actualizar Producto</h3>
 
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Id</label>
+          <div className="inputName">
+          <label> <b>ID Producto</b></label>
           <input className="inputActualizar" placeholder="Id *" value={productoActualizar.id} onChange={handleOnchangeId} />
           </div>
 
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Nombre</label>
+          <div className="inputName">
+          <label><b>Nombre</b></label>
           <input className="inputActualizar" placeholder="Nombre *" value={productoActualizar.name} onChange={handleCambioName} />
           </div>
 
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Tipo</label>
+          <div className="inputTipo">
+          <label><b>Tipo</b></label>
           <input className="inputActualizar" placeholder="Tipo *" value={productoActualizar.type} onChange={handleOnchangeTipo} />
           </div>
           
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Categoria</label>
-          <select onChange={handleOnchangeCategoria}className='inputCategoria'>
+          <div className="inputCategoria">
+          <label><b>Categoria</b></label>
+          <select className="inputActualizar" onChange={handleOnchangeCategoria}>
                 <option  value="">Categoría</option>
                 {state.categorias.slice(1).map((categoria, index) => (
                 <option key={index} value={categoria.id}>{categoria.title}</option>
@@ -302,13 +268,13 @@ const handleCheckboxChange = (e) => {
                      
           
           
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Precio</label>
+          <div className="inputPrecio">
+          <label> <b>Precio</b></label>
           <input className="inputActualizar" placeholder="Precio USD *" value={productoActualizar.price} onChange={handleOnchangePrecio} />
           </div>
             
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Consola</label>
+          <div className="inputCategoria">
+          <label ><b>Consola</b></label>
           <select className="inputActualizar" value={productoActualizar.console} onChange={handleOnchangeConsola}>
             <option value="">Consola *</option>
             <option value="PlayStation">PlayStation</option>
@@ -318,35 +284,40 @@ const handleCheckboxChange = (e) => {
           </select>
           </div>
 
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Url Img</label>
+          <div className="inputImage1">
+          <label ><b>Url Img</b></label>
           <input className="inputActualizar" placeholder="URL Image1 *" name='imageUrl' value={productoActualizar.images[0].imageUrl} onChange={(e) => handleImageChange(0, e)} />
           </div>
 
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Url Img</label>
+          <div className="inputImage2">
+          <label ><b>Url Img</b></label>
           <input className="inputActualizar" placeholder="URL Image2 *" name='imageUrl' value={productoActualizar.images[1].imageUrl} onChange={(e) => handleImageChange(1, e)} />
           </div>
 
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Url Img</label>
+          <div className="inputImage3">
+          <label><b>Url Img</b></label>
           <input className="inputActualizar" placeholder="URL Image3 *" name='imageUrl' value={productoActualizar.images[2].imageUrl} onChange={(e) => handleImageChange(2, e)} />
           </div>
 
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Url Img</label>
+          <div className="inputImage4">
+          <label><b>Url Img</b> </label>
           <input className="inputActualizar" placeholder="URL Image4 *" name='imageUrl' value={productoActualizar.images[3].imageUrl} onChange={(e) => handleImageChange(3, e)} />
           </div>
 
-          <div className="contenedorDeInput">
-          <label className="labelActualizarProducto">Url Img</label>
+          <div className="inputImage5">
+          <label><b>Url Img</b></label>
           <input className="inputActualizar" placeholder="URL Image5 *" name='imageUrl' value={productoActualizar.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)} />
           </div>
           
+          <div className="inputDescripcion">
+           <label className="labelActualizarProducto"><b>Descripción</b></label>
+          <textarea className="inputActualizarDescripcion" placeholder="Descripcion *" value={productoActualizar.description} onChange={handleOnchangeDescripcion} />
+          </div>
+
           {console.log(productoActualizar.characteristics)}
           
           <div className="contenedorCaracteristicaCheckbox">
-                <h5 className="tituloCheckbox">Caracteristicas</h5>
+                <h5 className="tituloCheckbox"><b>Caracteristicas</b></h5>
                 {state.caracteristicas.map((caracteristica, index)=>(
                     <label className='contenedorCheckbox' key={index}>
                         <input className='inputCheckbox' type="checkbox" value={`${caracteristica.id}-${caracteristica.name}-${caracteristica.description}`} onChange={handleCheckboxChange} />
@@ -356,10 +327,9 @@ const handleCheckboxChange = (e) => {
                 ))}
 
            </div>
-           <div className="contenedorDeInputDescription">
-           <label className="labelActualizarProducto">Descripcion</label>
-          <textarea className="inputActualizarDescripcion" placeholder="Descripcion *" value={productoActualizar.description} onChange={handleOnchangeDescripcion} />
-          </div>
+
+          
+           
           <button onClick={handleSubmit} className='botonActualizar'>Actualizar</button>
         </form>
 

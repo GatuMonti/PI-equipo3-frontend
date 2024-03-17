@@ -65,6 +65,8 @@ function ListarProductAdmin() {
         const indexOfFirstProductos = indexOfLastProductos - productsPerPage;
         currentProducts = state.productos.slice(indexOfFirstProductos, indexOfLastProductos);
     }
+
+    
  
     return (
         <div className='listaAdmin'>
