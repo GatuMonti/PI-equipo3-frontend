@@ -13,10 +13,12 @@ const PanelDetallesUsuario = () => {
       <h1>Detalles del Usuario</h1>
       <div className='detallesDeUsuario'>
       <Avatar name={nombre+" "+apellido} round={true} className='avatarUser' />
-        <p><strong>Email:</strong> {email}</p>
-        <p><strong>Nombre:</strong> {nombre}</p>
-        <p><strong>Apellido:</strong> {apellido}</p>
-        <p><strong>Rol:</strong> {rol}</p>
+        <div className='divDatosUsuario'>
+          <p><strong>Email:</strong> {email}</p>
+          <p><strong>Nombre:</strong> {nombre}</p>
+          <p><strong>Apellido:</strong> {apellido}</p>
+          <p><strong>Rol:</strong> {rol}</p>
+        </div>
       </div>
     </main>
   );

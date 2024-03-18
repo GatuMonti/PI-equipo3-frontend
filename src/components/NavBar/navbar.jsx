@@ -29,13 +29,13 @@ const navbar = () => {
           <Link to={'/'} className={styles.logo}><img  className={styles.imagenLogo} src={logo} alt="logo" /></Link>
           <h3 className={styles.lema}>Explora, juega y disfruta</h3>
         </div>
-        <div cclassName={styles.botones}>
+        <div className={styles.botones}>
         {/* {state.theme === "light" ? <button onClick={handleTheme} className="botonHeader circulo">🌙</button> : <button onClick={handleTheme} className="themeLight">☀️</button>} */}
           {userRole === null ? (
-            <>
+            <div className={styles.botonera}>
               <Link to={'/FormCrearCuenta'}><button className={styles.botonHeader}>Crear cuenta</button></Link>
               <Link to={'/FormLogin/'}><button  className={styles.botonHeader}>Iniciar sesión</button></Link>
-            </>
+            </div>
           ) : (                       
           <CardUsuario userRole={userRole} setUserRole={setUserRole}/> //<---- Eliminar el lin de cerrar secion y poner el componente de card              
           )}

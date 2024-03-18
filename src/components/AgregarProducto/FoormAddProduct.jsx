@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios, { formToJSON } from 'axios'
 import Swal from 'sweetalert2'
 import { useContextGlobal } from '../Util/global.context'
+import styles from './addProduct.module.css'
 
 function FoormAddProduct() {
 
@@ -191,24 +192,24 @@ function FoormAddProduct() {
     };
 
     return (
-        <div className='divAddProduct'>
+        <div className={styles.divAddProduct}>
 
-            <form className="formularioAddProducto">
-                <h3 className="tituloFormulario">Agregar Producto</h3>
+            <form className={styles.formularioAddProducto}>
+                <h3 className={styles.tituloFormulario}>Agregar Producto</h3>
 
                 {/* Imputs de datos */}
-                <div className='contenedorInputDatos'>
-                    <input className="inputName" placeholder="Nombre *" value={productoNuevo.name} onChange={handleOnchangeName} />
+                <div className={styles.contenedorInputDatos}>
+                    <input className={styles.inputName} placeholder="Nombre *" value={productoNuevo.name} onChange={handleOnchangeName} />
 
                     {/* <input className="inputCategoria" placeholder="Id categoria " value={productoNuevo.category.id} onChange={handleOnchangeCategoria}/> */}
 
 
                     {console.log(productoNuevo)}
 
-                    <input className="inputPrecio" placeholder="Precio USD *" value={productoNuevo.price} onChange={handleOnchangePrecio} />
-                    <input className="inputTipo" placeholder="Tipo *" value={productoNuevo.type} onChange={handleOnchangeTipo} />
+                    <input className={styles.inputPrecio} placeholder="Precio USD *" value={productoNuevo.price} onChange={handleOnchangePrecio} />
+                    <input className={styles.inputTipo} placeholder="Tipo *" value={productoNuevo.type} onChange={handleOnchangeTipo} />
 
-                    <select onChange={handleOnchangeCategoria} className='inputCategoria'>
+                    <select onChange={handleOnchangeCategoria} className={styles.inputCategoria}>
                         <option value="">Categoría</option>
                         {state.categorias.slice(1).map((categoria, index) => (
                             <option key={index} value={categoria.id}>{categoria.title}</option>
@@ -218,7 +219,7 @@ function FoormAddProduct() {
 
                     </select>
 
-                    <select className="inputConsola" value={productoNuevo.console} onChange={handleOnchangeConsola}>
+                    <select className={styles.inputConsola} value={productoNuevo.console} onChange={handleOnchangeConsola}>
                         <option value="">Consola *</option>
                         <option value="PlayStation">PlayStation</option>
                         <option value="Xbox">Xbox</option>
@@ -228,36 +229,33 @@ function FoormAddProduct() {
                 </div>
 
                 {/* Imputs de Imagenes */}
-                <div className='contenedorInputImgText'>
-                    <div lassName='contenedorInputImg'>
-                        <input className="inputImage1" placeholder="URL Image1 *" name='imageUrl' value={productoNuevo.images[0].imageUrl} onChange={(e) => handleImageChange(0, e)} />
-                        <input className="inputImage2" placeholder="URL Image2 *" name='imageUrl' value={productoNuevo.images[1].imageUrl} onChange={(e) => handleImageChange(1, e)} />
-                        <input className="inputImage3" placeholder="URL Image3 *" name='imageUrl' value={productoNuevo.images[2].imageUrl} onChange={(e) => handleImageChange(2, e)} />
-                        <input className="inputImage4" placeholder="URL Image4 *" name='imageUrl' value={productoNuevo.images[3].imageUrl} onChange={(e) => handleImageChange(3, e)} />
-                        <input className="inputImage5" placeholder="URL Image5 *" name='imageUrl' value={productoNuevo.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)} />
+                <div className={styles.contenedorInputImgText}>
+                    <div lassName={styles.contenedorInputImg}>
+                        <input className={styles.inputImage1} placeholder="URL Image1 *" name='imageUrl' value={productoNuevo.images[0].imageUrl} onChange={(e) => handleImageChange(0, e)} />
+                        <input className={styles.inputImage2} placeholder="URL Image2 *" name='imageUrl' value={productoNuevo.images[1].imageUrl} onChange={(e) => handleImageChange(1, e)} />
+                        <input className={styles.inputImage3} placeholder="URL Image3 *" name='imageUrl' value={productoNuevo.images[2].imageUrl} onChange={(e) => handleImageChange(2, e)} />
+                        <input className={styles.inputImage4} placeholder="URL Image4 *" name='imageUrl' value={productoNuevo.images[3].imageUrl} onChange={(e) => handleImageChange(3, e)} />
+                        <input className={styles.inputImage5} placeholder="URL Image5 *" name='imageUrl' value={productoNuevo.images[4].imageUrl} onChange={(e) => handleImageChange(4, e)} />
 
                     </div>
-                    <textarea className="inputDescripcion" placeholder="Descripcion *" value={productoNuevo.description} onChange={handleOnchangeDescripcion} />
+                    <textarea className={styles.inputDescripcion} placeholder="Descripcion *" value={productoNuevo.description} onChange={handleOnchangeDescripcion} />
                 </div>
                 {/* <input className="inputCaracteristicaAdd" placeholder="IdCaracterística " value={productoNuevo.characteristics.length > 0 ? productoNuevo.characteristics[0].id : ''} onChange={(e) => handleCaracteristicaChange(0, e)} />             */}
 
-                <div className="contenedorCaracteristicas">
-                    <h5 className="tituloCheckbox">Caracteristicas</h5>
-                    <div className="contenedorCaracteristicaCheckbox">
+                <div className={styles.contenedorCaracteristicas}>
+                    <h5 className={styles.tituloCheckbox}>Caracteristicas</h5>
+                    <div className={styles.contenedorCaracteristicaCheckbox}>
                         {state.caracteristicas.map((caracteristica, index) => (
-                            <label className='contenedorCheckbox' key={index}>
-                                <input className='inputCheckbox' type="checkbox" value={caracteristica.id} onChange={handleCheckboxChange} />
-                                <span className="nombreCaracteristica">{caracteristica.name}</span>
+                            <label className={styles.contenedorCheckbox} key={index}>
+                                <input className={styles.inputCheckbox} type="checkbox" value={caracteristica.id} onChange={handleCheckboxChange} />
+                                <span className={styles.nombreCaracteristica}>{caracteristica.name}</span>
                             </label>
 
                         ))}
                     </div>
                 </div>
-                <button onClick={handleSubmit} className='guardarProducto'>Grabar</button>
+                <button onClick={handleSubmit} className={styles.guardarProducto}>Grabar</button>
             </form>
-
-
-
         </div>
     )
 

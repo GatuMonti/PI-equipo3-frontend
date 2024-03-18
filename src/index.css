@@ -566,19 +566,22 @@ a {
 /************Politicas******************/
 
 
-/************Formulario crear cuenta******************/
+  /******************************************************/
+  /************Formulario crear cuenta******************/
+  /******************************************************/
 
 .pageFormCrearcuenta {
-  height: 100%;
-  padding: 20vh 0vw 10vh 0vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0vw 2rem 0rem;
+  font-size: small;
 }
 
 .formRegister {
+  max-width: 400px;
+  max-height: 700px;
   font-family: "Arial";
-  margin-bottom: 10px;
-  margin-left: 35%;
-  margin-top: 10px;
-  padding: 15px;
   border-radius: 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -586,19 +589,15 @@ a {
   user-select: none;
   overflow-y: hidden;
   display: inline-flex;
-  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #dde5f4;
-
-  width: 30%;
-  height: 30%;
   box-shadow: 5px 5px 15px black;
 }
 
 .titleFormLoguin {
-  font-size: 2vw;
+  font-size: large;
 }
 
 .bannerRegister {
@@ -613,16 +612,15 @@ a {
 .etiquetaName,
 .etiquetaApellido,
 .etiquetaEmail {
-  background: #f1f7fe;
-  margin: auto;
-  margin-top: 1rem;
-  width: 100%;
-  padding: 1.3rem;
+  margin: 1px;
+  background: #dde5f4;
+  width: 70%;
+  height:50px;
+  padding: 0 5%;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   box-shadow: 0;
-  gap: 1rem;
 }
 
 .inputUserName,
@@ -630,46 +628,45 @@ a {
 .inputNameRegister,
 .inputApellido,
 .inputEmail {
+  padding-left: 5px;
   align-content: end;
-  padding: 10px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 20px;
+  font-size: small;
 }
 
 .crearCuenta {
-  padding: 10px;
-  width: 10rem;
+  padding: 5px 20px;
   margin: auto;
   margin-top: 1rem;
-  background-color: #007bff;
+  background-color: #AC6AB4;
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: smal;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .crearCuenta:hover {
-  background-color: #0056b3;
+  background-color: #ceb0d1;;
 }
 
 /************Formulario Login******************/
 
 .pageFormLogin {
-  width: 100%;
-  height: 100%;
-  padding: 20vh 0vw 10vh 0vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0vw 2rem 0rem;
+  font-size: small;
 }
 
 .formLogin {
+  max-width: 400px;
+  max-height: 700px;
   font-family: "Arial";
-  margin-bottom: 10px;
-  margin-left: 35%;
-  margin-top: 10px;
-  padding: 15px;
   border-radius: 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -677,18 +674,14 @@ a {
   user-select: none;
   overflow-y: hidden;
   display: inline-flex;
-  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #dde5f4;
-
-  width: 30%;
-  height: 30%;
   box-shadow: 5px 5px 15px black;
 }
 
-.banner {
+.formLogin .banner {
   width: 100%;
   height: auto;
   padding: 0px;
@@ -696,55 +689,53 @@ a {
 }
 
 .logoLoguin {
-  margin-top: -3em;
+  margin-top: -3.5em;
 }
 
 
 .titleFormLogin {
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: large;
+  margin: 10px;
 }
 
 .etiquetaUserNameLogin,
 .etiquetaPasswordLogin {
-  background: #f1f7fe;
-  margin: auto;
-  margin-top: 1rem;
-  width: 100%;
-  padding: 1rem;
+  margin: 2px;
+  background: #dde5f4;
+  width: 70%;
+  height:50px;
+  padding: 0 5%;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   box-shadow: 0;
-  gap: 1rem;
 }
 
 .inputUserNameLogin,
 .inputPasswordLogin {
+  padding-left: 5px;
   align-content: end;
-  padding: 10px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 20px;
+  font-size: small;
 }
 
 .botonLogin {
-  padding: 10px;
-  width: 10rem;
+  padding: 5px 20px;
   margin: auto;
   margin-top: 1rem;
-  background-color: #007bff;
+  background-color: #AC6AB4;
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: smal;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .botonLogin:hover {
-  background-color: #0056b3;
+  background-color: #ceb0d1;;
 
 }
 
@@ -809,192 +800,6 @@ a {
 /***********************************Formulario Add PRoduct***********************************/
 /********************************************************************************************/
 
-
-/******Form General***********************/
-
-.divAddProduct {
-  width: 100%;
-  height: 700px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.formularioAddProducto {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: 550px;
-  height: 500px;
-  align-items: center;
-  justify-content: space-between;
-  align-self: center;
-  border-radius: 15px;
-  user-select: none;
-  background: #dde5f4;
-  box-shadow: 5px 5px 15px black;
-  
-}
-
-.tituloFormulario {
-  margin-bottom: 20px;
-  font-size: 2vw;
-  text-align: center;
-  color: #6269d3;
-  font-weight: bold;
-}
-
-
-.contenedorInputDatos {
-  border: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content:space-between;
-}
-
-.contenedorInputImgText {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border: none;
-  display: flex;
-  flex-direction: row;
-  align-items:start;
-  flex: 1;
-}
-
-.inputCategoria,
-.inputName,
-.inputCategoria,
-.inputPrecio,
-.inputTipo,
-.inputConsola,
-.inputImage1,
-.inputImage2,
-.inputImage3,
-.inputImage4,
-.inputImage5,
-.inputCaracteristicaAdd {
-  padding-left: 5px;  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 4px;
-  background: #f1f7fe;
-  border-radius: 10px;
-  font-size: small;
-  width: 160px;
-  box-shadow: .2px .2px 1px black;
-  border: none;
-  
-}
-
-.contenedorInputDatos ::placeholder{
-  font-size: small;
-  width: 100%;
-  padding: 10px 10px;
-} 
-
-.contenedorInputImgText ::placeholder{
-  font-size: small;
-  width: 100%;
-  padding: 10px 10px;
-} 
-
-.formularioAddProducto select{
-  font-size: small;
-  color: rgb(97, 94, 94);
-  padding-left: 5px;
-}
-
-.inputDescripcion {
-  font-size: small;
-  margin: 5px;
-  padding: 10px;
-  background: #f1f7fe;
-  width:280px;
-  height:124px;
-  border-radius: 10px;
-  box-shadow: .2px .2px 1px black;
-  border: none;
-  overflow: hidden;
-  
-}
-
-.contenedorCaracteristicas {
-  margin: 20px;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  background-color: #f1f7fe;
-  flex: 1;
-}
-
-.contenedorCaracteristicaCheckbox {
-  padding: 0 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content:space-around;
-  border-radius: 15px;
-  background-color: #f1f7fe;
-}
-
-.tituloCheckbox {
-  margin-bottom: 20px;
-  text-align: center;
-  font-size:larger;
-  font-weight: 500;
-}
-
-.contenedorCheckbox {
-  display: flex;
-  font-size: small;
-  color: rgb(97, 94, 94);
-}
-
-.inputCheckbox {
-  font-size: small;
- margin-right: 4px ;
-}
-
-.nombreCaracteristica {
-  font-size: small;
-}
-.guardarProducto {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.guardarProducto:hover {
-  background-color: #0056b3;
-}
-
-
-.textFalla,
-.textExito {
-  color: #6269d3;
-  width: 25vw;
-  height: 55vh;
-  bottom: 6vh;
-}
-
-.textExito {
-  height: 65vh;
-}
-
-.textFallaServer {
-  color: #6269d3;
-  width: 25vw;
-  height: 57vh;
-  bottom: 6vh;
-}
 
 /***********************************Listar-Producto-Administrador****************************************/
 .listaAdmin {
@@ -1273,7 +1078,7 @@ a {
 }
 
 /********************************Panel de Usuario********************************/
-.panelUsuarios {
+/* .panelUsuarios {
   height: 84vh;
   padding-top: 20vh;
   display: flex;
@@ -1281,73 +1086,53 @@ a {
   align-items: center;
   margin: 0vh 9vw 0vh 0vw;
 
-}
+} */
 
-/**** Card del Navbar****/
 .panelDetallesDeUsuario {
   width: 100%;
   height: auto;
-  padding-top: 18vh;
-  margin-bottom: 10vh;
+  padding: 20vh 0vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
+.panelDetallesDeUsuario h1{
+  margin-bottom: 3vh;
+}
+
+
 .detallesDeUsuario {
+  min-width: 280px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:space-around;
   background-color: #D9D9D9;
-  padding: 20px;
-  width: 25%;
-  margin-top: 10px;
   border-radius: 5px;
+  box-shadow: 5px 5px 20px black;
+}
+
+.divDatosUsuario{
+  display: flex;
+  flex-direction: column;
+}
+
+.divDatosUsuario p {
+  margin: 2px;
 }
 
 .avatarUser {
-  margin-bottom: 10px;
-
+  margin: 0px;
 }
-
-
-
 
 /***********************************Table****************************************/
 
-/***********************************Header****************************************/
+/************************************************************************/
 @media(max-width:900px) {
-  .contenedorLogo {
-    width: 32vw;
-    height: 15vh;
-    flex-direction: column;
-    margin: 0vh 0vw 0vh 4vw;
-    justify-content: space-between;
-  }
-
-  .imagenLogo {
-    width: 22vw;
-    height: 10vh;
-    margin: 0vh 0vw -0.5vh 0vw;
-  }
-
-  .lema {
-    width: 40vw;
-    margin: 0vh 0vw 1vh 0vw;
-    text-align: left;
-    font-size: 3vw;
-  }
-
-  .botones {
-    width: 65vw;
-    height: 5vh;
-    margin: 4vh 5vw 0vh 0vw;
-  }
-
-  .crear-cuenta,
-  .iniciar-sesion {
-    width: 22vw;
-    height: 4vh;
-    margin: 0.5vh 0vw 0vh 0vw;
-    font-size: 2.9vw;
-  }
+  
 
   .themeLight,
   .themeDark {
@@ -1356,38 +1141,6 @@ a {
   }
 
   /************************************Footer***********************************/
-
-  .derechos {
-    width: 30vw;
-    margin: 5vh 0vw 0vh 10vw;
-  }
-
-  .circuloFooter {
-    width: 28px;
-    margin: 2.3vh 0vw 0vh 0vw;
-  }
-
-  .mensajeFooter {
-    width: 15vw;
-    height: 3vh;
-    font-size: 2.5vw;
-    margin: 3vh 0vw 0vh 0vw;
-  }
-
-  .navegacionFooter {
-    width: 30vw;
-    height: 5vh;
-    margin: 6.5vh 10vw 0vh 0vw;
-  }
-
-  .bx.bxl-facebook-circle,
-  .bxl-whatsapp,
-  .bxl-instagram,
-  .bxl-twitter {
-    font-size: 5vw;
-    margin: 1vh 2vw 0vh 0vw;
-  }
-
   /***********************************Home****************************************/
 
   /********************Categorias****************/
@@ -1582,71 +1335,8 @@ a {
 
   /************Formulario crear cuenta******************/
 
-  .formRegister {
-    width: 40vw;
-    margin: 7vh 0vw 5vh 30vw;
-  }
+ 
 
-  .titleFormRegister {
-    margin: 1vh 0vw 0vh 12vw;
-    font-size: 2.5vw;
-  }
-
-  .etiquetaUserName,
-  .etiquetaPassword,
-  .etiquetaName,
-  .etiquetaApellido,
-  .etiquetaEmail {
-    margin: 1vh 0vw 1vh 8vw;
-  }
-
-  .inputUserName,
-  .inputPassword,
-  .inputNameRegister,
-  .inputApellido,
-  .inputEmail {
-    width: 25vw;
-    margin: 0vh 0vw 0vh 8vw;
-  }
-
-  .crearCuenta {
-    width: 20vw;
-    height: 5vh;
-    margin: 2vh 0vw 2vh 10vw;
-  }
-
-  .crearCuenta:hover {
-    width: 21vw;
-  }
-
-  /************Formulario Login******************/
-
-  .formLogin {
-    width: 35vw;
-    margin: 20vh 0vw 16vh 34vw;
-  }
-
-  .titleFormLogin {
-    width: 40%;
-    margin: 2vh 0vw 0vh 11vw;
-    font-size: 3vw;
-  }
-
-  .inputUserNameLogin,
-  .inputPasswordLogin {
-    width: 20vw;
-    margin: 0vh 0vw 0vh 8vw;
-  }
-
-  .botonLogin {
-    width: 15vw;
-    margin: 3vh 0vw 2vh 10vw;
-  }
-
-  .botonLogin:hover {
-    width: 16vw;
-
-  }
 
 
 
@@ -1665,7 +1355,7 @@ a {
 
 @media(max-width:480px) {
 
-  .imagenLogo {
+  /* .imagenLogo {
     width: 30vw;
     height: 8vh;
     margin: 0vh 0vw 0vh 1vw;
@@ -1683,33 +1373,10 @@ a {
     font-size: 3vw;
     width: 25vw;
     margin: 0.5vh 0vw 0vh 2vw;
-  }
+  } */
 
   /************************************Footer***********************************/
-  .circuloFooter {
-    width: 17px;
-    height: 15px;
-    font-size: 1.5vw;
-    margin: 3vh 0vw 0vh 0vw;
-    padding: 0.2vh 0vw 0vh 0vw;
-  }
 
-  .mensajeFooter {
-    width: 20vw;
-    font-size: 3vw;
-    margin: 2.9vh 0vw 0vh 2vw;
-  }
-
-  .navegacionFooter {
-    height: 5vh;
-  }
-
-  .bx.bxl-facebook-circle,
-  .bxl-whatsapp,
-  .bxl-instagram,
-  .bxl-twitter {
-    margin: 1vh 2vw 0vh 0vw;
-  }
 
   /************************************Home***********************************/
 
@@ -1879,72 +1546,8 @@ a {
     font-size: 2.5vw;
   }
 
-  /************Formulario crear cuenta******************/
 
-  .formRegister {
-    width: 70vw;
-    margin: 7vh 0vw 5vh 15vw;
-  }
 
-  .titleFormRegister {
-    margin: 2vh 0vw 0vh 22vw;
-    font-size: 4vw;
-  }
-
-  .etiquetaUserName,
-  .etiquetaPassword,
-  .etiquetaName,
-  .etiquetaApellido,
-  .etiquetaEmail {
-    margin: 1vh 0vw 1vh 11vw;
-  }
-
-  .inputUserName,
-  .inputPassword,
-  .inputNameRegister,
-  .inputApellido,
-  .inputEmail {
-    width: 50vw;
-    margin: 0vh 0vw 0vh 11vw;
-  }
-
-  .crearCuenta {
-    width: 30vw;
-    margin: 2vh 0vw 2vh 20vw;
-  }
-
-  .crearCuenta:hover {
-    width: 31vw;
-  }
-
-  /************Formulario Login******************/
-
-  .formLogin {
-    width: 80vw;
-    margin: 10vh 0vw 10vh 10vw;
-  }
-
-  .titleFormLogin {
-    margin: 2vh 0vw 0vh 0vw;
-    font-size: 5vw;
-  }
-
-  .inputUserNameLogin,
-  .inputPasswordLogin {
-    width: 40vw;
-    margin: 0vh 0vw 0vh 0vw;
-  }
-
-  .botonLogin {
-    width: 20vw;
-    margin: 3vh 0vw 2vh 0vw;
-    font-size: 4vw;
-  }
-
-  .botonLogin:hover {
-    width: 21vw;
-
-  }
 
 
 
