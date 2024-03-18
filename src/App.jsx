@@ -24,7 +24,7 @@ function App() {
     <div>
       <div className={state.theme}>
          <Header/>
-
+         <div style={{ paddingTop: '5rem', paddingBottom: '6.5rem', minHeight: '100vh'}}>
          <Routes>
            <Route path='/' element={<Home/>}/>
            <Route path='/Detail/:id' element={<Detail/>}/>
@@ -38,6 +38,7 @@ function App() {
            <Route path="/pageAdmin/panelUsuarios" element={<PanelUsuarios/>}/>
            <Route path='/terminosycondiciones' element={<Politicas/>}/>
          </Routes>
+         </div>
          <Footer/>
 
 
