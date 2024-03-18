@@ -203,15 +203,9 @@ const manejarCambioFechaFin = (fecha) => {
         <Slider></Slider>
       
       
-       {estadosNuevos.buscar ? (
-        <div className="contenedorProductos">
-        <h1 className="tituloProductos">Productos Disponibles</h1>
-        {estadosNuevos.productosDeUnaCategoria.map((producto) => (
-        <Card product={producto} key={producto.id} />
-        ))}
-      </div>
+      
 
-      ) : (
+
       
       <div className="contenedorProductos">
       <h1 className="tituloProductos">Los Mas Recomendados</h1>
@@ -224,7 +218,7 @@ const manejarCambioFechaFin = (fecha) => {
         ))
     )}
   </div>
-)}
+
       </div>
     </main>
   );
