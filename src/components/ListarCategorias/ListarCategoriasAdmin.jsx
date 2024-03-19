@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useContextGlobal } from './Util/global.context';
+import { useContextGlobal } from '../Util/global.context';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Pagination, Button } from 'react-bootstrap';
-import EditarCategoriaButton from './EditarCategoriaButton';
+import EditarCategoriaButton from '../EditarCategoriaButton';
 
 const ListarCategoriasAdmin = () => {
     const { state, dispatch } = useContextGlobal();

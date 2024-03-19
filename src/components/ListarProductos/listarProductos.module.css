@@ -23,7 +23,6 @@
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    margin-left: 6px;
   }
   
   .botonEditar,
@@ -45,7 +44,7 @@
   
   .tablaProductos th,
   .tablaProductos td {
-    text-align:justify;
+    text-align:center;
     vertical-align: middle;
   }
 
@@ -61,4 +60,10 @@
     transform: scale(1.1); /* Cambia el valor según el nivel de zoom deseado */
     transition: transform 0.3s ease;
     background-color: #f5f5f5;
+  }
+
+  .contenedorPaginado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }

@@ -15,8 +15,7 @@
     border-radius: 15px;
     user-select: none;
     background: #dde5f4;
-    margin-top: 6vh;
-    box-shadow: 5px 5px 15px black; 
+    box-shadow: 1px 1px 8px black; 
   }
   
   .tituloFormulario {

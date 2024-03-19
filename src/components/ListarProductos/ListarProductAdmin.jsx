@@ -87,8 +87,8 @@ function ListarProductAdmin() {
             ))}
           </tbody>
         </Table>
-        <div>
-          <p className={styles.contadorProductos}>Total de productos : {state.productos.length}</p>
+        <p className={styles.contadorProductos}>Total de productos : {state.productos.length}</p>
+        <div className={styles.contenedorPaginado}>
           {state.productos.length > productsPerPage && (
             <Pagination>
               {Array.from({ length: Math.ceil(state.productos.length / productsPerPage) }).map((_, index) => (

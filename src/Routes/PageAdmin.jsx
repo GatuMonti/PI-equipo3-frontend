@@ -3,7 +3,7 @@ import FoormAddProduct from '../components/AgregarProducto/FoormAddProduct'
 import ListarProductAdmin from '../components/ListarProductos/ListarProductAdmin'
 // import { Link } from 'react-router-dom' //Importamos Link para poder darle navegacion al boton de Categorias
 import ListarCaracteristicasAdmin from '../components/ListarCaracteristicasAdmin'
-import ListarCategoriasAdmin from '../components/ListarCategoriasAdmin'
+import ListarCategoriasAdmin from '../components/ListarCategorias/ListarCategoriasAdmin'
 // import PanelUsuarios from './PanelUsuarios'
 import ListarUsuariosAdmin from '../components/ListarUsuariosAdmin'
 
