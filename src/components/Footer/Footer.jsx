@@ -1,4 +1,5 @@
 import styles from './footer.module.css'
+import {Link} from 'react-router-dom'
 //La única manera que encontré de pasar estos estilos fue poniendolos en 
 //un .css a parte. Dan probelmas con el module.css.
 import './socialMediaIcons.css'
@@ -18,12 +19,12 @@ const Footer = () => {
             <a href="#">Contactanos</a>
             <a href="#">Nuestros servicios</a>
             <a href="#">Politicas de privacidad</a>
-            <a href="#">Terminos y condiciones</a>
+            <li><Link to={'/terminosycondiciones'}>Terminos y condiciones</Link></li>
             <a href="#">Career</a>
           </div>
 
           <div className={styles.footerRights}>
-              Vortex Copyright © 2024 - All rights reserved
+            <p>Vortex Copyright © 2024 - All rights reserved</p>
         </div>
 
         </footer>

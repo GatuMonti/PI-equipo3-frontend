@@ -3,7 +3,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
-
+import styles from './crearCuenta.module.css'
 
 const FormCrearCuenta = () => {
 
@@ -138,43 +138,41 @@ const FormCrearCuenta = () => {
     }
 
 
-
     return (
-        <div className='pageFormCrearcuenta'>
-            <form className='formRegister'>
-                <img className='bannerRegister' src='../src/Images/2.jpg' />
-                <img className='logoLoguin' src='../src/Images/fondoblanco.png' />
-                <h2 className="titleFormLoguin">Bienvenido a Vortex Games</h2>
-                <div className='etiquetaUserName'>
+        <div className={styles.pageFormCrearcuenta}>
+            <form className={styles.formRegister}>
+                <img className={styles.bannerRegister}  src='../src/Images/2.jpg' />
+                <img className={styles.logoLoguin} src='../src/Images/fondoblanco.png' />
+                <h2 className={styles.titleFormLoguin}>Bienvenido a Vortex Games</h2>
+                <div className={styles.etiquetaUserName}>
                     <label >Email *</label>
-                    <input className='inputUserName' value={usuarioRegistrar.username} onChange={handleChangeUserName} />
+                    <input className={styles.inputUserName} value={usuarioRegistrar.username} onChange={handleChangeUserName} />
 
                 </div>
-                <div className='etiquetaPassword'>
+                <div className={styles.etiquetaPassword}>
                     <label> Contraseña *</label>
-                    <input placeholder="Minimo 8 caracteres" className='inputPassword' type='password' value={usuarioRegistrar.password} onChange={handleChangePassword} />
+                    <input placeholder="Minimo 8 caracteres" className={styles.inputPassword} type='password' value={usuarioRegistrar.password} onChange={handleChangePassword} />
 
                 </div>
-                <div className='etiquetaName'>
+                <div className={styles.etiquetaName}>
                     <label> Nombre *</label>
-                    <input className='inputNameRegister' value={usuarioRegistrar.nombre} onChange={handleChangeFirstName} />
+                    <input className={styles.inputNameRegister} value={usuarioRegistrar.nombre} onChange={handleChangeFirstName} />
                 </div>
                 <div>
 
                 </div>
-                <div className='etiquetaApellido'>
+                <div className={styles.etiquetaApellido}>
                     <label >Apellido *</label>
-                    <input className="inputApellido" value={usuarioRegistrar.apellido} onChange={handleChangeLastName} />
+                    <input className={styles.inputApellido} value={usuarioRegistrar.apellido} onChange={handleChangeLastName} />
                 </div>
-                <div className='etiquetaEmail'>
+                <div className={styles.etiquetaEmail}>
                     <label >Dirección *</label>
-                    <input className='inputEmail' value={usuarioRegistrar.direccion} onChange={handleChangeEmail} />
+                    <input className={styles.inputEmail} value={usuarioRegistrar.direccion} onChange={handleChangeEmail} />
                 </div>
 
-                <button className="crearCuenta" onClick={handleSubmitRegister}>Crear Cuenta</button>
-                <div className='footerLoguin'><Link to={'/FormLogin/'}> <span> Iniciar sesion </span> </Link> <span>¿Olvidaste tu contraseña?</span></div>
+                <button className={styles.crearCuenta} onClick={handleSubmitRegister}>Crear Cuenta</button>
+                <div className={styles.footerLoguin}><Link to={'/FormLogin/'}> <span> Iniciar sesion </span> </Link> <span>¿Olvidaste tu contraseña?</span></div>
             </form>
-
 
         </div>
 

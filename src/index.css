@@ -1,8 +1,19 @@
 * {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Para que la página ocupe al menos el alto de la ventana del navegador */
+}
+
+.content {
+  margin: 7rem 0rem 0rem 0rem;
+  flex: 1; /* El contenido ocupará todo el espacio disponible */
+  display: flex;
+  /* Puedes agregar estilos adicionales según necesites */
+}
 .dark {
   background-color: black;
   color: #FFFFFF;
@@ -566,96 +577,10 @@ a {
 /************Politicas******************/
 
 
-  /******************************************************/
-  /************Formulario crear cuenta******************/
-  /******************************************************/
-
-.pageFormCrearcuenta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8rem 0vw 2rem 0rem;
-  font-size: small;
-}
-
-.formRegister {
-  max-width: 400px;
-  max-height: 700px;
-  font-family: "Arial";
-  border-radius: 15px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  overflow-y: hidden;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #dde5f4;
-  box-shadow: 5px 5px 15px black;
-}
-
-.titleFormLoguin {
-  font-size: large;
-}
-
-.bannerRegister {
-  width: 100%;
-  height: auto;
-  padding: 0px;
-  border-radius: 5px;
-}
-
-.etiquetaUserName,
-.etiquetaPassword,
-.etiquetaName,
-.etiquetaApellido,
-.etiquetaEmail {
-  margin: 1px;
-  background: #dde5f4;
-  width: 70%;
-  height:50px;
-  padding: 0 5%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  box-shadow: 0;
-}
-
-.inputUserName,
-.inputPassword,
-.inputNameRegister,
-.inputApellido,
-.inputEmail {
-  padding-left: 5px;
-  align-content: end;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: small;
-}
-
-.crearCuenta {
-  padding: 5px 20px;
-  margin: auto;
-  margin-top: 1rem;
-  background-color: #AC6AB4;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: smal;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.crearCuenta:hover {
-  background-color: #ceb0d1;;
-}
 
 /************Formulario Login******************/
 
-.pageFormLogin {
+/* .pageFormLogin {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -750,7 +675,7 @@ a {
 
 .footerLoguin span {
   cursor: pointer;
-}
+} */
 
 
 

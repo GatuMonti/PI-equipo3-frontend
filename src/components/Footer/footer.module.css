@@ -1,9 +1,10 @@
   
   .piePagina{
     width: 100%;
-    height: 6.5rem;
+    height: 12rem;
     background-color: #6269d3;
-    padding: 1rem;
+    opacity: 30%;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,6 +59,7 @@
 
   .footerRights{
     font-size: 2vw;
+    margin-bottom: 2vh;
   }
 
   .footerRedes{
