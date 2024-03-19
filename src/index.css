@@ -683,7 +683,6 @@ a {
 /***********************************Pagina-administrador****************************************/
 .pageAdmin {
   width: 100vw;
-  height: 100vh;
   display: flex;
   padding: 1rem;
   flex-direction: column;
