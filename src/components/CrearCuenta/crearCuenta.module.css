@@ -11,6 +11,8 @@
   }
   
   .formRegister {
+    margin: 2vh 2vw 2vw 2vh;
+
     height: 800px;
     border-radius: 15px;
     user-select: none;

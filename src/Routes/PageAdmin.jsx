@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import FoormAddProduct from '../components/AgregarProducto/FoormAddProduct'
-import ListarProductAdmin from '../components/ListarProductAdmin'
-import { Link } from 'react-router-dom' //Importamos Link para poder darle navegacion al boton de Categorias
+import ListarProductAdmin from '../components/ListarProductos/ListarProductAdmin'
+// import { Link } from 'react-router-dom' //Importamos Link para poder darle navegacion al boton de Categorias
 import ListarCaracteristicasAdmin from '../components/ListarCaracteristicasAdmin'
 import ListarCategoriasAdmin from '../components/ListarCategoriasAdmin'
-import PanelUsuarios from './PanelUsuarios'
+// import PanelUsuarios from './PanelUsuarios'
 import ListarUsuariosAdmin from '../components/ListarUsuariosAdmin'
 
 
@@ -43,6 +43,7 @@ const PageAdmin = () => {
   return (
 
     <div className='pageAdmin'>
+
       <div className="panel">
         <button onClick={handleAddProduct} className="agregarProducto">Agregar Producto</button>
         <button onClick={handleListProducts} className="ListarProductos">Listar Productos</button>
@@ -57,31 +58,35 @@ const PageAdmin = () => {
         {/* <Link to="panelCaracteristicas" className='actualizarProducto' style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}> Panel de Caracteristicas</Link> */}
         {/* <Link to="panelUsuarios" className='actualizarProducto' style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}> Panel de Usuarios</Link> */}
         {/* ************************************************************************************************************** */}
-      
-      
+
+
       </div>
-      {
-        estadosAdmin.goAddProduct &&
-        <FoormAddProduct />
-      }
-      {
-        estadosAdmin.goList &&
-        <ListarProductAdmin />
-      }
-      {
-        estadosAdmin.goCategorias &&
-        <ListarCategoriasAdmin />
-      }
 
-      {
-        estadosAdmin.goCaracteristicas &&
-        <ListarCaracteristicasAdmin />
-      }
+      <div className='contenidoAdmin'>
+        {
+          estadosAdmin.goAddProduct &&
+          <FoormAddProduct />
+        }
+        {
+          estadosAdmin.goList &&
+          <ListarProductAdmin />
+        }
+        {
+          estadosAdmin.goCategorias &&
+          <ListarCategoriasAdmin />
+        }
 
-      {
-        estadosAdmin.goUsuarios &&
-        <ListarUsuariosAdmin />
-      }
+        {
+          estadosAdmin.goCaracteristicas &&
+          <ListarCaracteristicasAdmin />
+        }
+
+        {
+          estadosAdmin.goUsuarios &&
+          <ListarUsuariosAdmin />
+        }
+
+      </div>
     </div>
 
 
