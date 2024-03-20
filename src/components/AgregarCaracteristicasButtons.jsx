@@ -15,7 +15,6 @@ const AgregarCaracteristicaButton = ({ toggleForm }) => {
         toggleForm(false); // Cambia el estado de showForm en el componente padre
     };
 
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setCaracteristicaData(prevData => ({

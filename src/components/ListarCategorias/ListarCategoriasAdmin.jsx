@@ -13,6 +13,34 @@ const ListarCategoriasAdmin = () => {
     const [categoriasPerPage] = useState(5);
     const [showEditModal, setShowEditModal] = useState(false);
     const [editingCategoriaId, setEditingCategoriaId] = useState(null);
+    const [showFormAgregar, setshowFormAgregar] = useState(false); // Estado para mostrar u ocultar el formulario cuando se aprieta boton agregar 
+    const [showFormEditar, setshowFormEditar] = useState(false); // Estado para mostrar u ocultar el formulario cuando se aprieta boton agregar 
+
+    // Función para mostrar u ocultar el formulario de agregar característica
+    const toggleFormAgregar = () => {
+        setshowFormAgregar(!showFormAgregar);
+    };
+
+    const toggleFormEditar = () => {
+        setshowFormEditar(!showFormEditar);
+    };
+
+    //Paginacion
+    const indexOfLastCategoria = currentPage * categoriasPerPage;
+    const indexOfFirstCategoria = indexOfLastCategoria - categoriasPerPage;
+    const currentCategorias = state.categorias.slice(indexOfFirstCategoria, indexOfLastCategoria);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    const handleEdit = (categoriaId) => {
+        setEditingCategoriaId(categoriaId);
+        setshowFormEditar(true)
+        //setShowEditModal(true);
+    };
+
+    const handleCloseEditModal = () => {
+        setShowEditModal(false);
+        setEditingCategoriaId(null);
+    };
 
     // Logica para eliminar categoria
     const endPointDeleteCategoria = `http://localhost:8080/categorias/delete-category/`;
@@ -67,54 +95,63 @@ const ListarCategoriasAdmin = () => {
         }
     };
 
-    const indexOfLastCategoria = currentPage * categoriasPerPage;
-    const indexOfFirstCategoria = indexOfLastCategoria - categoriasPerPage;
-    const currentCategorias = state.categorias.slice(indexOfFirstCategoria, indexOfLastCategoria);
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const handleEdit = (categoriaId) => {
-        setEditingCategoriaId(categoriaId);
-        setShowEditModal(true);
-    };
-
-    const handleCloseEditModal = () => {
-        setShowEditModal(false);
-        setEditingCategoriaId(null);
-    };
 
     return (
         <div className={styles.contenedorTablaListados}>
-            <h2 className={styles.tituloTablaListados}> Categorías</h2>
 
-            <Table striped hover variant="light" className={styles.tablaListados}>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Título</th>
-                        <th>Descripción</th>
-                        <th>Imagen</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {currentCategorias.map((categoria, index) => (
-                        <tr key={index}>
-                            <td>{categoria.id}</td>
-                            <td>{categoria.title}</td>
-                            <td>{categoria.description}</td>
-                            <td><img className={styles.imageTableListAdmin} src={categoria.image.imageUrl} alt="imageProductAdmin" /></td>
-                            <td>
-                                <Button variant="primary" className={styles.botonEditar} onClick={() =>
-                                    handleEdit(categoria.id)}>Editar</Button>
-                                <Button variant="danger" className={styles.botonEliminar} onClick={() =>
-                                    handleDelete(categoria.id)}>Eliminar</Button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
 
-            <AgregarCategoriaButton/>
+            {showFormAgregar ? ( // Mostrar el formulario si showFormAgregar es verdadero
+                <AgregarCategoriaButton toggleFormAgregar={toggleFormAgregar} />
+            ) : showFormEditar ? (
+                <EditarCategoriaButton
+                    categoriaId={editingCategoriaId}
+                    show={showEditModal}
+                    // handleClose={handleCloseEditModal}
+                    dispatch={dispatch}
+                    toggleFormEditar={toggleFormEditar}
+                />
+            ) : (
+                <>
+                    <h2 className={styles.tituloTablaListados}> Categorías</h2>
+                    <Table striped hover variant="light" className={styles.tablaListados}>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Descripción</th>
+                                <th>Imagen</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {currentCategorias.map((categoria, index) => (
+                                <tr key={index}>
+                                    <td>{categoria.id}</td>
+                                    <td>{categoria.title}</td>
+                                    <td>{categoria.description}</td>
+                                    <td><img className={styles.imageTableListAdmin} src={categoria.image.imageUrl} alt="imageProductAdmin" /></td>
+                                    <td>
+                                        <Button variant="primary" className={styles.botonEditar} onClick={() =>
+                                            handleEdit(categoria.id)}>Editar</Button>
+                                        <Button variant="danger" className={styles.botonEliminar} onClick={() =>
+                                            handleDelete(categoria.id)}>Eliminar</Button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+
+                    </Table>
+                    <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Categoría</Button>
+                </>
+            )}
+
+            {/* {!showFormAgregar ? ( // Mostrar el botón de agregar característica si showFormAgregar es falso
+                <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Categoría</Button>
+            ) : !showFormEditar ? (
+                <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Categoría</Button>
+            ):<p>htsdgsdfgsdfg</p>} */}
+
             {/* {currentCategorias.map((categoria, index) => (
                 <div key={index} className="contenedorProductosAdmin">
                     <p className='listId'>ID: {categoria.id}</p>
@@ -134,12 +171,12 @@ const ListarCategoriasAdmin = () => {
             </Pagination>
 
             {/* Modal de edición */}
-            <EditarCategoriaButton
+            {/* <EditarCategoriaButton
                 categoriaId={editingCategoriaId}
                 show={showEditModal}
                 handleClose={handleCloseEditModal}
                 dispatch={dispatch}
-            />
+            /> */}
         </div>
     );
 };
