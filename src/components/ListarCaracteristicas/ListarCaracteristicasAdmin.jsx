@@ -52,7 +52,7 @@ const ListarCaracteristicasAdmin = () => {
         }
     };
 
-    // Logica para la paginacion    
+    // Paginacion    
     let currentCaracteristicas = [];
     if (state.caracteristicas.length > 0) {
         const indexOfLastCaracteristica = currentPage * caracteristicasPerPage;
@@ -71,35 +71,35 @@ const ListarCaracteristicasAdmin = () => {
     };
 
     return (
-        <div className={styles.contenedorTablaListados}>           
+        <div className={styles.contenedorTablaListados}>
             <h2 className={styles.tituloTablaListados}>Características</h2>
-            
-            <Table striped hover variant="light" className={styles.tablaListados}>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {currentCaracteristicas.map((caracteristica, index) => (
-                <tr key={index}>
-                    <td>{caracteristica.id}</td>
-                    <td>{caracteristica.name}</td>
-                    <td>{caracteristica.description}</td>
-                    <td>
-                        <button onClick={() => handleEdit(caracteristica.id)} className="btn btn-primary">Editar</button>
-                        <button onClick={() => handleDelete(caracteristica.id)} className="btn btn-danger">Eliminar</button>
-                    </td>
-                </tr>
-            ))}
-        </tbody>
-    </Table>
 
-    <AgregarCaracteristicaButton/>
-            
+            <Table striped hover variant="light" className={styles.tablaListados}>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {currentCaracteristicas.map((caracteristica, index) => (
+                        <tr key={index}>
+                            <td>{caracteristica.id}</td>
+                            <td>{caracteristica.name}</td>
+                            <td>{caracteristica.description}</td>
+                            <td>
+                                <button onClick={() => handleEdit(caracteristica.id)} className="btn btn-primary">Editar</button>
+                                <button onClick={() => handleDelete(caracteristica.id)} className="btn btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+
+            <AgregarCaracteristicaButton />
+
             {/* {currentCaracteristicas.length > 0 ? (
                 currentCaracteristicas.map((caracteristica, index) => (
                     <div key={index} className="contenedorProductosAdmin">
@@ -123,13 +123,13 @@ const ListarCaracteristicasAdmin = () => {
                 </Pagination>
             )}
 
-            
-<EditarCaracteristicaButton
+
+            <EditarCaracteristicaButton
                 caracteristicaId={editingCaracteristicaId}
                 show={showEditModal}
                 handleClose={handleCloseEditModal}
             />
-                
+
         </div>
     );
 };
