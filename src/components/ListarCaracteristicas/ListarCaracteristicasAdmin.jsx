@@ -13,9 +13,26 @@ const ListarCaracteristicasAdmin = () => {
     const [caracteristicasPerPage] = useState(5);
     const [showEditModal, setShowEditModal] = useState(false);
     const [editingCaracteristicaId, setEditingCaracteristicaId] = useState(null);
+    const [showForm, setShowForm] = useState(false); // Estado para mostrar u ocultar el formulario
 
     // Endpoint para eliminar característica
     const endPointDeleteCaracteristica = `http://localhost:8080/characteristics/delete/`;
+
+    const handleEdit = (caracteristicaId) => {
+        setEditingCaracteristicaId(caracteristicaId);
+        setShowEditModal(true);
+    };
+
+    const handleCloseEditModal = () => {
+        setShowEditModal(false);
+        setEditingCaracteristicaId(null);
+    };
+
+    // Función para mostrar u ocultar el formulario de agregar característica
+    const toggleForm = () => {
+        setShowForm(!showForm);
+    };
+
 
     const handleDelete = async (id) => {
         try {
@@ -60,76 +77,58 @@ const ListarCaracteristicasAdmin = () => {
         currentCaracteristicas = state.caracteristicas.slice(indexOfFirstCaracteristica, indexOfLastCaracteristica);
     }
 
-    const handleEdit = (caracteristicaId) => {
-        setEditingCaracteristicaId(caracteristicaId);
-        setShowEditModal(true);
-    };
-
-    const handleCloseEditModal = () => {
-        setShowEditModal(false);
-        setEditingCaracteristicaId(null);
-    };
-
     return (
         <div className={styles.contenedorTablaListados}>
             <h2 className={styles.tituloTablaListados}>Características</h2>
 
-            <Table striped hover variant="light" className={styles.tablaListados}>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {currentCaracteristicas.map((caracteristica, index) => (
-                        <tr key={index}>
-                            <td>{caracteristica.id}</td>
-                            <td>{caracteristica.name}</td>
-                            <td>{caracteristica.description}</td>
-                            <td>
-                                <button onClick={() => handleEdit(caracteristica.id)} className="btn btn-primary">Editar</button>
-                                <button onClick={() => handleDelete(caracteristica.id)} className="btn btn-danger">Eliminar</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
-
-            <AgregarCaracteristicaButton />
-
-            {/* {currentCaracteristicas.length > 0 ? (
-                currentCaracteristicas.map((caracteristica, index) => (
-                    <div key={index} className="contenedorProductosAdmin">
-                        <p className='listId'>ID: {caracteristica.id}</p>
-                        <p className='listName'>Nombre: <br />{caracteristica.name}</p>
-                        <p className='listName'>Descripción: <br />{caracteristica.description}</p>
-                        <button onClick={() => handleEdit(caracteristica.id)} className="botonEditar">🖋️</button>
-                        <button onClick={() => handleDelete(caracteristica.id)} className="botonEliminar" >❎</button>
-                    </div>
-                ))
+            {showForm ? ( // Mostrar el formulario si showForm es verdadero
+                <AgregarCaracteristicaButton toggleForm={toggleForm} />
             ) : (
-                <p>No tiene características cargadas en el sistema</p>
-            )} */}
-            {state.caracteristicas.length > 0 && (
-                <Pagination>
-                    {Array.from({ length: Math.ceil(state.caracteristicas.length / caracteristicasPerPage) }).map((_, index) => (
-                        <Pagination.Item key={index} onClick={() => setCurrentPage(index + 1)} active={index + 1 === currentPage}>
-                            {index + 1}
-                        </Pagination.Item>
-                    ))}
-                </Pagination>
+                <Table striped hover variant="light" className={styles.tablaListados}>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {currentCaracteristicas.map((caracteristica, index) => (
+                            <tr key={index}>
+                                <td>{caracteristica.id}</td>
+                                <td>{caracteristica.name}</td>
+                                <td>{caracteristica.description}</td>
+                                <td>
+                                    <button onClick={() => handleEdit(caracteristica.id)} className="btn btn-primary">Editar</button>
+                                    <button onClick={() => handleDelete(caracteristica.id)} className="btn btn-danger">Eliminar</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
             )}
 
+            {!showForm && ( // Mostrar el botón de agregar característica si showForm es falso
+                <Button onClick={toggleForm} className="btn btn-primary">Agregar Característica</Button>
+            )}
 
+            {/* Componente para editar característica */}
             <EditarCaracteristicaButton
                 caracteristicaId={editingCaracteristicaId}
                 show={showEditModal}
                 handleClose={handleCloseEditModal}
             />
 
+            {/* Componente para la paginación */}
+            <Pagination>
+                {Array.from({ length: Math.ceil(state.caracteristicas.length / caracteristicasPerPage) }).map((_, index) => (
+                    <Pagination.Item key={index} onClick={() => setCurrentPage(index + 1)} active={index + 1 === currentPage}>
+                        {index + 1}
+                    </Pagination.Item>
+                ))}
+            </Pagination>
+            
         </div>
     );
 };

@@ -3,13 +3,18 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useContextGlobal } from './Util/global.context';
 
-const AgregarCaracteristicaButton = () => {
+const AgregarCaracteristicaButton = ({ toggleForm }) => {
     const { dispatch } = useContextGlobal();
-    const [showForm, setShowForm] = useState(false);
     const [caracteristicaData, setCaracteristicaData] = useState({
         name: '',
         description: ''
     });
+
+
+    const handleCancel = () => {
+        toggleForm(false); // Cambia el estado de showForm en el componente padre
+    };
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -36,7 +41,8 @@ const AgregarCaracteristicaButton = () => {
             const response = await axios.post('http://localhost:8080/characteristics/add-characteristic', caracteristicaData);
             const newResponse = await axios.get('http://localhost:8080/characteristics/search-name/'+caracteristicaData.name);
             dispatch({ type: 'agregar_caracteristica', payload: newResponse.data });
-            setShowForm(false); // Cierra el pop-up después de agregar la característica
+            //setShowForm(false); // Cierra el pop-up después de agregar la característica
+            toggleForm(false);
             Swal.fire({
                 title: 'Característica agregada',
                 text: 'La característica se ha agregado exitosamente',
@@ -52,18 +58,12 @@ const AgregarCaracteristicaButton = () => {
         }
     };
 
-    const handleCancel = () => {
-        setShowForm(false); // Cierra el pop-up sin agregar la característica
-    };
 
     return (
-        <div>
-            {!showForm && <button onClick={() => setShowForm(true)} className="btn btn-primary">Agregar Característica</button>}
-            {showForm && (
-                <div className="popup">
-                    <h2 className="mb-4">Nueva Característica</h2>
-                    <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center">
-                        <div className="form-group">
+        <div className="popup">
+            <h2 className="mb-4">Nueva Característica</h2>
+            <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center">
+            <div className="form-group">
                             <input
                                 type="text"
                                 name="name"
@@ -87,12 +87,9 @@ const AgregarCaracteristicaButton = () => {
                             <button type="submit" className="btn btn-primary mr-2">Agregar</button>
                             <button type="button" onClick={handleCancel} className="btn btn-secondary">Cancelar</button>
                         </div>
-                    </form>
-                </div>
-            )}
+            </form>
         </div>
     );
 };
 
 export default AgregarCaracteristicaButton;
-

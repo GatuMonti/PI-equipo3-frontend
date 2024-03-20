@@ -230,7 +230,7 @@ function FoormAddProduct() {
 
                 {/* Imputs de Imagenes */}
                 <div className={styles.contenedorInputImgText}>
-                    <div lassName={styles.contenedorInputImg}>
+                    <div className={styles.contenedorInputImg}>
                         <input className={styles.inputImage1} placeholder="URL Image1 *" name='imageUrl' value={productoNuevo.images[0].imageUrl} onChange={(e) => handleImageChange(0, e)} />
                         <input className={styles.inputImage2} placeholder="URL Image2 *" name='imageUrl' value={productoNuevo.images[1].imageUrl} onChange={(e) => handleImageChange(1, e)} />
                         <input className={styles.inputImage3} placeholder="URL Image3 *" name='imageUrl' value={productoNuevo.images[2].imageUrl} onChange={(e) => handleImageChange(2, e)} />
