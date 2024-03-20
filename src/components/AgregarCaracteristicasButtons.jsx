@@ -3,7 +3,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useContextGlobal } from './Util/global.context';
 
-const AgregarCaracteristicaButton = ({ toggleForm }) => {
+const AgregarCaracteristicaButton = ({ toggleFormAgregar }) => {
     const { dispatch } = useContextGlobal();
     const [caracteristicaData, setCaracteristicaData] = useState({
         name: '',
@@ -12,7 +12,7 @@ const AgregarCaracteristicaButton = ({ toggleForm }) => {
 
 
     const handleCancel = () => {
-        toggleForm(false); // Cambia el estado de showForm en el componente padre
+        toggleFormAgregar(false); // Cambia el estado de showForm en el componente padre
     };
 
     const handleChange = (e) => {
@@ -41,7 +41,7 @@ const AgregarCaracteristicaButton = ({ toggleForm }) => {
             const newResponse = await axios.get('http://localhost:8080/characteristics/search-name/'+caracteristicaData.name);
             dispatch({ type: 'agregar_caracteristica', payload: newResponse.data });
             //setShowForm(false); // Cierra el pop-up después de agregar la característica
-            toggleForm(false);
+            toggleFormAgregar(false);
             Swal.fire({
                 title: 'Característica agregada',
                 text: 'La característica se ha agregado exitosamente',

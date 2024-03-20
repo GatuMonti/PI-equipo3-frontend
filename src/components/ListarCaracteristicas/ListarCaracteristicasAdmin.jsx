@@ -15,22 +15,30 @@ const ListarCaracteristicasAdmin = () => {
     const [editingCaracteristicaId, setEditingCaracteristicaId] = useState(null);
     const [showForm, setShowForm] = useState(false); // Estado para mostrar u ocultar el formulario
 
+    const [showFormAgregar, setshowFormAgregar] = useState(false); // Estado para mostrar u ocultar el formulario cuando se aprieta boton agregar 
+    const [showFormEditar, setshowFormEditar] = useState(false); // Estado para mostrar u ocultar el formulario cuando se aprieta boton agregar 
+
     // Endpoint para eliminar característica
     const endPointDeleteCaracteristica = `http://localhost:8080/characteristics/delete/`;
 
     const handleEdit = (caracteristicaId) => {
         setEditingCaracteristicaId(caracteristicaId);
-        setShowEditModal(true);
+        // setShowEditModal(true);
+        setshowFormEditar(true)
     };
 
-    const handleCloseEditModal = () => {
-        setShowEditModal(false);
-        setEditingCaracteristicaId(null);
+    // const handleCloseEditModal = () => {
+    //     setShowEditModal(false);
+    //     setEditingCaracteristicaId(null);
+    // };
+
+    // Funciones para mostrar u ocultar el formulario de agregar característica
+    const toggleFormAgregar = () => {
+        setshowFormAgregar(!showFormAgregar);
     };
 
-    // Función para mostrar u ocultar el formulario de agregar característica
-    const toggleForm = () => {
-        setShowForm(!showForm);
+    const toggleFormEditar = () => {
+        setshowFormEditar(!showFormEditar);
     };
 
 
@@ -79,46 +87,64 @@ const ListarCaracteristicasAdmin = () => {
 
     return (
         <div className={styles.contenedorTablaListados}>
-            <h2 className={styles.tituloTablaListados}>Características</h2>
-
-            {showForm ? ( // Mostrar el formulario si showForm es verdadero
-                <AgregarCaracteristicaButton toggleForm={toggleForm} />
+            {showFormAgregar ? ( // Mostrar el formulario si showFormAgregar es verdadero
+                <AgregarCaracteristicaButton toggleFormAgregar={toggleFormAgregar} />
+            ) : showFormEditar ? (
+                <EditarCaracteristicaButton
+                    caracteristicaId={editingCaracteristicaId}
+                    show={showEditModal}
+                    // handleClose={handleCloseEditModal}
+                    dispatch={dispatch}
+                    toggleFormEditar={toggleFormEditar}
+                />
             ) : (
-                <Table striped hover variant="light" className={styles.tablaListados}>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {currentCaracteristicas.map((caracteristica, index) => (
-                            <tr key={index}>
-                                <td>{caracteristica.id}</td>
-                                <td>{caracteristica.name}</td>
-                                <td>{caracteristica.description}</td>
-                                <td>
-                                    <button onClick={() => handleEdit(caracteristica.id)} className="btn btn-primary">Editar</button>
-                                    <button onClick={() => handleDelete(caracteristica.id)} className="btn btn-danger">Eliminar</button>
-                                </td>
+                <>
+                    <h2 className={styles.tituloTablaListados}>Características</h2>
+                    <Table striped hover variant="light" className={styles.tablaListados}>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </Table>
+                        </thead>
+                        <tbody>
+                            {currentCaracteristicas.map((caracteristica, index) => (
+                                <tr key={index}>
+                                    <td>{caracteristica.id}</td>
+                                    <td>{caracteristica.name}</td>
+                                    <td>{caracteristica.description}</td>
+                                    <td>
+                                        {/* <Button onClick={() =>
+                                            handleEdit(caracteristica.id)}
+                                            className="btn btn-primary">Editar
+                                        </Button> */}
+                                        <Button className="btn btn-danger" onClick={() =>
+                                            handleEdit(caracteristica.id)}>Editar</Button>
+                                        <Button onClick={() =>
+                                            handleDelete(caracteristica.id)}
+                                            className="btn btn-danger">Eliminar
+                                        </Button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </Table>
+                    <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Categoría</Button>
+                </>
             )}
 
-            {!showForm && ( // Mostrar el botón de agregar característica si showForm es falso
+            {/* {!showForm && ( // Mostrar el botón de agregar característica si showForm es falso
                 <Button onClick={toggleForm} className="btn btn-primary">Agregar Característica</Button>
-            )}
+            )} */}
 
             {/* Componente para editar característica */}
-            <EditarCaracteristicaButton
+            {/* <EditarCaracteristicaButton
                 caracteristicaId={editingCaracteristicaId}
                 show={showEditModal}
                 handleClose={handleCloseEditModal}
-            />
+            /> */}
 
             {/* Componente para la paginación */}
             <Pagination>
@@ -128,7 +154,7 @@ const ListarCaracteristicasAdmin = () => {
                     </Pagination.Item>
                 ))}
             </Pagination>
-            
+
         </div>
     );
 };

@@ -37,10 +37,10 @@ const ListarCategoriasAdmin = () => {
         //setShowEditModal(true);
     };
 
-    const handleCloseEditModal = () => {
-        setShowEditModal(false);
-        setEditingCategoriaId(null);
-    };
+    // const handleCloseEditModal = () => {
+    //     setShowEditModal(false);
+    //     setEditingCategoriaId(null);
+    // };
 
     // Logica para eliminar categoria
     const endPointDeleteCategoria = `http://localhost:8080/categorias/delete-category/`;
