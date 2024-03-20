@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import styles from '../ListarProductos/listarProductos.module.css';
+import { Button, Pagination, Table } from 'react-bootstrap';
+
 
 const ListarUsuariosAdmin = () => {
   const [users, setUsers] = useState([]);
@@ -65,9 +68,9 @@ const ListarUsuariosAdmin = () => {
   };
 
   return (
-    <div>
-      <h1>Listado de Usuarios</h1>
-      <table>
+    <div className={styles.contenedorTablaListados}>
+      <h2 className={styles.tituloTablaListados}>Listado de Usuarios</h2>
+      <Table striped hover variant="light" className={styles.tablaListados}>
         <thead>
           <tr>
             <th>ID</th>
@@ -87,14 +90,14 @@ const ListarUsuariosAdmin = () => {
               <td>{user.apellido}</td>
               <td>{user.role}</td>
               <td>
-                <button onClick={() => changeUserRole(user.username, user.role === 'ADMIN' ? 'USER' : 'ADMIN')}>
+                <Button className={styles.botonEditar} onClick={() => changeUserRole(user.username, user.role === 'ADMIN' ? 'USER' : 'ADMIN')}>
                   Cambiar Rol
-                </button>
+                </Button>
               </td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 };

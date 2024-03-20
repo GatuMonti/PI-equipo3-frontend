@@ -57,10 +57,9 @@ function ListarProductAdmin() {
   const currentProducts = state.productos.slice(indexOfFirstProduct, indexOfLastProduct);
 
   return (
-    <div className={styles.contenedorProductos}>
-      <h2 className={styles.titleListProducts}>Listado de Productos </h2>
-      <div className={styles.contenedorListaProductos}>
-        <Table striped hover variant="light" className={styles.tablaProductos}>
+    <div className={styles.contenedorTablaListados}>
+      <h2 className={styles.tituloTablaListados}>Listado de Productos </h2>
+        <Table striped hover variant="light" className={styles.tablaListados}>
           <thead>
             <tr>
               <th>ID</th>
@@ -73,12 +72,12 @@ function ListarProductAdmin() {
           </thead>
           <tbody>
             {currentProducts.map((producto, index) => (
-              <tr key={index} style={{ backgroundColor: index % 2 === 0 ? '#6269d3' : '#6269d3' }}>
+              <tr key={index}>
                 <td>{producto.id}</td>
                 <td>{producto.name}</td>
                 <td>{producto.category ? producto.category.title : 'Sin categoría'}</td>
                 <td>{producto.type}</td>
-                <td><img className={styles.imageProductListAdmin} src={producto.images[0].imageUrl} alt="imageProductAdmin" /></td>
+                <td><img className={styles.imageTableListAdmin} src={producto.images[0].imageUrl} alt="imageProductAdmin" /></td>
                 <td>
                   <Link to={'/editProduct/' + producto.id}><button className={styles.botonEditar}>🖋️</button></Link>
                   <button onClick={() => handleDelete(producto.id)} className={styles.botonEliminar}>❎</button>
@@ -87,7 +86,7 @@ function ListarProductAdmin() {
             ))}
           </tbody>
         </Table>
-        <p className={styles.contadorProductos}>Total de productos : {state.productos.length}</p>
+        <p className={styles.contadorItemsTabla}>Total de productos : {state.productos.length}</p>
         <div className={styles.contenedorPaginado}>
           {state.productos.length > productsPerPage && (
             <Pagination>
@@ -104,7 +103,6 @@ function ListarProductAdmin() {
           )}
         </div>
       </div>
-    </div>
   );
 }
 

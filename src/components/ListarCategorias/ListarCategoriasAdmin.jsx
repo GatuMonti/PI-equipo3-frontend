@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useContextGlobal } from '../Util/global.context';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { Pagination, Button } from 'react-bootstrap';
+import { Pagination, Button, Table } from 'react-bootstrap';
+import AgregarCategoriaButton from '../AgregarCategoriaButton'
 import EditarCategoriaButton from '../EditarCategoriaButton';
+import styles from '../ListarProductos/listarProductos.module.css';
 
 const ListarCategoriasAdmin = () => {
     const { state, dispatch } = useContextGlobal();
@@ -65,7 +67,6 @@ const ListarCategoriasAdmin = () => {
         }
     };
 
-    // Logica para la paginacion
     const indexOfLastCategoria = currentPage * categoriasPerPage;
     const indexOfFirstCategoria = indexOfLastCategoria - categoriasPerPage;
     const currentCategorias = state.categorias.slice(indexOfFirstCategoria, indexOfLastCategoria);
@@ -82,9 +83,39 @@ const ListarCategoriasAdmin = () => {
     };
 
     return (
-        <div className='contenedorListaProductos'>
-            <h3 className='tituloCategoriasAdmin'> {state.categorias.length} Categorías</h3>
-            {currentCategorias.map((categoria, index) => (
+        <div className={styles.contenedorTablaListados}>
+            <h2 className={styles.tituloTablaListados}> Categorías</h2>
+
+            <Table striped hover variant="light" className={styles.tablaListados}>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {currentCategorias.map((categoria, index) => (
+                        <tr key={index}>
+                            <td>{categoria.id}</td>
+                            <td>{categoria.title}</td>
+                            <td>{categoria.description}</td>
+                            <td><img className={styles.imageTableListAdmin} src={categoria.image.imageUrl} alt="imageProductAdmin" /></td>
+                            <td>
+                                <Button variant="primary" className={styles.botonEditar} onClick={() =>
+                                    handleEdit(categoria.id)}>Editar</Button>
+                                <Button variant="danger" className={styles.botonEliminar} onClick={() =>
+                                    handleDelete(categoria.id)}>Eliminar</Button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+
+            <AgregarCategoriaButton/>
+            {/* {currentCategorias.map((categoria, index) => (
                 <div key={index} className="contenedorProductosAdmin">
                     <p className='listId'>ID: {categoria.id}</p>
                     <p className='listName'>Título: <br />{categoria.title}</p>
@@ -93,7 +124,7 @@ const ListarCategoriasAdmin = () => {
                     <button onClick={() => handleEdit(categoria.id)} className="botonEditar">🖋️</button>
                     <button onClick={() => handleDelete(categoria.id)} className="botonEliminar" >❎</button>
                 </div>
-            ))}
+            ))} */}
             <Pagination>
                 {Array.from({ length: Math.ceil(state.categorias.length / categoriasPerPage) }).map((_, index) => (
                     <Pagination.Item key={index} onClick={() => paginate(index + 1)} active={index + 1 === currentPage}>

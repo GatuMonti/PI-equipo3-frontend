@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useContextGlobal } from './Util/global.context';
-import { Pagination, Button } from 'react-bootstrap';
-import EditarCaracteristicaButton from './EditarCaracteristicasButton'
+import { useContextGlobal } from '../Util/global.context';
+import { Pagination, Button, Table } from 'react-bootstrap';
+import EditarCaracteristicaButton from '../EditarCaracteristicasButton'
+import AgregarCaracteristicaButton from '../AgregarCaracteristicasButtons'
+import styles from '../ListarProductos/listarProductos.module.css';
 
 const ListarCaracteristicasAdmin = () => {
     const { state, dispatch } = useContextGlobal();
@@ -69,9 +71,36 @@ const ListarCaracteristicasAdmin = () => {
     };
 
     return (
-        <div className='contenedorListaProductos'>            
-            <h2 className='tituloCaracteristicasAdmin'>{state.caracteristicas.length} Características</h2>
-            {currentCaracteristicas.length > 0 ? (
+        <div className={styles.contenedorTablaListados}>           
+            <h2 className={styles.tituloTablaListados}>Características</h2>
+            
+            <Table striped hover variant="light" className={styles.tablaListados}>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {currentCaracteristicas.map((caracteristica, index) => (
+                <tr key={index}>
+                    <td>{caracteristica.id}</td>
+                    <td>{caracteristica.name}</td>
+                    <td>{caracteristica.description}</td>
+                    <td>
+                        <button onClick={() => handleEdit(caracteristica.id)} className="btn btn-primary">Editar</button>
+                        <button onClick={() => handleDelete(caracteristica.id)} className="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+    </Table>
+
+    <AgregarCaracteristicaButton/>
+            
+            {/* {currentCaracteristicas.length > 0 ? (
                 currentCaracteristicas.map((caracteristica, index) => (
                     <div key={index} className="contenedorProductosAdmin">
                         <p className='listId'>ID: {caracteristica.id}</p>
@@ -83,7 +112,7 @@ const ListarCaracteristicasAdmin = () => {
                 ))
             ) : (
                 <p>No tiene características cargadas en el sistema</p>
-            )}
+            )} */}
             {state.caracteristicas.length > 0 && (
                 <Pagination>
                     {Array.from({ length: Math.ceil(state.caracteristicas.length / caracteristicasPerPage) }).map((_, index) => (
