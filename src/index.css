@@ -11,7 +11,6 @@
 }
 /************************************Desktop***********************************/
 
-/*Comentario de prueba de commit Marco Y Edu*/
 
 /************************************Header***********************************/
 .Header{
@@ -521,12 +520,22 @@ a{
   width: 9vw;
 }
 
+.contenedorCalendarioDetalles{
+  background-color: #070000;
+  display: flex;
+
+}
+
+
+
 .contenedorDetalles{
   width: 50vw;
   display: flex;
   flex-direction: column;
   margin: 2vh 0vw 0vh 10vw;
 }
+
+
 .tituloDetallesDeProducto{
     background-color:#4867DB;
     text-align: center;
@@ -555,6 +564,9 @@ a{
   width: 20vw;
   height: 25vh;
   margin: 2vh 0vw 0vh 12vw;
+  display: flex;
+  justify-content: space-between;
+
 }
 .botonComprar{
   width: 8vw;
@@ -587,6 +599,43 @@ a{
   text-align: center;
   margin: 2vh 0vw 3vh 0vw;
 }
+
+
+.contenedorFechasDetail{
+  height: 5vh;
+    margin: 0.5vh 7vw 0vh 8vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botonBuscarFechaDetail{
+  width: 5vw;
+  height: 3.5vh;
+  border: 2px solid black; /* Agregar borde negro de 2px */
+  border-radius: 10px;
+  margin: 0vh 0vw 0vh 0vw;
+  cursor: pointer;
+  background-color: #AC6ABA;
+  box-sizing: border-box;
+  color: #070000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
 
 /************Formulario crear cuenta******************/
 
@@ -1367,6 +1416,9 @@ font-size: 2vw;
 width: 20vw;
 height: 25vh;
 margin: 2vh 0vw 0vh 12vw;
+
+
+
 }
 .botonComprar{
 width: 9vw;

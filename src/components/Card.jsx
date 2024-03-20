@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Card({product}) {
 
-    console.log(product.images)
+   // console.log(product.images)
     
 
   return (
