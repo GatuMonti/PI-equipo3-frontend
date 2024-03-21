@@ -510,7 +510,7 @@ a{
   font-size: 8vh;
 }
 .contenedorImagenesDetail{
-  margin: 3vh 0vw 0vh 10vw;
+  margin: 0vh 0vw 0vh 10vw;
   display: flex;
   flex-wrap: wrap;
   width: 80%;
@@ -720,6 +720,36 @@ a{
   margin: 1vh 0vw 2vh 0vw;
   
 
+}
+
+ /* FAVORITOS DENTRO DE DETAIL  */
+
+ .contenedorFavorito {
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  left: 10vw;
+  padding: 4px;
+
+}
+
+.bx-heart {
+  color: black;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.bx-heart:hover {
+  color: red;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.bx.bxs-heart {
+  color: red;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 /************Politicas******************/

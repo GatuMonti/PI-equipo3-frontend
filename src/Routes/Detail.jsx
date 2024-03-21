@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import { format } from 'date-fns';
 import ComparteRedesSociales from '../components/ComparteRedesSociales';
+import 'boxicons/css/boxicons.min.css';
 
 
 const Detail = () => {
@@ -14,6 +15,7 @@ const Detail = () => {
   const params = useParams()
 
   const { state, dispatch } = useContextGlobal()
+  const [esFavorito, setEsFavorito] = useState(false);
 
   const endPointDetail = `http://localhost:8080/products/search-id/${params.id}`
 
@@ -25,6 +27,10 @@ const Detail = () => {
     showFeatures: false,
     cambiarBoton: false,
   })
+
+  const toggleFavorito = () => {
+    setEsFavorito(!esFavorito);
+  };
 
   const fechaHoy = new Date();
 
@@ -73,7 +79,12 @@ const Detail = () => {
     axios(endPointDetail)
       .then(res => dispatch({ type: 'get_producto', payload: res.data }))
       .catch(error => console.error("Error fetching product details:", error));
+
+      //  Aquí movemos la página arriba al cargar el componente
+
+    window.scrollTo(0, 0); 
   }, [endPointDetail, dispatch]);
+
 
   // bloquea fechas usadas
   useEffect(() => {
@@ -87,6 +98,8 @@ const Detail = () => {
       })
       .catch(error => console.error("Error fetching product details:", error));
   }, []);
+
+  
 
   
 
@@ -116,9 +129,11 @@ const Detail = () => {
 
       <Link to={'/'}><button className='botonRegresar'>Atras</button></Link>
       <h3 className="tituloDetail">{state.producto?.name}</h3>
+
+      <div onClick={toggleFavorito} className='contenedorFavorito'>
+        <i className={`bx ${esFavorito ? 'bxs-heart' : 'bx-heart'}`}></i>
+      </div>
       
-
-
       <div className="contenedorImagenesDetail">
         {state.producto && state.producto.images && state.producto.images.length > 0 && (
           <img className='imagen1Producto' src={state.producto.images[0].imageUrl} alt="imagen1" />
@@ -173,7 +188,7 @@ const Detail = () => {
     
       </div>
       <div className="contenedorComprar">
-        {rolEnLocalStore != null && <button className='botonComprar'>Comprar</button>}
+        {rolEnLocalStore != null && <button className='botonComprar'>Alquilar</button>}
         <div className='contenedorDatePicker'>
         <i className="bx bx-calendar-event"></i>
 
