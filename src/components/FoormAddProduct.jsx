@@ -84,6 +84,17 @@ function FoormAddProduct() {
                 }
             }
             catch (error) {
+                if (error.response.status===400){
+                    Swal.fire({
+                        title: "Error",
+                        text: "El juego ya se encuentra registrado",
+                        icon: "error",
+                        confirmButtonColor: "#ff00008f",
+                        customClass: {
+                            popup: 'textFallaServer'
+                        }
+                    });
+                }else{
                 console.error('Error:', error.message);
                 Swal.fire({
                     title: "Error!",
@@ -94,6 +105,7 @@ function FoormAddProduct() {
                         popup:'textFallaServer'
                     }
                 });
+            }
                 setProductoNuevo({
                     name:"",
                     category:{
@@ -121,17 +133,6 @@ function FoormAddProduct() {
          const handleOnchangeCategoria=(e)=>{
               setProductoNuevo((prevState) => ({ ...prevState, category:{id: e.target.value.trimStart() }}))
          } 
-
-        //  const handleOnchangeCategoria = (e) => {
-        //      const categoryId = e.target.value;
-        //      setProductoNuevo(prevState => ({
-        //          ...prevState,
-        //          category: {
-        //              id: categoryId
-        //          }
-        //      }));
-        //  };
-
         
         const handleOnchangeDescripcion=(e)=>{
             setProductoNuevo((prevState) => ({ ...prevState, description: e.target.value.trimStart() }))
@@ -153,9 +154,6 @@ function FoormAddProduct() {
              imagesCopy[index] = { ...imagesCopy[index], [name]: value.trimStart() };
              setProductoNuevo(prevState => ({ ...prevState, images: imagesCopy }));
          };
-
-
-    
 
 
         const handleCheckboxChange = (e) => {

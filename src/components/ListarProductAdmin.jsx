@@ -3,13 +3,16 @@ import { useContextGlobal } from './Util/global.context'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import { Pagination, Button } from 'react-bootstrap';
 
 
 
 function ListarProductAdmin() {
 
 
-    const {state,dispatch}=useContextGlobal()
+    const {state,dispatch}=useContextGlobal();
+    const [currentPage, setCurrentPage] = useState(1);
+    const [productsPerPage] = useState(5);
 
     const endPointDeleteProduct=`http://localhost:8080/products/delete-product/`
 
@@ -55,6 +58,15 @@ function ListarProductAdmin() {
       }
   };
 
+    // Logica para la paginacion    
+    let currentProducts = [];
+    if (state.productos.length > 0) {
+        const indexOfLastProductos = currentPage * productsPerPage;
+        const indexOfFirstProductos = indexOfLastProductos - productsPerPage;
+        currentProducts = state.productos.slice(indexOfFirstProductos, indexOfLastProductos);
+    }
+
+    
  
     return (
         <div className='listaAdmin'>
@@ -72,6 +84,16 @@ function ListarProductAdmin() {
                   <button onClick={()=>handleDelete(producto.id)} className="botonEliminar">❎</button>
               </div>
           ))}
+          
+          {state.productos.length > 0 && (
+                <Pagination>
+                    {Array.from({ length: Math.ceil(state.productos.length / productsPerPage) }).map((_, index) => (
+                        <Pagination.Item key={index} onClick={() => setCurrentPage(index + 1)} active={index + 1 === currentPage}>
+                            {index + 1}
+                        </Pagination.Item>
+                    ))}
+                </Pagination>
+            )}
           </div>
           
       </div>

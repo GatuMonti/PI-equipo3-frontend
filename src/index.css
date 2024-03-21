@@ -3,19 +3,18 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 .dark{
-  background-color: #12121296;
-  
+  background-color: black;
+  color: #FFFFFF;
 }
 .light{
-  background-color: #AC6ABA;
+  background-color: white;
 }
 /************************************Desktop***********************************/
-
 
 /************************************Header***********************************/
 .Header{
   width: 100%;
-  height: 18vh;
+  height: 15vh;
   background-color: #6269d3;
   display: flex;
   justify-content: space-between;
@@ -67,21 +66,22 @@
 .iniciar-sesion{
   width: 10vw;
   height: 5vh;
-  background-color: #AC6ABA;
+  background-color: #FFFFFF;
   border-radius: 5px;
   border: none;
-  color: #FFFFFF;
+  color: #0C1029;
   font-weight: 500;
   font-size: 1vw;
 
 }
 .crear-cuenta:hover{
-  background-color: #AC6ABA;
   color: black;
+  
 }
 .iniciar-sesion:hover{
-  background-color: #FFFFFF;
-  color: black;
+  background-color: #AC6AB4;
+  color: white;
+  
 }
 .themeLight,.themeDark{
   width: 40px;
@@ -102,7 +102,7 @@
 
 .footer{
   background-color:#6269d3;
-  padding:30px 0px;
+  padding:10px 0px;
   font-family: 'Play', sans-serif;
   text-align:center;
   
@@ -128,10 +128,6 @@
     color:#5e5e5e;
     }
     
-.footer .row ul{
-    width:100%;
-}
-    
 .footer .row ul li{
     display:inline-block;
     direction: row;
@@ -139,8 +135,12 @@
 }
     
 .footer .row a i{
-    font-size:2em;
-    margin:0% 1%;
+  font-size:2em;
+  margin:0% 1%;
+}
+.roww{
+color:#D9D9D9;
+font-size: 11px;
 }
 
 
@@ -150,7 +150,7 @@
 /********************Categorias****************/
 .home{
   display: flex;
-  flex-wrap: wrap;
+  
 }
 .contenedorCategorias{
   background-color: #4867DB;
@@ -198,46 +198,48 @@
 
 .contenedorDos{
   width: 80%;
-  margin: 0vh 0vw 0vh 2.5vw;
+  margin: 10vh 1vw 0vh 3.5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   
 }
 
-.contenedorBuscador{
+.barraBuscador{
+  width: 80%;
+  height: 70px;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  
   background-color: #DAC9DF;
-  margin: 0vh 7vw 0vh 0vw;
+  margin: 10vh 0vw 0vh 0vw;
   border-radius: 20px;
 }
 
 .formularioBuscador{
   height: 5vh;
   width: 40vh;
-  margin: 20vh 2vw 0.5vh 0vw;
+  margin: 16px 2vw 0.5vh 0vw;
   display: flex;
   justify-content: space-between;
-  border-radius: 5vw;
-
-  
+  border-radius: 8px;
 
 }
+
 .inputSearch{
-  width: 15vw;
-  height: 3vh;
+  width: 10vw;
+  height: auto;
   text-align: center;
   border: none;
   font-size: 1.1vw;
-  margin: 0vh 0vw 0vh 3vw;
+  margin: 0vh 0vw 0vh 5vw;
   cursor: pointer;
-  background-color: #AC6ABA;
+  background-color: #FFFFFF;
+  color: black;
    border-radius: 8px;
    border-style: none;
    box-sizing: border-box;
-   color: #FFFFFF;
+   color: black;
    cursor: pointer;
    display: inline-block;
    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -257,28 +259,28 @@
    touch-action: manipulation;
 }
 
+
+
 .inputSearchBuscador{
-  width: 7vw;
-  height: 4.2vh;
+  width: 150px;
+  height: 33px;
   text-align: center;
   border: none;
   font-size: 1vw;
-  margin: 0vh 2vw 1vh 0vw;
-  background-color: #AC6ABA;
+  margin: 16px 2vw 0.5vh 0vw;
+  background-color: #FFFFFF;
    border-radius: 8px;
    border-style: none;
    box-sizing: border-box;
-   color: #FFFFFF;
+   color: black;
    display: inline-block;
-   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
    font-size: 14.5px;
    font-weight: 500;
    line-height: 20px;
    list-style: none;
    outline: none;
    position: relative;
-   text-align: center;
-   text-decoration: none;
+   text-align: left;
    transition: color 100ms;
    vertical-align: baseline;
    user-select: none;
@@ -287,32 +289,38 @@
 }
 
 .inputSearchBuscador::placeholder {
-  color: white;
+  color: black;
 }
 
-.bx.bx-calendar {
-  font-size: 3.5vh;
-  margin:  0vh 0.4vw 0vh 0vw;
+.inputSearchBuscador:focus {
+  border:  solid black;
+  
 }
+
+
+.bx.bx-calendar {
+  font-size: 3.7vh;
+  margin: 9px 0.5vw 0vh 0vw;
+}
+
 
 
 .calendarioInicio {
-  height: 5vh;
-  margin: 0.50vh 7vw 0vh 0vw;
+  width: 130px;
+  height: 33px;
+  margin: 8px 0.5vw 0vh 0vw;
   display: flex;
-  justify-content: space-between;
-  
+  border-radius: 8px;
+  font-size: 1.68vh;
   
 }
 
 .calendarioFinalizacion{  
-  height: 3.8vh;
-  margin: 0vh 2vw 0vh 1vw;
+  width: 130px;
+  height: 33px;
+  margin: 8px 0.3vw 0vh 0vw;
   display: flex;
-  justify-content: space-between;
-  position: relative;
-  z-index: 2;
- 
+  border-radius: 8px;
 }
 
 .inputSearch:focus{
@@ -320,10 +328,10 @@
 }
 
 .botonBuscarFecha{
-  width: 5vw;
-  height: 4vh;
+  height: 33px;
+  width: auto;
   border: none;
-  margin: 0vh 0vw 0vh 0vw;
+  margin: 8px 0.3vw 0vh 0vw;
   cursor: pointer;
   background-color: #AC6ABA;
   border-radius: 8px;
@@ -338,7 +346,6 @@
   line-height: 20px;
   list-style: none;
   outline: none;
-  
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -347,9 +354,12 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-
 }
 
+.botonBuscarFecha:hover,
+.botonBuscarFecha:focus {
+  background-color: #F082AC;
+}
 
 .botonBuscar{
   width: 3vw;
@@ -388,16 +398,17 @@
     background-color: #F082AC;
   }
  
+ 
 
 
 
-/********************Carrusel****************/
+/********************Slider****************/
 
 .container{
-  width: 100%;
+  width: 80%;
   height: auto;
-  padding: 20px;
-  border-radius: 15px;
+  padding: 15px;
+  border-radius: 20px;
       -webkit-user-select: none;
       -moz-user-select: none;
        -ms-user-select: none;
@@ -408,9 +419,10 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-  background: #dde5f4;
-  
-  
+  margin-left: 0px;
+  margin-right: 2px;
+  background: #AC6AB4;
+  color: #FFFFFF;
 }
 
 /********************Productos****************/
@@ -420,38 +432,51 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 3vh 0vw 4vh 0vw;
-  width: 50vw;
+  width: 75%;
 }
 .tituloProductos{
   width: 100%;
-  height: 5vh;
+  padding: 10px;
+  background-color: white;
+  color: #4867DB;
+  border-radius: 5px;
+  font-size: 2.5vw;
   text-align: center;
-  font-size: 2vw;
-  color: #FFFFFF;
 }
 .card{
   width: 20vw;
-  height: 20vw;
+  height: auto;
   padding: 5px;
-  margin: 5vh 0vw 0vh 0vw;
-  background-color:#FFFFFF; 
-  box-shadow: (2px 2px 8px 10px) #5e5e5e;
-  border-radius: 5px;
-
+  background-color: #AC6AB4;
+  color:black;
+  box-shadow: (8px 8px 8px 10px) black;
+  margin-top: 2vw;
+  border-color: #0056b3;
+  border-width: 0.3vh;
+  transition: transform 0.3s ease;
 }
-.imageProduct{
-  width: 100%;
-  height: 25vh;
+.card:hover {
+  transform: scale(1.05); 
+}
 
+.tituloProducto  {
+  margin-top: 5px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
 }
 .DescriptionProduct{
-  height: 10vh;
+  color: white;
   text-align: center;
-  font-size: 1vw;
-  color: #4867DB;
-  background-color:#FFFFFF;
-  margin: 1vh 0vw 0vh 0vw; 
 }
+
+.imageProduct{
+  width: 90%;
+  height: 25vh;
+  margin-left: 1vw;
+  border-radius: 1vh;
+}
+
 a{
   text-decoration: none;
 }
@@ -459,10 +484,10 @@ a{
 /***********************************Detail****************************************/
 .detalleProducto{
   margin: 0;
-  padding: 20vh 0vw 0vh 0vw;
+  padding: 15vh 0vw 0vh 0vw;
 }
 .botonRegresar{
-  margin: 1vh 0vw 0vh 80vw;
+  margin: 2vh 0vw 0vh 80vw;
   width: 8vw;
   height: 5vh;
   background-color:#4867DB;
@@ -472,60 +497,77 @@ a{
   font-size: 1vw;
 }
 .botonRegresar:hover{
-  background-color: #FFFFFF;
+  background-color: gray;
   color: black  ;
-  width: 9vw;
+
 }
 .tituloDetail{
   width: 50vw;
   margin: 0vh 0vw 0vh 25vw;
-  color:#0a37db;
+  color:#4867DB;
   font-weight: bold ;
   text-align: center;
+  font-size: 8vh;
 }
 .contenedorImagenesDetail{
-  margin: 3vh 0vw 0vh 25vw;
+  margin: 3vh 0vw 0vh 10vw;
   display: flex;
   flex-wrap: wrap;
-  width: 50vw;
-  height: 50vh;
+  width: 80%;
+  height: 60vh;
 }
 .imagen1Producto{
   width: 50%;
   height: 100%;
+  padding: 5px;
+}
+.imagen1Producto:hover{
+  padding: 9px;
 }
 .contenedor4imagenes{
   width: 50%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  padding: 3px;
 }
 .imagen2Producto,.imagen3Producto,.imagen4Producto,.imagen5Producto{
-    width: 50%;
-    height: 50%;
+  width: 50%;
+  height: 50%;
+  padding: 3px;
 }
+.imagen5Producto:hover{
+  padding: 9px;
+}
+.imagen2Producto:hover{
+  padding: 9px;
+}
+.imagen3Producto:hover{
+  padding: 9px;
+}
+.imagen4Producto:hover{
+  padding: 9px;
+}
+
+.bx.bx-calendar-event{
+  font-size: 3.7vh;
+  margin: 1.5vh 0.5vw 0vh 0vw;
+}
+
 .verMas{
   width: 8vw;
   height: 5vh;
   background-color:#4867DB;
-  margin: 3vh 0vw 0vh 65vw;
+  margin: 2.2vh 0vw 0vh 80vw;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
 }
 .verMas:hover{
-  background-color: #FFFFFF;
+  background-color: gray;
   color: black  ;
-  width: 9vw;
 }
-
-.contenedorCalendarioDetalles{
-  background-color: #070000;
-  display: flex;
-
-}
-
 
 
 .contenedorDetalles{
@@ -533,14 +575,14 @@ a{
   display: flex;
   flex-direction: column;
   margin: 2vh 0vw 0vh 10vw;
+  
 }
 
-
 .tituloDetallesDeProducto{
-    background-color:#4867DB;
-    text-align: center;
-    font-size: 1.9vw;
-    color: #FFFFFF;
+  background-color:#4867DB;
+  text-align: center;
+  font-size: 1.9vw;
+  color: #FFFFFF;
 }
 .tituloDetallesDeProducto:hover{
   background-color: #FFFFFF;
@@ -549,25 +591,37 @@ a{
 }
 .categoriaProducto{
   width: 18vw;
-  color: #FFFFFF;
+  color: black;
   font-size: 1.5vw;
   margin: 1vh 0vw 0vh 2vw;
-
 }
 
 .descripcionProducto,.precioProducto{
-  color: #FFFFFF;
+  color: black;
   font-size: 1.5vw;
   margin: 1vh 0vw 0vh 2vw;
 }
+
 .contenedorComprar{
-  width: 20vw;
-  height: 25vh;
+  width: 50vw;
+  height: 15vh;
   margin: 2vh 0vw 0vh 12vw;
   display: flex;
   justify-content: space-between;
+  padding: 0vh 0vw 0vh 0vw;
+  border-radius: 8px;
 
 }
+
+.contenedorDatePicker{
+  width: 39vw;
+  height: 10vh;
+  margin: 0vh 0.5vw 0vh 0vw;
+  display: flex;
+  border-radius: 8px;
+  
+}
+
 .botonComprar{
   width: 8vw;
   height: 5vh;
@@ -576,13 +630,12 @@ a{
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
+  margin: 0.70vh 0vw 0vh 0vw;
 }
 .botonComprar:hover{
-  background-color: #FFFFFF;
+  background-color: #AC6ABA;
   color: black  ;
-  width: 9vw;
 }
-
 .contenedorMostrarCaracteristicas{
   width: 50vw;
   height: 22vh;
@@ -592,13 +645,14 @@ a{
   color: #FFFFFF;
   background-color:#6269d3;
   justify-content: space-around;
-
 }
 .tituloMostarCaracteristicas{
   width: 100%;
   text-align: center;
   margin: 2vh 0vw 3vh 0vw;
 }
+
+ /* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
 
 
 .contenedorFechasDetail{
@@ -607,6 +661,24 @@ a{
     display: flex;
     justify-content: space-between;
 }
+
+.calendarioInicioDetail{
+  width: 25vh;
+  height: 33px;
+  margin: 8px 0.5vw 0vh 0vw;
+  display: flex;
+  border-radius: 8px;
+  font-size: 2.1vh
+}
+
+.calendarioFinalizacionDetail{
+  width: 25vh;
+  height: 33px;
+  margin: 8px 0.3vw 0vh 0vw;
+  display: flex;
+  border-radius: 8px;
+}
+
 
 .botonBuscarFechaDetail{
   width: 5vw;
@@ -636,6 +708,33 @@ a{
   touch-action: manipulation;
 }
 
+/************Politicas******************/
+
+
+.espacePoliticas{
+  color: #FFFFFF;
+}
+
+.politicasTitle{
+  width: 100%;
+  margin-top: 15vh;
+  text-align: center;
+  color:#6269d3;
+  text-decoration: underline;
+}
+
+.politicas{
+  display: flex;
+  margin: 1vh 5vh 2vh 5vh;
+  
+}
+.politica{
+  justify-content: center;
+  text-align: left;
+  margin: 10vh 14vh 8vh 10px;
+  list-style-type: none;
+}
+
 
 /************Formulario crear cuenta******************/
 
@@ -647,7 +746,7 @@ a{
 .formRegister{
   font-family: "Arial";
     margin-bottom: 10px;
-    margin-left: 30%;
+    margin-left: 35%;
     margin-top: 10px;
     padding: 15px;
     border-radius: 15px;
@@ -662,9 +761,13 @@ a{
     justify-content: center;
     align-items: center;
     background: #dde5f4;
-    height: auto;
-    width: 40%;
+    
+    width: 30%;
+    height: 30%;
     box-shadow: 5px 5px 15px black;
+}
+.titleFormLoguin{
+  font-size: 2vw;
 }
 .bannerRegister{
   width: 100%;
@@ -676,12 +779,12 @@ a{
 .etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
   background: #f1f7fe;
   margin: auto;
-  margin-top: 1.5rem;
-  width: 80%;
-  padding: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1.3rem;
   display: flex;
   flex-direction: column;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0;
   gap: 1rem;
 }
@@ -694,7 +797,7 @@ a{
   font-size: 16px;
 }
 .crearCuenta{
-  padding: 16px;
+  padding: 10px;
     width: 10rem;
     margin: auto;
     margin-top: 1rem;
@@ -720,7 +823,7 @@ a{
 .formLogin{
   font-family: "Arial";
     margin-bottom: 10px;
-    margin-left: 30%;
+    margin-left: 35%;
     margin-top: 10px;
     padding: 15px;
     border-radius: 15px;
@@ -735,8 +838,9 @@ a{
     justify-content: center;
     align-items: center;
     background: #dde5f4;
-    height: auto;
-    width: 40%;
+    
+    width: 30%;
+    height: 30%;
     box-shadow: 5px 5px 15px black;
 }
 .banner{
@@ -757,12 +861,12 @@ a{
 .etiquetaUserNameLogin,.etiquetaPasswordLogin{
   background: #f1f7fe;
     margin: auto;
-    margin-top: 1.5rem;
-    width: 80%;
-    padding: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: 0;
     gap: 1rem;
 }
@@ -775,7 +879,7 @@ a{
     font-size: 16px;
 }
 .botonLogin{
-  padding: 16px;
+  padding: 10px;
     width: 10rem;
     margin: auto;
     margin-top: 1rem;
@@ -794,11 +898,11 @@ a{
 
 .footerLoguin{
   display: flex;
-    padding: 12px;
+    padding: 7px;
     margin-top: 0.5rem;
     font-size: 0.7em;
     color: #5e5e5e;
-    gap: 14em;
+    gap: 1em;
 }
 
 .footerLoguin span{
@@ -808,9 +912,12 @@ a{
 
 
 
+
+
 /***********************************Pagina-administrador****************************************/
 .pageAdmin{
   width: 100%;
+  background-image: url('/src/Images/24.jpg')
 }
 .panel{
   width: 80%;
@@ -824,14 +931,13 @@ a{
 }
 .agregarProducto,.ListarProductos,.ListarCategorias,.actualizarProducto{
   width: 15%;
-  height: 5vh;
-  margin: 20vh 0vw 2vh 0vw;
+  height: auto;
+  margin: 20vh 0vw 0vh 0vw;
   background-color:#6269d3;
   color: #FFFFFF;
   border: none;
   border-radius: 5px;
   font-size: 1vw;
-  font-weight: 500;
 }
 .agregarProducto:hover,
 .ListarProductos:hover,
@@ -839,57 +945,70 @@ a{
 .actualizarProducto:hover{
   color: rgba(0, 0, 0, 0.692);
   width: 16%;
-  height: 6vh;
+  height: auto;
   background-color: #FFFFFF;
 }
 
 /***********************************Formulario****************************************/
 
-.formularioAddProducto{
-  display: flex;
-  flex-wrap: wrap;
-  width: 42vw;
-  min-height: 100vh;
-  height: auto;
-  margin: -55vh 0vw 4vh 30vw;
-  background-color:#FFFFFF;
-  border-radius: 5px;
-}
-
 .tituloFormulario{
   width: 100%;
-  font-size: 1.5vw;
+  padding: 8px;
+  font-size: 2vw;
   text-align: center;
   margin: 4vh 0vw 1vh 0vw;
   color:#6269d3;
   font-weight: bold;
 }
-.inputName,.inputCategoria,.inputDescripcion,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
-  width: 11vw;
-  height: 6%;
-  margin: 0vh 0vw 0vh 2.5vw;
-  background-color:rgba(128, 128, 128, 0.568);
-  text-align: center;
-  border-radius: 5px;
-  border: none;
+
+.formularioAddProducto{
+  font-family: "Arial";
+  margin-bottom: 0;
+  margin-left: 13%;
+  margin-top: -25%;
+  border-radius: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  flex-wrap: wrap;
+  background: #dde5f4;
+  width: 75%;
+  height: auto;
+  box-shadow: 5px 5px 15px black;
 }
 
-.inputCategoria{
-  height: 30px;
-  margin: 0vh 0vw 0vh 0vw;
-  width: 12vw;
+.inputCategoria, .inputName,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
+  background: #f1f7fe;
+    margin-top: 1rem;
+    margin-left: 10px;
+    margin-bottom: 1rem;
+    width: 30%;
+    display: inline-flex;
+    padding: 0.4rem;   
+    border-radius: 20px;
+    border: none;
+}
 
+.inputDescripcion{
+  background: #f1f7fe;
+  margin: 1rem 15vw 2vh 15vh;  
+    width: 80%;
+    padding: 0.4rem;
+    border-radius: 20px;
+    box-shadow: 0;
+    border: none;
 }
 .contenedorCaracteristicaCheckbox{
-  display: flex;
-  flex-wrap: wrap;
-  width: 40vw;
-  min-height: 15vh;
+  flex-direction:column ;
+  width: 80%;
+  height: auto;
   margin-bottom: 2vh;
-  margin: 0vh 0vw 2vh 2.5vw;  
+  margin: 1rem 0vw 2vh 15vh;  
   padding-bottom: 1vh;
-  border-radius: 5px;
-  background-color:rgba(128, 128, 128, 0.568);
+  border-radius: 15px;
+  background-color:#f1f7fe;
+  flex-wrap: wrap;
 
 }
 .tituloCheckbox{
@@ -899,55 +1018,41 @@ a{
   font-weight: 500;
   margin: 2vh 0vw 0vh 0vw;  
 }
-
 .contenedorCheckbox{
-  display: flex;  
-  width: 15vw ;
-  justify-content:flex-start;
+  display: wrap;  
+  margin-left: 30%;
+  width: 100% ;
+  justify-content:center;
   align-items: center;
-    
 }
 .inputCheckbox{
   width: 5vw;
   height: 3vh;
-  margin: 0vh 0vw 0vh 0vw;
+  margin: 0.5vh 0vw 0vh 0vw;
 }
 .nombreCaracteristica{
   margin: 0vh 0vw 0vh 0vw;
   font-size: 1.25vw;
 }
-.inputDescripcion{
-  width: 20vw;
-  height: 12vh;
-  margin: 0vh 0vw 0vh 4vw;
-}
 
 .guardarProducto{
-  width: 15vw;
-  height: 5vh;
-  margin: 2.5vh 0vw 0vh 13vw;
-  background-color:#6269d3;
-  border-radius: 5px;
-  border: none;
-  color:#FFFFFF;
-  font-size: 1vw;
+  padding: 8px;
+    width: 10rem;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 70vh;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .guardarProducto:hover{
-  color: rgba(0, 0, 0, 0.692);
-  width: 16vw;
-  height: 9%;
+  background-color: #0056b3;
 }
-/* .mensajeExitoso,.mensajeError{
-  width: 30%;
-  height: 6vh;
-  margin: 2vh 0vw 0vh 37vw;
-  text-align: center;
-  color:green;
-  font-size: 2vw;
-}
-.mensajeError{
-  color: red;
-} */
 
 .textFalla,.textExito{
   color:#6269d3;
@@ -966,7 +1071,7 @@ a{
 }
 /***********************************Listar-Producto-Administrador****************************************/
 .listaAdmin{
-  margin: -55vh 0vw 0vh 0vw;
+  margin: -55vh 0vw -37vh 0vw;
 }
 .titleListProducts{
   color:#4867DB;
@@ -976,7 +1081,7 @@ a{
   font-size: 1.8vw;
   text-align: center;
   background-color: #FFFFFF;
-  border-radius: 5px;
+  
 }
 .contenedorListaProductos{
   display: flex;
@@ -1024,16 +1129,9 @@ a{
 
 /************Caracteristicas del producto******************/
 
-.pageEditar{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-around;
-  align-items: center;
 
-  
-}
 .botonAtrasEditar{
+  margin: 25vh 0vw 0vh 80vw;
   width: 8vw;
   height: 5vh;
   background-color:#4867DB;
@@ -1041,28 +1139,19 @@ a{
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
-  margin: 20vh 0vw 0vh 80vw;
 }
 .botonAtrasEditar:hover{
-  background-color: #FFFFFF;
+  background-color: gray;
   color: black  ;
-  width: 9vw;
-}
-.tituloEditar{
-  width: 25vw;
-  font-weight:100;
-  color:#0e41f7;
-  margin: 0vh 0vw 4vh 2vw;
-}
-.contenedorActualizar{
-  display: flex;
-  width: 50%;
+
 }
 .contenedorEditar{
   width: 40%;
   margin: 0vh 0vw 3vh 2vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
 .idEditar,.nameEditar,.typeEditar,.categoriaEditar,.descripcionEditar,.precioEditar,.consolaEditar,.idImagen,.urlImagen,.idProductoImagen,.idCarateristica,.nameCaracteristica,.descripcionCaracteristica{
   color:#0e41f7;
   font-size: 1.2vw;
@@ -1071,90 +1160,88 @@ a{
   color:rgba(0, 0, 0, 0.705);
 }
 
+
 /************Formulario actualizar producto******************/
 
+.pageEditar{
+  width: 100%;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+
+}
+
+.inputDescripcion{
+  background: #f1f7fe;
+  margin: 1rem 15vw 1vh 15vh;  
+    width: 80%;
+    padding: 0.4rem;
+    border-radius: 20px;
+    box-shadow: 0;
+    border: none;
+}
 
 .formularioActualizarProducto{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 60vw;
-  height: 90vh;
-  margin-bottom: 2vh;
-  padding:0vh 1.1vw 0vw 0vh;
+  font-family: "Arial";
+  margin-bottom: 0;
+  margin-left: 10%;
+  margin-top: 5%;
+  border-radius: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   
-  background-color:#FFFFFF;
-  border-radius: 5px;
+  flex-direction: row;
+  background: #dde5f4;
+  width: 80%;
+  height: auto;
+  box-shadow: 5px 5px 15px black;
+  justify-content: center;
 }
 
-.inputActualizar,.inputActualizarDescripcion,.inputCaracteristica{
-  width: 12vw;
-  height: 30px;  
-  background-color:rgba(128, 128, 128, 0.568);
-  text-align: center;
-  border-radius: 5px;
-  border: none;
-  font-size: 1.5vh;
-}
-.contenedorDeInput, .contenedorDeInputDescription{  
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-  margin: -20px 0px 0px 2vw;
-  flex-wrap: wrap;
-  width: 14vw;
-  height: 8vh;
+.inputActualizar,.inputActualizarDescripcion,.inputCaracteristica .inputCategoriaEdit{
+  background: #FFFFFF;
+    margin-top: 1rem;
+    margin-left: 10px;
+    margin-bottom: 1rem;
+    width: 60%;
+    display: inline-flex;
+    padding: 0.4rem;   
+    border-radius: 20px;
+    border: none; 
 }
 
-.inputCaracteristica{
-  height: 6vh;
-}
-.contenedorDeInputDescription{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 50%;
-  height: 10vh;
-  margin: 0vh 0vw 0vh 3vw;
+.inputActualizarDescripcion{
+  padding: 10px;
+  position: relative;
   
 }
 
 .inputActualizarDescripcion{  
-  width: 100%;
-  height: 70%;
+  width: 80%;
+  height: auto;
   margin: 0vh 0vw 0vh 0vw;
-  font-size: 1.25vh;
+  font-size: 15pxh;
+  display: inline-flex;
 }
+
 .botonActualizar{
-  width: 10vw;
-  height: 8%;
-  margin: 2.75vh 0vw 0vh 2vw;
-  background-color:#6269d3;
-  border-radius: 5px;
-  border: none;
-  color:#FFFFFF;
-  font-size: 1vw;
+  padding: 8px;
+    width: 10rem;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 70vh;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .botonActualizar:hover{
-  width: 16vw;
-  height: 9%;
-}
-
-.labelActualizarProducto{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center; 
-  width: auto;     
-}
-
-.labelActualizarProducto input, .labelActualizarProducto select{
-  height: auto;
-}
-
-.labelActualizarProducto textArea{  
-  height: 100%;
-  width: 40vw;  
+  background-color: #0056b3;
 }
 
 
@@ -1204,9 +1291,10 @@ a{
   flex-direction: column;
   align-items: center;
   margin: 0vh 9vw 0vh 0vw;
+  
 }
 
-/**** Card del Navbar****/
+/** Card del Navbar**/
 .panelDetallesDeUsuario{  
   width: 100%;
   height: auto;
@@ -1232,7 +1320,7 @@ a{
 
 
 
-/***********************************Table****************************************/
+/****************************************MEDIA*******************************************************/
 
 /***********************************Header****************************************/
 @media(max-width:900px){
@@ -1244,27 +1332,22 @@ a{
     justify-content:space-between;
   }
   .imagenLogo{
-    width: 22vw;
+    width: 9vw;
     height: 10vh;
     margin: 0vh 0vw -0.5vh 0vw;
   }
   .lema{
     width: 40vw;
-    margin: 0vh 0vw 1vh 0vw;
+    margin: -8vh 0vw 5vh 10vw;
     text-align:left;
     font-size: 3vw;
   }
   .botones{
-    width: 65vw;
+    width: 10%;
     height: 5vh;
-    margin: 4vh 5vw 0vh 0vw;
+    margin: 5vh 10vw 0vh 0vw;
   }
-  .crear-cuenta,.iniciar-sesion{
-    width: 22vw;
-    height: 4vh;
-    margin: 0.5vh 0vw 0vh 0vw;
-    font-size: 2.9vw;
-  }
+  
   .themeLight,.themeDark{
     height: 80%;
     margin: 0.5vh 0vw 0vh 1vw;
@@ -1272,50 +1355,39 @@ a{
   
   /************************************Footer***********************************/
   
-  .derechos{
-    width: 30vw; 
-    margin: 5vh 0vw 0vh 10vw;
-  }
-  .circuloFooter{
-    width: 28px;
-    margin: 2.3vh 0vw 0vh 0vw;
-  }
-  .mensajeFooter{
-    width: 15vw; 
-    height: 3vh;
-    font-size: 2.5vw;
-    margin: 3vh 0vw 0vh 0vw;
-  }
-  .navegacionFooter{
-    width: 30vw;
-    height: 5vh;
-    margin: 6.5vh 10vw 0vh 0vw; 
-  }
-  .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
-    font-size: 5vw;
-    margin: 1vh 2vw 0vh 0vw;
-  }
+  .footer .row{
+    padding: 3px;
+    font-size: 2vh;
+ }
 
+
+ .roww{
+  color:#D9D9D9;
+  font-size: 9px;
+ }
   /***********************************Home****************************************/
   
   /********************Categorias****************/
 
   .contenedorCategorias{
-    width: 30vw;
+    width: 25%;
+    height: 300vh;
   }
   .tituloCategorias{
-    font-size: 3vw;
+    font-size: 2.9vw;
+    margin-top: 3vw;
   }
   .categoriaUno, .categoriaDos,.categoriaTres,.categoriaCuatro,.categoriaCinco{   
-     width: 28vw;
-    margin: 2vh 0vw 0vh 1vw;
+     width: 80%;
+     height: 30%;
+    margin: 2vh 0vw 0vh 2.1vw;
   }
 
   .tituloCategoriaUno,.tituloCategoriaDos,.tituloCategoriaTres,.tituloCategoriaCuatro,.tituloCategoriaCinco{
     font-size: 2.5vw;
   }
   .img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres,.img1CategoriaCuatro,.img2CategoriaCuatro,.img1CategoriaCinco,.img2CategoriaCinco{
-    width: 26vw;
+    width: 100%;
     height: 15vh;
     margin: 1vh 0vw 0vh 0vw;
   }
@@ -1331,32 +1403,59 @@ a{
 
 /********************Buscador****************/
 .contenedorDos{
-  width: 65%;
-  margin: 0vh 0vw 0vh 2vw;
+  width: 85%;
+  margin: 10vh 0vw 0vh 2vw;
 }
+
+.barraBuscador{
+  width: 80%;
+  height: 70px;
+  
+}
+
 
 .formularioBuscador{
-  width: 40vw;
-  margin: 20vh 0vw 0vh 0vw;
-
+  width: 30%;
 }
 .inputSearch{
-  width: 30vw;
-  font-size: 2.5vw;
+  width: 11vw;
+  font-size: 1vw;
+  margin: 0vh 0vw 0vh 2vw;
 }
-
-
-.botonBuscar{
-  margin: 1vh 3vw 0vh 0vw;
+.botonBuscar{ 
+  margin: 0vh 4vw 0vh 0vw;
 }
 .bx-search-alt{
-  font-size: 4vw;
+  font-size: 2vw;
+  margin: -1.2vh;
 }
+
+.inputSearchBuscador{
+  width: 11vw;
+  font-size: 1vw;
+  margin: 3.5vh 0vw 0vh -2.5vw;
+}
+
+.calendarioInicio{
+  width: 70px;
+  font-size: 9px;
+}
+.calendarioFinalizacion{
+  width: 70px;
+  font-size: 9px;
+}
+
+.botonBuscarFecha{
+  font-size: 9px;
+}
+
 
 /********************Carrusel****************/
 
-.carousel-control-next, .izq{
-  margin: 0vh 5vw 0vh 10vw;
+.container{
+  width: 100%;
+  height: auto;
+  margin: 4vh 1.5vw 0vh 0vw;
 }
 
 
@@ -1364,18 +1463,18 @@ a{
 
 .contenedorProductos{
   margin: 0vh 0vw 4vh 0vw;
-  width: 65vw;
+  width: 100%;
 }
 .tituloProductos{
   font-size: 4vw;
   margin: 6vh 0vw 0vh 0vw;
 }
 .card{
-  width: 28vw;
-  height: 14%;
+  width: 35%;
+  height: 23%;
 }
 .imageProduct{
-  width: 28vw;
+  width: 90%;
   height: 15vh;
 }
 .DescriptionProduct{
@@ -1391,7 +1490,7 @@ a{
 /***********************************Detail****************************************/
 
 .contenedorImagenesDetail{
-  margin: 3vh 0vw 0vh 15vw;
+  margin: 3vh 0vw 0vh 12vw;
   width: 80vw;
 }
 .botonRegresar{
@@ -1416,9 +1515,6 @@ font-size: 2vw;
 width: 20vw;
 height: 25vh;
 margin: 2vh 0vw 0vh 12vw;
-
-
-
 }
 .botonComprar{
 width: 9vw;
@@ -1432,24 +1528,29 @@ font-size: 1.5vw;
 /************Formulario crear cuenta******************/
 
 .formRegister{
-  width: 40vw;
-  margin: 7vh 0vw 5vh 30vw;
+  width: 50%;
+  margin: 6vh 0vw 5vh 30vw;
 }
 .titleFormRegister{
   margin: 1vh 0vw 0vh 12vw;
   font-size: 2.5vw;
 }
 .etiquetaUserName,.etiquetaPassword,.etiquetaName,.etiquetaApellido,.etiquetaEmail{
-  margin: 1vh 0vw 1vh 8vw;
+  width: 90%;
+  padding: 10px;
+  margin: 1vh 0vw 0vh 0vw;
+  font-size: 12px;
 }
 .inputUserName,.inputPassword,.inputNameRegister,.inputApellido,.inputEmail{
-  width: 25vw;
-  margin: 0vh 0vw 0vh 8vw;
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
 }
 .crearCuenta{
-  width: 20vw;
-  height: 5vh;
-  margin: 2vh 0vw 2vh 10vw;
+  width: 30%;
+  height: auto;
+  font-size: 10px;
+  
 }
 .crearCuenta:hover{
   width: 21vw;
@@ -1458,22 +1559,25 @@ font-size: 1.5vw;
 /************Formulario Login******************/
 
 .formLogin{
-  width: 35vw;
-  margin: 20vh 0vw 16vh 34vw;
-}
-.titleFormLogin{
-  width: 40%;
-  margin: 2vh 0vw 0vh 11vw;
-  font-size: 3vw;
+  width: 50%;
+  margin: 6vh 0vw 5vh 30vw;
 }
 
+.etiquetaUserNameLogin, .etiquetaPasswordLogin{
+  width: 90%;
+  padding: 10px;
+  margin: 1vh 0vw 0vh 0vw;
+  font-size: 12px;
+}
 .inputUserNameLogin,.inputPasswordLogin{
-  width: 20vw;
-  margin: 0vh 0vw 0vh 8vw;
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
 }
 .botonLogin{
-  width: 15vw;
-  margin: 3vh 0vw 2vh 10vw;
+  width: 30%;
+  height: auto;
+  font-size: 10px;
 }
 .botonLogin:hover{
   width: 16vw;
@@ -1484,18 +1588,51 @@ font-size: 1.5vw;
 
 /***********************************Pagina-administrador****************************************/
 
-  .pageAdmin{
-    display: none;
+/********Agregar Producto Responsive******/
+  .vacio{
+    height: 45vh;
   }
+  .agregarProducto,.ListarProductos,.ListarCategorias,.actualizarProducto{
+    justify-content: center;
+    font-size: 1.5vw;
+    
+  }
+  .inputCategoria, .inputName,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
+    font-size: 10px;   
+  }
+  .inputDescripcion{
+    margin-top: 1vh;
+    font-size: 10px;
+  }
+
+  .guardarProducto{
+    margin-left: 38%;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+/********Listar Producto Responsive******/
+.listaAdmin{
+  margin: -35vh 0vw -37vh 0vw;
+}
+.botonActualizar{
+  margin-left: 38%;
+    font-size: 12px;
+    padding: 5px;
+}
+
+
+
+
 
 
 }
 
-/***********************************Mobile****************************************/
+/************************************************************Mobile****************************************/
 
 /***********************************Header****************************************/
 
-@media(max-width:480px){
+@media(max-width:500px){
 
   .imagenLogo{
     width: 30vw;
@@ -1726,14 +1863,3 @@ font-size: 2.5vw;
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-

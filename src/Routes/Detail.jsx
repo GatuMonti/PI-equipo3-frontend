@@ -112,6 +112,7 @@ const Detail = () => {
     <div className='detalleProducto'>
       <Link to={'/'}><button className='botonRegresar'>Atras</button></Link>
       <h3 className="tituloDetail">{state.producto?.name}</h3>
+      
 
 
       <div className="contenedorImagenesDetail">
@@ -154,54 +155,31 @@ const Detail = () => {
           <h3 className="precioProducto">Precio:<span>{state.producto.price} USD</span></h3>
         </div>
 
-        <div>
-          <DatePicker
-            className='calendario'
-            selected={estadosFechas.fechaInicio}
-            excludeDates={fechasBloqueadas}
-            dateFormat="yyyy-MM-dd"
-            placeholderText="Fecha de Inicio"
-            customDayClassName={customDayClass}
-            onChange={date => setStartDate(date)} // Actualiza startDate al seleccionar una fecha
-          />
-        </div>
+        
 
-        <div>
-          <DatePicker
-            className='calendario'
-            excludeDates={fechasBloqueadas}
-            dateFormat="yyyy-MM-dd"
-            placeholderText="Fecha de Finalización"
-            customDayClassName={customDayClass}
-          />
-        </div>
-
-        {/* <div className='contenedorDatePicker'>
-          <DatePicker
-            selected={estadosFechas.fechaInicio}
-            onChange={manejarCambioFechaInicio}
-            dateFormat="yyyy-MM-dd"
-            placeholderText="Fecha de Inicio"
-            className='calendario'
-            type="date"
-            name={estadosFechas.fechaInicio}
-            value={estadosFechas.fechaInicio}
-          />
-          <DatePicker
-            selected={estadosFechas.fechaFin}
-            onChange={manejarCambioFechaFin}
-            dateFormat="yyyy-MM-dd"
-            placeholderText="Fecha de Finalización"
-            className='calendario'
-            type="date"
-            value={estadosFechas.fechaFin}
-            name={estadosFechas.fechaFin}
-          />
-          {<button className="botonBuscarFechaDetail" onClick={handleRealizarBusqueda}>Buscar</button>}
-        </div> */}
+    
       </div>
       <div className="contenedorComprar">
         {rolEnLocalStore != null && <button className='botonComprar'>Comprar</button>}
+        <div className='contenedorDatePicker'>
+        <i className="bx bx-calendar-event"></i>
+
+        <DatePicker className= "calendarioInicioDetail"
+            selected={estadosFechas.fechaInicio}
+            excludeDates={fechasBloqueadas}
+            dateFormat="yyyy-MM-dd"
+            placeholderText=" Fecha de Inicio"
+            customDayClassName={customDayClass}         
+          />
+        
+          <DatePicker className="calendarioFinalizacionDetail"
+            selected={estadosFechas.fechaFin}
+            excludeDates={fechasBloqueadas}
+            dateFormat="yyyy-MM-dd"
+            placeholderText=" Fecha de Finalización"
+            customDayClassName={customDayClass}    
+          />
+        </div>
       </div>
 
 

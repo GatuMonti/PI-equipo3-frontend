@@ -20,6 +20,7 @@ import Slider from "../components/slider";
 import axios from "axios";
 import { format } from 'date-fns';
 
+
 const Home = () => {
   const { state } = useContextGlobal();
   const [estadosNuevos, setStateNuevos] = useState({
@@ -35,6 +36,8 @@ const Home = () => {
     inicio: null,
     fin: null,
   });
+
+  const fechaHoy = new Date();
 
 
   // Función para revolver los elementos del array
@@ -195,10 +198,12 @@ const Home = () => {
       </div>
 
       <div className="contenedorDos">
-        <div className="contenedorBuscador">
+      <div className="barraBuscador">
+
+        
           <form className="formularioBuscador">
             <select onChange={handleChangeCategoria} className="inputSearch">
-              <option value="">Categoría</option>
+              <option value="">Filtrar por categoria</option>
               {state.categorias.slice(1).map((categoria, index) => (
                 <option key={index} value={categoria.title}>
                   {categoria.title}
@@ -214,19 +219,20 @@ const Home = () => {
           <input
             type="text"
             className="inputSearchBuscador"
-            placeholder="Buscar Juego"
+            placeholder=" Buscar un juego..."
             onChange={handleOnchangeInputText}
           />
+
           <form className="calendarioInicio">
+          <i className="bx bx-calendar"></i>
 
-            <i className="bx bx-calendar"></i>
-
-            <DatePicker
+          <DatePicker className= "calendarioInicio"
               selected={estadosFechas.inicio}
               onChange={manejarCambioFechaInicio}
               dateFormat="yyyy-MM-dd"
-              placeholderText="Fecha de Inicio"
+              placeholderText=" Fecha de Inicio"
               type="date"
+              minDate={fechaHoy}
               name={estadosFechas.inicio}
               value={estadosFechas.inicio}
             />
@@ -238,6 +244,7 @@ const Home = () => {
               dateFormat="yyyy-MM-dd"
               placeholderText="Fecha de Finalización"
               type="date"
+              minDate={fechaHoy}
               value={estadosFechas.fin}
               name={estadosFechas.fin}
             />
@@ -251,17 +258,16 @@ const Home = () => {
 
         {/*Renderizacion de productos*/}
         {estadosNuevos.buscarPorFechas ?
-
           <div className="contenedorProductos">
             <h1 className="tituloProductos"> Productos disponibles {estadosNuevos.productosDisponiblesPorFecha.length}</h1>
             {productsDateToShow}
 
             {/* Botones para navegar entre las páginas  */}
 
-            <div className="botonesPaginado">
+            {/* <div className="botonesPaginado">
                 <button className='botonPaginadoAtras' onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
                 <button className='botonPaginadoAdelante' onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
-            </div>
+            </div> */}
 
           </div> :
 
@@ -272,10 +278,10 @@ const Home = () => {
 
               {/* Botones para navegar entre las páginas  */}
 
-              <div className="botonesPaginado">
+              {/* <div className="botonesPaginado">
                 <button className='botonPaginadoAtras' onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
                 <button className='botonPaginadoAdelante' onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
-              </div>
+              </div> */}
             </div>
             :
             <div className="contenedorProductos">
