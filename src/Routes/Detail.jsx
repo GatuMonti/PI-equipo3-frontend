@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import { format } from 'date-fns';
+import ComparteRedesSociales from '../components/ComparteRedesSociales';
 
 
 const Detail = () => {
@@ -24,6 +25,8 @@ const Detail = () => {
     showFeatures: false,
     cambiarBoton: false,
   })
+
+  const fechaHoy = new Date();
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -110,6 +113,7 @@ const Detail = () => {
 
   return (
     <div className='detalleProducto'>
+
       <Link to={'/'}><button className='botonRegresar'>Atras</button></Link>
       <h3 className="tituloDetail">{state.producto?.name}</h3>
       
@@ -140,11 +144,20 @@ const Detail = () => {
       {State.showFeatures &&
         <div className="contenedorMostrarCaracteristicas">
           <h2 className="tituloMostarCaracteristicas">¡Caracteristicas Especiales!</h2>
+          <div className='caracteristicas'>
           {state.producto.characteristics.map((caracteristica) => {
             return <p className="nombreCaracteristicas"><Avatar name={caracteristica.name} textMarginRatio='.15' font-size='2px' size="30" round={true} />{caracteristica.name}</p>
           })}
+          </div>
+          <div className='comparteRedes'>
+        <ComparteRedesSociales location={location.pathname}/>
         </div>
+  
+        </div>
+        
+
       }
+      
 
       <div className='contenedorCalendarioDetalles'>
 
@@ -169,6 +182,7 @@ const Detail = () => {
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText=" Fecha de Inicio"
+            minDate={fechaHoy}
             customDayClassName={customDayClass}         
           />
         
@@ -177,6 +191,7 @@ const Detail = () => {
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText=" Fecha de Finalización"
+            minDate={fechaHoy}
             customDayClassName={customDayClass}    
           />
         </div>

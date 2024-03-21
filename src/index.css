@@ -558,7 +558,7 @@ a{
   width: 8vw;
   height: 5vh;
   background-color:#4867DB;
-  margin: 2.2vh 0vw 0vh 80vw;
+  margin: 2.2vh 0vw 0vh 62vw;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
@@ -638,9 +638,9 @@ a{
 }
 .contenedorMostrarCaracteristicas{
   width: 50vw;
-  height: 22vh;
+  height: 24vh;
   display: flex;
-  margin: 2vh 0vw 0vh 10vw;
+  margin: -4vh 0vw 0vh 10vw;
   flex-wrap: wrap;
   color: #FFFFFF;
   background-color:#6269d3;
@@ -706,6 +706,20 @@ a{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+.caracteristicas{
+  display: flex;
+  margin: 1vh 0vw 0vh 0vw;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.comparteRedes{
+  display: flex;
+  margin: 2vh 0vw 2vh 0vw;
+  
+
 }
 
 /************Politicas******************/
