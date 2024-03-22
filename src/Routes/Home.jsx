@@ -377,7 +377,8 @@ console.log("Productos favortiso en el state:",state.favoritos)
             // </div>
 
             <div className="contenedorProductos">
-              {state.isFavorite ? <h1 className="tituloProductos">Mis favoritos {state.favoritos.length}</h1>
+              {state.isFavorite ? 
+              <h1 className="tituloProductos">Mis favoritos {state.favoritos.length}</h1>
               : <h1 className="tituloProductos">Los Mas Recomendados</h1>
               }
               

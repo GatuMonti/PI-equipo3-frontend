@@ -3,10 +3,12 @@ import Avatar from 'react-avatar';
 import styles from './CardUsuario.module.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useContextGlobal } from "../Util/global.context";
+import { useNavigate } from 'react-router-dom';
 
 const CardUsuario = ({ userRole, setUserRole }) => {
   const [showMenu, setShowMenu] = useState(false);
    const {state, dispatch} = useContextGlobal();
+   const navigate = useNavigate();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -19,6 +21,7 @@ const CardUsuario = ({ userRole, setUserRole }) => {
 
 const onClickFavs = ()=>{
     dispatch({type: "set_isFavorite", payload: true})
+    navigate('/');
 }
 
   return (
