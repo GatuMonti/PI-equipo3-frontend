@@ -741,15 +741,6 @@ a{
 
 }
 
-.contenedorFavoritoCard{
-  display: inline-block;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  left: 8.2vw;
-  padding: 4px;
-}
-
 .bx-heart {
   color: black;
   font-size: 40px;
@@ -794,6 +785,7 @@ a{
   margin: 10vh 14vh 8vh 10px;
   list-style-type: none;
 }
+
 
 
 /************Formulario crear cuenta******************/
@@ -1376,8 +1368,86 @@ a{
   margin-bottom: 10px;
  
 }
+/****************** Estilos agregados por Gatu ************************************************/
+
+.cardTop{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardBottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  color:#D9D9D9
+}
+
+.cardVotos{
+  font-size: 1.5rem;
+}
+
+/****************************Calificaciones***************************************/
+.contenedorReservas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative; /* Agregado */
+  cursor: pointer;
+}
+.contenedorReservas .contenedorProductosAdmin{
+  margin-bottom: 0px;
+}
+.productoACalificar {
+  background-color: #ccc;
+  min-width: 95%;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  overflow: hidden; /* Ocultar el contenido que se desborda */
+  max-height: 0px; /* Altura máxima */
+  transition: 0.5s ease-in-out; /* Transición de altura */
+}
+
+.invisible {
+  max-height: 0; /* Ocultar el contenido */
+}
+
+.visible {
+  max-height: 500px; /* Ajustado */
+}
 
 
+.productosClasificar{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px dashed grey;
+
+}
+.msjsCalificar{
+  display: flex;
+  width: 40vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.msjsCalificar p{
+  margin: 0px;
+}
+.calificarColumna1{
+  display: flex;
+  width: 30%;  
+  justify-content: space-between;
+}
+
+.inputCalificacion{
+  width: 35vw;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+}
 
 
 /****************************************MEDIA*******************************************************/

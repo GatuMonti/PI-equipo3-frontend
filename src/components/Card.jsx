@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 import { useContextGlobal } from './Util/global.context';
 import axios from 'axios';
 import { agregarFavorito, eliminarFavorito, obtenerFavoritos } from '../components/favoritos';
+import EstrellasCard from './EstrellasCard'; 
+import CalificacionPromedioInfo from './CalificacionPromedioInfo';
 
 
 
@@ -182,16 +184,18 @@ const usuario=localStorage.getItem("username")
 
   return (
     <div className='card'>
+      <div className='cardTop'>
+      <div onClick={handleToggleFavorito} className='contenedorFavoritoCard'>
+          {localStorage.getItem('username') && <i className={`bx ${estadosFavoritos.favorito ? 'bxs-heart' : 'bx-heart'}`}></i>}        
+      </div>
+      <EstrellasCard productId={product.id}/>
+      </div>
         <Link to={'/Detail/' + product.id}>
            <img className="imageProduct" src={product.images[0].imageUrl}alt="imagen del producto" />
            <h4 className='tituloProducto'> {product.name} </h4>
            <p className="DescriptionProduct">{trimmedDescription}</p>
-        </Link>  
-
-        <div onClick={handleToggleFavorito} className='contenedorFavoritoCard'>
-          {localStorage.getItem('username') && <i className={`bx ${estadosFavoritos.favorito ? 'bxs-heart' : 'bx-heart'}`}></i>}        
-      </div>
-
+        </Link>               
+      <CalificacionPromedioInfo productId={product.id}/>
     </div>
   )
 }

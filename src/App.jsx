@@ -15,6 +15,7 @@ import PanelCategorias from './Routes/PanelCategorias'
 import PanelDetallesUsuario from './Routes/PanelDetallesUsuario'
 import PanelUsuarios from './Routes/PanelUsuarios'
 import Politicas from './components/Politicas'
+import PanelReservas from './Routes/PanelReservas'
 
 function App() {
   
@@ -37,6 +38,7 @@ function App() {
            <Route path='/pageDetallesUsuario' element={<PanelDetallesUsuario/>}/>
            <Route path="/pageAdmin/panelUsuarios" element={<PanelUsuarios/>}/>
            <Route path='/terminosycondiciones' element={<Politicas/>}/>
+           <Route path='/panelReservas' element={<PanelReservas/>}/>
          </Routes>
          <Footer/>
 
