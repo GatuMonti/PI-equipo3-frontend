@@ -483,6 +483,10 @@ a{
   text-decoration: none;
 }
 
+.estrellas{
+  margin: 0vh 1vw 0vh 0vw;
+}
+
 /***********************************Detail****************************************/
 .detalleProducto{
   margin: 0;
@@ -1125,7 +1129,7 @@ a{
 }
 /***********************************Listar-Producto-Administrador****************************************/
 .listaAdmin{
-  margin: -55vh 0vw -37vh 0vw;
+  margin: -45vh 0vw -37vh 0vw;
 }
 .titleListProducts{
   color:#4867DB;
@@ -1344,7 +1348,7 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0vh 9vw 0vh 0vw;
+  margin: 0vh 9vw 84vh 0vw;
   
 }
 
@@ -1386,6 +1390,39 @@ a{
 
 .cardVotos{
   font-size: 1.5rem;
+}
+
+/* Estilos para las sugerencias del Autosuggest */
+.react-autosuggest__suggestions-container {
+  position: relative;
+  z-index: 10;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  width: calc(100% - 20px); /* Ancho del contenedor (ajustar según sea necesario) */
+  max-height: 200px; /* Altura máxima del contenedor (ajustar según sea necesario) */
+  overflow-y: auto; /* Agregar barra de desplazamiento vertical si es necesario */
+  background-color: white; /* Fondo blanco */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-autosuggest__suggestions-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.react-autosuggest__suggestion {
+  padding: 10px;
+  cursor: pointer;
+  color: black; /* Color de texto negro */
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #f0f0f0;
 }
 
 /****************************Calificaciones***************************************/

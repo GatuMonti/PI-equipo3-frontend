@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
+import { urlBackend } from '../App';
 
 const CalificacionCard = ({ productId }) => {
   const [calificacionData, setCalificacionData] = useState(null);
@@ -8,7 +9,7 @@ const CalificacionCard = ({ productId }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/calificaciones/calificacionPromedio/${productId}`);
+        const response = await axios.get(`${urlBackend}calificaciones/calificacionPromedio/${productId}`);
         setCalificacionData(response.data);
       } catch (error) {
         console.error('Error fetching calificacion data:', error);

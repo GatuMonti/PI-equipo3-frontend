@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Modal, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { useContextGlobal } from './Util/global.context';
+import { urlBackend } from '../App';
 
 const EditarCaracteristicaButton = ({ caracteristicaId, show, handleClose }) => {
     const { dispatch } = useContextGlobal();
@@ -16,7 +17,7 @@ const EditarCaracteristicaButton = ({ caracteristicaId, show, handleClose }) => 
         const fetchCaracteristica = async () => {
             try {
                 console.log(caracteristicaId)
-                const response = await axios.get(`http://localhost:8080/characteristics/search-id/${caracteristicaId}`);
+                const response = await axios.get(`${urlBackend}characteristics/search-id/${caracteristicaId}`);
                 console.log(response.data)
                 setCaracteristicaData(response.data);
             } catch (error) {

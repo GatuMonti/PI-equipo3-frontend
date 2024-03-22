@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Modal, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
+import { urlBackend } from '../App';
 
 const EditarCategoriaButton = ({ categoriaId, show, handleClose, dispatch }) => {
     const [categoriaData, setCategoriaData] = useState({
@@ -14,7 +15,7 @@ const EditarCategoriaButton = ({ categoriaId, show, handleClose, dispatch }) => 
     useEffect(() => {
         const fetchCategoria = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/categorias/search-categoryById/${categoriaId}`);
+                const response = await axios.get(`${urlBackend}categorias/search-categoryById/${categoriaId}`);
                 let data = response.data;
                 // Verifica si la categoría no tiene imagen asignada y la establece como "Sin Imagen"
                 if (!data.image || !data.image.imageUrl) {
@@ -59,7 +60,7 @@ const EditarCategoriaButton = ({ categoriaId, show, handleClose, dispatch }) => 
     const handleEditSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put('http://localhost:8080/categorias/update-category', categoriaData);
+            await axios.put(urlBackend + 'categorias/update-category', categoriaData);
             dispatch({ type: 'update_categoria', payload: categoriaData });
             handleClose();
             Swal.fire({

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './TotalCalificacionesProducto.module.css';
+import { urlBackend } from '../../App';
 
 const StarRating = ({ value }) => {
   const stars = [];
@@ -22,7 +23,7 @@ const TotalCalificacionesProducto = ({ productId }) => {
   useEffect(() => {
     const fetchCalificaciones = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/calificaciones/calificacionDeUnProducto/${productId}`);
+        const response = await axios.get(`${urlBackend}calificaciones/calificacionDeUnProducto/${productId}`);
         setCalificaciones(response.data);
       } catch (error) {
         console.error('Error fetching calificaciones:', error);

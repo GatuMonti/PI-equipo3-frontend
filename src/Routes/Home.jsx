@@ -20,7 +20,7 @@ import Slider from "../components/slider";
 import axios from "axios";
 import { format } from 'date-fns';
 import Autosuggest from 'react-autosuggest';
-import { agregarFavorito, eliminarFavorito, obtenerFavoritos } from '../components/favoritos';
+import { urlBackend } from '../App';
 
 
 const Home = () => {
@@ -46,24 +46,11 @@ const Home = () => {
 
   const fechaHoy = new Date();
 
-  //Renderizar favoritos 
-  // useEffect(() => {
-  //   if (usuario != null) {
-  //     obtenerFavoritos(usuario)//funcion de Andres
-  //       .then(respuesta => {
-  //         console.log(respuesta)
-  //         dispatch({ type: 'get_favorites', payload: respuesta });
-  //       })
-  //       .catch(error => {
-  //         console.error('Error al obtener favoritos:', error);
-  //       });
-  //   }
-  // }, [usuario, product.id]);
 
   useEffect(()=>{
     if(usuario!=null){
       try {
-        axios.get("http://localhost:8080/favorite/listar-favoritos-usuario/" + usuario )
+        axios.get(urlBackend + "favorite/listar-favoritos-usuario/" + usuario )
         .then((response)=>{
           console.log("Favoritos del usuario desde el back",response.data)
           dispatch({ type: 'get_favorites', payload: response.data })
@@ -104,7 +91,7 @@ console.log("Productos favortiso en el state:",state.favoritos)
     e.preventDefault();
     state.productos.map((producto) => {
       if (producto.category?.title === estadosNuevos.categoriaSeleccionada) {
-        axios.get(`http://localhost:8080/products/search-category/${estadosNuevos.categoriaSeleccionada}`)
+        axios.get(`${urlBackend}products/search-category/${estadosNuevos.categoriaSeleccionada}`)
           .then((response) => {
             setStateNuevos({ ...estadosNuevos, productosDeUnaCategoria: response.data, buscar: true, buscarPorFechas: false });
           })
@@ -142,7 +129,7 @@ console.log("Productos favortiso en el state:",state.favoritos)
     console.log(estadosFechas)
 
     axios
-      .post(`http://localhost:8080/booking/list-productos-disponibles`, estadosFechas)
+      .post(`${urlBackend}booking/list-productos-disponibles`, estadosFechas)
       .then((response) => {
         const productosFiltradosConPalabra = response.data.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase()))
         setStateNuevos({ ...estadosNuevos, productosDisponiblesPorFecha: productosFiltradosConPalabra, buscarPorFechas: true, buscar: false }, () => {
@@ -371,11 +358,6 @@ console.log("Productos favortiso en el state:",state.favoritos)
 
           !estadosNuevos.buscar ?
 
-            // <div className="contenedorProductos">
-            //   <h1 className="tituloProductos">Los Mas Recomendados</h1>
-            //   { shuffleArray(state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>))}
-            // </div>
-
             <div className="contenedorProductos">
               {state.isFavorite ? 
               <h1 className="tituloProductos">Mis favoritos {state.favoritos.length}</h1>
@@ -383,8 +365,6 @@ console.log("Productos favortiso en el state:",state.favoritos)
               }
               
               {productsToShow}                    
-             
-
              
             </div>
 

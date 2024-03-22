@@ -3,12 +3,13 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import {useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { urlBackend } from '../App';
 
 
 const FormCrearCuenta = () => {
 
 
-    const endPointRegister="http://localhost:8080/auth/register";
+    const endPointRegister= urlBackend + "auth/register";
 
     const[usuarioRegistrar, setUsuarioRegistrar]=useState({
         username:"",

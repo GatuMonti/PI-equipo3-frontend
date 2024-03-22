@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
+import { urlBackend } from '../App';
 
 const EditarProducto = () => {
 
@@ -14,16 +15,10 @@ const EditarProducto = () => {
 
   const navigate = useNavigate();
 
-  const endPointDetail=`http://localhost:8080/products/search-id/${params.id}`
+  const endPointDetail=`${urlBackend}products/search-id/${params.id}`
 
   console.log(params.id)
 
-//   useEffect(()=>{
-//      const response= axios(endPointDetail)
-//     .then( res => dispatch({ type: 'get_producto', payload: res.data }))
-//     .catch(error => console.error("Error fetching product details:", error));
-
-// }, [endPointDetail, dispatch]);
 
 useEffect(() => {
   const fetchData = async () => {
@@ -108,7 +103,7 @@ const handleSubmit= async(e)=>{
       }
       else{
           console.log(productoActualizar)
-          const response = await axios.put('http://localhost:8080/products/update-product', productoActualizar);
+          const response = await axios.put(`${urlBackend}products/update-product`, productoActualizar);
           console.log(response);
           setEstados((prevState)=>({
               ...prevState,

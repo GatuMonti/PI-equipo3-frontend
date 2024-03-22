@@ -7,6 +7,7 @@ import axios from 'axios';
 import { agregarFavorito, eliminarFavorito, obtenerFavoritos } from '../components/favoritos';
 import EstrellasCard from './EstrellasCard'; 
 import CalificacionPromedioInfo from './CalificacionPromedioInfo';
+import { urlBackend } from '../App';
 
 
 
@@ -58,10 +59,10 @@ const usuario=localStorage.getItem("username")
           confirmButtonText: "Si, quiero eliminarlo!",
         }).then((result) => {
           if (result.isConfirmed) {
-            axios.delete(`http://localhost:8080/favorite/delete-favorite`, { data: productoFavorito })
+            axios.delete(`${urlBackend}favorite/delete-favorite`, { data: productoFavorito })
             .then((response)=>{
               console.log(response.data)
-              axios.get("http://localhost:8080/favorite/listar-favoritos-usuario/" + usuario )
+              axios.get(urlBackend + "favorite/listar-favoritos-usuario/" + usuario )
               .then((response)=>{
                 console.log("Favoritos del usuario desde el back",response.data)
                 dispatch({ type: 'get_favorites', payload: response.data }) 
@@ -88,11 +89,11 @@ const usuario=localStorage.getItem("username")
     else{
      
       try {
-        axios.post(`http://localhost:8080/favorite/add-favorite`, productoFavorito)
+        axios.post(`${urlBackend}favorite/add-favorite`, productoFavorito)
         .then((response)=>{
           console.log(response.data)
           Swal.fire("El juego ha sido añadido a favorito!");
-          axios.get("http://localhost:8080/favorite/listar-favoritos-usuario/" + usuario )
+          axios.get(urlBackend + "favorite/listar-favoritos-usuario/" + usuario )
           .then((response)=>{
             console.log("Favoritos del usuario desde el back",response.data)
             dispatch({ type: 'get_favorites', payload: response.data })
@@ -114,65 +115,6 @@ const usuario=localStorage.getItem("username")
     }
   }
   
-//   useEffect(()=>{
-//     if(localStorage.getItem("username")!=null){
-//       state.favoritos.map((product)=>{
-//         localStorage.setItem(`favorito_${product.id}`, 'true');
-//       })
-//       setEsFavorito(localStorage.getItem(`favorito_${product.id}`) === 'true')
-//      }
-//     },[])
-
-  // const toggleFavorito = () => {   
-  //   if (!esFavorito) {
-  //     agregarFavorito(localStorage.getItem('username'), product.id) 
-  //     .then(() => {
-  //       setEsFavorito(true); // Cambiar esFavorito solo después de agregar el favorito
-  //       Swal.fire("has been added to favorites");     
-  //     })
-  //     .catch(error => {
-  //       console.error("Error adding favorite:", error);
-  //       Swal.fire({
-  //         title: "Error!",
-  //         text: "An error occurred while adding the play to favorites.",
-  //         icon: "error"
-  //       });
-  //     });
-  //   } else {
-  //     Swal.fire({
-  //       title: "Want to delete?",
-  //       text: "The Play will be removed from favorites",
-  //       icon: "warning",
-  //       showCancelButton: true,
-  //       confirmButtonColor: "#3085d6",
-  //       cancelButtonColor: "#d33",
-  //       confirmButtonText: "Yes, delete it!"
-  //     }).then((result) => {        
-  //       if (result.isConfirmed) {
-  //         eliminarFavorito(localStorage.getItem('username'), product.id)
-  //         .then(() => {
-  //           setEsFavorito(false); // Cambiar esFavorito solo después de eliminar el favorito
-  //           Swal.fire({
-  //             title: "Deleted!",
-  //             text: "The play has been deleted.",
-  //             icon: "success"
-  //           });
-  //         })
-  //         .catch(error => {
-  //           console.error("Error deleting favorite:", error);
-  //           Swal.fire({
-  //             title: "Error!",
-  //             text: "An error occurred while deleting the play from favorites.",
-  //             icon: "error"
-  //           });
-  //         });
-  //       }           
-  //     });
-  //   }
-  // };
-
-  
-
 
   console.log(product.images)
   // Limita la cantidad de caracteres de DescriptionProduct 

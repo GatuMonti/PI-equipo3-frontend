@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { urlBackend } from '../App';
 
 const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, username, recibirCambioDeEstado }) => {
   // Estados para manejar el comentario y la calificación
@@ -14,7 +15,7 @@ const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, userna
   useEffect(() => {
     const obtenerCalificaciones = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/calificaciones/calificacionDeUnProducto/${producto.id}`);        
+        const response = await axios.get(`${urlBackend}calificaciones/calificacionDeUnProducto/${producto.id}`);        
         setCalificacionesProducto(response.data);        
         const calificacionUsuario = response.data.find(calificacion => calificacion.username === username);
         if (calificacionUsuario) {
@@ -34,7 +35,7 @@ const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, userna
         if (yaCalificado) {
           Swal.fire("Ya has calificado este producto", "No puedes calificar el mismo producto más de una vez.", "warning");
         } else {
-          await axios.post('http://localhost:8080/calificaciones/calificar', {
+          await axios.post(`${urlBackend}calificaciones/calificar`, {
             username: username,
             productoId: producto.id,
             valorCalificacion: valorCalificacion,
@@ -62,7 +63,7 @@ const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, userna
 
   const verCalificaciones = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/calificaciones/calificacionDeUnProducto/${producto.id}`);
+      const response = await axios.get(`${urlBackend}calificaciones/calificacionDeUnProducto/${producto.id}`);
       const calificaciones = response.data.map(calificacion => ({
         username: calificacion.username,
         valorCalificacion: calificacion.valorCalificacion,

@@ -4,6 +4,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import { Pagination, Button } from 'react-bootstrap';
+import { urlBackend } from '../App';
 
 
 
@@ -14,7 +15,7 @@ function ListarProductAdmin() {
     const [currentPage, setCurrentPage] = useState(1);
     const [productsPerPage] = useState(5);
 
-    const endPointDeleteProduct=`http://localhost:8080/products/delete-product/`
+    const endPointDeleteProduct= urlBackend + "products/delete-product/"
 
     useEffect(()=>{
 

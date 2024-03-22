@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { urlBackend } from '../App';
 
 
 
@@ -14,7 +15,7 @@ const FormLogin = () => {
         password:""
     })
 
-    const endPointLogin="http://localhost:8080/auth/login";
+    const endPointLogin= urlBackend + "auth/login";
 
      // Función para decodificar el token JWT
 //  const parseJwt = (token) => {
@@ -121,10 +122,6 @@ function parseJwt (token) {
             })
         }
     }
-
-
-   
-
 
   return (
     <div className='pageFormLogin'>

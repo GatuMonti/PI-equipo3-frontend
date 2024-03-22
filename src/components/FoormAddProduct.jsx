@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import axios, { formToJSON } from 'axios'
 import Swal from 'sweetalert2'
 import { useContextGlobal } from './Util/global.context'
+import { urlBackend } from '../App';
 
 function FoormAddProduct() {
 
@@ -48,7 +49,7 @@ function FoormAddProduct() {
                 }
                 else{
                     console.log(productoNuevo)
-                    const response = await axios.post('http://localhost:8080/products/add-product', productoNuevo);
+                    const response = await axios.post(urlBackend + 'products/add-product', productoNuevo);
                     console.log(response);
                     setTimeout(()=>{
                         window.location.reload()

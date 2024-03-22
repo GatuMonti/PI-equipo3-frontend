@@ -35,7 +35,7 @@ const navbar = () => {
           <h3 className="lema">Explora, juega y disfruta</h3>
         </div>
         <div className="botones">
-        {state.theme === "light" ? <button onClick={handleTheme} className="themeDark">🌙</button> : <button onClick={handleTheme} className="themeLight">☀️</button>}
+        {/* {state.theme === "light" ? <button onClick={handleTheme} className="themeDark">🌙</button> : <button onClick={handleTheme} className="themeLight">☀️</button>} */}
           {userRole === null ? (
             <>
               <Link to={'/FormCrearCuenta'}><button className="crear-cuenta">Crear cuenta</button></Link>

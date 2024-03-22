@@ -9,12 +9,8 @@ import { format } from "date-fns";
 import ComparteRedesSociales from "../components/ComparteRedesSociales";
 import "boxicons/css/boxicons.min.css";
 import TotalCalificacionesProducto from "../components/TotalCalificacionesProducto/TotalCalificacionesProducto"
-import {
-  agregarFavorito,
-  eliminarFavorito,
-  obtenerFavoritos,
-} from "../components/favoritos";
 import Swal from "sweetalert2";
+import { urlBackend } from '../App';
 
 const Detail = () => {
   const params = useParams();
@@ -31,7 +27,7 @@ const Detail = () => {
     id: params.id,
   };
 
-  const endPointDetail = `http://localhost:8080/products/search-id/${params.id}`;
+  const endPointDetail = `${urlBackend}products/search-id/${params.id}`;
 
   console.log(params.id);
 
@@ -42,18 +38,6 @@ const Detail = () => {
     cambiarBoton: false,
   });
 
-  // useEffect(()=>{
-  //   if(localStorage.getItem("username")!=null){
-  //     state.favoritos.map((product)=>{
-  //       localStorage.setItem(`favorito_${params.id}`, 'true');
-  //     })
-  //     setEstadosFavoritos({
-  //       ...estadosFavoritos,
-  //       isUsuario:true,
-  //       favorito: localStorage.getItem(`favorito_${params.id}`) === 'true'
-  //     })
-  //      }
-  //     },[])
 
   useEffect(() => {
     const favoritoEncontrado = state.favoritos.find(fav => fav.id == params.id);
@@ -91,14 +75,14 @@ const Detail = () => {
         }).then((result) => {
           if (result.isConfirmed) {
             axios
-              .delete(`http://localhost:8080/favorite/delete-favorite`, {
+              .delete(urlBackend + "favorite/delete-favorite", {
                 data: productoFavorito,
               })
               .then((response) => {
                 console.log(response.data);
                 axios
                   .get(
-                    "http://localhost:8080/favorite/listar-favoritos-usuario/" +
+                    urlBackend + "favorite/listar-favoritos-usuario/" +
                       usuario
                   )
                   .then((response) => {
@@ -127,13 +111,13 @@ const Detail = () => {
     } else {
       try {
         axios
-          .post(`http://localhost:8080/favorite/add-favorite`, productoFavorito)
+          .post(`${urlBackend}favorite/add-favorite`, productoFavorito)
           .then((response) => {
             console.log(response.data);
             Swal.fire("El juego ha sido añadido a tus favoritos");
             axios
               .get(
-                "http://localhost:8080/favorite/listar-favoritos-usuario/" +
+               urlBackend + "favorite/listar-favoritos-usuario/" +
                   usuario
               )
               .then((response) => {
@@ -217,7 +201,7 @@ const Detail = () => {
   // bloquea fechas usadas
   useEffect(() => {
     axios
-      .get("http://localhost:8080/booking/disponibilidadXProducto/" + params.id)
+      .get(urlBackend + "booking/disponibilidadXProducto/" + params.id)
       .then((res) => {
         const formattedReservas = res.data.map((item) => ({
           fechaInicio: new Date(
@@ -233,17 +217,6 @@ const Detail = () => {
         console.error("Error fetching product details:", error)
       );
   }, []);
-
-  // const verificar = () => {
-  //   // Verificar si el producto está en la lista de favoritos
-  //   const productoEnFavoritos = state.favoritos.some(favorito => favorito.id === params.id);
-  //   setEsFavorito(productoEnFavoritos);
-  // };
-
-  // useEffect(() => {
-  //   verificar();
-  //   console.log("SI ENTRAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-  // }, []);
 
   const fechasBloqueadas = reservas.flatMap((reserva) => {
     const fechas = [];

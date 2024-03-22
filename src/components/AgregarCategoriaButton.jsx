@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useContextGlobal } from './Util/global.context';
+import { urlBackend } from '../App';
 
 const AgregarCategoriaButton = () => {
     const { dispatch } = useContextGlobal();
@@ -54,7 +55,7 @@ const AgregarCategoriaButton = () => {
         }
         
         try {
-            const response = await axios.post('http://localhost:8080/categorias/add-categoria', categoriaData);
+            const response = await axios.post(`${urlBackend}categorias/add-categoria`, categoriaData);
             dispatch({ type: 'agregar_categoria', payload: response.data });
             setShowForm(false); // Cierra el pop-up después de agregar la categoría
             Swal.fire({

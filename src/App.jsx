@@ -17,6 +17,8 @@ import PanelUsuarios from './Routes/PanelUsuarios'
 import Politicas from './components/Politicas'
 import PanelReservas from './Routes/PanelReservas'
 
+const urlBackend = 'https://vortexsprint2back-production.up.railway.app/';
+
 function App() {
   
   const {state}=useContextGlobal()
@@ -25,7 +27,6 @@ function App() {
     <div>
       <div className={state.theme}>
          <Header/>
-
          <Routes>
            <Route path='/' element={<Home/>}/>
            <Route path='/Detail/:id' element={<Detail/>}/>
@@ -41,14 +42,11 @@ function App() {
            <Route path='/panelReservas' element={<PanelReservas/>}/>
          </Routes>
          <Footer/>
-
-
-
-
       </div>
-     
     </div>
   )
 }
 
-export default App
+export {urlBackend};
+export default App;
+

@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { Pagination } from "react-bootstrap";
 import { format } from "date-fns";
 import ProductoReservado from "./ProductosReservados";
+import { urlBackend } from '../App';
 
 const ListarReservas = () => {
   const [reservas, setReservas] = useState([]);
@@ -19,9 +20,7 @@ const ListarReservas = () => {
 
   const obtenerReservas = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:8080/booking/list-bookings`
-      );
+      const response = await axios.get(urlBackend + "booking/list-bookings");
       const reservasUsuario = response.data.filter(
         (reserva) => reserva.userName === username
       );
