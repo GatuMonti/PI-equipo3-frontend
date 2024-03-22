@@ -47,7 +47,7 @@ const ListarReservas = () => {
 
   useEffect(() => {
     obtenerReservas();
-  }, [username, estadoRecibido]);
+  }, []);
 
   const formatDate = (dateArray) => {
     const date = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
