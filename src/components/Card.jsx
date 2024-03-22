@@ -46,13 +46,14 @@ const usuario=localStorage.getItem("username")
      
       try {
         Swal.fire({
-          title: "Want to delete?",
-          text: "The Play will be remove from favorites",
+          title: "Seguro que quieres eliminarlo?",
+          text: "El juego sera eliminado de tus favoritos",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
+          cancelButtonText: "Cancelar!",
           cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!"
+          confirmButtonText: "Si, quiero eliminarlo!",
         }).then((result) => {
           if (result.isConfirmed) {
             axios.delete(`http://localhost:8080/favorite/delete-favorite`, { data: productoFavorito })
@@ -70,8 +71,8 @@ const usuario=localStorage.getItem("username")
               })
             })   
             Swal.fire({
-              title: "Deleted!",
-              text: "He play has been deleted.",
+              title: "Eliminado!",
+              text: "El juego ha sido eliminado!",
               icon: "success"
             });
           }
@@ -88,7 +89,7 @@ const usuario=localStorage.getItem("username")
         axios.post(`http://localhost:8080/favorite/add-favorite`, productoFavorito)
         .then((response)=>{
           console.log(response.data)
-          Swal.fire("has been added to favorites");
+          Swal.fire("El juego ha sido añadido a favorito!");
           axios.get("http://localhost:8080/favorite/listar-favoritos-usuario/" + usuario )
           .then((response)=>{
             console.log("Favoritos del usuario desde el back",response.data)

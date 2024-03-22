@@ -80,13 +80,14 @@ const Detail = () => {
     if (estadosFavoritos.favorito) {
       try {
         Swal.fire({
-          title: "Want to delete?",
-          text: "The Play will be remove from favorites",
+          title: "Seguro que quieres eliminarlo?",
+          text: "El juego sera eliminado de tus favoritos",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
+          cancelButtonText: "Cancelar!",
           cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!",
+          confirmButtonText: "Si, quiero eliminarlo!",
         }).then((result) => {
           if (result.isConfirmed) {
             axios
@@ -114,8 +115,8 @@ const Detail = () => {
                   });
               });
             Swal.fire({
-              title: "Deleted!",
-              text: "He play has been deleted.",
+              title: "Eliminado!",
+              text: "El juego ha sido eliminado!",
               icon: "success",
             });
           }
@@ -129,7 +130,7 @@ const Detail = () => {
           .post(`http://localhost:8080/favorite/add-favorite`, productoFavorito)
           .then((response) => {
             console.log(response.data);
-            Swal.fire("has been added to favorites");
+            Swal.fire("El juego ha sido añadido a tus favoritos");
             axios
               .get(
                 "http://localhost:8080/favorite/listar-favoritos-usuario/" +
@@ -157,53 +158,7 @@ const Detail = () => {
     }
   };
 
-  // const toggleFavorito = () => {
-  //   if (!esFavorito) {
-  //     agregarFavorito(usuarioID, params.id)
-  //     .then(() => {
-  //       setEsFavorito(true); // Cambiar esFavorito solo después de agregar el favorito
-  //       Swal.fire("has been added to favorites");
-  //     })
-  //     .catch(error => {
-  //       console.error("Error adding favorite:", error);
-  //       Swal.fire({
-  //         title: "Error!",
-  //         text: "An error occurred while adding the play to favorites.",
-  //         icon: "error"
-  //       });
-  //     });
-  //   } else {
-  //     Swal.fire({
-  //       title: "Want to delete?",
-  //       text: "The Play will be removed from favorites",
-  //       icon: "warning",
-  //       showCancelButton: true,
-  //       confirmButtonColor: "#3085d6",
-  //       cancelButtonColor: "#d33",
-  //       confirmButtonText: "Yes, delete it!"
-  //     }).then((result) => {
-  //       if (result.isConfirmed) {
-  //         eliminarFavorito(usuarioID, params.id)
-  //         .then(() => {
-  //           setEsFavorito(false); // Cambiar esFavorito solo después de eliminar el favorito
-  //           Swal.fire({
-  //             title: "Deleted!",
-  //             text: "The play has been deleted.",
-  //             icon: "success"
-  //           });
-  //         })
-  //         .catch(error => {
-  //           console.error("Error deleting favorite:", error);
-  //           Swal.fire({
-  //             title: "Error!",
-  //             text: "An error occurred while deleting the play from favorites.",
-  //             icon: "error"
-  //           });
-  //         });
-  //       }
-  //     });
-  //   }
-  // };
+  
 
   const fechaHoy = new Date();
 
