@@ -120,11 +120,11 @@ const ListarCaracteristicasAdmin = () => {
                                             handleEdit(caracteristica.id)}
                                             className="btn btn-primary">Editar
                                         </Button> */}
-                                        <Button className="btn btn-danger" onClick={() =>
+                                        <Button variant="primary" onClick={() =>
                                             handleEdit(caracteristica.id)}>Editar</Button>
-                                        <Button onClick={() =>
+                                        <Button variant="danger" onClick={() =>
                                             handleDelete(caracteristica.id)}
-                                            className="btn btn-danger">Eliminar
+                                            >Eliminar
                                         </Button>
                                     </td>
                                 </tr>

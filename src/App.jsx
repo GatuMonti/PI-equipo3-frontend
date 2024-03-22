@@ -5,7 +5,6 @@ import { Route, Routes } from 'react-router'
 import Footer from './components/Footer/Footer'
 import Detail from './Routes/Detail'
 import PageAdmin from './Routes/PageAdmin'
-import EditarProducto from './Routes/EditarProducto'
 import FormCrearCuenta from './components/CrearCuenta/FormCrearCuenta'
 import FormLogin from './components/Login/FormLogin'
 import PanelDetallesUsuario from './Routes/PanelDetallesUsuario'
@@ -20,7 +19,6 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/Detail/:id' element={<Detail />} />
           <Route path='/pageAdmin/' element={<PageAdmin />} />
-          <Route path='/editProduct/:id' element={<EditarProducto />} />
           <Route path='/FormCrearCuenta/' element={<FormCrearCuenta />} />
           <Route path='/FormLogin/' element={<FormLogin />} />
           <Route path='/pageDetallesUsuario' element={<PanelDetallesUsuario />} />
