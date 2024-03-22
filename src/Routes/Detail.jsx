@@ -9,12 +9,12 @@ import { format } from 'date-fns';
 import ComparteRedesSociales from '../components/ComparteRedesSociales';
 import 'boxicons/css/boxicons.min.css';
 import { agregarFavorito, eliminarFavorito, obtenerFavoritos } from '../components/favoritos';
+import Swal from 'sweetalert2';
 
 
 const Detail = () => {
 
   const params = useParams()
-
   const { state, dispatch } = useContextGlobal()
   const [usuarioID, setUsuarioID] = useState(localStorage.getItem('username'))
   const [esFavorito, setEsFavorito] = useState(false);
@@ -30,23 +30,53 @@ const Detail = () => {
     cambiarBoton: false,
   })
 
-  const toggleFavorito = () => {
-   
+  const toggleFavorito = () => {   
     if (!esFavorito) {
-      agregarFavorito (usuarioID,params.id)
-      console.log("se agrego el producto");
+      agregarFavorito(usuarioID, params.id) 
+      .then(() => {
+        setEsFavorito(true); // Cambiar esFavorito solo después de agregar el favorito
+        Swal.fire("has been added to favorites");     
+      })
+      .catch(error => {
+        console.error("Error adding favorite:", error);
+        Swal.fire({
+          title: "Error!",
+          text: "An error occurred while adding the play to favorites.",
+          icon: "error"
+        });
+      });
+    } else {
+      Swal.fire({
+        title: "Want to delete?",
+        text: "The Play will be removed from favorites",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {        
+        if (result.isConfirmed) {
+          eliminarFavorito(usuarioID, params.id)
+          .then(() => {
+            setEsFavorito(false); // Cambiar esFavorito solo después de eliminar el favorito
+            Swal.fire({
+              title: "Deleted!",
+              text: "The play has been deleted.",
+              icon: "success"
+            });
+          })
+          .catch(error => {
+            console.error("Error deleting favorite:", error);
+            Swal.fire({
+              title: "Error!",
+              text: "An error occurred while deleting the play from favorites.",
+              icon: "error"
+            });
+          });
+        }           
+      });
     }
-    else {
-      eliminarFavorito(usuarioID,params.id)
-      console.log("se elimino el producto");
-      console.log(esFavorito);
-    }
-    setEsFavorito(!esFavorito);
-    console.log("finaliza la funcion");
   };
-  
-
-
 
   const fechaHoy = new Date();
 
@@ -100,6 +130,7 @@ const Detail = () => {
 
     window.scrollTo(0, 0); 
   }, [endPointDetail, dispatch]);
+  
 
 
   // bloquea fechas usadas
@@ -147,7 +178,7 @@ const Detail = () => {
       <h3 className="tituloDetail">{state.producto?.name}</h3>
 
       <div onClick={toggleFavorito} className='contenedorFavorito'>
-        <i className={`bx ${esFavorito ? 'bxs-heart' : 'bx-heart'}`}></i>
+        {usuarioID && <i className={`bx ${esFavorito ? 'bxs-heart' : 'bx-heart'}`}></i>}        
       </div>
       
       <div className="contenedorImagenesDetail">
@@ -225,4 +256,4 @@ const Detail = () => {
   )
 }
 
-export default Detail
+export default Detail;

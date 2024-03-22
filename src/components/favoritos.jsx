@@ -31,12 +31,14 @@ const agregarFavorito = async (usuarioId, objetoId) => {
 
   const obtenerFavoritos = async (usuarioId) => {
     try {
-      const respuesta = await api.get(`/favoritos/${usuarioId}`);
+      const respuesta = await api.get(`/favorite/listar-favoritos-usuario/${usuarioId}`);
+      console.log("esto es la respuesta del backend:", respuesta.data); 
       return respuesta.data; 
     } catch (error) {
       console.error('Error al obtener favoritos', error);
       return [];
     }
   };
+  
 
   export { obtenerFavoritos, agregarFavorito, eliminarFavorito}

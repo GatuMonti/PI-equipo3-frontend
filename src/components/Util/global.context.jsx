@@ -8,7 +8,9 @@ export const initialState={
     productos:[],
     categorias:[], //Se guarda el listado de categorias
     caracteristicas:[],
-    theme:"light"
+    theme:"light",
+    favoritos:[],
+    isFavorite:false
 }
 
 export const contextoGlobal=createContext();

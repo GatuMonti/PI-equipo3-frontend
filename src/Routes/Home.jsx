@@ -20,10 +20,13 @@ import Slider from "../components/slider";
 import axios from "axios";
 import { format } from 'date-fns';
 import Autosuggest from 'react-autosuggest';
+import { agregarFavorito, eliminarFavorito, obtenerFavoritos } from '../components/favoritos';
 
 
 const Home = () => {
-  const { state } = useContextGlobal();
+
+  const usuario=localStorage.getItem("username")  
+  const { state, dispatch } = useContextGlobal();
   const [estadosNuevos, setStateNuevos] = useState({
     productosDeUnaCategoria: [],
     buscar: false,
@@ -32,6 +35,7 @@ const Home = () => {
     palabraEnElInputBuscador: "",
     productosDisponiblesPorFecha: []
   })
+  
 
   const [estadosFechas, setStateFechas] = useState({
     inicio: null,
@@ -42,6 +46,43 @@ const Home = () => {
 
   const fechaHoy = new Date();
 
+  //Renderizar favoritos 
+  // useEffect(() => {
+  //   if (usuario != null) {
+  //     obtenerFavoritos(usuario)//funcion de Andres
+  //       .then(respuesta => {
+  //         console.log(respuesta)
+  //         dispatch({ type: 'get_favorites', payload: respuesta });
+  //       })
+  //       .catch(error => {
+  //         console.error('Error al obtener favoritos:', error);
+  //       });
+  //   }
+  // }, [usuario, product.id]);
+
+  useEffect(()=>{
+    if(usuario!=null){
+      try {
+        axios.get("http://localhost:8080/favorite/listar-favoritos-usuario/" + usuario )
+        .then((response)=>{
+          console.log("Favoritos del usuario desde el back",response.data)
+          dispatch({ type: 'get_favorites', payload: response.data })
+         
+        })
+        
+        .catch((error) => {
+          console.error("Error al obtener favoritos:", error);
+        });
+      } 
+      catch (error) {
+        console.log("Error: ", error)
+      }
+      return;
+   }
+  //  dispatch({ type: 'set_isFavorite', payload: false })
+  },[])
+  
+console.log("Productos favortiso en el state:",state.favoritos)
 
   // Función para revolver los elementos del array
   const shuffleArray = (array) => {
@@ -126,7 +167,6 @@ const Home = () => {
   //Manejador cambio del input tipo texto en el buscador de fechas
 
   const handleOnchangeInputText = (event,{newValue}) => {
-
     setStateNuevos(prevState => ({
       ...prevState,
       palabraEnElInputBuscador: newValue,
@@ -145,12 +185,20 @@ const Home = () => {
 
   // Filtra y mapea los elementos para mostrar solo los de la página actual
 
-  const productsToShow = !handleOnchangeInputText ? state.productos.slice(startIndex, endIndex).map((producto) => (
-    <Card product={producto} key={producto.id} />))
+  const productsToShow = !handleOnchangeInputText ?  state.productos.slice(startIndex, endIndex).map((producto) => (
+    <Card product={producto} key={producto.id} />))  
+    : 
+    state.isFavorite ? 
+   
+    state.favoritos.length<=0 ?
+    dispatch({ type: 'set_isFavorite', payload: false })
     :
-    state.productos.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase())).slice(startIndex, endIndex).map((producto) => (
-      <Card product={producto} key={producto.id} />
-    ));
+    state.favoritos.map((favorito) =>(
+      <Card product={favorito} key={favorito.id} />
+    )):
+    state.productos.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase())) .slice(startIndex, endIndex).map((producto) => (
+    <Card product={producto} key={producto.id} />
+  ));
 
 
   //Filtra el array de los productos disponibles por fecha
@@ -304,38 +352,48 @@ const Home = () => {
 
         {/*Renderizacion de productos*/}
         {estadosNuevos.buscarPorFechas ?
+
           <div className="contenedorProductos">
             <h1 className="tituloProductos"> Productos disponibles {estadosNuevos.productosDisponiblesPorFecha.length}</h1>
             {productsDateToShow}
 
             {/* Botones para navegar entre las páginas  */}
 
-            {/* <div className="botonesPaginado">
-                <button className='botonPaginadoAtras' onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
-                <button className='botonPaginadoAdelante' onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
-            </div> */}
+            {estadosNuevos.productosDisponiblesPorFecha.length>10  &&
 
+              <div className="botonesPaginado">
+              <button className='botonPaginadoAtras' onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
+              <button className='botonPaginadoAdelante' onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
+             </div>
+
+            }
           </div> :
 
           !estadosNuevos.buscar ?
+
+            // <div className="contenedorProductos">
+            //   <h1 className="tituloProductos">Los Mas Recomendados</h1>
+            //   { shuffleArray(state.productos.slice(-10).reverse().map((producto)=><Card product={producto} key={producto.id}/>))}
+            // </div>
+
             <div className="contenedorProductos">
-              <h1 className="tituloProductos">Los Mas Recomendados</h1>
-              {productsToShow}
+              {state.isFavorite ? <h1 className="tituloProductos">Mis favoritos {state.favoritos.length}</h1>
+              : <h1 className="tituloProductos">Los Mas Recomendados</h1>
+              }
+              
+              {productsToShow}                    
+             
 
-              {/* Botones para navegar entre las páginas  */}
-
-              {/* <div className="botonesPaginado">
-                <button className='botonPaginadoAtras' onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
-                <button className='botonPaginadoAdelante' onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
-              </div> */}
+             
             </div>
+
             :
             <div className="contenedorProductos">
               <h1 className="tituloProductos"> {estadosNuevos.productosDeUnaCategoria[0].category.title}</h1>
               {estadosNuevos.productosDeUnaCategoria.map((producto) => <Card product={producto} key={producto.id} />)}
             </div>
 
-        }
+        }
       </div>
     </main>
   );
