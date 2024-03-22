@@ -8,6 +8,7 @@ import DatePicker from "react-datepicker";
 import { format } from "date-fns";
 import ComparteRedesSociales from "../components/ComparteRedesSociales";
 import "boxicons/css/boxicons.min.css";
+import TotalCalificacionesProducto from "../components/TotalCalificacionesProducto/TotalCalificacionesProducto"
 import {
   agregarFavorito,
   eliminarFavorito,
@@ -413,7 +414,8 @@ const Detail = () => {
           </div>
         </div>
       )}
-
+      <div className="calendarioCalificaciones">
+      <div className="detallesCalendraio">
       <div className="contenedorCalendarioDetalles">
         <div className="contenedorDetalles">
           <h2 className="tituloDetallesDeProducto">Detalles principales</h2>
@@ -460,6 +462,9 @@ const Detail = () => {
             customDayClassName={customDayClass}
           />
         </div>
+      </div>
+      </div>
+      <TotalCalificacionesProducto productId={params.id}/>
       </div>
     </div>
   );

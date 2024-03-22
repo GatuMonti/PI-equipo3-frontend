@@ -570,6 +570,11 @@ a{
   background-color: gray;
   color: black  ;
 }
+.calendarioCalificaciones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 .contenedorDetalles{
