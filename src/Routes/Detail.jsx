@@ -8,6 +8,7 @@ import DatePicker from "react-datepicker";
 import { format } from 'date-fns';
 import ComparteRedesSociales from '../components/ComparteRedesSociales';
 import 'boxicons/css/boxicons.min.css';
+import { agregarFavorito, eliminarFavorito, obtenerFavoritos } from '../components/favoritos';
 
 
 const Detail = () => {
@@ -15,6 +16,7 @@ const Detail = () => {
   const params = useParams()
 
   const { state, dispatch } = useContextGlobal()
+  const [usuarioID, setUsuarioID] = useState(localStorage.getItem('username'))
   const [esFavorito, setEsFavorito] = useState(false);
 
   const endPointDetail = `http://localhost:8080/products/search-id/${params.id}`
@@ -29,8 +31,22 @@ const Detail = () => {
   })
 
   const toggleFavorito = () => {
+   
+    if (!esFavorito) {
+      agregarFavorito (usuarioID,params.id)
+      console.log("se agrego el producto");
+    }
+    else {
+      eliminarFavorito(usuarioID,params.id)
+      console.log("se elimino el producto");
+      console.log(esFavorito);
+    }
     setEsFavorito(!esFavorito);
+    console.log("finaliza la funcion");
   };
+  
+
+
 
   const fechaHoy = new Date();
 
@@ -80,7 +96,7 @@ const Detail = () => {
       .then(res => dispatch({ type: 'get_producto', payload: res.data }))
       .catch(error => console.error("Error fetching product details:", error));
 
-      //  Aquí movemos la página arriba al cargar el componente
+  //  Aquí movemos la página arriba al cargar el componente
 
     window.scrollTo(0, 0); 
   }, [endPointDetail, dispatch]);
@@ -169,10 +185,8 @@ const Detail = () => {
         </div>
   
         </div>
-        
 
       }
-      
 
       <div className='contenedorCalendarioDetalles'>
 
@@ -182,10 +196,6 @@ const Detail = () => {
           <h3 className="descripcionProducto">Descripcion:<span>{state.producto.description}</span></h3>
           <h3 className="precioProducto">Precio:<span>{state.producto.price} USD</span></h3>
         </div>
-
-        
-
-    
       </div>
       <div className="contenedorComprar">
         {rolEnLocalStore != null && <button className='botonComprar'>Alquilar</button>}
@@ -211,8 +221,6 @@ const Detail = () => {
           />
         </div>
       </div>
-
-
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://tuapi.com/api',
+  baseURL: 'http://localhost:8080',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -11,7 +11,7 @@ const api = axios.create({
 
 const agregarFavorito = async (usuarioId, objetoId) => {
     try {
-      const respuesta = await api.post('/favoritos', { usuarioId, objetoId });
+      const respuesta = await api.post('/favorite/add-favorite', { "username":usuarioId, "id":objetoId });
       console.log('Favorito agregado', respuesta.data);
     } catch (error) {
       console.error('Error al agregar favorito', error);
@@ -19,25 +19,24 @@ const agregarFavorito = async (usuarioId, objetoId) => {
   };
 
 
-
   const eliminarFavorito = async (usuarioId, objetoId) => {
     try {
-      // Nota: Verifica cómo tu backend espera recibir los parámetros para eliminar
-      const respuesta = await api.delete(`/favoritos/${usuarioId}/${objetoId}`);
-      console.log('Favorito eliminado', respuesta.data);
+      const respuesta = await api.delete('/favorite/delete-favorite', {
+        data: { "username": usuarioId, "id": objetoId }
+      });
     } catch (error) {
       console.error('Error al eliminar favorito', error);
     }
   };
 
-
-
   const obtenerFavoritos = async (usuarioId) => {
     try {
       const respuesta = await api.get(`/favoritos/${usuarioId}`);
-      return respuesta.data; // Esto debería ser una lista de favoritos
+      return respuesta.data; 
     } catch (error) {
       console.error('Error al obtener favoritos', error);
       return [];
     }
   };
+
+  export { obtenerFavoritos, agregarFavorito, eliminarFavorito}

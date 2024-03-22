@@ -19,6 +19,7 @@ import Swal from "sweetalert2";
 import Slider from "../components/slider";
 import axios from "axios";
 import { format } from 'date-fns';
+import Autosuggest from 'react-autosuggest';
 
 
 const Home = () => {
@@ -36,6 +37,8 @@ const Home = () => {
     inicio: null,
     fin: null,
   });
+
+  const [suggestions, setSuggestions] = useState([]);
 
   const fechaHoy = new Date();
 
@@ -122,11 +125,13 @@ const Home = () => {
 
   //Manejador cambio del input tipo texto en el buscador de fechas
 
-  const handleOnchangeInputText = (event) => {
+  const handleOnchangeInputText = (event,{newValue}) => {
+
     setStateNuevos(prevState => ({
       ...prevState,
-      palabraEnElInputBuscador: event.target.value,
+      palabraEnElInputBuscador: newValue,
     }));
+    
   }
 
   //Codigo para paginado
@@ -140,12 +145,12 @@ const Home = () => {
 
   // Filtra y mapea los elementos para mostrar solo los de la página actual
 
-  const productsToShow = !handleOnchangeInputText ?  state.productos.slice(startIndex, endIndex).map((producto) => (
-    <Card product={producto} key={producto.id} />))  
-    : 
-    state.productos.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase())) .slice(startIndex, endIndex).map((producto) => (
-    <Card product={producto} key={producto.id} />
-  ));
+  const productsToShow = !handleOnchangeInputText ? state.productos.slice(startIndex, endIndex).map((producto) => (
+    <Card product={producto} key={producto.id} />))
+    :
+    state.productos.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase())).slice(startIndex, endIndex).map((producto) => (
+      <Card product={producto} key={producto.id} />
+    ));
 
 
   //Filtra el array de los productos disponibles por fecha
@@ -161,6 +166,38 @@ const Home = () => {
     setCurrentPage(currentPage - 1); // Decrementa la página actual
   };
 
+  //  Logica del autosuggest 
+
+  const getSuggestions = (value) => {
+    // Filtrar state.productos en base al valor de entrada (value)
+    return state.productos.filter(producto => producto.name.toLowerCase().includes(value.toLowerCase()));
+  };
+
+  const renderSuggestion = (suggestion) => (
+    <div>
+      {suggestion.name}
+    </div>
+  );
+
+  const onSuggestionsFetchRequested = ({ value }) => {
+    const suggestions =  getSuggestions(value);
+    setSuggestions(suggestions);
+  };
+
+  const onSuggestionsClearRequested = () => {
+    setSuggestions([]);
+  };
+
+  const handleEnterPress = (e) => {
+    if (e.key === 'Enter' && suggestions.length > 0) {
+      e.preventDefault(); // Evita que el formulario se envíe al presionar Enter
+      setStateNuevos(prevState => ({
+        ...prevState,
+        palabraEnElInputBuscador:suggestions[0].name
+      }));
+      onSubmit(e); // Llama a onSubmit para manejar cualquier acción adicional
+    }
+  };
 
   return (
     <main className="home">
@@ -198,9 +235,10 @@ const Home = () => {
       </div>
 
       <div className="contenedorDos">
-      <div className="barraBuscador">
 
-        
+        <div className="barraBuscador">
+
+
           <form className="formularioBuscador">
             <select onChange={handleChangeCategoria} className="inputSearch">
               <option value="">Filtrar por categoria</option>
@@ -216,17 +254,25 @@ const Home = () => {
             </button>
           </form>
 
-          <input
-            type="text"
-            className="inputSearchBuscador"
-            placeholder=" Buscar un juego..."
-            onChange={handleOnchangeInputText}
+          <Autosuggest 
+            suggestions={suggestions}
+            onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={onSuggestionsClearRequested}
+            getSuggestionValue={(suggestion) => suggestion.name}
+            renderSuggestion={renderSuggestion}
+            inputProps={{
+              placeholder: 'Buscar un juego ...',
+              value: estadosNuevos.palabraEnElInputBuscador,
+              onChange: handleOnchangeInputText,
+              onKeyDown: handleEnterPress, // Agrega el manejador para el evento keydown
+              className: 'inputSearchBuscador'
+            }}
           />
 
           <form className="calendarioInicio">
-          <i className="bx bx-calendar"></i>
+            <i className="bx bx-calendar"></i>
 
-          <DatePicker className= "calendarioInicio"
+            <DatePicker className="calendarioInicio"
               selected={estadosFechas.inicio}
               onChange={manejarCambioFechaInicio}
               dateFormat="yyyy-MM-dd"

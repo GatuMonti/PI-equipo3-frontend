@@ -454,6 +454,8 @@ font-size: 11px;
   border-color: #0056b3;
   border-width: 0.3vh;
   transition: transform 0.3s ease;
+  display: flex;
+  
 }
 .card:hover {
   transform: scale(1.05); 
@@ -732,6 +734,15 @@ a{
   left: 10vw;
   padding: 4px;
 
+}
+
+.contenedorFavoritoCard{
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  left: 8.2vw;
+  padding: 4px;
 }
 
 .bx-heart {
@@ -1414,7 +1425,7 @@ a{
   /********************Categorias****************/
 
   .contenedorCategorias{
-    width: 25%;
+    width: 100%;
     height: 300vh;
   }
   .tituloCategorias{
@@ -1498,8 +1509,13 @@ a{
 
 .container{
   width: 100%;
-  height: auto;
-  margin: 4vh 1.5vw 0vh 0vw;
+  height: 70vh;
+  margin: 4vh 0.5vw 0vh 0vw;
+}
+
+.carousel{
+  width: 100vh;
+  height: 50vh;
 }
 
 
@@ -1678,6 +1694,20 @@ font-size: 1.5vw;
 
 @media(max-width:500px){
 
+  .Header{
+    width: 68%;
+    height: 16vh;
+    margin: 0vh 0vw 0vh 0vw;
+  }
+
+  .contenedorLogo {
+    width: 32vw;
+    height: 15vh;
+    flex-direction: column;
+    margin: 0vh 0vw 0vh 4vw;
+    justify-content: space-between;
+}
+
   .imagenLogo{
     width: 30vw;
     height: 8vh;
@@ -1788,13 +1818,13 @@ font-size: 1.5vw;
   margin: 4vh 0vw 0vh 0vw;
 }
 .card{
-  width: 50vw;
-  height: 15vh;
+  width: 40vw;
+  height: 37vh;
   margin: 4vh 0vw 0vh 0vw;
 }
 .imageProduct{
-  width: 50vw;
-  height: 10vh;
+  width: 36vw;
+  height: 16vh;
 }
 .DescriptionProduct{
   height: 5vh;

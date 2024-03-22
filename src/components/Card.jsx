@@ -1,8 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link} from 'react-router-dom'
+import 'boxicons/css/boxicons.min.css';
 
 
 function Card({product}) {
+  const [esFavorito, setEsFavorito] = useState(false);
+
+  const toggleFavorito = () => {
+    setEsFavorito(!esFavorito);
+  };
+
 
   console.log(product.images)
   // Limita la cantidad de caracteres de DescriptionProduct 
@@ -20,6 +27,12 @@ function Card({product}) {
            <h4 className='tituloProducto'> {product.name} </h4>
            <p className="DescriptionProduct">{trimmedDescription}</p>
         </Link>
+  
+
+        <div onClick={toggleFavorito} className='contenedorFavoritoCard'>
+        <i className={`bx ${esFavorito ? 'bxs-heart' : 'bx-heart'}`}></i>
+      </div>
+
     </div>
   )
 }
