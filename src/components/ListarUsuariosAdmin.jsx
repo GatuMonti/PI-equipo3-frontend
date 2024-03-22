@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Button } from 'react-bootstrap';
+import { urlBackend } from '../App';
+
 
 const ListarUsuariosAdmin = () => {
   const [users, setUsers] = useState([]);
@@ -9,7 +12,7 @@ const ListarUsuariosAdmin = () => {
     // Función para obtener la lista de usuarios
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/auth/listar-usuarios');
+        const response = await axios.get(urlBackend + "auth/listar-usuarios");
         if (response.status === 200) {
           setUsers(response.data);
         }
@@ -65,36 +68,24 @@ const ListarUsuariosAdmin = () => {
   };
 
   return (
-    <div>
-      <h1>Listado de Usuarios</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Rol</th>
-            <th>Cambiar Rol</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map(user => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.username}</td>
-              <td>{user.nombre}</td>
-              <td>{user.apellido}</td>
-              <td>{user.role}</td>
-              <td>
-                <button onClick={() => changeUserRole(user.username, user.role === 'ADMIN' ? 'USER' : 'ADMIN')}>
-                  Cambiar Rol
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className='contenedorListaProductos'>
+      <h3 className='tituloCategoriasAdmin'> Listar Usuarios <br></br>Cantidad: {users.length} </h3>
+      <div className='contenedorProductosAdmin'>
+        <div>
+        {users.map(user => (
+          <div key={user.id} className='contenedorProductosAdmin'>
+            <p className='listId'>ID: {user.id}</p>
+            <p className='listName'>Username: {user.username}</p>
+            <p className='listName'>Nombre: {user.nombre}</p>
+            <p className='listName'>Apellido: {user.apellido}</p>
+            <p className='listName'>Rol: {user.role}</p>
+            <Button variant="light" style={{ margin: '1vh' }} onClick={() => changeUserRole(user.username, user.role === 'ADMIN' ? 'USER' : 'ADMIN')}>
+              Cambiar Rol
+            </Button>
+          </div>
+        ))}
+        </div>
+      </div>
     </div>
   );
 };

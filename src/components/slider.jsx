@@ -71,7 +71,7 @@ const Slider = (props) => {
 
   return (
     <div className="container">
-        <h1><b>Más Populares</b></h1>
+        <h2>Más Populares</h2>
         <Carousel
         activeIndex={activeIndex}
         next={next}
@@ -79,9 +79,8 @@ const Slider = (props) => {
         >
         <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex}/>
         {slides}
-        <CarouselControl direction='prev' directionText='Previous' onClickHandler={previous}/>
-        <CarouselControl direction='next' directionText='Next' onClickHandler={next}/>
-        </Carousel>
+        
+    </Carousel>
 
     </div>
     

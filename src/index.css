@@ -5,19 +5,16 @@
 .dark{
   background-color: black;
   color: #FFFFFF;
-  
 }
 .light{
   background-color: white;
 }
 /************************************Desktop***********************************/
 
-
-
 /************************************Header***********************************/
 .Header{
   width: 100%;
-  height: 18vh;
+  height: 15vh;
   background-color: #6269d3;
   display: flex;
   justify-content: space-between;
@@ -58,11 +55,10 @@
 .crear-cuenta{
   width: 10vw;
   height: 5vh;
-  background-color: #6269d3;
-  border-radius: 10px;
-  border-color: #FFFFFF;
+  background-color: #FFFFFF;
+  border-radius: 5px;
   border: none;
-  color: #FFFFFF;
+  color: #AC6ABA;
   font-weight: 500;
   font-size: 1vw;
 
@@ -106,7 +102,7 @@
 
 .footer{
   background-color:#6269d3;
-  padding:30px 0px;
+  padding:10px 0px;
   font-family: 'Play', sans-serif;
   text-align:center;
   
@@ -129,12 +125,8 @@
 }
 
 .footer .row a:hover{
-    color:black;
+    color:#5e5e5e;
     }
-    
-.footer .row ul{
-    width:100%;
-}
     
 .footer .row ul li{
     display:inline-block;
@@ -143,13 +135,14 @@
 }
     
 .footer .row a i{
-    font-size:2em;
-    margin:0% 1%;
+  font-size:2em;
+  margin:0% 1%;
 }
- .roww{
-  color:#D9D9D9;
-  font-size: 11px;
- }
+.roww{
+color:#D9D9D9;
+font-size: 11px;
+}
+
 
 
 /***********************************Home****************************************/
@@ -231,9 +224,8 @@
   justify-content: space-between;
   border-radius: 8px;
 
-  
-
 }
+
 .inputSearch{
   width: 10vw;
   height: auto;
@@ -308,8 +300,9 @@
 
 .bx.bx-calendar {
   font-size: 3.7vh;
-  margin: 8px 0vw 0vh 0vw;
+  margin: 9px 0.5vw 0vh 0vw;
 }
+
 
 
 .calendarioInicio {
@@ -318,7 +311,7 @@
   margin: 8px 0.5vw 0vh 0vw;
   display: flex;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 1.68vh;
   
 }
 
@@ -328,8 +321,6 @@
   margin: 8px 0.3vw 0vh 0vw;
   display: flex;
   border-radius: 8px;
-  
- 
 }
 
 .inputSearch:focus{
@@ -355,7 +346,6 @@
   line-height: 20px;
   list-style: none;
   outline: none;
-  
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -364,7 +354,6 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-
 }
 
 .botonBuscarFecha:hover,
@@ -409,14 +398,16 @@
     background-color: #F082AC;
   }
  
+ 
 
 
-/********************Carrusel****************/
+
+/********************Slider****************/
 
 .container{
-  width: 100%;
+  width: 80%;
   height: auto;
-  padding: 20px;
+  padding: 15px;
   border-radius: 20px;
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -434,10 +425,6 @@
   color: #FFFFFF;
 }
 
-
-
-
-
 /********************Productos****************/
 
 .contenedorProductos{
@@ -453,7 +440,7 @@
   background-color: white;
   color: #4867DB;
   border-radius: 5px;
-  font-size: 3vw;
+  font-size: 2.5vw;
   text-align: center;
 }
 .card{
@@ -467,6 +454,8 @@
   border-color: #0056b3;
   border-width: 0.3vh;
   transition: transform 0.3s ease;
+  display: flex;
+  
 }
 .card:hover {
   transform: scale(1.05); 
@@ -494,14 +483,17 @@ a{
   text-decoration: none;
 }
 
+.estrellas{
+  margin: 0vh 1vw 0vh 0vw;
+}
 
 /***********************************Detail****************************************/
 .detalleProducto{
   margin: 0;
-  padding: 20vh 0vw 0vh 0vw;
+  padding: 15vh 0vw 0vh 0vw;
 }
 .botonRegresar{
-  margin: 1vh 0vw 0vh 80vw;
+  margin: 2vh 0vw 0vh 80vw;
   width: 8vw;
   height: 5vh;
   background-color:#4867DB;
@@ -524,12 +516,11 @@ a{
   font-size: 8vh;
 }
 .contenedorImagenesDetail{
-  margin: 3vh 0vw 0vh 10vw;
+  margin: 0vh 0vw 0vh 10vw;
   display: flex;
   flex-wrap: wrap;
   width: 80%;
   height: 60vh;
-  
 }
 .imagen1Producto{
   width: 50%;
@@ -547,9 +538,9 @@ a{
   padding: 3px;
 }
 .imagen2Producto,.imagen3Producto,.imagen4Producto,.imagen5Producto{
-    width: 50%;
-    height: 50%;
-    padding: 3px;
+  width: 50%;
+  height: 50%;
+  padding: 3px;
 }
 .imagen5Producto:hover{
   padding: 9px;
@@ -564,14 +555,16 @@ a{
   padding: 9px;
 }
 
-
-
+.bx.bx-calendar-event{
+  font-size: 3.7vh;
+  margin: 1.5vh 0.5vw 0vh 0vw;
+}
 
 .verMas{
   width: 8vw;
   height: 5vh;
   background-color:#4867DB;
-  margin: 3vh 0vw 0vh 80vw;
+  margin: 2.2vh 0vw 0vh 62vw;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
@@ -580,20 +573,29 @@ a{
 .verMas:hover{
   background-color: gray;
   color: black  ;
+}
+.calendarioCalificaciones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 87%;
 
 }
+
 
 .contenedorDetalles{
   width: 50vw;
   display: flex;
   flex-direction: column;
   margin: 2vh 0vw 0vh 10vw;
+  
 }
+
 .tituloDetallesDeProducto{
-    background-color:#4867DB;
-    text-align: center;
-    font-size: 1.9vw;
-    color: #FFFFFF;
+  background-color:#4867DB;
+  text-align: center;
+  font-size: 1.9vw;
+  color: #FFFFFF;
 }
 .tituloDetallesDeProducto:hover{
   background-color: #FFFFFF;
@@ -602,10 +604,9 @@ a{
 }
 .categoriaProducto{
   width: 18vw;
-  color: #FFFFFF;
+  color: black;
   font-size: 1.5vw;
   margin: 1vh 0vw 0vh 2vw;
-
 }
 
 .descripcionProducto,.precioProducto{
@@ -613,11 +614,27 @@ a{
   font-size: 1.5vw;
   margin: 1vh 0vw 0vh 2vw;
 }
+
 .contenedorComprar{
-  width: 20vw;
-  height: 25vh;
+  width: 50vw;
+  height: 15vh;
   margin: 2vh 0vw 0vh 12vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0vh 0vw 0vh 0vw;
+  border-radius: 8px;
+
 }
+
+.contenedorDatePicker{
+  width: 39vw;
+  height: 10vh;
+  margin: 0vh 0.5vw 0vh 0vw;
+  display: flex;
+  border-radius: 8px;
+  
+}
+
 .botonComprar{
   width: 8vw;
   height: 5vh;
@@ -626,28 +643,126 @@ a{
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
+  margin: 0.70vh 0vw 0vh 0vw;
 }
 .botonComprar:hover{
   background-color: #AC6ABA;
   color: black  ;
-  
 }
-
 .contenedorMostrarCaracteristicas{
   width: 50vw;
-  height: 22vh;
+  height: 24vh;
   display: flex;
-  margin: 2vh 0vw 0vh 10vw;
+  margin: -4vh 0vw 0vh 10vw;
   flex-wrap: wrap;
   color: #FFFFFF;
   background-color:#6269d3;
   justify-content: space-around;
-
 }
 .tituloMostarCaracteristicas{
   width: 100%;
   text-align: center;
   margin: 2vh 0vw 3vh 0vw;
+}
+
+ /* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
+
+
+.contenedorFechasDetail{
+  height: 5vh;
+    margin: 0.5vh 7vw 0vh 8vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendarioInicioDetail{
+  width: 25vh;
+  height: 33px;
+  margin: 8px 0.5vw 0vh 0vw;
+  display: flex;
+  border-radius: 8px;
+  font-size: 2.1vh
+}
+
+.calendarioFinalizacionDetail{
+  width: 25vh;
+  height: 33px;
+  margin: 8px 0.3vw 0vh 0vw;
+  display: flex;
+  border-radius: 8px;
+}
+
+
+.botonBuscarFechaDetail{
+  width: 5vw;
+  height: 3.5vh;
+  border: 2px solid black; /* Agregar borde negro de 2px */
+  border-radius: 10px;
+  margin: 0vh 0vw 0vh 0vw;
+  cursor: pointer;
+  background-color: #AC6ABA;
+  box-sizing: border-box;
+  color: #070000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.caracteristicas{
+  display: flex;
+  margin: 1vh 0vw 0vh 0vw;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.comparteRedes{
+  display: flex;
+  margin: 1vh 0vw 2vh 0vw;
+  
+
+}
+
+ /* FAVORITOS DENTRO DE DETAIL  */
+
+ .contenedorFavorito {
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  left: 10vw;
+  padding: 4px;
+
+}
+
+.bx-heart {
+  color: black;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.bx-heart:hover {
+  color: red;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.bx.bxs-heart {
+  color: red;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 /************Politicas******************/
@@ -676,6 +791,8 @@ a{
   margin: 10vh 14vh 8vh 10px;
   list-style-type: none;
 }
+
+
 
 /************Formulario crear cuenta******************/
 
@@ -853,6 +970,8 @@ a{
 
 
 
+
+
 /***********************************Pagina-administrador****************************************/
 .pageAdmin{
   width: 100%;
@@ -877,7 +996,6 @@ a{
   border: none;
   border-radius: 5px;
   font-size: 1vw;
-  
 }
 .agregarProducto:hover,
 .ListarProductos:hover,
@@ -911,7 +1029,6 @@ a{
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  
   flex-wrap: wrap;
   background: #dde5f4;
   width: 75%;
@@ -919,8 +1036,7 @@ a{
   box-shadow: 5px 5px 15px black;
 }
 
-
- .inputCategoria, .inputName,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
+.inputCategoria, .inputName,.inputPrecio,.inputTipo,.inputConsola,.inputImage1,.inputImage2,.inputImage3,.inputImage4,.inputImage5,.inputCaracteristicaAdd{
   background: #f1f7fe;
     margin-top: 1rem;
     margin-left: 10px;
@@ -930,8 +1046,6 @@ a{
     padding: 0.4rem;   
     border-radius: 20px;
     border: none;
-    
-    
 }
 
 .inputDescripcion{
@@ -943,7 +1057,6 @@ a{
     box-shadow: 0;
     border: none;
 }
-
 .contenedorCaracteristicaCheckbox{
   flex-direction:column ;
   width: 80%;
@@ -963,17 +1076,15 @@ a{
   font-weight: 500;
   margin: 2vh 0vw 0vh 0vw;  
 }
-
 .contenedorCheckbox{
   display: wrap;  
   margin-left: 30%;
   width: 100% ;
   justify-content:center;
   align-items: center;
-    
 }
 .inputCheckbox{
-  width: 5w;
+  width: 5vw;
   height: 3vh;
   margin: 0.5vh 0vw 0vh 0vw;
 }
@@ -1001,7 +1112,6 @@ a{
   background-color: #0056b3;
 }
 
-
 .textFalla,.textExito{
   color:#6269d3;
   width: 25vw;
@@ -1019,7 +1129,7 @@ a{
 }
 /***********************************Listar-Producto-Administrador****************************************/
 .listaAdmin{
-  margin: -55vh 0vw -37vh 0vw;
+  margin: -45vh 0vw -37vh 0vw;
 }
 .titleListProducts{
   color:#4867DB;
@@ -1093,7 +1203,6 @@ a{
   color: black  ;
 
 }
-
 .contenedorEditar{
   width: 40%;
   margin: 0vh 0vw 3vh 2vw;
@@ -1101,7 +1210,6 @@ a{
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 .idEditar,.nameEditar,.typeEditar,.categoriaEditar,.descripcionEditar,.precioEditar,.consolaEditar,.idImagen,.urlImagen,.idProductoImagen,.idCarateristica,.nameCaracteristica,.descripcionCaracteristica{
   color:#0e41f7;
   font-size: 1.2vw;
@@ -1109,6 +1217,7 @@ a{
 .contenedorEditar span{
   color:rgba(0, 0, 0, 0.705);
 }
+
 
 /************Formulario actualizar producto******************/
 
@@ -1146,7 +1255,6 @@ a{
   height: auto;
   box-shadow: 5px 5px 15px black;
   justify-content: center;
-  
 }
 
 .inputActualizar,.inputActualizarDescripcion,.inputCaracteristica .inputCategoriaEdit{
@@ -1158,9 +1266,7 @@ a{
     display: inline-flex;
     padding: 0.4rem;   
     border-radius: 20px;
-    border: none;
-    
-    
+    border: none; 
 }
 
 .inputActualizarDescripcion{
@@ -1176,6 +1282,7 @@ a{
   font-size: 15pxh;
   display: inline-flex;
 }
+
 .botonActualizar{
   padding: 8px;
     width: 10rem;
@@ -1197,18 +1304,14 @@ a{
 
 
 
-
-
-
 /**********************************Panel Categorias y caracteristicas***********************************************/
 .panelCategorias, .panelCaracteristicas{
   padding: 20vh;    
-  height: 100%;
+  min-height: 84vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0vh 9vw 0vh 0vw;
-  
 
 }
 .tituloCategoriasAdmin,.tituloCaracteristicasAdmin{
@@ -1226,16 +1329,16 @@ a{
   font-size: 1vw;
 }
 .botonRegresarPageAdmin:hover{
-  background-color: gray;
+  background-color: #FFFFFF;
   color: black  ;
-  
+  width: 9vw;
 }
 .btn-primary{
   background-color:#4867DB;
   border: none;
 }
 .btn-primary:hover{
-  background-color: gray;
+  background-color:#FFFFFF;
   color: rgba(0, 0, 0, 0.733);
 }
 /********************************Panel de Usuario********************************/
@@ -1245,11 +1348,11 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0vh 9vw 0vh 0vw;
+  margin: 0vh 9vw 84vh 0vw;
   
 }
 
-/**** Card del Navbar****/
+/** Card del Navbar**/
 .panelDetallesDeUsuario{  
   width: 100%;
   height: auto;
@@ -1271,8 +1374,119 @@ a{
   margin-bottom: 10px;
  
 }
+/****************** Estilos agregados por Gatu ************************************************/
+
+.cardTop{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardBottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  color:#D9D9D9
+}
+
+.cardVotos{
+  font-size: 1.5rem;
+}
+
+/* Estilos para las sugerencias del Autosuggest */
+.react-autosuggest__suggestions-container {
+  position: relative;
+  z-index: 10;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  width: calc(100% - 20px); /* Ancho del contenedor (ajustar según sea necesario) */
+  max-height: 200px; /* Altura máxima del contenedor (ajustar según sea necesario) */
+  overflow-y: auto; /* Agregar barra de desplazamiento vertical si es necesario */
+  background-color: white; /* Fondo blanco */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-autosuggest__suggestions-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.react-autosuggest__suggestion {
+  padding: 10px;
+  cursor: pointer;
+  color: black; /* Color de texto negro */
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #f0f0f0;
+}
+
+/****************************Calificaciones***************************************/
+.contenedorReservas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative; /* Agregado */
+  cursor: pointer;
+}
+.contenedorReservas .contenedorProductosAdmin{
+  margin-bottom: 0px;
+}
+.productoACalificar {
+  background-color: #ccc;
+  min-width: 95%;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  overflow: hidden; /* Ocultar el contenido que se desborda */
+  max-height: 0px; /* Altura máxima */
+  transition: 0.5s ease-in-out; /* Transición de altura */
+}
+
+.invisible {
+  max-height: 0; /* Ocultar el contenido */
+}
+
+.visible {
+  max-height: 500px; /* Ajustado */
+}
 
 
+.productosClasificar{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px dashed grey;
+
+}
+.msjsCalificar{
+  display: flex;
+  width: 40vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.msjsCalificar p{
+  margin: 0px;
+}
+.calificarColumna1{
+  display: flex;
+  width: 30%;  
+  justify-content: space-between;
+}
+
+.inputCalificacion{
+  width: 35vw;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+}
 
 
 /****************************************MEDIA*******************************************************/
@@ -1325,7 +1539,7 @@ a{
   /********************Categorias****************/
 
   .contenedorCategorias{
-    width: 25%;
+    width: 100%;
     height: 300vh;
   }
   .tituloCategorias{
@@ -1409,8 +1623,13 @@ a{
 
 .container{
   width: 100%;
-  height: auto;
-  margin: 4vh 1.5vw 0vh 0vw;
+  height: 70vh;
+  margin: 4vh 0.5vw 0vh 0vw;
+}
+
+.carousel{
+  width: 100vh;
+  height: 50vh;
 }
 
 
@@ -1589,6 +1808,20 @@ font-size: 1.5vw;
 
 @media(max-width:500px){
 
+  .Header{
+    width: 68%;
+    height: 16vh;
+    margin: 0vh 0vw 0vh 0vw;
+  }
+
+  .contenedorLogo {
+    width: 32vw;
+    height: 15vh;
+    flex-direction: column;
+    margin: 0vh 0vw 0vh 4vw;
+    justify-content: space-between;
+}
+
   .imagenLogo{
     width: 30vw;
     height: 8vh;
@@ -1699,13 +1932,13 @@ font-size: 1.5vw;
   margin: 4vh 0vw 0vh 0vw;
 }
 .card{
-  width: 50vw;
-  height: 15vh;
+  width: 40vw;
+  height: 37vh;
   margin: 4vh 0vw 0vh 0vw;
 }
 .imageProduct{
-  width: 50vw;
-  height: 10vh;
+  width: 36vw;
+  height: 16vh;
 }
 .DescriptionProduct{
   height: 5vh;
@@ -1818,14 +2051,3 @@ font-size: 2.5vw;
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-

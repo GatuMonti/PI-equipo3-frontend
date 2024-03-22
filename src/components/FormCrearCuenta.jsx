@@ -3,12 +3,13 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import {useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { urlBackend } from '../App';
 
 
 const FormCrearCuenta = () => {
 
 
-    const endPointRegister="http://localhost:8080/auth/register";
+    const endPointRegister= urlBackend + "auth/register";
 
     const[usuarioRegistrar, setUsuarioRegistrar]=useState({
         username:"",
@@ -154,7 +155,7 @@ const FormCrearCuenta = () => {
                     </div>
                     <div className='etiquetaPassword'>
                         <label> Contraseña *</label>
-                     <input placeholder="Minimo 8 caracteres"className='inputPassword' type='password' value={usuarioRegistrar.password} onChange={handleChangePassword}/>
+                     <input placeholder="Minimo 4 caracteres"className='inputPassword' type='password' value={usuarioRegistrar.password} onChange={handleChangePassword}/>
 
                     </div>
                     <div className='etiquetaName'>

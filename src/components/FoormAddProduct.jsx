@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import axios, { formToJSON } from 'axios'
 import Swal from 'sweetalert2'
 import { useContextGlobal } from './Util/global.context'
+import { urlBackend } from '../App';
 
 function FoormAddProduct() {
 
@@ -48,7 +49,7 @@ function FoormAddProduct() {
                 }
                 else{
                     console.log(productoNuevo)
-                    const response = await axios.post('http://localhost:8080/products/add-product', productoNuevo);
+                    const response = await axios.post(urlBackend + 'products/add-product', productoNuevo);
                     console.log(response);
                     setTimeout(()=>{
                         window.location.reload()
@@ -133,17 +134,6 @@ function FoormAddProduct() {
          const handleOnchangeCategoria=(e)=>{
               setProductoNuevo((prevState) => ({ ...prevState, category:{id: e.target.value.trimStart() }}))
          } 
-
-        //  const handleOnchangeCategoria = (e) => {
-        //      const categoryId = e.target.value;
-        //      setProductoNuevo(prevState => ({
-        //          ...prevState,
-        //          category: {
-        //              id: categoryId
-        //          }
-        //      }));
-        //  };
-
         
         const handleOnchangeDescripcion=(e)=>{
             setProductoNuevo((prevState) => ({ ...prevState, description: e.target.value.trimStart() }))
@@ -165,14 +155,6 @@ function FoormAddProduct() {
              imagesCopy[index] = { ...imagesCopy[index], [name]: value.trimStart() };
              setProductoNuevo(prevState => ({ ...prevState, images: imagesCopy }));
          };
-
-
-        //  const handleCaracteristicaChange = (index, e) => {
-        //     const { value } = e.target;
-        //     const characteristicsCopy = [...productoNuevo.characteristics];
-        //     characteristicsCopy[index] = { id: value.trimStart() };
-        //     setProductoNuevo(prevState => ({ ...prevState, characteristics: characteristicsCopy }));
-        // };
 
 
         const handleCheckboxChange = (e) => {
@@ -197,7 +179,9 @@ function FoormAddProduct() {
             <h3 className="tituloFormulario">Agregar Producto</h3>
             <input className="inputName" placeholder="Nombre *" value={productoNuevo.name} onChange={handleOnchangeName}/>
             
-           
+             {/*Otro input*/}
+            {/* <input className="inputCategoria" placeholder="Id categoria " value={productoNuevo.category.id} onChange={handleOnchangeCategoria}/> */}
+               
             <select onChange={handleOnchangeCategoria}className='inputCategoria'>
                 <option  value="">Categoría</option>
                 {state.categorias.slice(1).map((categoria, index) => (

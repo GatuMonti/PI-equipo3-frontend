@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useContextGlobal } from './Util/global.context';
+import { urlBackend } from '../App';
 
 const AgregarCaracteristicaButton = () => {
     const { dispatch } = useContextGlobal();
@@ -33,8 +34,8 @@ const AgregarCaracteristicaButton = () => {
         }
         
         try {
-            const response = await axios.post('http://localhost:8080/characteristics/add-characteristic', caracteristicaData);
-            const newResponse = await axios.get('http://localhost:8080/characteristics/search-name/'+caracteristicaData.name);
+            const response = await axios.post(`${urlBackend}characteristics/add-characteristic`, caracteristicaData);
+            const newResponse = await axios.get(`${urlBackend}characteristics/search-name/`+caracteristicaData.name);
             dispatch({ type: 'agregar_caracteristica', payload: newResponse.data });
             setShowForm(false); // Cierra el pop-up después de agregar la característica
             Swal.fire({

@@ -5,6 +5,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Pagination, Button } from 'react-bootstrap';
 import EditarCategoriaButton from './EditarCategoriaButton';
+import { urlBackend } from '../App';
 
 const ListarCategoriasAdmin = () => {
     const { state, dispatch } = useContextGlobal();
@@ -14,7 +15,7 @@ const ListarCategoriasAdmin = () => {
     const [editingCategoriaId, setEditingCategoriaId] = useState(null);
 
     // Logica para eliminar categoria
-    const endPointDeleteCategoria = `http://localhost:8080/categorias/delete-category/`;
+    const endPointDeleteCategoria =  urlBackend + "categorias/delete-category/";
 
     const handleDelete = async (id) => {
         try {

@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { useContextGlobal } from './Util/global.context';
 import { Pagination, Button } from 'react-bootstrap';
 import EditarCaracteristicaButton from './EditarCaracteristicasButton'
+import { urlBackend } from '../App';
 
 const ListarCaracteristicasAdmin = () => {
     const { state, dispatch } = useContextGlobal();
@@ -13,7 +14,7 @@ const ListarCaracteristicasAdmin = () => {
     const [editingCaracteristicaId, setEditingCaracteristicaId] = useState(null);
 
     // Endpoint para eliminar característica
-    const endPointDeleteCaracteristica = `http://localhost:8080/characteristics/delete/`;
+    const endPointDeleteCaracteristica = urlBackend + "characteristics/delete/";
 
     const handleDelete = async (id) => {
         try {
