@@ -17,7 +17,8 @@ import PanelUsuarios from './Routes/PanelUsuarios'
 import Politicas from './components/Politicas'
 import PanelReservas from './Routes/PanelReservas'
 
-const urlBackend = 'https://vortexsprint2back-production.up.railway.app/';
+// const urlBackend = 'https://vortexsprint2back-production.up.railway.app/';
+const urlBackend = 'http://localhost:8080/';
 
 function App() {
   
