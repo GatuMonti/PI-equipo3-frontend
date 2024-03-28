@@ -1,4 +1,4 @@
-*{
+/* *{
   margin: 0;
   font-family:Arial, Helvetica, sans-serif;
 }
@@ -8,11 +8,25 @@
 }
 .light{
   background-color: white;
+} */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Para que la página ocupe al menos el alto de la ventana del navegador */
 }
+
+
+.content {
+  margin: 7rem 0rem 0rem 0rem;
+  flex: 1; /* El contenido ocupará todo el espacio disponible */
+  display: flex;
+  /* Puedes agregar estilos adicionales según necesites */
+}
+
 /************************************Desktop***********************************/
 
 /************************************Header***********************************/
-.Header{
+/* .Header{
   width: 100%;
   height: 15vh;
   background-color: #6269d3;
@@ -99,7 +113,7 @@
 
 /************************************Footer***********************************/
 
-
+/* 
 .footer{
   background-color:#6269d3;
   padding:10px 0px;
@@ -141,14 +155,14 @@
 .roww{
 color:#D9D9D9;
 font-size: 11px;
-}
+} */
 
 
 
 /***********************************Home****************************************/
 
 /********************Categorias****************/
-.home{
+/* .home{
   display: flex;
   
 }
@@ -193,8 +207,8 @@ font-size: 11px;
 .img1CategoriaCinco:hover,
 .img2CategoriaCinco:hover {
   width: 14vw;
-}
-/********************Buscador****************/
+} */
+/* *******************Buscador***************
 
 .contenedorDos{
   width: 80%;
@@ -399,7 +413,7 @@ font-size: 11px;
   }
  
  
-
+ */
 
 
 /********************Slider****************/
@@ -794,18 +808,16 @@ a{
 
 
 
-/************Formulario crear cuenta******************/
+/* ***********Formulario crear cuenta***************** */
 
-.pageFormCrearcuenta{
+/* .pageFormCrearcuenta{
   height: 100%;
-  padding: 20vh 0vw 10vh 0vw;
 }
 
 .formRegister{
   font-family: "Arial";
     margin-bottom: 10px;
     margin-left: 35%;
-    margin-top: 10px;
     padding: 15px;
     border-radius: 15px;
     -webkit-user-select: none;
@@ -869,11 +881,11 @@ a{
 }
 .crearCuenta:hover{
   background-color: #0056b3;
-}
+} */
 
 /************Formulario Login******************/
 
-.pageFormLogin{
+/* .pageFormLogin{
   width: 100%;
   height: 100%;
   padding: 20vh 0vw 10vh 0vw;
@@ -967,49 +979,68 @@ a{
   cursor: pointer;
 }
 
-
+ */
 
 
 
 
 /***********************************Pagina-administrador****************************************/
-.pageAdmin{
-  width: 100%;
-  background-image: url('/src/Images/24.jpg')
-}
-.panel{
-  width: 80%;
-  margin: 0vh 0vw 0vh 10vw;
+.pageAdmin {
+  width: 100vw;
   display: flex;
-  justify-content: space-around;
+  padding: 1rem;
+  flex-direction: column;
   align-items: center;
+  /* background-image: url('/src/Images/24.jpg'); */
 }
-.vacio{
-  height: 60vh;
+
+.panel {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  /* 
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80vw;
+  max-height: 100vh; */
 }
-.agregarProducto,.ListarProductos,.ListarCategorias,.actualizarProducto{
-  width: 15%;
-  height: auto;
-  margin: 20vh 0vw 0vh 0vw;
-  background-color:#6269d3;
+
+
+.contenidoAdmin{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+
+.agregarProducto,
+.ListarProductos,
+.ListarCategorias,
+.actualizarProducto {
+  margin: 1rem;
+  width: 180px;
+  height: 30px;
+  background-color: #6269d3;
   color: #FFFFFF;
   border: none;
   border-radius: 5px;
-  font-size: 1vw;
+  font-size: 14px;
 }
+
 .agregarProducto:hover,
 .ListarProductos:hover,
 .ListarCategorias:hover,
-.actualizarProducto:hover{
+.actualizarProducto:hover {
   color: rgba(0, 0, 0, 0.692);
-  width: 16%;
-  height: auto;
+  width: 180px;
+  height: 28px;;
   background-color: #FFFFFF;
+  box-shadow: 5px 5px 15px rgb(78, 77, 77);
 }
-
 /***********************************Formulario****************************************/
 
-.tituloFormulario{
+/* .tituloFormulario{
   width: 100%;
   padding: 8px;
   font-size: 2vw;
@@ -1126,9 +1157,9 @@ a{
   width: 25vw;
   height: 57vh;
   bottom:6vh;
-}
+} */
 /***********************************Listar-Producto-Administrador****************************************/
-.listaAdmin{
+/* .listaAdmin{
   margin: -45vh 0vw -37vh 0vw;
 }
 .titleListProducts{
@@ -1181,14 +1212,14 @@ a{
   margin: 2vh 2vw 0vh 2vw;
   border: none;
   border-radius: 5px;
-}
+} */
 
 /***********************************Editar-Producto-Administrador****************************************/
 
 /************Caracteristicas del producto******************/
 
 
-.botonAtrasEditar{
+/* .botonAtrasEditar{
   margin: 25vh 0vw 0vh 80vw;
   width: 8vw;
   height: 5vh;
@@ -1216,12 +1247,12 @@ a{
 }
 .contenedorEditar span{
   color:rgba(0, 0, 0, 0.705);
-}
+} */
 
 
 /************Formulario actualizar producto******************/
 
-.pageEditar{
+/* .pageEditar{
   width: 100%;
   margin-bottom: 30px;
   flex-wrap: wrap;
@@ -1301,11 +1332,11 @@ a{
 .botonActualizar:hover{
   background-color: #0056b3;
 }
-
+ */
 
 
 /**********************************Panel Categorias y caracteristicas***********************************************/
-.panelCategorias, .panelCaracteristicas{
+/* .panelCategorias, .panelCaracteristicas{
   padding: 20vh;    
   min-height: 84vh;
   display: flex;
@@ -1340,9 +1371,9 @@ a{
 .btn-primary:hover{
   background-color:#FFFFFF;
   color: rgba(0, 0, 0, 0.733);
-}
+} */
 /********************************Panel de Usuario********************************/
-.panelUsuarios{
+/* .panelUsuarios{
   height: 84vh;
   padding-top: 20vh;  
   display: flex;
@@ -1350,10 +1381,10 @@ a{
   align-items: center;
   margin: 0vh 9vw 84vh 0vw;
   
-}
+} */
 
 /** Card del Navbar**/
-.panelDetallesDeUsuario{  
+/* .panelDetallesDeUsuario{  
   width: 100%;
   height: auto;
   padding-top: 18vh;
@@ -1373,7 +1404,7 @@ a{
 .avatarUser{
   margin-bottom: 10px;
  
-}
+} */
 /****************** Estilos agregados por Gatu ************************************************/
 
 .cardTop{

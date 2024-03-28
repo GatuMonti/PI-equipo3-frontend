@@ -6,7 +6,7 @@ import { urlBackend } from '../App';
 
 const AgregarCategoriaButton = () => {
     const { dispatch } = useContextGlobal();
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(true);
     const [categoriaData, setCategoriaData] = useState({
         title: '',
         description: '',
@@ -79,7 +79,7 @@ const AgregarCategoriaButton = () => {
 
     return (
         <div>
-            {!showForm && <button onClick={() => setShowForm(true)} className="btn btn-primary">Agregar Categoría</button>}
+            {!showForm && <button onClick={() => showForm} className="btn btn-primary">Agregar Categoría</button>}
             {showForm && (
                 <div className="popup">
                     <h2 className="mb-4">Nueva Categoría</h2>

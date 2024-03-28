@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ListarUsuariosAdmin from '../components/ListarUsuariosAdmin'
+import ListarUsuariosAdmin from '../components/ListarUsuarios/ListarUsuariosAdmin'
 
 const PanelUsuarios = () => {
     return (
