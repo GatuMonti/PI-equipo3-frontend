@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { urlBackend } from '../App';
+import { urlBackend } from '../App'
 
 const api = axios.create({
   headers: {
