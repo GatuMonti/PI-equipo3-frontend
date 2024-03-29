@@ -488,298 +488,26 @@ a{
 }
 
 /***********************************Detail****************************************/
-.detalleProducto{
-  margin: 0;
-  padding: 15vh 0vw 0vh 0vw;
-}
-.botonRegresar{
-  margin: 2vh 0vw 0vh 80vw;
-  width: 8vw;
-  height: 5vh;
-  background-color:#4867DB;
-  border-radius: 5px;
-  border: none;
-  color: #FFFFFF;
-  font-size: 1vw;
-}
-.botonRegresar:hover{
-  background-color: gray;
-  color: black  ;
 
-}
-.tituloDetail{
-  width: 50vw;
-  margin: 0vh 0vw 0vh 25vw;
-  color:#4867DB;
-  font-weight: bold ;
-  text-align: center;
-  font-size: 8vh;
-}
-.contenedorImagenesDetail{
-  margin: 0vh 0vw 0vh 10vw;
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  height: 60vh;
-}
-.imagen1Producto{
-  width: 50%;
-  height: 100%;
-  padding: 5px;
-}
-.imagen1Producto:hover{
-  padding: 9px;
-}
-.contenedor4imagenes{
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 3px;
-}
-.imagen2Producto,.imagen3Producto,.imagen4Producto,.imagen5Producto{
-  width: 50%;
-  height: 50%;
-  padding: 3px;
-}
-.imagen5Producto:hover{
-  padding: 9px;
-}
-.imagen2Producto:hover{
-  padding: 9px;
-}
-.imagen3Producto:hover{
-  padding: 9px;
-}
-.imagen4Producto:hover{
-  padding: 9px;
-}
-
-.bx.bx-calendar-event{
-  font-size: 3.7vh;
-  margin: 1.5vh 0.5vw 0vh 0vw;
-}
-
-.verMas{
-  width: 8vw;
-  height: 5vh;
-  background-color:#4867DB;
-  margin: 2.2vh 0vw 0vh 62vw;
-  border-radius: 5px;
-  border: none;
-  color: #FFFFFF;
-  font-size: 1vw;
-}
-.verMas:hover{
-  background-color: gray;
-  color: black  ;
-}
-.calendarioCalificaciones{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 87%;
-
-}
-
-
-.contenedorDetalles{
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  margin: 2vh 0vw 0vh 10vw;
-  
-}
-
-.tituloDetallesDeProducto{
-  background-color:#4867DB;
-  text-align: center;
-  font-size: 1.9vw;
-  color: #FFFFFF;
-}
-.tituloDetallesDeProducto:hover{
-  background-color: #FFFFFF;
-  color: #AC6ABA;
-  font-weight: 900;
-}
-.categoriaProducto{
-  width: 18vw;
-  color: black;
-  font-size: 1.5vw;
-  margin: 1vh 0vw 0vh 2vw;
-}
-
-.descripcionProducto,.precioProducto{
-  color: black;
-  font-size: 1.5vw;
-  margin: 1vh 0vw 0vh 2vw;
-}
-
-.contenedorComprar{
-  width: 50vw;
-  height: 15vh;
-  margin: 2vh 0vw 0vh 12vw;
-  display: flex;
-  justify-content: space-between;
-  padding: 0vh 0vw 0vh 0vw;
-  border-radius: 8px;
-
-}
-
-.contenedorDatePicker{
-  width: 39vw;
-  height: 10vh;
-  margin: 0vh 0.5vw 0vh 0vw;
-  display: flex;
-  border-radius: 8px;
-  
-}
-
-.botonComprar{
-  width: 8vw;
-  height: 5vh;
-  background-color:#4867DB;
-  border-radius: 5px;
-  border: none;
-  color: #FFFFFF;
-  font-size: 1vw;
-  margin: 0.70vh 0vw 0vh 0vw;
-}
-.botonComprar:hover{
-  background-color: #AC6ABA;
-  color: black  ;
-}
-.contenedorMostrarCaracteristicas{
-  width: 50vw;
-  height: 24vh;
-  display: flex;
-  margin: -4vh 0vw 0vh 10vw;
-  flex-wrap: wrap;
-  color: #FFFFFF;
-  background-color:#6269d3;
-  justify-content: space-around;
-}
-.tituloMostarCaracteristicas{
-  width: 100%;
-  text-align: center;
-  margin: 2vh 0vw 3vh 0vw;
-}
-
- /* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
-
-
-.contenedorFechasDetail{
-  height: 5vh;
-    margin: 0.5vh 7vw 0vh 8vw;
-    display: flex;
-    justify-content: space-between;
-}
-
-.subtituloPopUp,.tituloPopUp{
-  color:blue;
-}
-.valorPopUp{
-  color: black;
-}
-.imageReserva{
-  width: 45%;
-  height: 16vh;
-  margin: 0vh 0vw 0vh 1vw;
-}
-.botonReservar{
-  margin: 0vh 0vw 0vh 1vw;
-}
-
-.calendarioInicioDetail{
-  width: 25vh;
-  height: 33px;
-  margin: 8px 0.5vw 0vh 0vw;
-  display: flex;
-  border-radius: 8px;
-  font-size: 2.1vh
-}
-
-.calendarioFinalizacionDetail{
-  width: 25vh;
-  height: 33px;
-  margin: 8px 0.3vw 0vh 0vw;
-  display: flex;
-  border-radius: 8px;
-  font-size: 2.1vh
-}
-
-
-.botonBuscarFechaDetail{
-  width: 5vw;
-  height: 3.5vh;
-  border: 2px solid black; /* Agregar borde negro de 2px */
-  border-radius: 10px;
-  margin: 0vh 0vw 0vh 0vw;
-  cursor: pointer;
-  background-color: #AC6ABA;
-  box-sizing: border-box;
-  color: #070000;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 20px;
-  list-style: none;
-  outline: none;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.caracteristicas{
-  display: flex;
-  margin: 1vh 0vw 0vh 0vw;
-  width: 100%;
-  justify-content: space-around;
-}
-
-.comparteRedes{
-  display: flex;
-  margin: 1vh 0vw 2vh 0vw;
-  
-
-}
-
- /* FAVORITOS DENTRO DE DETAIL  */
-
- .contenedorFavorito {
-  display: inline-block;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  left: 10vw;
-  padding: 4px;
-
-}
 
 .bx-heart {
   color: black;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
 }
 
 .bx-heart:hover {
   color: red;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
 }
 
 .bx.bxs-heart {
   color: red;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
 }
+
 
 /************Politicas******************/
 
@@ -1679,41 +1407,7 @@ a{
 
 /***********************************Detail****************************************/
 
-.contenedorImagenesDetail{
-  margin: 3vh 0vw 0vh 12vw;
-  width: 80vw;
-}
-.botonRegresar{
-  width: 9vw;
-  font-size: 1.5vw;
-}
-.verMas{
-  width: 9vw;
-  margin: 3vh 0vw 0vh 85vw;
-  font-size: 1.5vw;
-}
-.tituloDetallesDeProducto{
-  background-color:#4867DB;
-  text-align: center;
-  font-size: 2.5vw;
-  color: #FFFFFF;
-}
-.categoriaProducto,.descripcionProducto,.precioProducto{
-font-size: 2vw;
-}
-.contenedorComprar{
-width: 20vw;
-height: 25vh;
-margin: 2vh 0vw 0vh 12vw;
-}
-.botonComprar{
-width: 9vw;
-font-size: 1.5vw;
-}
 
-.contenedorMostrarCaracteristicas{
-  height: 30vh;
-}
 
 /************Formulario crear cuenta******************/
 
@@ -1825,7 +1519,7 @@ font-size: 1.5vw;
 @media(max-width:500px){
 
   .Header{
-    width: 68%;
+    width: 100%;
     height: 16vh;
     margin: 0vh 0vw 0vh 0vw;
   }
@@ -1968,45 +1662,7 @@ a{
 
 /***********************************Detail****************************************/
 
-.botonRegresar{
-  width: 15vw;
-  font-size: 2.5vw;
-  margin: 2vh 0vw 0vh 80vw;
-}
-.contenedorImagenesDetail{
-  margin: 3vh 0vw 0vh 5vw;
-  width: 90vw;
-}
 
-.imagen1Producto{
-  width: 100%;
-}
-.contenedor4imagenes{
-  width: 100%;
-}
-.imagen2Producto,.imagen3Producto,.imagen4Producto,.imagen5Producto{
-    width: 50%;
-}
-.verMas{
-  width: 15vw;
-  margin: 54vh 0vw 0vh 80vw;
-  font-size: 2.5vw;
-}
-.tituloDetallesDeProducto{
-  font-size: 3vw;
-}
-.categoriaProducto,.descripcionProducto,.precioProducto{
-font-size: 3vw;
-}
-.contenedorComprar{
-width: 50vw;
-height: 25vh;
-margin: 2vh 0vw 0vh 12vw;
-}
-.botonComprar{
-width: 15vw;
-font-size: 2.5vw;
-}
 
 /************Formulario crear cuenta******************/
 

@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Avatar from "react-avatar";
 import { useParams } from "react-router-dom";
-import { useContextGlobal } from "../components/Util/global.context";
+import { useContextGlobal } from "../../components/Util/global.context";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import { format , differenceInDays } from "date-fns";
-import ComparteRedesSociales from "../components/ComparteRedesSociales";
+import ComparteRedesSociales from "../../components/ComparteRedesSociales";
 import "boxicons/css/boxicons.min.css";
-import TotalCalificacionesProducto from "../components/TotalCalificacionesProducto/TotalCalificacionesProducto"
+import TotalCalificacionesProducto from "../../components/TotalCalificacionesProducto/TotalCalificacionesProducto"
 import Swal from "sweetalert2";
-import { urlBackend } from '../App';
+import { urlBackend } from '../../App';
 import {useNavigate} from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
+import styles from './Detail.module.css'
 
 
 const Detail = () => {
@@ -380,38 +381,38 @@ const handleOnclickReserva= async()=>{
   };
 
   return (
-    <div className="detalleProducto">
+    <div className={styles.detalleProducto}>
       <Link to={"/"}>
-        <button className="botonRegresar">Atras</button>
+        <button className={styles.botonRegresar}>Atras</button>
       </Link>
-      <h3 className="tituloDetail">{state.producto?.name}</h3>
+      <h3 className={styles.tituloDetail}>{state.producto?.name}</h3>
 
-      <div onClick={handleToggleFavorito} className="contenedorFavorito">
+      <div onClick={handleToggleFavorito} className={styles.contenedorFavorito}>
         {usuarioID && (
-          <i
-            className={`bx ${
-              estadosFavoritos.favorito ? "bxs-heart" : "bx-heart"
-            }`}
+           <i
+           className={`bx ${
+             estadosFavoritos.favorito ? "bxs-heart" : "bx-heart"
+           }`}
           ></i>
         )}
       </div>
 
-      <div className="contenedorImagenesDetail">
+      <div className={styles.contenedorImagenesDetail}>
         {state.producto &&
           state.producto.images &&
           state.producto.images.length > 0 && (
             <img
-              className="imagen1Producto"
+              className={styles.imagen1Producto}
               src={state.producto.images[0].imageUrl}
               alt="imagen1"
             />
           )}
-        <div className="contenedor4imagenes">
+        <div className={styles.contenedor4imagenes}>
           {state.producto &&
             state.producto.images &&
             state.producto.images.length > 0 && (
               <img
-                className="imagen2Producto"
+                className={styles.imagen2Producto}
                 src={state.producto.images[1].imageUrl}
                 alt="imagen2"
               />
@@ -420,7 +421,7 @@ const handleOnclickReserva= async()=>{
             state.producto.images &&
             state.producto.images.length > 0 && (
               <img
-                className="imagen3Producto"
+                className={styles.imagen3Producto}
                 src={state.producto.images[2].imageUrl}
                 alt="imagen3"
               />
@@ -429,7 +430,7 @@ const handleOnclickReserva= async()=>{
             state.producto.images &&
             state.producto.images.length > 0 && (
               <img
-                className="imagen4Producto"
+                className={styles.imagen4Producto}
                 src={state.producto.images[3].imageUrl}
                 alt="imagen4"
               />
@@ -438,7 +439,7 @@ const handleOnclickReserva= async()=>{
             state.producto.images &&
             state.producto.images.length > 0 && (
               <img
-                className="imagen5Producto"
+                className={styles.imagen5Producto}
                 src={state.producto.images[4].imageUrl}
                 alt="imagen5"
               />
@@ -446,24 +447,24 @@ const handleOnclickReserva= async()=>{
         </div>
       </div>
       {!State.cambiarBoton ? (
-        <button onClick={handleMostarMas} className="verMas">
+        <button onClick={handleMostarMas} className={styles.verMas}>
           ver mas
         </button>
       ) : (
-        <button onClick={handleOcultar} className="verMas">
+        <button onClick={handleOcultar} className={styles.verMas}>
           Ocultar
         </button>
       )}
 
       {State.showFeatures && (
-        <div className="contenedorMostrarCaracteristicas">
-          <h2 className="tituloMostarCaracteristicas">
+        <div className={styles.contenedorMostrarCaracteristicas}>
+          <h2 className={styles.tituloMostarCaracteristicas}>
             ¡Caracteristicas Especiales!
           </h2>
-          <div className="caracteristicas">
+          <div className={styles.caracteristicas}>
             {state.producto.characteristics.map((caracteristica) => {
               return (
-                <p className="nombreCaracteristicas">
+                <p className={styles.nombreCaracteristicas}>
                   <Avatar
                     name={caracteristica.name}
                     textMarginRatio=".15"
@@ -476,42 +477,42 @@ const handleOnclickReserva= async()=>{
               );
             })}
           </div>
-          <div className="comparteRedes">
+          <div className={styles.comparteRedes}>
             <ComparteRedesSociales location={location.pathname} />
           </div>
         </div>
       )}
       
-      <div className="calendarioCalificaciones">
-      <div className="detallesCalendraio">
-      <div className="contenedorCalendarioDetalles">
-        <div className="contenedorDetalles">
-          <h2 className="tituloDetallesDeProducto">Detalles principales</h2>
-          <h3 className="categoriaProducto">
-            Categoria:
+      <div className={styles.calendarioCalificaciones}>
+      <div className={styles.detallesCalendraio}>
+      <div className={styles.contenedorCalendarioDetalles}>
+        <div className={styles.contenedorDetalles}>
+          <h2 className={styles.tituloDetallesDeProducto}>Detalles principales</h2>
+          <h3 className={styles.categoriaProducto}>
+            <b>Categoria:</b>
             <span>
               {state.producto.category
                 ? state.producto.category.title
                 : "Sin categoria"}
             </span>
           </h3>
-          <h3 className="descripcionProducto">
-            Descripcion:<span>{state.producto.description}</span>
+          <h3 className={styles.descripcionProducto}>
+            <b>Descripcion:</b><span>{state.producto.description}</span>
           </h3>
-          <h3 className="precioProducto">
-            Precio:<span>{state.producto.price} USD</span>
+          <h3 className={styles.precioProducto}>
+            <b>Precio:</b><span>{state.producto.price} USD</span>
           </h3>
         </div>
       </div>
 
-      <div className="contenedorComprar">
-        <button className="botonComprar" onClick={handleClickVerReserva} >Ver reserva</button>
+      <div className={styles.contenedorComprar}>
+        <button className={styles.botonComprar} onClick={handleClickVerReserva}>Reservar</button>
 
-        <div className="contenedorDatePicker">
-          <i className="bx bx-calendar-event"></i>
+        <div className={styles.contenedorDatePicker}>
+          <i className={styles.calendarEvent} ></i>
 
           <DatePicker
-            className="calendarioInicioDetail"
+            className={styles.calendarioInicioDetail}
             selected={fechasReservas.fechaInicio}
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
@@ -522,7 +523,7 @@ const handleOnclickReserva= async()=>{
           />
 
           <DatePicker
-            className="calendarioFinalizacionDetail"
+            className={styles.calendarioFinalizacionDetail}
             selected={fechasReservas.fechaFin}
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
@@ -538,46 +539,46 @@ const handleOnclickReserva= async()=>{
       {/*Renderizacion del cuadro que muestra todos los datos de la reserva si el estado dataAlquiler es true*/}
 
     <Modal  show={dataAlquiler} >
-    <Modal.Header className="headerPopUp" onClick={handleOnclickCancelarReserva} closeButton>
-    <Modal.Title className='tituloPopUp'>Reserva</Modal.Title>
+    <Modal.Header className={styles.headerPopUp} onClick={handleOnclickCancelarReserva} closeButton>
+    <Modal.Title className={styles.tituloPopUp}>Reserva</Modal.Title>
     </Modal.Header>
-    <Modal.Body className="contenedorPopUp">
+    <Modal.Body className={styles.contenedorPopUp} >
     <form >
-        <div className="mb-3">
-        <p className='subtituloPopUp'>Nombre del producto: <span className='valorPopUp'>{state.producto.name}</span></p> 
+        <div className="mb-3" >
+        <p className={styles.subtituloPopUp}>Nombre del producto: <span className={styles.valorPopUp}>{state.producto.name}</span></p> 
         </div>
 
         <div className="mb-3">
-        <p className='subtituloPopUp'>Precio: <span className='valorPopUp'>{precioTotal} USD</span></p> 
+        <p className={styles.subtituloPopUp}>Precio: <span className={styles.valorPopUp}>{precioTotal} USD</span></p> 
         </div>
 
         <div className="mb-3">
-        <p className='subtituloPopUp'>Descripcion: <span className='valorPopUp'>{state.producto.description}</span></p>
+        <p className={styles.subtituloPopUp}>Descripcion: <span className={styles.valorPopUp}>{state.producto.description}</span></p>
         </div>
 
         <div className="mb-3">
-          <img src={state.producto.images && state.producto.images[0].imageUrl} alt="imageReserva" className="imageReserva" />
-          <img src={state.producto.images && state.producto.images[1].imageUrl} alt="imageReserva" className="imageReserva" />
+          <img src={state.producto.images && state.producto.images[0].imageUrl} alt="imageReserva" className={styles.imageReserva}/>
+          <img src={state.producto.images && state.producto.images[1].imageUrl} alt="imageReserva" className={styles.imageReserva} />
         </div>
 
         <div className="mb-3">
-        <p className='subtituloPopUp'>Inicio Reserva: <span className='valorPopUp'>{fechasReservas.fechaInicio}</span></p>
+        <p className={styles.subtituloPopUp}>Inicio Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaInicio}</span></p>
         </div>
 
         <div className="mb-3">
-        <p className='subtituloPopUp'>Fin Reserva: <span className='valorPopUp'>{fechasReservas.fechaFin}</span></p>
+        <p className={styles.subtituloPopUp}>Fin Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaFin}</span></p>
         </div>
 
         <div className="mb-3">
-        <p className='subtituloPopUp'>Nombre de usuario: <span className='valorPopUp'>{localStorage.getItem("nombre") +  " " +localStorage.getItem("apellido")}</span></p>
+        <p className={styles.subtituloPopUp}>Nombre de usuario: <span className={styles.valorPopUp}>{localStorage.getItem("nombre") +  " " +localStorage.getItem("apellido")}</span></p>
         </div>
 
         <div className="mb-3">
-        <p className='subtituloPopUp'>Email: <span className='valorPopUp'>{localStorage.getItem("username")}</span></p>
+        <p className={styles.subtituloPopUp}>Email: <span className={styles.valorPopUp}>{localStorage.getItem("username")}</span></p>
         </div>
 
-        <Button className="botonCancelarReserva"  onClick={handleOnclickCancelarReserva} variant="secondary" >Cancelar</Button>
-        <Button  className="botonReservar" onClick={handleOnclickReserva}>Alquilar</Button>
+        <Button className={styles.botonCancelarReserva} onClick={handleOnclickCancelarReserva} variant="secondary" >Cancelar</Button>
+        <Button  className={styles.botonReservar} onClick={handleOnclickReserva}>Alquilar</Button>
     </form>
     </Modal.Body>
     </Modal>
