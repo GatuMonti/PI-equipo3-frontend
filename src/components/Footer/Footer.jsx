@@ -6,7 +6,6 @@ import './socialMediaIcons.css'
 
 const Footer = () => {
   return (
-    <div>
         <footer className={styles.piePagina}>
           <div className={styles.footerRedes}>
             <a href="#"><i className='bx bxl-facebook-circle'></i></a>
@@ -28,7 +27,6 @@ const Footer = () => {
         </div>
 
         </footer>
-      </div>
   )
 }
 

@@ -12,14 +12,18 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Para que la página ocupe al menos el alto de la ventana del navegador */
+  align-items: center;
+  min-height: 100vh;
+  /* Para que la página ocupe al menos el alto de la ventana del navegador */
 }
 
 
 .content {
   margin: 7rem 0rem 0rem 0rem;
-  flex: 1; /* El contenido ocupará todo el espacio disponible */
+  flex: 1;
+  /* El contenido ocupará todo el espacio disponible */
   display: flex;
+  align-items: center;
   /* Puedes agregar estilos adicionales según necesites */
 }
 
@@ -418,37 +422,91 @@ font-size: 11px;
 
 /********************Slider****************/
 
-.container{
+/* 
+.contenedorCarrusel {
   width: 80%;
-  height: auto;
-  padding: 15px;
   border-radius: 20px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-       -ms-user-select: none;
-        user-select: none;
+-webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   overflow-y: hidden;
   display: flex;
-   flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  margin-left: 0px;
-  margin-right: 2px;
-  background: #AC6AB4;
+  background: #d6a9db;
   color: #FFFFFF;
 }
 
+
+.custom-carousel {
+  max-width: 500px;
+
+  max-height: 400px;
+  margin: 0 auto;
+
+}
+
+.carousel-content {
+  max-width: 100%;
+
+} */
+
+/*******Carrusel*****/
+
+
+/* .contenedorCarrusel{
+  margin: 2vh 0;
+  max-width: 700px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item h5{
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+}
+.tituloCarrusel{
+  text-align: center;
+  margin-bottom: -30px;
+  color: white;
+  
+}
+.carousel-inner{
+  width: auto;
+  height: auto;
+  width: 700px;
+  height: 450px;
+  object-fit: cover;
+} 
+
+.imageCarrusel{
+  width: 700px;
+  height: 450px;
+  object-fit: cover;
+} */
+
+
+
+
+
+
 /********************Productos****************/
 
-.contenedorProductos{
+.contenedorProductos {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 3vh 0vw 4vh 0vw;
   width: 75%;
 }
-.tituloProductos{
+
+.tituloProductos {
   width: 100%;
   padding: 10px;
   background-color: white;
@@ -457,138 +515,159 @@ font-size: 11px;
   font-size: 2.5vw;
   text-align: center;
 }
-.card{
+
+.card {
   width: 20vw;
   height: auto;
   padding: 5px;
+  margin: 1vw;
   background-color: #AC6AB4;
-  color:black;
+  color: black;
   box-shadow: (8px 8px 8px 10px) black;
   margin-top: 2vw;
   border-color: #0056b3;
   border-width: 0.3vh;
   transition: transform 0.3s ease;
   display: flex;
-  
-}
-.card:hover {
-  transform: scale(1.05); 
+
 }
 
-.tituloProducto  {
+.card:hover {
+  transform: scale(1.05);
+}
+
+.tituloProducto {
   margin-top: 5px;
   color: white;
   text-align: center;
   font-weight: 700;
 }
-.DescriptionProduct{
+
+.DescriptionProduct {
   color: white;
   text-align: center;
 }
 
-.imageProduct{
+.imageProduct {
   width: 90%;
   height: 25vh;
   margin-left: 1vw;
   border-radius: 1vh;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-.estrellas{
+.estrellas {
   margin: 0vh 1vw 0vh 0vw;
 }
 
 /***********************************Detail****************************************/
-.detalleProducto{
+.detalleProducto {
   margin: 0;
   padding: 15vh 0vw 0vh 0vw;
 }
-.botonRegresar{
+
+.botonRegresar {
   margin: 2vh 0vw 0vh 80vw;
   width: 8vw;
   height: 5vh;
-  background-color:#4867DB;
+  background-color: #4867DB;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
 }
-.botonRegresar:hover{
+
+.botonRegresar:hover {
   background-color: gray;
-  color: black  ;
+  color: black;
 
 }
-.tituloDetail{
+
+.tituloDetail {
   width: 50vw;
   margin: 0vh 0vw 0vh 25vw;
-  color:#4867DB;
-  font-weight: bold ;
+  color: #4867DB;
+  font-weight: bold;
   text-align: center;
   font-size: 8vh;
 }
-.contenedorImagenesDetail{
+
+.contenedorImagenesDetail {
   margin: 0vh 0vw 0vh 10vw;
   display: flex;
   flex-wrap: wrap;
   width: 80%;
   height: 60vh;
 }
-.imagen1Producto{
+
+.imagen1Producto {
   width: 50%;
   height: 100%;
   padding: 5px;
 }
-.imagen1Producto:hover{
+
+.imagen1Producto:hover {
   padding: 9px;
 }
-.contenedor4imagenes{
+
+.contenedor4imagenes {
   width: 50%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   padding: 3px;
 }
-.imagen2Producto,.imagen3Producto,.imagen4Producto,.imagen5Producto{
+
+.imagen2Producto,
+.imagen3Producto,
+.imagen4Producto,
+.imagen5Producto {
   width: 50%;
   height: 50%;
   padding: 3px;
 }
-.imagen5Producto:hover{
-  padding: 9px;
-}
-.imagen2Producto:hover{
-  padding: 9px;
-}
-.imagen3Producto:hover{
-  padding: 9px;
-}
-.imagen4Producto:hover{
+
+.imagen5Producto:hover {
   padding: 9px;
 }
 
-.bx.bx-calendar-event{
+.imagen2Producto:hover {
+  padding: 9px;
+}
+
+.imagen3Producto:hover {
+  padding: 9px;
+}
+
+.imagen4Producto:hover {
+  padding: 9px;
+}
+
+.bx.bx-calendar-event {
   font-size: 3.7vh;
   margin: 1.5vh 0.5vw 0vh 0vw;
 }
 
-.verMas{
+.verMas {
   width: 8vw;
   height: 5vh;
-  background-color:#4867DB;
+  background-color: #4867DB;
   margin: 2.2vh 0vw 0vh 62vw;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
 }
-.verMas:hover{
+
+.verMas:hover {
   background-color: gray;
-  color: black  ;
+  color: black;
 }
-.calendarioCalificaciones{
+
+.calendarioCalificaciones {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -597,39 +676,42 @@ a{
 }
 
 
-.contenedorDetalles{
+.contenedorDetalles {
   width: 50vw;
   display: flex;
   flex-direction: column;
   margin: 2vh 0vw 0vh 10vw;
-  
+
 }
 
-.tituloDetallesDeProducto{
-  background-color:#4867DB;
+.tituloDetallesDeProducto {
+  background-color: #4867DB;
   text-align: center;
   font-size: 1.9vw;
   color: #FFFFFF;
 }
-.tituloDetallesDeProducto:hover{
+
+.tituloDetallesDeProducto:hover {
   background-color: #FFFFFF;
   color: #AC6ABA;
   font-weight: 900;
 }
-.categoriaProducto{
+
+.categoriaProducto {
   width: 18vw;
   color: black;
   font-size: 1.5vw;
   margin: 1vh 0vw 0vh 2vw;
 }
 
-.descripcionProducto,.precioProducto{
+.descripcionProducto,
+.precioProducto {
   color: black;
   font-size: 1.5vw;
   margin: 1vh 0vw 0vh 2vw;
 }
 
-.contenedorComprar{
+.contenedorComprar {
   width: 50vw;
   height: 15vh;
   margin: 2vh 0vw 0vh 12vw;
@@ -640,56 +722,59 @@ a{
 
 }
 
-.contenedorDatePicker{
+.contenedorDatePicker {
   width: 39vw;
   height: 10vh;
   margin: 0vh 0.5vw 0vh 0vw;
   display: flex;
   border-radius: 8px;
-  
+
 }
 
-.botonComprar{
+.botonComprar {
   width: 8vw;
   height: 5vh;
-  background-color:#4867DB;
+  background-color: #4867DB;
   border-radius: 5px;
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
   margin: 0.70vh 0vw 0vh 0vw;
 }
-.botonComprar:hover{
+
+.botonComprar:hover {
   background-color: #AC6ABA;
-  color: black  ;
+  color: black;
 }
-.contenedorMostrarCaracteristicas{
+
+.contenedorMostrarCaracteristicas {
   width: 50vw;
   height: 24vh;
   display: flex;
   margin: -4vh 0vw 0vh 10vw;
   flex-wrap: wrap;
   color: #FFFFFF;
-  background-color:#6269d3;
+  background-color: #6269d3;
   justify-content: space-around;
 }
-.tituloMostarCaracteristicas{
+
+.tituloMostarCaracteristicas {
   width: 100%;
   text-align: center;
-  margin: 2vh 0vw 3vh 0vw;
+  margin: 2vh 0vw 3vh 0vw;
 }
 
- /* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
+/* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
 
 
-.contenedorFechasDetail{
+.contenedorFechasDetail {
   height: 5vh;
-    margin: 0.5vh 7vw 0vh 8vw;
-    display: flex;
-    justify-content: space-between;
+  margin: 0.5vh 7vw 0vh 8vw;
+  display: flex;
+  justify-content: space-between;
 }
 
-.calendarioInicioDetail{
+.calendarioInicioDetail {
   width: 25vh;
   height: 33px;
   margin: 8px 0.5vw 0vh 0vw;
@@ -698,7 +783,7 @@ a{
   font-size: 2.1vh
 }
 
-.calendarioFinalizacionDetail{
+.calendarioFinalizacionDetail {
   width: 25vh;
   height: 33px;
   margin: 8px 0.3vw 0vh 0vw;
@@ -707,10 +792,11 @@ a{
 }
 
 
-.botonBuscarFechaDetail{
+.botonBuscarFechaDetail {
   width: 5vw;
   height: 3.5vh;
-  border: 2px solid black; /* Agregar borde negro de 2px */
+  border: 2px solid black;
+  /* Agregar borde negro de 2px */
   border-radius: 10px;
   margin: 0vh 0vw 0vh 0vw;
   cursor: pointer;
@@ -735,23 +821,23 @@ a{
   touch-action: manipulation;
 }
 
-.caracteristicas{
+.caracteristicas {
   display: flex;
   margin: 1vh 0vw 0vh 0vw;
   width: 100%;
   justify-content: space-around;
 }
 
-.comparteRedes{
+.comparteRedes {
   display: flex;
   margin: 1vh 0vw 2vh 0vw;
-  
+
 
 }
 
- /* FAVORITOS DENTRO DE DETAIL  */
+/* FAVORITOS DENTRO DE DETAIL  */
 
- .contenedorFavorito {
+.contenedorFavorito {
   display: inline-block;
   position: relative;
   align-items: center;
@@ -782,24 +868,25 @@ a{
 /************Politicas******************/
 
 
-.espacePoliticas{
+.espacePoliticas {
   color: #FFFFFF;
 }
 
-.politicasTitle{
+.politicasTitle {
   width: 100%;
   margin-top: 15vh;
   text-align: center;
-  color:#6269d3;
+  color: #6269d3;
   text-decoration: underline;
 }
 
-.politicas{
+.politicas {
   display: flex;
   margin: 1vh 5vh 2vh 5vh;
-  
+
 }
-.politica{
+
+.politica {
   justify-content: center;
   text-align: left;
   margin: 10vh 14vh 8vh 10px;
@@ -1006,10 +1093,10 @@ a{
 }
 
 
-.contenidoAdmin{
+.contenidoAdmin {
   display: flex;
   flex-direction: column;
-  
+
 }
 
 
@@ -1034,10 +1121,12 @@ a{
 .actualizarProducto:hover {
   color: rgba(0, 0, 0, 0.692);
   width: 180px;
-  height: 28px;;
+  height: 28px;
+  ;
   background-color: #FFFFFF;
   box-shadow: 5px 5px 15px rgb(78, 77, 77);
 }
+
 /***********************************Formulario****************************************/
 
 /* .tituloFormulario{
@@ -1407,12 +1496,12 @@ a{
 } */
 /****************** Estilos agregados por Gatu ************************************************/
 
-.cardTop{
+/* .cardTop{
   display: flex;
   justify-content: space-between;
-}
+} */
 
-.cardBottom{
+/* .cardBottom{
   display: flex;
   justify-content: space-between;
   align-items: center;  
@@ -1421,7 +1510,7 @@ a{
 
 .cardVotos{
   font-size: 1.5rem;
-}
+} */
 
 /* Estilos para las sugerencias del Autosuggest */
 .react-autosuggest__suggestions-container {
@@ -1431,10 +1520,14 @@ a{
 
 .react-autosuggest__suggestions-container--open {
   display: block;
-  width: calc(100% - 20px); /* Ancho del contenedor (ajustar según sea necesario) */
-  max-height: 200px; /* Altura máxima del contenedor (ajustar según sea necesario) */
-  overflow-y: auto; /* Agregar barra de desplazamiento vertical si es necesario */
-  background-color: white; /* Fondo blanco */
+  width: calc(100% - 20px);
+  /* Ancho del contenedor (ajustar según sea necesario) */
+  max-height: 200px;
+  /* Altura máxima del contenedor (ajustar según sea necesario) */
+  overflow-y: auto;
+  /* Agregar barra de desplazamiento vertical si es necesario */
+  background-color: white;
+  /* Fondo blanco */
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -1449,7 +1542,8 @@ a{
 .react-autosuggest__suggestion {
   padding: 10px;
   cursor: pointer;
-  color: black; /* Color de texto negro */
+  color: black;
+  /* Color de texto negro */
 }
 
 .react-autosuggest__suggestion--highlighted {
@@ -1462,33 +1556,41 @@ a{
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  position: relative; /* Agregado */
+  position: relative;
+  /* Agregado */
   cursor: pointer;
 }
-.contenedorReservas .contenedorProductosAdmin{
+
+.contenedorReservas .contenedorProductosAdmin {
   margin-bottom: 0px;
 }
+
 .productoACalificar {
   background-color: #ccc;
   min-width: 95%;
   border-left: 2px solid black;
   border-right: 2px solid black;
   border-bottom: 2px solid black;
-  overflow: hidden; /* Ocultar el contenido que se desborda */
-  max-height: 0px; /* Altura máxima */
-  transition: 0.5s ease-in-out; /* Transición de altura */
+  overflow: hidden;
+  /* Ocultar el contenido que se desborda */
+  max-height: 0px;
+  /* Altura máxima */
+  transition: 0.5s ease-in-out;
+  /* Transición de altura */
 }
 
 .invisible {
-  max-height: 0; /* Ocultar el contenido */
+  max-height: 0;
+  /* Ocultar el contenido */
 }
 
 .visible {
-  max-height: 500px; /* Ajustado */
+  max-height: 500px;
+  /* Ajustado */
 }
 
 
-.productosClasificar{
+.productosClasificar {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -1497,22 +1599,25 @@ a{
   border-top: 1px dashed grey;
 
 }
-.msjsCalificar{
+
+.msjsCalificar {
   display: flex;
   width: 40vw;
   justify-content: space-between;
   align-items: center;
 }
-.msjsCalificar p{
+
+.msjsCalificar p {
   margin: 0px;
 }
-.calificarColumna1{
+
+.calificarColumna1 {
   display: flex;
-  width: 30%;  
+  width: 30%;
   justify-content: space-between;
 }
 
-.inputCalificacion{
+.inputCalificacion {
   width: 35vw;
   flex-wrap: wrap;
   display: flex;
@@ -1523,8 +1628,8 @@ a{
 /****************************************MEDIA*******************************************************/
 
 /***********************************Header****************************************/
-@media(max-width:900px){
-  .contenedorLogo{
+@media(max-width:900px) {
+  /* .contenedorLogo{
     width: 32vw;
     height: 15vh;
     flex-direction: column;
@@ -1551,11 +1656,11 @@ a{
   .themeLight,.themeDark{
     height: 80%;
     margin: 0.5vh 0vw 0vh 1vw;
-  }
-  
+  } */
+
   /************************************Footer***********************************/
-  
-  .footer .row{
+
+  /* .footer .row{
     padding: 3px;
     font-size: 2vh;
  }
@@ -1564,12 +1669,12 @@ a{
  .roww{
   color:#D9D9D9;
   font-size: 9px;
- }
+ } */
   /***********************************Home****************************************/
-  
+
   /********************Categorias****************/
 
-  .contenedorCategorias{
+  /* .contenedorCategorias{
     width: 100%;
     height: 300vh;
   }
@@ -1599,10 +1704,10 @@ a{
 .img2CategoriaTres:hover {
   width: 18vw;
   height: 11vh;
-}
+} */
 
-/********************Buscador****************/
-.contenedorDos{
+  /********************Buscador****************/
+  /* .contenedorDos{
   width: 85%;
   margin: 10vh 0vw 0vh 2vw;
 }
@@ -1647,12 +1752,12 @@ a{
 
 .botonBuscarFecha{
   font-size: 9px;
-}
+} */
 
 
-/********************Carrusel****************/
+  /********************Carrusel****************/
 
-.container{
+  /* .container{
   width: 100%;
   height: 70vh;
   margin: 4vh 0.5vw 0vh 0vw;
@@ -1661,12 +1766,12 @@ a{
 .carousel{
   width: 100vh;
   height: 50vh;
-}
+} */
 
 
-/********************Productos****************/
+  /********************Productos****************/
 
-.contenedorProductos{
+  /* .contenedorProductos{
   margin: 0vh 0vw 4vh 0vw;
   width: 100%;
 }
@@ -1690,11 +1795,11 @@ a{
 }
 a{
   text-decoration: none;
-}
+} */
 
-/***********************************Detail****************************************/
+  /***********************************Detail****************************************/
 
-.contenedorImagenesDetail{
+  /* .contenedorImagenesDetail{
   margin: 3vh 0vw 0vh 12vw;
   width: 80vw;
 }
@@ -1728,11 +1833,11 @@ font-size: 1.5vw;
 
 .contenedorMostrarCaracteristicas{
   height: 30vh;
-}
+} */
 
-/************Formulario crear cuenta******************/
+  /************Formulario crear cuenta******************/
 
-.formRegister{
+  /* .formRegister{
   width: 50%;
   margin: 6vh 0vw 5vh 30vw;
 }
@@ -1759,10 +1864,10 @@ font-size: 1.5vw;
 }
 .crearCuenta:hover{
   width: 21vw;
-}
+} */
 
-/************Formulario Login******************/
-
+  /************Formulario Login******************/
+  /* 
 .formLogin{
   width: 50%;
   margin: 6vh 0vw 5vh 30vw;
@@ -1787,14 +1892,14 @@ font-size: 1.5vw;
 .botonLogin:hover{
   width: 16vw;
 
-}
+} */
 
 
 
-/***********************************Pagina-administrador****************************************/
+  /***********************************Pagina-administrador****************************************/
 
-/********Agregar Producto Responsive******/
-  .vacio{
+  /********Agregar Producto Responsive******/
+  /* .vacio{
     height: 45vh;
   }
   .agregarProducto,.ListarProductos,.ListarCategorias,.actualizarProducto{
@@ -1814,17 +1919,17 @@ font-size: 1.5vw;
     margin-left: 38%;
     font-size: 12px;
     padding: 5px;
-  }
+  } */
 
-/********Listar Producto Responsive******/
-.listaAdmin{
+  /********Listar Producto Responsive******/
+  /* .listaAdmin{
   margin: -35vh 0vw -37vh 0vw;
 }
 .botonActualizar{
   margin-left: 38%;
     font-size: 12px;
     padding: 5px;
-}
+} */
 
 
 
@@ -1837,9 +1942,9 @@ font-size: 1.5vw;
 
 /***********************************Header****************************************/
 
-@media(max-width:500px){
+@media(max-width:500px) {
 
-  .Header{
+  /* .Header{
     width: 68%;
     height: 16vh;
     margin: 0vh 0vw 0vh 0vw;
@@ -1868,10 +1973,10 @@ font-size: 1.5vw;
     font-size: 3vw;
     width: 25vw;
     margin: 0.5vh 0vw 0vh 2vw;
-  }
+  } */
 
   /************************************Footer***********************************/
-  .circuloFooter{
+  /* .circuloFooter{
     width: 17px;
     height: 15px;
     font-size: 1.5vw;
@@ -1889,13 +1994,13 @@ font-size: 1.5vw;
   }
   .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
     margin: 1vh 2vw 0vh 0vw;
-  }
+  } */
 
-/************************************Home***********************************/ 
+  /************************************Home***********************************/
 
- /********************Categorias****************/
+  /********************Categorias****************/
 
- .contenedorCategorias{
+  /* .contenedorCategorias{
   width: 35vw;
 }
 
@@ -1908,12 +2013,12 @@ font-size: 1.5vw;
   width: 30vw;
   height: 18vh;
   margin: 2vh 0vw 0vh 0vw;
-}
+} */
 
 
 
-/********************Buscador****************/
-.contenedorDos{
+  /********************Buscador****************/
+  /* .contenedorDos{
   width: 60%;
   margin: 0vh 0vw 0vh 2vw;
 }
@@ -1935,11 +2040,11 @@ font-size: 1.5vw;
 }
 .bx-search-alt{
   font-size: 5vw;
-}
+} */
 
-/********************Carrusel****************/
+  /********************Carrusel****************/
 
-.contenedorCarrusel{
+  /* .contenedorCarrusel{
   width: 50vw;
   height: 50vw;
   margin: 4vh 0vw 0vh 0vw;
@@ -1948,13 +2053,13 @@ font-size: 1.5vw;
   font-size: 4vw;
   margin: 0vh 0vw 0vh 12vw;
   color: #FFFFFF;
-}
+} */
 
 
 
-/********************Productos****************/
+  /********************Productos****************/
 
-.contenedorProductos{
+  /* .contenedorProductos{
   width: 60vw;
   margin: 0vh 0vw 4vh 0vw;
 }
@@ -1979,10 +2084,10 @@ font-size: 1.5vw;
 }
 a{
   text-decoration: none;
-}
+} */
 
-/***********************************Detail****************************************/
-
+  /***********************************Detail****************************************/
+  /* 
 .botonRegresar{
   width: 15vw;
   font-size: 2.5vw;
@@ -2021,10 +2126,10 @@ margin: 2vh 0vw 0vh 12vw;
 .botonComprar{
 width: 15vw;
 font-size: 2.5vw;
-}
+} */
 
-/************Formulario crear cuenta******************/
-
+  /************Formulario crear cuenta******************/
+  /* 
 .formRegister{
   width: 70vw;
   margin: 7vh 0vw 5vh 15vw;
@@ -2046,11 +2151,11 @@ font-size: 2.5vw;
 }
 .crearCuenta:hover{
   width: 31vw;
-}
+} */
 
-/************Formulario Login******************/
+  /************Formulario Login******************/
 
-.formLogin{
+  /* .formLogin{
   width: 80vw;
   margin: 10vh 0vw 10vh 10vw;
 }
@@ -2071,14 +2176,14 @@ font-size: 2.5vw;
 .botonLogin:hover{
   width: 21vw;
 
-}
+} */
 
 
 
-/***********************************Pagina-administrador****************************************/
+  /***********************************Pagina-administrador****************************************/
 
-.pageAdmin{
-  display: none;
-}
+  .pageAdmin {
+    display: none;
+  }
 
 }

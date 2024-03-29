@@ -1,22 +1,10 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import callDutty from "../Images/callDutty.png";
-// import avowed from "../Images/Avowed.png";
-// import RedHead from "../Images/Redhead.png";
-// import theLastOf from "../Images/thelastOf.png";
-// import embape from "../Images/embape.png";
-// import messi from "../Images/mesi.png";
-// import oso from "../Images/imageOso.png";
-// import outlast from "../Images/outLast.png";
-// import cards from "../Images/card.png";
-// import sonic from "../Images/imageSonic.png";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { useContextGlobal } from "../Util/global.context";
-import Card from "../Card";
+import Card from "../CardProducto/Card";
 import Swal from "sweetalert2";
-import Slider from "../slider";
+import Slider from "../Slider/slider";
 import axios from "axios";
 import { format } from 'date-fns';
 import Autosuggest from 'react-autosuggest';
@@ -37,7 +25,7 @@ const Home = () => {
     productosDisponiblesPorFecha: []
   })
 
-
+  console.log(state.productos)
   const [estadosFechas, setStateFechas] = useState({
     inicio: null,
     fin: null,
@@ -236,13 +224,8 @@ const Home = () => {
   };
 
   return (
-    <main className="home">
-
-      <div className={styles.contenedorDos}>
-
+    <main className={styles.home} >
         <div className={styles.barraBuscador}>
-
-
           <form className={styles.formularioBuscador}>
             <select onChange={handleChangeCategoria} className={styles.inputSearch}>
               <option value="">Filtrar por categoria</option>
@@ -257,7 +240,6 @@ const Home = () => {
               <i className="bx bx-search-alt"></i>
             </button>
           </form>
-
           <Autosuggest
             suggestions={suggestions}
             onSuggestionsFetchRequested={onSuggestionsFetchRequested}
@@ -273,7 +255,7 @@ const Home = () => {
             }}
           />
 
-          <form className={styles.calendarioInicio}>
+          <form className={styles.formCalendarios}>
             <i className="bx bx-calendar"></i>
 
             <DatePicker className={styles.calendarioInicio}
@@ -343,7 +325,6 @@ const Home = () => {
               {estadosNuevos.productosDeUnaCategoria.map((producto) => <Card product={producto} key={producto.id} />)}
             </div>
         }
-      </div>
     </main>
   );
 };

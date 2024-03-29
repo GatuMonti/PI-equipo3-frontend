@@ -103,12 +103,12 @@
     .formLogin  {
         width: 100%;
         height: 100%;
-        border-radius: none;
-        box-shadow: none;
+        border-radius: 0;
+        box-shadow: 0;
       }
 
       .formLogin .banner {
-        border-radius: none;
+        border-radius: 0;
       }
   }
 
