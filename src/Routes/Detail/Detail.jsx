@@ -450,160 +450,154 @@ const Detail = () => {
         </div>
       </div>
 
-      <div className={styles.contenedorReservarVerMas}>
-        {/*contenedor del boton reservar*/}
-        <div className={styles.contenedorComprar}>
-          <button className={styles.botonComprar} onClick={handleClickVerReserva}>Reservar</button>
+      {/*contenedor del boton reservar*/}
+      <div className={styles.contenedorComprar}>
 
-          <div className={styles.contenedorDatePicker}>
-            <i className={styles.calendarEvent} ></i>
 
-            <DatePicker
-              className={styles.calendarioInicioDetail}
-              selected={fechasReservas.fechaInicio}
-              excludeDates={fechasBloqueadas}
-              dateFormat="yyyy-MM-dd"
-              placeholderText=" Fecha de Inicio"
-              minDate={fechaHoy}
-              onChange={onChangeInicioReserva}
-              customDayClassName={customDayClass}
-            />
+        <div className={styles.contenedorDatePicker}>
+          <i className={styles.calendarEvent} ></i>
 
-            <DatePicker
-              className={styles.calendarioFinalizacionDetail}
-              selected={fechasReservas.fechaFin}
-              excludeDates={fechasBloqueadas}
-              dateFormat="yyyy-MM-dd"
-              placeholderText=" Fecha de Finalización"
-              minDate={fechaHoy}
-              onChange={onChangeFinReserva}
-              customDayClassName={customDayClass}
-            />
-          </div>
+          <DatePicker
+            className={styles.calendarioInicioDetail}
+            selected={fechasReservas.fechaInicio}
+            excludeDates={fechasBloqueadas}
+            dateFormat="yyyy-MM-dd"
+            placeholderText=" Fecha de Inicio"
+            minDate={fechaHoy}
+            onChange={onChangeInicioReserva}
+            customDayClassName={customDayClass}
+          />
 
+          <DatePicker
+            className={styles.calendarioFinalizacionDetail}
+            selected={fechasReservas.fechaFin}
+            excludeDates={fechasBloqueadas}
+            dateFormat="yyyy-MM-dd"
+            placeholderText=" Fecha de Finalización"
+            minDate={fechaHoy}
+            onChange={onChangeFinReserva}
+            customDayClassName={customDayClass}
+          />
         </div>
-
-
+        <button className={styles.botonComprar} onClick={handleClickVerReserva}>Reservar</button>
       </div>
 
 
       {/*Contenedor detalles principales*/}
       <div className={styles.calendarioCalificaciones}>
-        <div className={styles.detallesCalendraio}>
-          <div className={styles.contenedorCalendarioDetalles}>
-            <div className={styles.contenedorDetalles}>
-              <h2 className={styles.tituloDetallesDeProducto}>Detalles principales</h2>
-              <h3 className={styles.categoriaProducto}>
-                <b>Categoria:</b>
-                <span>
-                  {state.producto.category
-                    ? state.producto.category.title
-                    : "Sin categoria"}
-                </span>
-              </h3>
-              <h3 className={styles.descripcionProducto}>
-                <b>Descripcion:</b><span>{state.producto.description}</span>
-              </h3>
-              <h3 className={styles.precioProducto}>
-                <b>Precio:</b><span>{state.producto.price} USD</span>
-              </h3>
-            </div>
-            
-            {/* Contenedor del ver más */}
-            <div>
-              {!State.cambiarBoton ? (
-                <button onClick={handleMostarMas} className={styles.verMas}>
-                  ver mas
-                </button>
-              ) : (
-                <button onClick={handleOcultar} className={styles.verMas}>
-                  Ocultar
-                </button>
-              )}
 
-              {State.showFeatures && (
-                <div className={styles.contenedorMostrarCaracteristicas}>
-                  <h2 className={styles.tituloMostarCaracteristicas}>
-                    ¡Caracteristicas Especiales!
-                  </h2>
-                  <div className={styles.caracteristicas}>
-                    {state.producto.characteristics.map((caracteristica) => {
-                      return (
-                        <p className={styles.nombreCaracteristicas}>
-                          <Avatar
-                            name={caracteristica.name}
-                            textMarginRatio=".15"
-                            font-size="2px"
-                            size="30"
-                            round={true}
-                          />
-                          {caracteristica.name}
-                        </p>
-                      );
-                    })}
-                  </div>
-                  <div className={styles.comparteRedes}>
-                    <ComparteRedesSociales location={location.pathname} />
-                  </div>
-                </div>
-              )}
-            </div>
+        <div className={styles.contenedorCalendarioDetalles}>
+          <div className={styles.contenedorDetalles}>
+            <h2 className={styles.tituloDetallesDeProducto}>Detalles</h2>
+            <h3 className={styles.categoriaProducto}>
+              <b>Categoria:</b>
+              <span>
+                {state.producto.category
+                  ? state.producto.category.title
+                  : "Sin categoria"}
+              </span>
+            </h3>
+            <h3 className={styles.descripcionProducto}>
+              <b>Descripcion:</b><span>{state.producto.description}</span>
+            </h3>
+            <h3 className={styles.precioProducto}>
+              <b>Precio:</b><span>{state.producto.price} USD</span>
+            </h3>
           </div>
 
-
-
-
-          {/*Renderizacion del cuadro que muestra todos los datos de la reserva si el estado dataAlquiler es true*/}
-
-          <Modal show={dataAlquiler} >
-            <Modal.Header className={styles.headerPopUp} onClick={handleOnclickCancelarReserva} closeButton>
-              <Modal.Title className={styles.tituloPopUp}>Reserva</Modal.Title>
-            </Modal.Header>
-            <Modal.Body className={styles.contenedorPopUp} >
-              <form >
-                <div className="mb-3" >
-                  <p className={styles.subtituloPopUp}>Nombre del producto: <span className={styles.valorPopUp}>{state.producto.name}</span></p>
+          {/* Contenedor del ver más */}
+          <div>
+            {State.showFeatures && (
+              <div className={styles.contenedorMostrarCaracteristicas}>
+                {/* <h2 className={styles.tituloMostarCaracteristicas}>
+                    ¡Caracteristicas Especiales!
+                  </h2> */}
+                <div className={styles.caracteristicas}>
+                  {state.producto.characteristics.map((caracteristica) => {
+                    return (
+                      <p className={styles.nombreCaracteristicas}>
+                        <Avatar
+                          name={caracteristica.name}
+                          textMarginRatio=".15"
+                          size="1.2vw"
+                          round={true}
+                        />
+                        {caracteristica.name}
+                      </p>
+                    );
+                  })}
                 </div>
-
-                <div className="mb-3">
-                  <p className={styles.subtituloPopUp}>Precio: <span className={styles.valorPopUp}>{precioTotal} USD</span></p>
+                <div className={styles.comparteRedes}>
+                  <ComparteRedesSociales location={location.pathname} />
                 </div>
+              </div>
+            )}
 
-                <div className="mb-3">
-                  <p className={styles.subtituloPopUp}>Descripcion: <span className={styles.valorPopUp}>{state.producto.description}</span></p>
-                </div>
-
-                <div className="mb-3">
-                  <img src={state.producto.images && state.producto.images[0].imageUrl} alt="imageReserva" className={styles.imageReserva} />
-                  <img src={state.producto.images && state.producto.images[1].imageUrl} alt="imageReserva" className={styles.imageReserva} />
-                </div>
-
-                <div className="mb-3">
-                  <p className={styles.subtituloPopUp}>Inicio Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaInicio}</span></p>
-                </div>
-
-                <div className="mb-3">
-                  <p className={styles.subtituloPopUp}>Fin Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaFin}</span></p>
-                </div>
-
-                <div className="mb-3">
-                  <p className={styles.subtituloPopUp}>Nombre de usuario: <span className={styles.valorPopUp}>{localStorage.getItem("nombre") + " " + localStorage.getItem("apellido")}</span></p>
-                </div>
-
-                <div className="mb-3">
-                  <p className={styles.subtituloPopUp}>Email: <span className={styles.valorPopUp}>{localStorage.getItem("username")}</span></p>
-                </div>
-
-                <Button className={styles.botonCancelarReserva} onClick={handleOnclickCancelarReserva} variant="secondary" >Cancelar</Button>
-                <Button className={styles.botonReservar} onClick={handleOnclickReserva}>Alquilar</Button>
-              </form>
-            </Modal.Body>
-          </Modal>
-
-
-
-
+            {!State.cambiarBoton ? (
+              <button onClick={handleMostarMas} className={styles.verMas}>
+                Ver Más
+              </button>
+            ) : (
+              <button onClick={handleOcultar} className={styles.verMas}>
+                Ocultar
+              </button>
+            )}
+          </div>
         </div>
+
+
+
+
+        {/*Renderizacion del cuadro que muestra todos los datos de la reserva si el estado dataAlquiler es true*/}
+
+        <Modal show={dataAlquiler} >
+          <Modal.Header className={styles.headerPopUp} onClick={handleOnclickCancelarReserva} closeButton>
+            <Modal.Title className={styles.tituloPopUp}>Reserva</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className={styles.contenedorPopUp} >
+            <form >
+              <div className="mb-3" >
+                <p className={styles.subtituloPopUp}>Nombre del producto: <span className={styles.valorPopUp}>{state.producto.name}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Precio: <span className={styles.valorPopUp}>{precioTotal} USD</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Descripcion: <span className={styles.valorPopUp}>{state.producto.description}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <img src={state.producto.images && state.producto.images[0].imageUrl} alt="imageReserva" className={styles.imageReserva} />
+                <img src={state.producto.images && state.producto.images[1].imageUrl} alt="imageReserva" className={styles.imageReserva} />
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Inicio Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaInicio}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Fin Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaFin}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Nombre de usuario: <span className={styles.valorPopUp}>{localStorage.getItem("nombre") + " " + localStorage.getItem("apellido")}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Email: <span className={styles.valorPopUp}>{localStorage.getItem("username")}</span></p>
+              </div>
+
+              <Button className={styles.botonCancelarReserva} onClick={handleOnclickCancelarReserva} variant="secondary" >Cancelar</Button>
+              <Button className={styles.botonReservar} onClick={handleOnclickReserva}>Alquilar</Button>
+            </form>
+          </Modal.Body>
+        </Modal>
+
+
+
+
         <TotalCalificacionesProducto productId={params.id} />
       </div>
     </div>

@@ -1,291 +1,361 @@
-.detalleProducto{
+.detalleProducto {
+  margin: 2vh 0;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.contenedorTituloBoton {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tituloDetail {
+  /* margin: 0vh 0vw 0vh 25vw; */
+  color: #4867DB;
+  font-weight: bold;
+  font-size: 5vh;
+}
+
+.botonRegresar {
+  width: 100px;
+  font-size: large;
+  padding: 5px 10px;
+  background-color: #AC6AB4;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0 0.3rem;
+}
+
+.botonRegresar:hover {
+  background-color: #ceb0d1;
+
+}
+
+.contenedorFavorito {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -4rem;
+  margin-left: 1rem;
+}
+
+
+.contenedorImagenesDetail {
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contenedorImagenPrincipal {
+  width: 50%;
+  height: 400px;
+  display: flex;
+}
+
+.contenedor4imagenes {
+  height: 400px;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  /* Distribuirá el espacio entre las imágenes */
+}
+
+.imagen1Producto {
+  max-width: 100%;
+  height: 400px;
+  padding: 4px;
+}
+
+.imagen1Producto:hover {
+  padding: 9px;
+}
+
+.imagen2Producto,
+.imagen3Producto,
+.imagen4Producto,
+.imagen5Producto {
+  width: 50%;
+  height: 200px;
+  padding: 4px;
+}
+
+.imagen5Producto:hover {
+  padding: 9px;
+}
+
+.imagen2Producto:hover {
+  padding: 9px;
+}
+
+.imagen3Producto:hover {
+  padding: 9px;
+}
+
+.imagen4Producto:hover {
+  padding: 9px;
+}
+
+.bx.bx-calendar-event {
+  font-size: 3.7vh;
+  /* margin: 1.5vh 0.5vw 0vh 0vw; */
+}
+
+.verMas {
+  width: 100px;
+  font-size: large;
+  background-color: #AC6AB4;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.verMas:hover {
+  background-color: #ceb0d1;
+}
+
+.calendarioCalificaciones {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.contenedorCalendarioDetalles {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedorDetalles {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  /* margin: 2vh 0vw 0vh 10vw; */
+
+}
+
+.tituloDetallesDeProducto {
+  background-color: #4867DB;
+  text-align: center;
+  font-size: 1.5vw;
+  color: #FFFFFF;
+}
+
+.categoriaProducto {
+  width: 18vw;
+  color: black;
+  font-size: 1.5vw;
+  /* margin: 1vh 0vw 0vh 2vw; */
+}
+
+.descripcionProducto,
+.precioProducto {
+  color: black;
+  font-size: 1.1vw;
+  /* margin: 1vh 0vw 0vh 2vw; */
+}
+
+
+
+.contenedorComprar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.contenedorDatePicker {
+  display: flex;
+  border-radius: 8px;
+}
+
+.botonComprar {
+  font-size: large;
+  background-color: #AC6AB4;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.botonComprar:hover {
+  background-color: #ceb0d1;
+  ;
+}
+
+.contenedorMostrarCaracteristicas {
+  display: flex;
+  max-width: 40vw;
+  flex-wrap: wrap;
+  color: #000000;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.caracteristicas {
+  display: flex;
+  /* margin: 1vh 0vw 0vh 0vw; */
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+.nombreCaracteristicas {
+  font-size: 1.1vw;
+}
+
+
+.comparteRedes {
+  display: flex;
+  /* margin: 1vh 0vw 2vh 0vw; */
+}
+
+
+/* .tituloMostarCaracteristicas{
+    font-size: larger;
+    text-align: center;
+  } */
+
+/* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
+
+/*   
+  .contenedorFechasDetail{
+    height: 5vh;
+      display: flex;
+      justify-content: space-between;
+  } */
+
+.subtituloPopUp,
+.tituloPopUp {
+  color: blue;
+
+}
+
+.valorPopUp {
+  width: 80%;
+  color: black;
+
+}
+
+.imageReserva {
+  width: 45%;
+  /* margin: 0vh 0vw 0vh 1vw; */
+}
+
+/* .botonReservar{
+    margin: 0vh 0vw 0vh 1vw;
+  } */
+
+.calendarioInicioDetail {
+  display: flex;
+  border-radius: 8px;
+  font-size: large;
+  margin: 0px 5px;
+}
+
+.calendarioFinalizacionDetail {
+  display: flex;
+  border-radius: 8px;
+  font-size: large;
+}
+
+.calendarEvent {
+  font-size: large;
+}
+
+.botonBuscarFechaDetail {
+  width: 5vw;
+  height: 3.5vh;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 0vh 0vw 0vh 0vw;
+  cursor: pointer;
+  background-color: #AC6ABA;
+  box-sizing: border-box;
+  color: #070000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+
+@media screen and (max-width: 769px) {
+
+  /* Estilos de Detalles del Producto */
+  .detalleProducto {
     margin: 2vh 0;
-    max-width: 60vw;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
-  } 
-
-  .contenedorTituloBoton{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
-  .tituloDetail{
-    /* margin: 0vh 0vw 0vh 25vw; */
-    color:#4867DB;
-    font-weight: bold ;
-    font-size: 5vh;
-  }
-
-  .botonRegresar{
-    width: 100px;
-    font-size: large;
-    padding: 5px 10px;
-    background-color: #AC6AB4;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin: 0 0.3rem;
-  }
-  .botonRegresar:hover{
-    background-color: #ceb0d1;
-  
-  }
-
-  .contenedorFavorito {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    /* margin-bottom: -4rem;
-    margin-left: 1rem; */
-  }
-
-
-  .contenedorImagenesDetail{
-    height:400px; 
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .contenedorImagenPrincipal{
-    width: 50%;
-    height: 400px;
-    display: flex;
-  }
-
-  .contenedor4imagenes{
-    height:400px; 
-    width: 50%;
-    display: flex;
-    flex-wrap: wrap; /* Distribuirá el espacio entre las imágenes */
-  }
-
-.imagen1Producto{
-    max-width: 100%;
-    height: 400px;
-    padding: 4px;
-  } 
-
-  .imagen1Producto:hover{
-    padding: 9px;
-  }
-
-  .imagen2Producto,.imagen3Producto,.imagen4Producto,.imagen5Producto{
-    width: 50%;
-    height: 200px;
-    padding: 4px;
-  }
-  .imagen5Producto:hover{
-    padding: 9px;
-  }
-  .imagen2Producto:hover{
-    padding: 9px;
-  }
-  .imagen3Producto:hover{
-    padding: 9px;
-  }
-  .imagen4Producto:hover{
-    padding: 9px;
-  }
-  
-  .bx.bx-calendar-event{
-    font-size: 3.7vh;
-    /* margin: 1.5vh 0.5vw 0vh 0vw; */
-  }
-  
-  .verMas{
-    width: 100px;
-    font-size: large;
-    padding: 5px 10px;
-    background-color: #AC6AB4;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin: 0 0.3rem;
-  }
-  .verMas:hover{
-    background-color: #ceb0d1;
-  }
-  .calendarioCalificaciones{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-  }
-  
-  
-  .contenedorDetalles{
-    width: 50vw;
+  .contenedorDetalles {
+    width: 55vw;
     display: flex;
     flex-direction: column;
     /* margin: 2vh 0vw 0vh 10vw; */
-    
-  }
   
-  .tituloDetallesDeProducto{
-    background-color:#4867DB;
-    text-align: center;
-    font-size: 1.9vw;
-    color: #FFFFFF;
   }
-  .tituloDetallesDeProducto:hover{
-    background-color: #FFFFFF;
-    color: #AC6ABA;
-    font-weight: 900;
-  }
-  .categoriaProducto{
+
+  .categoriaProducto {
     width: 18vw;
     color: black;
-    font-size: 1.5vw;
+    font-size: 2vw;
     /* margin: 1vh 0vw 0vh 2vw; */
   }
   
-  .descripcionProducto,.precioProducto{
+  .descripcionProducto,
+  .precioProducto {
     color: black;
     font-size: 1.5vw;
     /* margin: 1vh 0vw 0vh 2vw; */
   }
-  
-  .contenedorComprar{
-    display: flex;
-    height: 37px;
-    width: 50%;
-    /* padding: 0vh 0vw 0vh 0vw; */
-    border-radius: 8px;
-  }
-  
-  .contenedorDatePicker{
-    width: 39vw;
-    height: 10vh;
-    /* margin: 0vh 0.5vw 0vh 0vw; */
-    display: flex;
-    border-radius: 8px;
-    
-  }
-  
-  .botonComprar{
-    font-size: large;
-    background-color: #AC6AB4;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin: 0 0.3rem;
-  }
-  .botonComprar:hover{
-    background-color: #ceb0d1;;
-  }
-  .contenedorMostrarCaracteristicas{
-    width: 50vw;
-    height: 24vh;
-    display: flex;
-    margin: -4vh 0vw 0vh 10vw;
-    flex-wrap: wrap;
-    color: #FFFFFF;
-    background-color:#6269d3;
-    justify-content: space-around;
-  }
-  .tituloMostarCaracteristicas{
-    width: 100%;
-    text-align: center;
-    /* margin: 2vh 0vw 3vh 0vw; */
-  }
-  
-   /* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
-  
-  
-  .contenedorFechasDetail{
-    height: 5vh;
-      /* margin: 0.5vh 7vw 0vh 8vw; */
-      display: flex;
-      justify-content: space-between;
-  }
-  
-  .subtituloPopUp,.tituloPopUp{
-    color:blue;
-    
-  }
-  .valorPopUp{
-    width: 80%;
-    color: black;
-    
-  }
-  .imageReserva{
-    width: 45%;
-    height: 16vh;
-    /* margin: 0vh 0vw 0vh 1vw; */
-  }
-  /* .botonReservar{
-    margin: 0vh 0vw 0vh 1vw;
-  } */
-  
-  .calendarioInicioDetail{
-    width: 25vh;
-    height: 33px;
-    /* margin: 8px 0.5vw 0vh 0vw; */
-    display: flex;
-    border-radius: 8px;
-    font-size: 2vh
-  }
-  
-  .calendarioFinalizacionDetail{
-    width: 25vh;
-    height: 33px;
-    /* margin: 8px 0.3vw 0vh 0vw; */
-    display: flex;
-    border-radius: 8px;
-    font-size: 2vh
-  }
-  
-  .calendarEvent{
-    font-size: 20px;
-  }
-  .botonBuscarFechaDetail{
-    width: 5vw;
-    height: 3.5vh;
-    border: 2px solid black; /* Agregar borde negro de 2px */
-    border-radius: 10px;
-    /* margin: 0vh 0vw 0vh 0vw; */
-    cursor: pointer;
-    background-color: #AC6ABA;
-    box-sizing: border-box;
-    color: #070000;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 20px;
-    list-style: none;
-    outline: none;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  
-  .caracteristicas{
-    display: flex;
-    /* margin: 1vh 0vw 0vh 0vw; */
-    width: 100%;
-    justify-content: space-around;
-  }
-  
-  .comparteRedes{
-    display: flex;
-    /* margin: 1vh 0vw 2vh 0vw; */
-    
-  
-  }
-  
-  
 
+  .tituloDetallesDeProducto {
+    background-color: #4867DB;
+    text-align: center;
+    font-size: 2.5vw;
+    color: #FFFFFF;
+  }
+
+  /* Estilos de Detalles extra */
+
+  .contenedorMostrarCaracteristicas {
+    max-width: 55vw;
+  }
   
+  .caracteristicas {
+    width: 100%;
+  }
+  
+  .nombreCaracteristicas {
+    font-size: 1.5vw;
+  }
+
+}
