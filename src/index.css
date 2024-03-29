@@ -675,6 +675,21 @@ a{
     justify-content: space-between;
 }
 
+.subtituloPopUp,.tituloPopUp{
+  color:blue;
+}
+.valorPopUp{
+  color: black;
+}
+.imageReserva{
+  width: 45%;
+  height: 16vh;
+  margin: 0vh 0vw 0vh 1vw;
+}
+.botonReservar{
+  margin: 0vh 0vw 0vh 1vw;
+}
+
 .calendarioInicioDetail{
   width: 25vh;
   height: 33px;
@@ -690,6 +705,7 @@ a{
   margin: 8px 0.3vw 0vh 0vw;
   display: flex;
   border-radius: 8px;
+  font-size: 2.1vh
 }
 
 

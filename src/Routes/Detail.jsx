@@ -5,18 +5,25 @@ import { useContextGlobal } from "../components/Util/global.context";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
-import { format } from "date-fns";
+import { format , differenceInDays } from "date-fns";
 import ComparteRedesSociales from "../components/ComparteRedesSociales";
 import "boxicons/css/boxicons.min.css";
 import TotalCalificacionesProducto from "../components/TotalCalificacionesProducto/TotalCalificacionesProducto"
 import Swal from "sweetalert2";
 import { urlBackend } from '../App';
+import {useNavigate} from "react-router-dom";
+import { Modal, Button } from 'react-bootstrap';
+
 
 const Detail = () => {
   const params = useParams();
   const { state, dispatch } = useContextGlobal();
   const [usuarioID, setUsuarioID] = useState(localStorage.getItem("username"));
   const [esFavorito, setEsFavorito] = useState(false);
+  const [fechasReservas, setFechasReservas]=useState({
+    fechaInicio:null,
+    fechaFin:null
+  })
   const [estadosFavoritos, setEstadosFavoritos] = useState({
     favorito: false,
     isUsuario: false,
@@ -26,6 +33,15 @@ const Detail = () => {
     username: localStorage.getItem("username"),
     id: params.id,
   };
+
+//Estado para mostrar la data del producto en alquiler
+const[dataAlquiler, setDataAlquiler]=useState(false)
+
+//Estado para calcular el precio total de la reserva
+const[precioTotal, setPrecioTotal]=useState(0)
+
+const navigate = useNavigate ();
+
 
   const endPointDetail = `${urlBackend}products/search-id/${params.id}`;
 
@@ -37,6 +53,8 @@ const Detail = () => {
     showFeatures: false,
     cambiarBoton: false,
   });
+
+
 
 
   useEffect(() => {
@@ -142,7 +160,128 @@ const Detail = () => {
     }
   };
 
-  
+//Onchange para el cambio de valores en los inputs de fechas de reservas
+
+const onChangeInicioReserva=(fecha)=>{
+  const fechaFormateada= format(fecha, 'yyyy-MM-dd')
+  setFechasReservas({
+    ...fechasReservas,
+    fechaInicio:fechaFormateada
+  })
+}
+
+//Onchange para el cambio de valores en los inputs de fechas de reservas
+
+const onChangeFinReserva=(fecha)=>{
+const fechaFormateada= format(fecha, 'yyyy-MM-dd')
+setFechasReservas({
+  ...fechasReservas,
+  fechaFin:fechaFormateada
+})
+}
+
+//OnClick para mostrar los datos de la reserva.
+
+const handleClickVerReserva=()=>{
+  if(localStorage.getItem("username")===null){
+    Swal.fire({
+      title: "El usuario debe estar logueado para realizar una reserva",
+      text: "Realiza primero el loguin",
+      icon: "error",
+      confirmButtonColor: "#ff00008f",
+      customClass: {
+          popup: 'textFalla'
+      }
+  });
+    setTimeout(()=>{
+      navigate('/FormLogin/');; // Redirige al loguin si el usuario no esta logueado  
+  },5000)
+  }
+  else if(fechasReservas.fechaInicio==null || fechasReservas.fechaFin==null){
+    Swal.fire({
+      title: "Los campos no pueden estar vacios",
+      text: "Verifique las fechas de reserva",
+      icon: "error",
+      confirmButtonColor: "#ff00008f",
+      customClass: {
+          popup: 'textFalla'
+      }
+  });
+  }
+  else{
+    setDataAlquiler(true) 
+    //Logica para calcular el precio del alquiler
+    let diasAlquilar=differenceInDays(fechasReservas.fechaFin,fechasReservas.fechaInicio)
+    //Condicional que validad si la fecha de inicio es la misma que la fecha de fin, los dias a alquilar sea 1
+    if( diasAlquilar===0){
+      diasAlquilar=1
+    }
+    else{
+      diasAlquilar=diasAlquilar
+    }
+    setPrecioTotal(diasAlquilar* state.producto.price) 
+  }  
+}
+
+// Manejo del onclick para cancelar la reserva
+const handleOnclickCancelarReserva=()=>{
+  setDataAlquiler(false)
+  setFechasReservas({
+    ...fechasReservas,
+    fechaInicio:null,
+    fechaFin:null
+  })
+}
+
+const username = localStorage.getItem("username");
+
+//Objeto para hacer la reserva
+const bookingAEnviar={
+  fechaInicio:fechasReservas.fechaInicio,
+  fechaFin:fechasReservas.fechaFin,
+  usuario:{
+    username:username
+  },
+  productosReservados:[
+    {name:state.producto.name}
+  ],
+}
+//manejo de onclick para hacer reserva
+
+const handleOnclickReserva= async()=>{
+  try {
+    const response= await axios.post(`http://localhost:8080/booking/add-booking`, bookingAEnviar 
+   )
+   Swal.fire("¡Reservado!", "Tu reservada ha sido guardada.", "success");
+    console.log(response.data)
+    setFechasReservas({
+      ...fechasReservas,
+      fechaInicio:null,
+      fechaFin:null
+    })
+ } 
+ catch (error) {
+   console.log("Error", error)
+   Swal.fire({
+     title: "Error al confirmar la reserva",
+     text: error,
+     icon: "error",
+     confirmButtonColor: "#ff00008f",
+     customClass: {
+         popup: 'textFallaServer'
+     }
+     
+   });
+   setFechasReservas({
+    ...fechasReservas,
+    fechaInicio:null,
+    fechaFin:null
+  })
+  }  
+ setDataAlquiler(false)
+}
+
+
 
   const fechaHoy = new Date();
 
@@ -342,6 +481,7 @@ const Detail = () => {
           </div>
         </div>
       )}
+      
       <div className="calendarioCalificaciones">
       <div className="detallesCalendraio">
       <div className="contenedorCalendarioDetalles">
@@ -363,34 +503,88 @@ const Detail = () => {
           </h3>
         </div>
       </div>
+
       <div className="contenedorComprar">
-        {rolEnLocalStore != null && (
-          <button className="botonComprar">Alquilar</button>
-        )}
+        <button className="botonComprar" onClick={handleClickVerReserva} >Ver reserva</button>
+
         <div className="contenedorDatePicker">
           <i className="bx bx-calendar-event"></i>
 
           <DatePicker
             className="calendarioInicioDetail"
-            selected={estadosFechas.fechaInicio}
+            selected={fechasReservas.fechaInicio}
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText=" Fecha de Inicio"
             minDate={fechaHoy}
+            onChange={onChangeInicioReserva}
             customDayClassName={customDayClass}
           />
 
           <DatePicker
             className="calendarioFinalizacionDetail"
-            selected={estadosFechas.fechaFin}
+            selected={fechasReservas.fechaFin}
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText=" Fecha de Finalización"
             minDate={fechaHoy}
+            onChange={onChangeFinReserva}
             customDayClassName={customDayClass}
           />
         </div>
+        
       </div>
+
+      {/*Renderizacion del cuadro que muestra todos los datos de la reserva si el estado dataAlquiler es true*/}
+
+    <Modal  show={dataAlquiler} >
+    <Modal.Header className="headerPopUp" onClick={handleOnclickCancelarReserva} closeButton>
+    <Modal.Title className='tituloPopUp'>Reserva</Modal.Title>
+    </Modal.Header>
+    <Modal.Body className="contenedorPopUp">
+    <form >
+        <div className="mb-3">
+        <p className='subtituloPopUp'>Nombre del producto: <span className='valorPopUp'>{state.producto.name}</span></p> 
+        </div>
+
+        <div className="mb-3">
+        <p className='subtituloPopUp'>Precio: <span className='valorPopUp'>{precioTotal} USD</span></p> 
+        </div>
+
+        <div className="mb-3">
+        <p className='subtituloPopUp'>Descripcion: <span className='valorPopUp'>{state.producto.description}</span></p>
+        </div>
+
+        <div className="mb-3">
+          <img src={state.producto.images && state.producto.images[0].imageUrl} alt="imageReserva" className="imageReserva" />
+          <img src={state.producto.images && state.producto.images[1].imageUrl} alt="imageReserva" className="imageReserva" />
+        </div>
+
+        <div className="mb-3">
+        <p className='subtituloPopUp'>Inicio Reserva: <span className='valorPopUp'>{fechasReservas.fechaInicio}</span></p>
+        </div>
+
+        <div className="mb-3">
+        <p className='subtituloPopUp'>Fin Reserva: <span className='valorPopUp'>{fechasReservas.fechaFin}</span></p>
+        </div>
+
+        <div className="mb-3">
+        <p className='subtituloPopUp'>Nombre de usuario: <span className='valorPopUp'>{localStorage.getItem("nombre") +  " " +localStorage.getItem("apellido")}</span></p>
+        </div>
+
+        <div className="mb-3">
+        <p className='subtituloPopUp'>Email: <span className='valorPopUp'>{localStorage.getItem("username")}</span></p>
+        </div>
+
+        <Button className="botonCancelarReserva"  onClick={handleOnclickCancelarReserva} variant="secondary" >Cancelar</Button>
+        <Button  className="botonReservar" onClick={handleOnclickReserva}>Alquilar</Button>
+    </form>
+    </Modal.Body>
+    </Modal>
+
+
+
+      
       </div>
       <TotalCalificacionesProducto productId={params.id}/>
       </div>
