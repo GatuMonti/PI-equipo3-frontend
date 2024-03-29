@@ -1,7 +1,7 @@
   
   .piePagina{
     width: 100%;
-    height: 12rem;
+    height: 8rem;
     background-color: #6269d3;
     padding: 3rem;
     display: flex;
@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.1vw;
+    font-size: 0.7vw;
     z-index: 1000;
     
   }
@@ -30,7 +30,7 @@
   }
 
   .footerRights{
-    font-size: .8vw;
+    font-size: .5vw;
   }
 
 /* ###################Responsivo###################### */
