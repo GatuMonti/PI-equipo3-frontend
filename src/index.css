@@ -564,7 +564,7 @@ a {
 }
 
 /***********************************Detail****************************************/
-.detalleProducto {
+/* .detalleProducto {
   margin: 0;
   padding: 15vh 0vw 0vh 0vw;
 }
@@ -762,10 +762,12 @@ a {
   width: 100%;
   text-align: center;
   margin: 2vh 0vw 3vh 0vw;
-}
+} */
+
 
 /* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
-
+/* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
+/* ESTE ES EL CONTENEDOR DE LOS CALENDARIOS  */
 
 .contenedorFechasDetail {
   height: 5vh;
