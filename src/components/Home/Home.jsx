@@ -240,7 +240,8 @@ const Home = () => {
               <i className="bx bx-search-alt"></i>
             </button>
           </form>
-          <Autosuggest
+          <div className={styles.buscadorConFechas}>
+          <Autosuggest className={styles.inputSearchBuscador}
             suggestions={suggestions}
             onSuggestionsFetchRequested={onSuggestionsFetchRequested}
             onSuggestionsClearRequested={onSuggestionsClearRequested}
@@ -284,6 +285,7 @@ const Home = () => {
             <button className={styles.botonBuscarFecha} onClick={handleOnclickBusquedaFechas}> Buscar </button>
 
           </form>
+          </div>
         </div>
 
         <Slider></Slider>

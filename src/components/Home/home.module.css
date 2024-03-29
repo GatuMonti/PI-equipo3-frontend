@@ -75,24 +75,44 @@
   } */
   
   .barraBuscador{
-    width: 50vw;
-    height: 6vh;
+    width: 90vw;   
+    max-width: 1000px; 
+    min-height: 6vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     background-color: #DAC9DF;
     border-radius: 20px;
+    padding: 5px;
   }
   
-  .formularioBuscador{
+  
+  .buscadorConFechas{
+    widows: 80%;    
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .formCalendarios{
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 45%;
+  }
+
+  .formularioBuscador{
+    display: flex;    
     height: auto;
     border-radius: 8px;
   }
+
   
   .inputSearch{
     width: 10vw;
+    min-width: 50px;
     height: auto;
     text-align: center;
     border: none;
@@ -131,7 +151,7 @@
     text-align: center;
     border: none;
     font-size: 1vw;
-    background-color: #FFFFFF;
+    background-color: #a80808;
      border-radius: 8px;
      border-style: none;
      box-sizing: border-box;
@@ -163,23 +183,23 @@
   
   .bx.bx-calendar {
     font-size: 3.7vh;
-  }
-  
+  }  
   
   
   .calendarioInicio {
-    width: 130px;
+    width: 5vw;
+    min-width: 50px;
     height: 33px;
-    display: flex;
+    
     border-radius: 8px;
     font-size: 1.68vh;
     
   }
   
   .calendarioFinalizacion{  
-    width: 130px;
-    height: 33px;
-    display: flex;
+    width: 5vw;
+    min-width: 50px;
+    height: 33px;    
     border-radius: 8px;
     font-size: 1.68vh;
   }
@@ -256,6 +276,14 @@
     .botonBuscar:focus {
       background-color: #F082AC;
     }
+
+    
+  /*Estilos para celular Iphone XR, TODAS LAS PANTALLAS MENORES A 415px*/
+  @media screen and (max-width: 415px) {
+    .formularioBuscador {
+      display: none; 
+    }
+  } 
    
    
   

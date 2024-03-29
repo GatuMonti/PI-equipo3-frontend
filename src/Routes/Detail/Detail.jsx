@@ -14,7 +14,7 @@ import { urlBackend } from '../../App';
 import { useNavigate } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 import styles from './Detail.module.css'
-
+import ModalCargaReseva from "../../components/ModalCargaReserva/ModalCargaReseva";
 
 const Detail = () => {
   const params = useParams();
@@ -35,6 +35,7 @@ const Detail = () => {
     id: params.id,
   };
 
+  const [mostrarSpinner, setMostrarSpinner] = useState(false);
   //Estado para mostrar la data del producto en alquiler
   const [dataAlquiler, setDataAlquiler] = useState(false)
 
@@ -251,6 +252,7 @@ const Detail = () => {
 
   const handleOnclickReserva = async () => {
     try {
+      setMostrarSpinner(true);
       const response = await axios.post(`${urlBackend}booking/add-booking`, bookingAEnviar
       )
       Swal.fire("¡Reservado!", "Tu reservada ha sido guardada.", "success");
@@ -279,6 +281,7 @@ const Detail = () => {
         fechaFin: null
       })
     }
+    setMostrarSpinner(false); //Ocultamos el loader
     setDataAlquiler(false)
   }
 
@@ -549,7 +552,7 @@ const Detail = () => {
 
 
         {/*Renderizacion del cuadro que muestra todos los datos de la reserva si el estado dataAlquiler es true*/}
-
+        <ModalCargaReseva mostrarSpinnerModal={mostrarSpinner}/>      
         <Modal show={dataAlquiler} >
           <Modal.Header className={styles.headerPopUp} onClick={handleOnclickCancelarReserva} closeButton>
             <Modal.Title className={styles.tituloPopUp}>Reserva</Modal.Title>
