@@ -3,8 +3,9 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { Pagination } from "react-bootstrap";
 import { format } from "date-fns";
-import ProductoReservado from "./ProductosReservados";
-import { urlBackend } from '../App';
+import ProductoReservado from "../ProductosReservados";
+import { urlBackend } from '../../App';
+import styles from './listarReserva.module.css'
 
 const ListarReservas = () => {
   const [reservas, setReservas] = useState([]);
@@ -65,12 +66,12 @@ const ListarReservas = () => {
   const currentReservas = reservas.slice(indexOfFirstReserva, indexOfLastReserva);
 
   return (
-    <div className="listaAdmin">
-      <h2 className="titleListProducts">
+    <div className={styles.listaAdmin}>
+      <h2 className={styles.titleListProducts}>
         Listado de Reservas{" "}
-        <span className="contadorProductos">Cantidad : {reservas.length}</span>
+        <span className={styles.contadorProductos}>Cantidad : {reservas.length}</span>
       </h2>
-      <div className="contenedorListaProductos">
+      <div className={styles.contenedorListaProductos}>
         {currentReservas.map((reserva, index) => {
           const fechaInicioReserva = new Date(
             reserva.fechaInicio[0],
@@ -88,12 +89,12 @@ const ListarReservas = () => {
           const reservaEnProgreso =
             fechaActual >= fechaInicioReserva && fechaActual <= fechaFinReserva;
           return (
-            <div className="contenedorReservas" key={index}>
+            <div className={styles.contenedorReservas} key={index}>
               <div
-                className="contenedorProductosAdmin"
+                className={styles.contenedorProductosAdmin}
                 onClick={() => toggleProductoVisible(reserva.id)}
               >
-                <p className="listId">
+                <p className={styles.listId}>
                   <span
                     style={{
                       color: reservaFinalizada
@@ -111,10 +112,10 @@ const ListarReservas = () => {
                   </span>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID: {reserva.id}
                 </p>
-                <p className="listName">
+                <p className={styles.listName}>
                   Fecha Inicio: <span>{formatDate(reserva.fechaInicio)}</span>
                 </p>
-                <p className="listName">
+                <p className={styles.listName}>
                   Fecha Fin: <span>{formatDate(reserva.fechaFin)}</span>
                 </p>
               </div>

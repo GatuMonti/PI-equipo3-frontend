@@ -83,7 +83,7 @@
     align-items: center;
     justify-content: space-around;
     background-color: #DAC9DF;
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 5px;
   }
   
@@ -120,7 +120,7 @@
     cursor: pointer;
     background-color: #FFFFFF;
     color: black;
-     border-radius: 8px;
+    border-radius: 8px;
      border-style: none;
      box-sizing: border-box;
      color: black;
@@ -152,7 +152,7 @@
     border: none;
     font-size: 1vw;
     background-color: #a80808;
-     border-radius: 8px;
+    border-radius: 8px;
      border-style: none;
      box-sizing: border-box;
      color: black;

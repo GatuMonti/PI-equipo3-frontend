@@ -1946,6 +1946,80 @@ font-size: 1.5vw;
 
 @media(max-width:500px) {
 
+  .contenedorReservas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    /* Agregado */
+    cursor: pointer;
+  }
+  
+  .contenedorReservas .contenedorProductosAdmin {
+    margin-bottom: 0px;
+  }
+  
+  .productoACalificar {
+    background-color: #ccc;
+    min-width: 95%;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    overflow: hidden;
+    /* Ocultar el contenido que se desborda */
+    max-height: 0px;
+    /* Altura máxima */
+    transition: 0.5s ease-in-out;
+    /* Transición de altura */
+  }
+  
+  .invisible {
+    max-height: 100px;
+    /* Ocultar el contenido */
+  }
+  
+  .visible {
+    max-height: 100px;
+    /* Ajustado */
+  }
+  
+  
+  .productosClasificar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    border-top: 1px dashed grey;
+  
+  }
+  
+  .msjsCalificar {
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .msjsCalificar p {
+    margin: 0px;
+  }
+  
+  .calificarColumna1 {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+  }
+  
+  .inputCalificacion {
+    width: 35vw;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+  }
+
+
   /* .Header{
     width: 68%;
     height: 16vh;
