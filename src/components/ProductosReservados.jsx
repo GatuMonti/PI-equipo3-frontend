@@ -117,7 +117,7 @@ const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, userna
               <button onClick={verCalificacionUsuario}>Ver Tu Calificación</button> {/* Botón para mostrar la calificación del usuario actual */}
             </div>
           ) : (
-            <div>
+            <div className='contenedorCalificador'>
               <input
                 type="text"
                 placeholder="Comentario"

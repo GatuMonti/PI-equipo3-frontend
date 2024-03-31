@@ -77,3 +77,38 @@
     font-size: 1.5rem;
   }
   
+
+    /*Estilos para IpadMini, TODAS LAS PANTALLAS MENORES A 768px*/
+    @media screen and (max-width: 768px) {
+      .card{
+        width: 35vw;
+        height: auto;
+        padding: 5px;
+        margin: 1vw;
+        background-color: #AC6AB4;
+        color:black;
+        box-shadow: (8px 8px 8px 10px) black;
+        margin-top: 2vw;
+        border-color: #0056b3;
+        border-width: 0.3vh;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        
+      }
+    } 
+
+    @media screen and (max-width: 414px) {
+      .card{
+        width: 65vw;
+        
+      }
+
+      .contenedorProductos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 3vh 0vw 4vh 0vw;
+        width: 90%;
+      }
+    } 

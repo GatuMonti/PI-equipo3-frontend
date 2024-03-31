@@ -278,6 +278,13 @@
     }
 
     
+  /*Estilos para IpadMini, TODAS LAS PANTALLAS MENORES A 768px*/
+  @media screen and (max-width: 768px) {
+    .contenedorProductos{
+      width: 80vw;
+    }  
+  } 
+ 
   /*Estilos para celular Iphone XR, TODAS LAS PANTALLAS MENORES A 415px*/
   @media screen and (max-width: 415px) {
     .formularioBuscador {

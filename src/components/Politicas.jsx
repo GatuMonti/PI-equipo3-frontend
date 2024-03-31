@@ -2,10 +2,7 @@
 
 const politicas= () =>{
     return(
-        <div>
-            <div className="espacePoliticas">
-                <h1 >Vortex Games </h1>
-            </div>
+        <div className="contenedorPoliticas">
              <div className="politicasTitle">
                 <h1><b>Política de Uso - Vortex Games</b></h1>
             </div>    

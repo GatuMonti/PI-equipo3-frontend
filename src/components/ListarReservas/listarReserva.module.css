@@ -1,72 +1,196 @@
-.listaAdmin{
-    margin: -15vh 8vw -10vh 0vw;
-  }
-.titleListProducts{
-    color:#FFFFFF;
-    font-weight: 600;
-    width: 25vw;
-    margin: 23vh 0vw 0vh 38vw;
-    font-size: 1.8vw;
-    text-align: center;
-    background-color: #4867DB;
-    
-  }
+.listaAdmin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.contenedorListaProductos{
+  align-self:stretch;
+}
+
+.titleListProducts {
+  color: #4867DB;
+  font-weight: 600;
+  font-size: 2.2vw;
+  text-align: center;
+  padding:20px;
+}
+
+.contenedorListaProductos {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.contenedorReservas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* Agregado */
+  cursor: pointer;
+
+}
+
+.contenedorProductosAdmin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #6269d3;
+  border-radius: 5px;
+}
+
+.listId,
+.listName,
+.listCategoria,
+.listTipo {
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0px;
+  font-size: 1.2vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.contadorProductos{
+  color: #4867DB;
+  font-weight: 600;
+  font-size: 1vw;
+  text-align: center;
+  padding:20px;
+}
+
+/* ///////////Estilos para IpadMini ////////*/
+/* ///////////Estilos para IpadMini ////////*/
+/* ///////////Estilos para IpadMini ////////*/
+
+@media screen and (max-width: 768px) {
+
+
+  .listaAdmin {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80vw;
-    margin: 10vh 0vw 37vh 10vw;
-    padding: 0vh 0vw 0vh 0vw;
-    background-color: #4867DB;
-    border-radius: 5px;
+    align-self:stretch;
   }
-.contenedorReservas {
+  
+  .titleListProducts {
+    font-weight: 600;
+    font-size: 3vw;
+    text-align: center;
+    padding:20px;
+  }
+  
+  .contenedorListaProductos {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .contenedorReservas {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
-    position: relative; /* Agregado */
+    /* Agregado */
     cursor: pointer;
-  }
-  .contenedorReservas .contenedorProductosAdmin{
-    margin-bottom: 0px;
-  }
-
-  .contenedorProductosAdmin{
-    width: 70vw;
-      height: 10vh;
-      display: flex;
-      margin: 4vh 0vw 4vh 0vw;
-      background-color:#6269d3;
-      border-radius: 5px;
   
   }
-
-  .listId,.listName,.listCategoria,.listTipo{
-    width: 15vw;
-    height: 4vh;
-    margin: 3.5vh 0vw 0vh 1vw;
+  
+  .contenedorProductosAdmin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #6269d3;
+    border-radius: 5px;
+  }
+  
+  .listId,
+  .listName,
+  .listCategoria,
+  .listTipo {
+    font-size: 1.8vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  
+  .contadorProductos{
+    color: #4867DB;
+    font-weight: 600;
+    font-size: 2vw;
     text-align: center;
-    color: #FFFFFF;
-    font-size: 1.1vw;
-    line-height: 1vw;
+    padding:20px;
   }
 
-  @media screen and (max-width: 500px) {
+  .paginationItem span{
+    /* Estilos personalizados para el número de página */
+    /* Por ejemplo: */
+    font-size: x-small;
 
-    .listaAdmin{
-        margin: 0vh 8vw -10vh 0vw;
-      }
-    .contenedorListaProductos{
-        
-        width: 80%;
-        margin: 30vh 0vw 0vh 0vw;
-        padding: 0vh 0vw 0vh 0vw;
-        background-color: #4867DB;
-        
-      }
+  }
   
+  .paginationItem.active {
+    /* Estilos para la página activa */
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
 
-} 
+}
+
+
+/* ///////////Estilos para IphoneXR ////////*/
+/* ///////////Estilos para IphoneXR  ////////*/
+/* ///////////Estilos para IphoneXR ////////*/
+
+@media screen and (max-width: 414px) {
+
+  
+  .titleListProducts {
+    font-weight: 600;
+    font-size: 4vw;
+
+  }
+  
+  .contenedorListaProductos {
+    width: 95vw;
+  }
+
+  
+  .listId,
+  .listName,
+  .listCategoria,
+  .listTipo {
+    font-size: 2.8vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  
+  .contadorProductos{
+    font-size: 3vw;
+
+  }
+
+  .paginationItem li{
+    /* Estilos personalizados para el número de página */
+    /* Por ejemplo: */
+    display: flex;
+
+
+  }
+
+  .paginationItem span{
+    /* Estilos personalizados para el número de página */
+    /* Por ejemplo: */
+    font-size: xx-small;
+    
+  }
+  
+  .paginationItem.active {
+    /* Estilos para la página activa */
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+
+}

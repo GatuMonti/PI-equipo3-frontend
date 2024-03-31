@@ -68,8 +68,7 @@ const ListarReservas = () => {
   return (
     <div className={styles.listaAdmin}>
       <h2 className={styles.titleListProducts}>
-        Listado de Reservas{" "}
-        <span className={styles.contadorProductos}>Cantidad : {reservas.length}</span>
+        Listado de Reservas
       </h2>
       <div className={styles.contenedorListaProductos}>
         {currentReservas.map((reserva, index) => {
@@ -100,15 +99,15 @@ const ListarReservas = () => {
                       color: reservaFinalizada
                         ? "lightgreen"
                         : reservaEnProgreso
-                        ? "blue"
-                        : "orange",
+                          ? "blue"
+                          : "orange",
                     }}
                   >
                     {reservaFinalizada
                       ? "FINALIZADA"
                       : reservaEnProgreso
-                      ? "EN PROGRESO"
-                      : "PENDIENTE"}
+                        ? "EN PROGRESO"
+                        : "PENDIENTE"}
                   </span>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID: {reserva.id}
                 </p>
@@ -120,7 +119,7 @@ const ListarReservas = () => {
                 </p>
               </div>
               <div className={`productoACalificar ${productoVisible[reserva.id] ? 'visible' : 'invisible'}`}>
-                <p style={{ marginTop: "5px" }}>Productos:</p>
+                {/* <p style={{ marginTop: "5px" }}>Productos:</p> */}
                 {reserva.productos.map((producto, indexProd) => (
                   <ProductoReservado
                     key={indexProd}
@@ -132,11 +131,17 @@ const ListarReservas = () => {
                   />
                 ))}
               </div>
+
             </div>
+
           );
         })}
-        {reservas.length > 0 && (
-          <Pagination>
+
+
+      </div>
+      {reservas.length > 0 && (
+        
+          <Pagination className={styles.paginationItem}>
             {Array.from({
               length: Math.ceil(reservas.length / reservasPerPage),
             }).map((_, index) => (
@@ -150,7 +155,8 @@ const ListarReservas = () => {
             ))}
           </Pagination>
         )}
-      </div>
+        
+        <span className={styles.contadorProductos}>Total de Reservas : {reservas.length}</span>
     </div>
   );
 };
