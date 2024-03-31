@@ -6,9 +6,14 @@ import { useContextGlobal } from "./Util/global.context";
 import avatar from '../Images/avatar.jpg'
 import { useNavigate } from "react-router-dom";
 
+
+
 const navbar = () => {
 
     const{state,dispatch}=useContextGlobal()
+
+    //Estado para cambiar la clase del contenedor avatar y me muestre info del user
+    const [isActive, setIsActive] = useState(false);
 
     
     const [userRole, setUserRole] = useState(localStorage.getItem("userRole")  );
@@ -22,7 +27,8 @@ const navbar = () => {
 
     const handleCerrarSesionAdmin = () => {
         localStorage.clear()
-        setUserRole(null)  
+        setUserRole(null)
+        window.location.reload();
     }
 
     
@@ -34,13 +40,24 @@ const navbar = () => {
 
     const handleLogo=()=>{
       useEffect(()=>{
-
       },[])
       navigate('/');
-     
     }
 
+    const handleOnclickFavoritos=()=>{
+      dispatch({type: 'set_isFavorite', payload:true})
+      navigate('/');
+    }
 
+    const handleOnclickReservas=()=>{
+      navigate('/listarReservas/');
+    }
+
+    const handleOnclickAvatar=()=>{
+      setIsActive(!isActive);
+    }
+    
+  
     return (
         <header className="Header">
         <div className="contenedorLogo">
@@ -48,19 +65,24 @@ const navbar = () => {
           <h3 className="lema">Explora, juega y disfruta</h3>
         </div>
       
-        <div className="contenedorAvatar">
+        <div onClick={handleOnclickAvatar}className="contenedorAvatar">
              <img className="imageAvatar" src={avatar} alt="avatar" />
              <p className="nombreAvatar">
               {localStorage.getItem('nombre') ? localStorage.getItem('nombre').charAt(0) : ''}
               {localStorage.getItem('apellido') ? localStorage.getItem('apellido').charAt(0) : ''}
+             
             </p>
             {localStorage.length !=0 && (
-                 <div className="userInfo">
+                 <div className={isActive ? "userInfo active" : "userInfo"}>
                       <p className="infoUserAvatar"> {localStorage.getItem('nombre')} {localStorage.getItem('apellido')} Rol: {localStorage.getItem('userRole')}</p>
+                      <a  onClick={handleOnclickFavoritos} className="enlaceFavoritos">Favoritos</a>
+                      <a  onClick={handleOnclickReservas}  className="enlaceReservas">Reservas</a>
                 </div>
+                
             )} 
            
         </div>
+        
         
        
         <div className="botones">
@@ -73,8 +95,10 @@ const navbar = () => {
           ) : (
             userRole === "ADMIN" ? (
               <>
+               
                 <Link to={'/'}><button onClick={handleCerrarSesionAdmin} className="iniciar-sesion">Cerrar Sesión</button></Link>
                 <Link to={'/pageAdmin'}><button  className="iniciar-sesion">Administar</button></Link>
+               
               </>
             ) : (
               <Link to={'/'}><button onClick={handleCerrarSesionAdmin} className="iniciar-sesion">Cerrar Sesión</button></Link>

@@ -1,6 +1,7 @@
 *{
   margin: 0;
-  font-family:cursive;
+  /*font-family:cursive;*/
+  font-family:Arial, Helvetica, sans-serif;
 }
 .dark{
   background-color: #12121296;
@@ -102,7 +103,6 @@
 }
 .userInfo{
   width: 14vw;
-  height: 10vh;
   background-color:#AC6ABA;
   text-align: center;
   display: none;
@@ -110,10 +110,30 @@
   margin: -12vh 0vw 0vh -15vw; /* Ajusta el margen según tus necesidades */
   padding: 1vh 1vw; /* Ajusta el padding según tus necesidades */
 }
-.contenedorAvatar:hover .userInfo {
+
+.active{  /* Clase que se activa cuando hay un click en el contenedor avatar*/
   display: flex;
   flex-direction: column;
 }
+.infoUserAvatar{
+  font-size: 1.2vw;
+}
+.enlaceFavoritos{
+ width: 3vw;
+ color:#FFFFFF;
+ text-decoration: underline; 
+ margin: -1vh 0vw 0vh 3vw;
+ width: 6vw;
+ font-size: 1.2vw;
+}
+.enlaceReservas{
+  width: 3vw;
+  color:#FFFFFF;
+  text-decoration: underline; 
+  margin: 0vh 0vw 0vh 3vw;
+  width: 6vw;
+  font-size: 1.2vw;
+ }
 
 /************************************Footer***********************************/
 .piePagina{
@@ -147,6 +167,15 @@
   margin: 2.5vh 0vw 0vh 0vw;
   font-size: 1.5vw;
 }
+.linkpoliticas{
+  margin: 7vh 0vw 0vh 0vw;
+  font-size: 1.5vw;
+  color: rgba(0, 0, 0, 0.671)  ;
+}
+.linkpoliticas:hover{
+  font-size: 1.8vw;
+  color:#FFFFFF;
+}
 .navegacionFooter{
   width: 25vw;
   height: 8vh;
@@ -155,7 +184,37 @@
 .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
   font-size: 3.5vw; 
   margin: 0vh 2vw 0vh 0vw;
- 
+  color: blue;
+}
+.bxl-whatsapp:hover{
+  color: rgb(74, 236, 9);
+}
+
+/***********************************Politicas****************************************/
+
+.politicasTitle{
+  color: #FFFFFF;
+  padding: 22vh 0vw 0vh 0vw;
+  text-align: center;
+}
+.politicas{
+  font-size: 1vw;
+  display: flex;
+  margin: 7vh 0vw 0vh 0vw;
+}
+.tituloPolitica{
+  font-size: 2vw;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+.politica{
+  width: 20%;
+  margin: 0vh 0vw 0vh 4vw;
+  
+}
+.parrafo{
+  width: 100%;
+  margin-top: 1.5vw;
 }
 
 /***********************************Home****************************************/
@@ -202,8 +261,8 @@
 
 .img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres,.img1CategoriaCuatro,.img2CategoriaCuatro,.img1CategoriaCinco,.img2CategoriaCinco{
   width: 13vw;
-  height: 17vh;
-  margin: 3vh 0vw 2vh 0vw;
+  height: 17.5vh;
+  margin: 4vh 0vw 2vh 0vw;
 }
 .img1CategoriaUno:hover,
 .img2CategoriaUno:hover,
@@ -217,6 +276,7 @@
 .img2CategoriaCinco:hover {
   width: 14vw;
 }
+
 /********************Buscador****************/
 
 .contenedorDos{
@@ -228,7 +288,8 @@
 }
 .formularioBuscador{
   height: 5vh;
-  margin: 20vh 0vw 0vh 0vw;
+  width: 30%;
+  margin: 4vh 0vw 0vh 0vw;
   background-color: #D9D9D9;
   display: flex;
   justify-content: space-between;
@@ -258,6 +319,102 @@
 .bx-search-alt{
   color:#c133dd;
 }
+
+/********************************Buscador Fechas***************************/
+
+.containerBuscadorFechas{
+  background-color: #D9D9D9;
+  display: flex;
+  justify-content: space-between;
+  margin: 20vh 0vw 0vh 0vw;
+  height: 2%;
+  width: 50%;
+  border-radius: 15vw;
+  font-size: 1.3vw;
+}
+
+
+.inputTextoBuscador{
+  margin: 0.5vh 0vw 0vh 0.5vw;
+  width: 90%;
+  height: 5vh;
+  text-align: center;
+  border-radius: 15vw;
+  border: none;
+  background-color: transparent;
+  color: #000;
+}
+.textAutoCompletado{
+  width: 14vw;
+  margin: 0vh 0vw 0vh -5vw;
+  background-color: #D9D9D9;
+  z-index: 9999;
+  position: absolute; 
+  text-align: center;
+ 
+}
+.inputTextoBuscador:focus{
+  outline: none;
+  border: 2px solid #6269d3;
+}
+.inputTextoBuscador:hover{
+  border: 2px solid #6269d3;
+}
+.inputline,.calendarioUnoline,.calendarioDosline {
+  width: 1px;
+  height: 70%;
+  margin: 1.5vh 0vw 0vh 0vw;
+  background-color: #000;
+  margin-right: 10px; /* Espacio entre la línea y los calendarios */
+}
+.calendarioUno{
+  margin: 0.5vh 0vw 0vh 0vw;
+  width: 95%;
+  height: 5vh;
+  text-align: center;
+  border-radius: 15vw;
+  border: none;
+  background-color: transparent;
+}.calendarioUno:focus{
+  outline: none;
+  border: 2px solid #6269d3;
+}
+.calendarioUno:hover{
+  border: 2px solid #6269d3;
+}
+.calendarioDos{
+  margin: 0.5vh 0vw 0vh 0vw;
+  width: 90%;
+  height: 5vh;
+ text-align: center;
+ border-radius: 15vw;
+ border: none;
+ background-color: transparent;
+}
+
+.calendarioDos:focus{
+  outline: none;
+  border: 2px solid #6269d3;
+}
+.calendarioDos:hover{
+  border: 2px solid #6269d3;
+}
+.botonBuscarFechas{
+  margin: 0.2vh 0.5vw 0vh 0vw;
+  width: 50px;
+  height: 95%;
+ text-align: center;
+ border-radius: 100%;
+ border: none;
+ font-size: 0.5vw;
+ background-color:#AC6ABA;
+ color: #FFFFFF;
+}
+.botonBuscarFechas:hover{
+ background-color:#FFFFFF;
+ color: black;
+}
+
 
 
 /********************Carrusel****************/
@@ -335,6 +492,29 @@
   background-color:#6269d3; 
 
 }
+/* Estilo base del corazón */
+.corazon {
+  cursor: pointer;
+  border: none;
+  width: 20px;
+  height: 30px;
+  position:absolute;
+  padding: 0vh 0vw 0vh 0.5vw;
+  background-color: transparent;
+  font-size: 39px;
+}
+
+/* Estilo del corazón vacío (no marcado como favorito) */
+.corazon::before {
+  content: '\2661'; /* Código de corazón vacío (♥) */
+ color:#AC6ABA; 
+}
+
+/* Estilo del corazón lleno (marcado como favorito) */
+.corazon.active::before {
+  content: '\2665'; /* Código de corazón lleno (♥) */
+  color:#c133dd; /* Color del corazón lleno */
+}
 .imageProduct{
   width: 19.8vw;
   height: 25vh;
@@ -367,9 +547,11 @@ a{
 
 
 /***********************************Detail****************************************/
+
 .detalleProducto{
   margin: 0;
   padding: 20vh 0vw 0vh 0vw;
+ 
 }
 .botonRegresar{
   margin: 1vh 0vw 0vh 80vw;
@@ -393,16 +575,70 @@ a{
   font-weight: bold ;
   text-align: center;
 }
+
+.contenedorEstrellas{
+  width: 35%;
+  margin: 0vh 0vw -2.5vh 25vw ;
+}
+
+.contenedorCalificacion{
+  display: flex;
+  width: 50vw;
+  margin: 3vh 0vw 4vh 0vw
+}
+.estrella{
+ font-size: 30px;
+ margin: 0vh 0vw 0vh 0vw;
+
+}
+
+.subtituloCalificacion{
+margin: 2vh 0vw 0vh 1vw;
+color: #FFFFFF;
+width: 8vw;
+font-weight: 600;
+text-align: center;
+}
+
+.inputComentarioCalificacion{
+  width: 13vw;
+  height: 5vh;
+  margin: 1.5vh 0vw 0vh 1vw;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  font-size: 1vw;
+}
+.inputComentarioCalificacion:focus{
+  outline: none;
+  border: 2px solid #4867DB;
+}
+.botonCalificar{
+  width: 6vw;
+  height: 5vh;
+  background-color:#4867DB;
+  margin: 0vh 0vw 0vh 1vw;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1vw;
+}
+
+
+
+
 .contenedorImagenesDetail{
   margin: 3vh 0vw 0vh 25vw;
   display: flex;
   flex-wrap: wrap;
   width: 50vw;
   height: 50vh;
+  border: 2px solid #FFFFFF;
 }
 .imagen1Producto{
   width: 50%;
   height: 100%;
+   border: 2px solid #FFFFFF;
 }
 .contenedor4imagenes{
   width: 50%;
@@ -413,6 +649,7 @@ a{
 .imagen2Producto,.imagen3Producto,.imagen4Producto,.imagen5Producto{
     width: 50%;
     height: 50%;
+    border: 2px solid #FFFFFF;
 }
 .verMas{
   width: 8vw;
@@ -428,6 +665,10 @@ a{
   background-color: #FFFFFF;
   color: black  ;
   width: 9vw;
+}
+
+.contenedorCalendarioDetalles{
+  display: flex;
 }
 
 .contenedorDetalles{
@@ -451,19 +692,47 @@ a{
   width: 18vw;
   color: #FFFFFF;
   font-size: 1.5vw;
-  margin: 1vh 0vw 0vh 2vw;
+  margin: 0vh 0vw 0vh 2vw;
 
 }
-
 .descripcionProducto,.precioProducto{
   color: #FFFFFF;
   font-size: 1.5vw;
-  margin: 1vh 0vw 0vh 2vw;
+  margin: 0vh 0vw 0vh 2vw;
+}
+.contenedorCalificaciones{
+  margin: 1vh 0vw 0vh 0vw;
+  width: 50vw;
+}
+.tituloReseña{
+  background-color:#4867DB;
+  font-size: 1.9vw;
+  color:#FFFFFF;
+  text-align: center;
+}
+.tituloReseña:hover{
+  background-color: #FFFFFF;
+  color: #AC6ABA;
+  font-weight: 900;
+}
+.contenedorCalificacionEnDetail{
+  margin: 0vh 0vw 0vh 2vw;
+}
+.dataReseña{
+  color: #FFFFFF;
+  font-size: 1.5vw;
+  margin: 0vh 0vw 0vh 0vw;
+}
+.divisorReseñas{
+  color:#FFFFFF;
 }
 .contenedorComprar{
-  width: 20vw;
-  height: 25vh;
+  display: flex;
+  justify-content:space-around;
+  width: 8vw;
+  height: 5vh;
   margin: 2vh 0vw 0vh 12vw;
+ 
 }
 .botonComprar{
   width: 8vw;
@@ -473,11 +742,84 @@ a{
   border: none;
   color: #FFFFFF;
   font-size: 1vw;
+  margin:0vh 0vw 0vh 0vw
 }
 .botonComprar:hover{
   background-color: #FFFFFF;
   color: black  ;
-  width: 9vw;
+  width: 8.5vw;
+}
+
+
+
+.contenedorDatePicker{
+  /* width: 30%; */  /* Ancho comentado, esta hecho incluyendo el boton comentado en el componente */
+  width: 22%;
+  height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: -4.5vh 0vw 4vh 25vw;
+  background-color:#FFFFFF;
+  border-radius: 10px;
+  font-size: 1vw;
+ 
+}
+.calendariodetailInicio,.calendariodetailFin{
+  width: 9.3vw;
+  text-align: center;
+  height: 5vh;
+  margin: 0vh 0vw 0vh 0vw;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+}
+.calendariodetailInicio:focus{
+  outline: none;
+  border: 2px solid #4867DB;
+}
+.calendariodetailInicio:hover{
+  outline: none;
+  border: 2px solid #4867DB;
+}
+.calendariodetailFin:focus{
+  outline: none;
+  border: 2px solid #4867DB;
+}
+.calendariodetailFin:hover{
+  outline: none;
+  border: 2px solid #4867DB;
+}
+.bx-calendar-event{
+  font-size: 1.5vw;
+  margin: 1vh 1vw 0vh 0vw;
+}
+
+.botonAlquilar{
+  margin: 0.5vh -0.5vw 0vh 0vw;
+  width: 14%;
+  height: 90%;
+ text-align: center;
+ border-radius: 100%;
+ border: none;
+ font-size: 1vw;
+ background-color:#AC6ABA;
+ color: #FFFFFF;
+}
+
+.subtituloPopUp,.tituloPopUp{
+  color:blue;
+}
+.valorPopUp{
+  color: black;
+}
+.imageReserva{
+  width: 45%;
+  height: 16vh;
+  margin: 0vh 0vw 0vh 1vw;
+}
+.botonReservar{
+  margin: 0vh 0vw 0vh 1vw;
 }
 
 .contenedorMostrarCaracteristicas{
@@ -499,6 +841,13 @@ a{
 .nombreCaracteristicas{
   width: 20vw;
   margin: 0vh 0vw 0vh 3vw;
+}
+.contenedorIconosCompartir{
+  margin: 1vh 0vw 1vh 1vw;
+  width: 25vw;
+}
+.Demo__some-network__share-button{
+  margin: 0vh 0vw 0vh 1vw;
 }
 
 
@@ -535,9 +884,11 @@ a{
   border-radius: 5px;
   border: none;
 }
+
 .crearCuenta{
   width: 10vw;
   height: 5vh;
+  font-size: 1vw;
   border-radius: 5px;
   border: none;
   margin: 2vh 0vw 2vh 7.5vw;
@@ -599,7 +950,63 @@ a{
   height: 6vh;
 
 }
+/***********************************Listar Reservas****************************************/
 
+.pageListarReservas{
+  padding: 37vh 0vw 0vh 0vw;
+}
+
+.contenedorReservasXUsuario{
+  background-color:#FFFFFF;
+  margin: 0vh 0vw 30vh 10vw;
+  width: 80vw;
+  height: auto;
+  border-radius: 8px;
+  padding: 0vh 0vw 5vh 0vw;
+}
+.tituloReservas{
+  text-align: center;
+  margin: 0vh 0vw 2vh 0vw;
+  border-radius: 8px;
+  color:#4867DB;
+  font-size: 2vw;
+  padding: 5vh 0vw 0vh 0vw;
+}
+.reservaXUsuario{
+  display: flex;
+  background-color:#4867DB;
+  width: 74vw;
+  height: 11vh;
+  margin: 4vh 0vw 0vh 3vw;
+  border-radius: 5px;
+}
+.inicioReserva,.estadoReservaFinalizada,.estadoReservaPendiente,.finReserva,.productoEnReserva,.productoEnReserva{
+  width: 14vw;
+  height: 4vh;
+  margin: 4vh 0vw 0vh 1vw;
+  text-align: center;
+  color: #ffffffce;
+}
+.estadoReservaFinalizada{
+  color:greenyellow;
+}
+.estadoReservaPendiente{
+  color: rgba(255, 102, 0, 0.932);
+}
+.contenedorProductosDeLaReserva{
+  display: flex;
+  margin: 4vh 0vw 0vh 1vw;
+}
+.tituloProductosDeReserva{
+  text-align: center;
+  color:greenyellow;
+  font-size: 1.5vw;
+ 
+}
+.productoEnReserva{
+  width: 7vw;
+  margin: 0vh 0vw 0vh 1vw;
+}
 
 
 
@@ -734,22 +1141,20 @@ a{
   color: red;
 } */
 
-.textFalla,.textExito{
+.textFalla,.textFallaServer{
   color:#6269d3;
   width: 25vw;
-  height: 55vh;
+  height: 60vh;
   bottom:6vh;
+  font-size: 1vw;
 } 
 .textExito{
-  height: 65vh;
-}
-.textFallaServer{
-  color:#6269d3;
+  font-size: 1.2vw;
+  height: 55vh;
   width: 25vw;
-  height: 57vh;
+  color:#6269d3;
   bottom:6vh;
 }
-
 
 /***********************************Listar-Producto-Administrador****************************************/
 .listaAdmin{
@@ -812,6 +1217,11 @@ a{
   width: 100%;
   display: flex;
   justify-content:center;
+}
+.botonPaginadoAtras,.botonPaginadoAdelante{
+  width: 5vw;
+  height: 4vh;
+  margin: 0vh 0vw 0vh 1vw;
 }
 
 /***********************************Editar-Producto-Administrador****************************************/
@@ -978,14 +1388,14 @@ a{
   border-radius: 5px;
 }
 .dataUsuario,.dataUsuarioName,.dataUsuarioNombre,.dataUsuarioApellido,.dataUsuarioRol{
-  width: 6svw;
+  width: 6vw;
   height: 4vh;
   margin: 3vh 0vw 0vh 1vw;
   text-align: center;
   color: #ffffffce;
 }
 .dataUsuarioName{
-  width: 15vw;
+  width: 18vw;
   height: 7vh;
   margin: 3vh 0vw 0vh 1vw;
 }
@@ -1028,7 +1438,7 @@ a{
     width: 40vw;
     margin: 0vh 0vw 1vh 0vw;
     text-align:left;
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
   .botones{
     width: 65vw;
@@ -1037,9 +1447,9 @@ a{
   }
   .crear-cuenta,.iniciar-sesion{
     width: 22vw;
-    height: 4vh;
+    height: 4.5vh;
     margin: 0.5vh 0vw 0vh 0vw;
-    font-size: 2.9vw;
+    font-size: 2vw;
   }
   .themeLight,.themeDark{
     height: 80%;
@@ -1057,20 +1467,30 @@ a{
   
   }
   .nombreAvatar{
-    font-size: 3vw;
+    font-size: 2vw;
     margin: 0vh 0vw 3vh 3vw;
   }
   .userInfo{
     width: 16vw;
-    height: 10vh;
-    font-size: 2.2vw;
+    font-size: 2vw;
   }
+  .infoUserAvatar{
+    font-size: 2vw;
+  }
+  .enlaceFavoritos{
+    margin: -1.8vh 0vw 0vh 3vw;
+    font-size: 2vw;
+   }
+   .enlaceReservas{
+    margin: 0vh 0vw 0vh 3vw;
+    font-size: 2vw;
+   }
   
   /************************************Footer***********************************/
   
   .derechos{
     width: 30vw; 
-    margin: 5vh 0vw 0vh 10vw;
+    margin: 5vh 0vw 0vh 5vw;
   }
   .circuloFooter{
     width: 28px;
@@ -1082,14 +1502,32 @@ a{
     font-size: 2.5vw;
     margin: 3vh 0vw 0vh 0vw;
   }
+  .linkpoliticas{
+    margin: 8vh 0vw 0vh 0vw;
+    font-size: 2.5vw;
+    width: 25vw;
+  }
   .navegacionFooter{
-    width: 30vw;
+    width: 35vw;
     height: 5vh;
-    margin: 6.5vh 10vw 0vh 0vw; 
+    margin: 6.5vh 5vw 0vh 4vw; 
   }
   .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
     font-size: 5vw;
     margin: 1vh 2vw 0vh 0vw;
+  }
+
+  /***********************************Politicas****************************************/
+
+  .politicas{
+    margin: 6vh 0vw 0vh 0vw;
+  }
+  .tituloPolitica{
+    font-size: 2.5vw;
+  }
+  .parrafo{
+    width: 100%;
+    font-size: 1.5vw;
   }
 
   /***********************************Home****************************************/
@@ -1113,7 +1551,7 @@ a{
   .img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres,.img1CategoriaCuatro,.img2CategoriaCuatro,.img1CategoriaCinco,.img2CategoriaCinco{
     width: 26vw;
     height: 15vh;
-    margin: 1vh 0vw 0vh 0vw;
+    margin: 1.5vh 0vw 0vh 0vw;
   }
   .img1CategoriaUno:hover,
 .img2CategoriaUno:hover,
@@ -1125,6 +1563,46 @@ a{
   height: 11vh;
 }
 
+/********************************Buscador Fechas***************************/
+
+.containerBuscadorFechas{
+ 
+  width: 80%;
+  font-size: 1.7vw;
+}
+.inputTextoBuscador{
+ 
+  margin: 0vh 0vw 0vh 0vw;
+}
+
+.calendarioUno{
+  margin: 0vh 0vw 0vh 0vw;
+  width: 100%;
+}.calendarioUno:focus{
+  outline: none;
+  border: 2px solid #6269d3;
+}
+.calendarioUno:hover{
+  border: 2px solid #6269d3;
+}
+.calendarioDos{
+  margin: 0vh 0vw 0vh 1vw;
+  width: 80%;
+ 
+}
+.botonBuscarFechas{
+  width: 40px;
+  height: 95%;
+  margin: 0.2vh 0.5vw 0vh 0vw;
+}
+.inputline,.calendarioUnoline,.calendarioDosline {
+  margin: 1vh 0vw 0vh 0vw;
+  margin-right: 10px; /* Espacio entre la línea y los calendarios */
+}
+
+
+
+
 /********************Buscador****************/
 .contenedorDos{
   width: 65%;
@@ -1133,25 +1611,25 @@ a{
 
 .formularioBuscador{
   width: 40vw;
-  margin: 20vh 0vw 0vh 0vw;
+  margin: 4vh 0vw 0vh 0vw;
 
 }
 .inputSearch{
   width: 30vw;
-  font-size: 2.5vw;
+  font-size: 1.7vw;
 }
 .botonBuscar{
   margin: 1vh 3vw 0vh 0vw;
 }
 .bx-search-alt{
-  font-size: 4vw;
+  font-size: 3.5vw;
 }
 
 /********************Carrusel****************/
 
 .contenedorCarrusel{
   width: 50vw;
-  height: 25vh;
+  height: 30vh;
   margin: 4vh 0vw 0vh 0vw;
 }
 .tituloCarrusel{
@@ -1166,15 +1644,15 @@ a{
 
 .carousel-inner{
   width: 44vw;
-  height: 17vh;
+  height: 20vh;
   margin: 1vh 0vw 0vh 3vw;
-
 }
+
 .carousel-control-prev{
-  margin: 10vh 0vw 0vh -1.5vw;
+  margin: 15.5vh 0vw 0vh -1.5vw;
 }
 .carousel-control-next{
-  margin: 10vh -13vw 0vh 0vw;
+  margin: 14vh -13vw 0vh 0vw;
 }
 
 /********************Productos****************/
@@ -1211,6 +1689,19 @@ a{
 
 /***********************************Detail****************************************/
 
+.contenedorCalificacion{
+  width: 80vw;
+  margin: 0vh 0vw 0vh -9vw;
+}
+.subtituloCalificacion{
+  margin: 2vh 0vw 0vh 2vw;
+  width: 15vw;
+  }
+.inputComentarioCalificacion{
+    margin: 2vh 0vw 0vh 1vw;
+    font-size: 1.2vw;
+}
+
 .contenedorImagenesDetail{
   margin: 3vh 0vw 0vh 15vw;
   width: 80vw;
@@ -1224,19 +1715,48 @@ a{
   margin: 3vh 0vw 0vh 85vw;
   font-size: 1.5vw;
 }
+.bx-calendar-event{
+  font-size: 25px;
+  margin: 0vh 0vw 0vh 4vw;
+}
+.bx-calendar-event{
+ display: none;
+}
+.contenedorDatePicker{
+  width: 20vw;
+  font-size: 1.5vw;
+  height: 6vh;
+  margin: -25vh 0vw 4vh 30vw;
+}
+
+.calendariodetailInicio,.calendariodetailFin{
+  height: 6vh;
+  width: 10vw;
+}
 .tituloDetallesDeProducto{
   background-color:#4867DB;
   text-align: center;
   font-size: 2.5vw;
   color: #FFFFFF;
 }
+.contenedorIconosCompartir{
+  width: 40vw;
+}
+
+.tituloReseña{
+  font-size:2.5vw ;
+}
 .categoriaProducto,.descripcionProducto,.precioProducto{
 font-size: 2vw;
+width: 50vw;
+}
+.dataReseña{
+  font-size: 2vw;
 }
 .contenedorComprar{
 width: 20vw;
 height: 25vh;
-margin: 2vh 0vw 0vh 12vw;
+margin: 4vh 0vw 0vh 12vw;
 }
 .botonComprar{
 width: 9vw;
@@ -1257,6 +1777,7 @@ font-size: 1.5vw;
   margin: 0vh 0vw 1vh 0vw;
   width: 35vw;
   }
+ 
 
 /************Formulario crear cuenta******************/
 
@@ -1275,10 +1796,15 @@ font-size: 1.5vw;
   width: 25vw;
   margin: 0vh 0vw 0vh 8vw;
 }
-.crearCuenta{
-  width: 20vw;
+.inputPassword{
+  font-size: 2vw;
   height: 5vh;
-  margin: 2vh 0vw 2vh 10vw;
+}
+.crearCuenta{
+  width: 12vw;
+  height: 5vh;
+  font-size: 1.5vw;
+  margin: 2vh 0vw 2vh 14vw;
 }
 .crearCuenta:hover{
   width: 21vw;
@@ -1309,6 +1835,42 @@ font-size: 1.5vw;
 .botonLogin:hover{
   width: 16vw;
 
+}
+.textExito{
+  font-size: 1.3vw;
+  height: 45vh;
+}
+.textFalla,.textFallaServer{
+  font-size: 1.5vw;
+  height: 40vh;
+}
+
+/***********************************Listar Reservas****************************************/
+
+.contenedorReservasXUsuario{
+  margin: 4vh 0vw 30vh 2.5vw;
+  width: 95vw;
+}
+.tituloReservas{
+  font-size: 2.5vw;
+}
+.reservaXUsuario{
+  width: 94%;
+}
+.inicioReserva,.estadoReservaFinalizada,.estadoReservaPendiente,.finReserva,.productoEnReserva,.productoEnReserva{
+  width: 18vw;
+  font-size: 1.5vw;
+}
+.contenedorProductosDeLaReserva{
+  display: flex;
+  margin: 4vh 0vw 0vh 1vw;
+}
+.tituloProductosDeReserva{
+  font-size: 2vw;
+ 
+}
+.productoEnReserva{
+  width: 7vw;
 }
 
 
@@ -1352,6 +1914,8 @@ font-size: 1.5vw;
   }
 
   /************************************Footer***********************************/
+  
+  
   .circuloFooter{
     width: 17px;
     height: 15px;
@@ -1366,10 +1930,16 @@ font-size: 1.5vw;
     margin: 2.9vh 0vw 0vh 2vw;
   }
   .navegacionFooter{
-    height: 5vh;
+    margin: 6.5vh 5vw 0vh 4vw; 
   }
   .bx.bxl-facebook-circle,.bxl-whatsapp,.bxl-instagram,.bxl-twitter {
     margin: 1vh 2vw 0vh 0vw;
+  }
+
+  /***********************************Politicas****************************************/
+
+  .parrafo{
+    font-size: 2.3vw;
   }
 
 /************************************Home***********************************/ 
@@ -1387,11 +1957,41 @@ font-size: 1.5vw;
 
 .img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres,.img1CategoriaCuatro,.img2CategoriaCuatro,.img1CategoriaCinco,.img2CategoriaCinco{
   width: 30vw;
-  height: 18vh;
-  margin: 2vh 0vw 0vh 0vw;
+  height: 21vh;
+  margin: 4vh 0vw 0vh 0vw;
 }
 
+/********************************Buscador Fechas***************************/
 
+.containerBuscadorFechas{
+  height: 1.5%;
+  font-size: 1.3vw;
+}
+.inputTextoBuscador{
+  height: 4.5vh;
+  margin: 0vh 0vw 0vh 0vw;
+}
+.calendarioUno{
+  width: 90%;
+  height: 4.5vh;
+  margin: 0vh 0vw 0vh 0vw;
+}
+.calendarioDos{
+  height: 4.5vh;
+  margin: 0vh 0vw 0vh 1vw;
+}
+.botonBuscarFechas{
+  width: 40px;
+  height: 95%;
+  margin: 0.3vh 1vw 0vh 0vw;
+}
+.inputline,.calendarioUnoline,.calendarioDosline {
+  width: 1px;
+  height: 60%;
+  margin: 1vh 0vw 0.5vh 0vw;
+  background-color: #000;
+  margin-right: 7px; /* Espacio entre la línea y los calendarios */
+}
 
 /********************Buscador****************/
 .contenedorDos{
@@ -1401,12 +2001,12 @@ font-size: 1.5vw;
 .formularioBuscador{
   width: 55vw;
   height: 4vh;
-  margin: 20vh 0vw 0vh 0vw;
+  margin: 4vh 0vw 0vh 0vw;
 }
 .inputSearch{
   width: 40vw;
   height: 3vh;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   margin: 0.5vh 0vw 0vh 5vw;
 }
 .botonBuscar{
@@ -1430,15 +2030,15 @@ font-size: 1.5vw;
   color: #FFFFFF;
 }
 .carousel-inner{
-  height: 17.5vh;
+  height: 20vh;
   margin: 1vh 0vw 0vh 7vw;
 
 }
 .carousel-control-prev{
-  margin: 10vh 0vw 0vh -0.5vw;
+  margin: 15vh 0vw 0vh -0.5vw;
 }
 .carousel-control-next{
-  margin: 10vh -18.5vw 0vh 0vw;
+  margin: 15vh -18.5vw 0vh 0vw;
 }
 
 
@@ -1454,13 +2054,13 @@ font-size: 1.5vw;
   margin: 4vh 0vw 0vh 0vw;
 }
 .card{
-  width: 50vw;
-  height: 15vh;
+  width: 45vw;
+  height: 18vh;
   margin: 4vh 0vw 0vh 0vw;
 }
 .imageProduct{
-  width: 50vw;
-  height: 10vh;
+  width: 45vw;
+  height: 13vh;
 }
 .DescriptionProduct{
   height: 5vh;
@@ -1473,10 +2073,34 @@ a{
 }
 .botonPaginadoAtras,.botonPaginadoAdelante{
   width: 11vw;
+  font-size: 2.5vw;
 }
 
 
 /***********************************Detail****************************************/
+
+.contenedorCalificacion{
+  
+  width:90vw;
+  margin: 0vh 0vw 0vh -20vw;
+}
+
+.subtituloCalificacion{
+  width: 18vw;
+  font-size: 4vw;
+  height: 5vh;
+  }
+
+  .inputComentarioCalificacion{
+    width: 18vw;
+    margin: 2vh 0vw 0vh 1vw;
+    font-size: 1.8vw;
+  }
+  .botonCalificar{
+    width: 9vw;
+    margin: 0vh 0vw 0vh 2vw;
+    font-size: 1.8vw;
+  }
 
 .botonRegresar{
   width: 15vw;
@@ -1505,21 +2129,52 @@ a{
 .verMas:hover{
   width: 10.5vw;
 }
+
+
+.contenedorDatePicker{
+  font-size: 2vw;
+  height: 5vh;
+  width:30%;
+ 
+}
+
+.calendariodetailInicio,.calendariodetailFin{
+  height: 5vh;
+  width: 15vw;
+}
 .tituloDetallesDeProducto{
   font-size: 3vw;
 }
 .categoriaProducto,.descripcionProducto,.precioProducto{
 font-size: 3vw;
 }
+.categoriaProducto{
+  width: 30vw;
+}
+.contenedorIconosCompartir{
+  width: 70vw;
+}
+.tituloReseña{
+  font-size:3vw ;
+}
+.dataReseña{
+  font-size: 3vw;
+}
 .contenedorComprar{
 width: 50vw;
 height: 25vh;
-margin: 2vh 0vw 0vh 12vw;
+margin: 2vh 0vw 0vh -5vw;
 }
 .botonComprar{
 width: 15vw;
 font-size: 2.5vw;
 }
+.botonComprar:hover{
+  width: 15vw;
+  font-size: 2.5vw;
+  }
+
+  
 
 /************Formulario crear cuenta******************/
 
@@ -1539,8 +2194,9 @@ font-size: 2.5vw;
   margin: 0vh 0vw 0vh 11vw;
 }
 .crearCuenta{
-  width: 30vw;
-  margin: 2vh 0vw 2vh 20vw;
+  width: 20vw;
+  font-size: 2vw;
+  margin: 2vh 0vw 2vh 25vw;
 }
 .crearCuenta:hover{
   width: 31vw;
@@ -1573,8 +2229,21 @@ font-size: 2.5vw;
   width: 21vw;
 
 }
+.textExito{
+  font-size: 1.5vw;
+  height: 30vh;
+}
+.textFalla,.textFallaServer{
+  font-size: 2.5vw;
+  height: 40vh;
+  width: 40vw;
+}
 
+/***********************************Listar Reservas****************************************/
 
+.pageListarReservas{
+  display: none;  
+}
 
 /***********************************Pagina-administrador****************************************/
 

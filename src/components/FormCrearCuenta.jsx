@@ -23,7 +23,7 @@ const FormCrearCuenta = () => {
         e.preventDefault()
         const regexSoloLetras = /^[A-Za-z]+$/;
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        const regexPassword = /^.{8,}$/; //Minimo 4 caracteres
+        const regexPassword = /^.{8,}$/; //Minimo 8 caracteres
         try {
            if(usuarioRegistrar.username.trim()==="" || usuarioRegistrar.password.trim()==="" || usuarioRegistrar.nombre.trim()==="" || usuarioRegistrar.apellido.trim()==="" || usuarioRegistrar.direccion.trim()===""){
             Swal.fire({
@@ -64,7 +64,7 @@ const FormCrearCuenta = () => {
             else if (!regexPassword.test(usuarioRegistrar.password)) {
                 Swal.fire({
                     title: "Registro fallo",
-                    text: "La contraseña debe contener minimo 4 caracteres",
+                    text: "La contraseña debe contener minimo 8 caracteres",
                     icon: "error",
                     confirmButtonColor: "#ff00008f",
                     confirmButtonText: "Aceptar",

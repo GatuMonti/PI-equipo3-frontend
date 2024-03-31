@@ -31,6 +31,10 @@ const reducer = (state, action) => {
         };
       case 'change_theme':
         return { ...state, theme: action.payload };
+      case 'get_favorites':
+        return{...state, favoritos: action.payload}
+      case 'set_isFavorite':
+        return{...state, isFavorite: action.payload}
       default:
         break;
     }

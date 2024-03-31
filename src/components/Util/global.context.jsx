@@ -8,7 +8,9 @@ export const initialState={
     productos:[],
     categorias:[], //Se guarda el listado de categorias
     caracteristicas:[],
-    theme:"light"
+    theme:"light",
+    favoritos:[],
+    isFavorite:false,  // Guarda los favoritos del usuario mientras tenga abierta la sesion
 }
 
 export const contextoGlobal=createContext();
@@ -28,7 +30,7 @@ const ContextProvider=({children})=>{
     useEffect(()=>{
         if(!updatingProductos){
             axios(endPointProducts)
-            .then(res=> dispatch({type: 'get_productos', payload:res.data},console.log(res.data)))
+            .then(res=> dispatch({type: 'get_productos', payload:res.data},console.log("Respuesta del back de los productos de la app : ",res.data)))
         }
         else{
             setUpdatingProductos(false)

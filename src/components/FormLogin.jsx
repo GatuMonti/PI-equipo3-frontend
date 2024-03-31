@@ -13,6 +13,10 @@ const FormLogin = () => {
         password:""
     })
 
+   const favoritos=[]
+
+   const favoritosJson=JSON.stringify(favoritos)
+
     const endPointLogin="http://localhost:8080/auth/login";
 
      // Función para decodificar el token JWT
@@ -25,6 +29,8 @@ const FormLogin = () => {
 // };
 
  // Función para decodificar el token JWT
+
+ 
 function parseJwt (token) {
      var base64Url = token.split('.')[1];
       var base64 = base64Url.replace('-', '+').replace('_', '/'); 
@@ -89,8 +95,8 @@ function parseJwt (token) {
                 },2000)
 
                 Swal.fire({
-                    title: "Logeado",
-                    text: "El usuario se ha logeado",
+                    title: "Logueado",  
+                    text: "El usuario se ha logueado",
                     icon: "success",
                     confirmButtonColor: "#008000a9",
                     customClass: {

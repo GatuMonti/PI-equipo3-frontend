@@ -12,6 +12,8 @@ import FormCrearCuenta from './components/FormCrearCuenta'
 import FormLogin from './components/FormLogin'
 import PanelCaracteristicas from './Routes/PanelCaracteristicas'
 import PanelCategorias from './Routes/PanelCategorias'
+import Politica from './components/Politica'
+import ListarReservas from './components/ListarReservas'
 
 
 function App() {
@@ -32,7 +34,8 @@ function App() {
            <Route path='/FormLogin/' element={<FormLogin/>}/>
            <Route path='/pageAdmin/panelCaracteristicas' element={<PanelCaracteristicas/>}/> {/*----Ruta al panel de caracteristicas*/}
            <Route path='pageAdmin/panelCategorias' element={<PanelCategorias/>}/> {/*<---Ruta al panel de categorias*/}
-
+           <Route path='/Politicas/' element={<Politica/>}/>
+           <Route path='/listarReservas/' element={<ListarReservas/>}/>
 
          </Routes>
          <Footer/>
