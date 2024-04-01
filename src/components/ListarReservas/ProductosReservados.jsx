@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { urlBackend } from '../App';
+import { urlBackend } from '../../App';
+// import styles from './productosReservados.module.css'
+import './estilosProductoACalificar.css';
 
 const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, username, recibirCambioDeEstado }) => {
   // Estados para manejar el comentario y la calificación

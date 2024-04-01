@@ -12,7 +12,7 @@ import FormCrearCuenta from './components/CrearCuenta/FormCrearCuenta'
 import FormLogin from './components/Login/FormLogin'
 import PanelDetallesUsuario from './Routes/PanelDetallesUsuario'
 import PanelUsuarios from './Routes/PanelUsuarios'
-import Politicas from './components/Politicas'
+import Politicas from './components/Politicas/Politicas'
 import PanelReservas from './Routes/PanelReservas'
 
 //const urlBackend = import.meta.env.VITE_URL_BACKEND;

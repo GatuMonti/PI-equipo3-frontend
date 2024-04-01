@@ -3,9 +3,10 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { Pagination } from "react-bootstrap";
 import { format } from "date-fns";
-import ProductoReservado from "../ProductosReservados";
+import ProductoReservado from "./ProductosReservados";
 import { urlBackend } from '../../App';
-import styles from './listarReserva.module.css'
+import styles from './listarReserva.module.css';
+import './estilosProductoACalificar.css';
 
 const ListarReservas = () => {
   const [reservas, setReservas] = useState([]);

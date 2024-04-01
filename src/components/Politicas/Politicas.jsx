@@ -1,15 +1,15 @@
-
+import styles from './politicas.module.css';
 
 const politicas= () =>{
     return(
-        <div className="contenedorPoliticas">
-             <div className="politicasTitle">
+        <div className={styles.contenedorPoliticas}>
+             <div className={styles.politicasTitle}>
                 <h1><b>Política de Uso - Vortex Games</b></h1>
             </div>    
        
-            <div className='politicas'>
+            <div className={styles.politicas}>
                    
-                <div className="politica">
+                <div className={styles.politica}>
                         <li>
                             <h2><b>Proceso de Alquiler:</b></h2>
                             <ul>
@@ -21,7 +21,7 @@ const politicas= () =>{
                         </li>
                 </div>
                     
-                <div className="politica">
+                <div className={styles.politica}>
                         <li>
                             <h2><b>Tarifas y Cargos Adicionales:</b></h2>
                             <ul>
@@ -32,7 +32,7 @@ const politicas= () =>{
                         </li>
                 </div>
                     
-                <div className="politica">
+                <div className={styles.politica}>
                         <li>
                             <h2><b>Condiciones de Alquiler:</b></h2>
                             <ul>
@@ -44,7 +44,7 @@ const politicas= () =>{
                         </li>
                     </div>
                 
-                <div className="politica">
+                <div className={styles.politica}>
                     <li>
                             <h2><b>Política de Cancelación:</b></h2>
                             <ul>
