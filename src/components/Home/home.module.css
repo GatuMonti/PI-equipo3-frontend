@@ -68,12 +68,6 @@
   /********************Buscador****************/
 
 
-  /* .contenedorDos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  } */
-  
   .barraBuscador{
     width: 90vw;   
     max-width: 1000px; 
@@ -286,9 +280,34 @@
   } 
  
   /*Estilos para celular Iphone XR, TODAS LAS PANTALLAS MENORES A 415px*/
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 414px) {
     .formularioBuscador {
       display: none; 
+    }
+
+    .buscadorConFechas{  
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .formCalendarios{
+      display: flex;   
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      width: 45%;
+    }
+
+    .inputSearchBuscador{
+      width: 100%;
+    }
+
+    .barraBuscador{
+      width: 100vw;     
+      margin-top: 0px;
+      border-radius: 0%;
+      padding: 5px;
     }
   } 
    
