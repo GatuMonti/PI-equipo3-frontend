@@ -201,12 +201,13 @@
 
 
 .react-autosuggest__suggestions-container {
-  position: relative;
+  position: absolute;
   z-index: 10;
 }
 
 .react-autosuggest__suggestions-container--open {
   display: block;
+  overflow-y: auto;
   width: calc(100% - 20px);
   /* Ancho del contenedor (ajustar según sea necesario) */
   max-height: 200px;

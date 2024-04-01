@@ -1,316 +1,383 @@
-.home{
+.home {
   min-width: 60vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2vh 0vh;
 
+}
+
+.contenedorProductos {
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedorProductos h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.contenedorCategorias {
+  background-color: #4867DB;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  margin: 15vh 0vw 0vh 0vw;
+}
+
+.tituloCategorias {
+  font-size: 2vw;
+  text-align: center;
+  margin: 3vh 0vw 0vh 0vw;
+  font-weight: 600;
+}
+
+.categoriaUno,
+.categoriaDos,
+.categoriaTres,
+.categoriaCuatro,
+.categoriaCinco {
+  display: flex;
+  flex-direction: column;
+  width: 13vw;
+  align-items: center;
+  margin: 5vh 0vw 0vh 1vw;
+}
+
+.tituloCategoriaUno,
+.tituloCategoriaDos,
+.tituloCategoriaTres,
+.tituloCategoriaCuatro,
+.tituloCategoriaCinco {
+  margin: 0vh 0vw 0vh 0vw;
+  color: #FFFFFF;
+  font-size: 1.2vw;
+}
+
+.img1CategoriaUno,
+.img2CategoriaUno,
+.img1CategoriaDos,
+.img2CategoriaDos,
+.img1CategoriaTres,
+.img2CategoriaTres,
+.img1CategoriaCuatro,
+.img2CategoriaCuatro,
+.img1CategoriaCinco,
+.img2CategoriaCinco {
+  width: 13vw;
+  height: 15vh;
+  margin: 3vh 0vw 2vh 0vw;
+}
+
+.img1CategoriaUno:hover,
+.img2CategoriaUno:hover,
+.img1CategoriaDos:hover,
+.img2CategoriaDos:hover,
+.img1CategoriaTres:hover,
+.img2CategoriaTres:hover,
+.img1CategoriaCuatro:hover,
+.img2CategoriaCuatro:hover,
+.img1CategoriaCinco:hover,
+.img2CategoriaCinco:hover {
+  width: 14vw;
+}
+
+
+/********************Buscador****************/
+
+
+.barraBuscador {
+  width: 90vw;
+  max-width: 1000px;
+  min-height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #DAC9DF;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+
+.buscadorConFechas {
+  widows: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.formCalendarios {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 45%;
+}
+
+.formularioBuscador {
+  display: flex;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+.inputSearch {
+  width: 10vw;
+  min-width: 50px;
+  height: auto;
+  text-align: center;
+  border: none;
+  font-size: 1.1vw;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: black;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 35px;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+
+.inputSearchBuscador {
+  width: 150px;
+  height: 33px;
+  text-align: center;
+  border: none;
+  font-size: 1vw;
+  background-color: #a80808;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: black;
+  display: inline-block;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: left;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.inputSearchBuscador::placeholder {
+  color: black;
+}
+
+.inputSearchBuscador:focus {
+  border: solid black;
+
+}
+
+
+.bx.bx-calendar {
+  font-size: 3.7vh;
+}
+
+
+.calendarioInicio {
+  width: 5vw;
+  min-width: 50px;
+  height: 33px;
+
+  border-radius: 8px;
+  font-size: 1.68vh;
+
+}
+
+.calendarioFinalizacion {
+  width: 5vw;
+  min-width: 50px;
+  height: 33px;
+  border-radius: 8px;
+  font-size: 1.68vh;
+}
+
+.inputSearch:focus {
+  outline: none;
+}
+
+.botonBuscarFecha {
+  height: 33px;
+  width: auto;
+  border: none;
+  cursor: pointer;
+  background-color: #AC6ABA;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.botonBuscarFecha:hover,
+.botonBuscarFecha:focus {
+  background-color: #F082AC;
+}
+
+.botonBuscar {
+  width: 2vw;
+  height: 2%;
+  border: none;
+  cursor: pointer;
+  background-color: #AC6ABA;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 35px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.botonBuscar:hover,
+.botonBuscar:focus {
+  background-color: #F082AC;
+}
+
+
+/*Estilos para IpadMini, TODAS LAS PANTALLAS MENORES A 768px*/
+@media screen and (max-width: 768px) {
+  .contenedorProductos {
+    width: 80vw;
   }
 
-  .contenedorProductos{
-    width: 60vw;
-    display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
+  .barraBuscador {
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-  }
-
-  .contenedorProductos h1{
-    width: 100%;
-    text-align: center;
-  }
-
-  .contenedorCategorias{
-    background-color: #4867DB;
-    display: flex;
-    flex-direction: column;
-    width: 15vw;
-    margin: 15vh 0vw 0vh 0vw;
-  }
-  .tituloCategorias{
-    font-size: 2vw;
-    text-align: center;
-    margin: 3vh 0vw 0vh 0vw;
-    font-weight: 600;
-  }
-  .categoriaUno, .categoriaDos,.categoriaTres,.categoriaCuatro,.categoriaCinco{
-    display: flex;
-    flex-direction: column;
-    width: 13vw;
-    align-items: center;
-    margin: 5vh 0vw 0vh 1vw;
-  }
-  .tituloCategoriaUno,.tituloCategoriaDos,.tituloCategoriaTres,.tituloCategoriaCuatro,.tituloCategoriaCinco{
-    margin: 0vh 0vw 0vh 0vw;
-    color: #FFFFFF;
-    font-size: 1.2vw;
-  }
-  .img1CategoriaUno,.img2CategoriaUno,.img1CategoriaDos,.img2CategoriaDos,.img1CategoriaTres,.img2CategoriaTres,.img1CategoriaCuatro,.img2CategoriaCuatro,.img1CategoriaCinco,.img2CategoriaCinco{
-    width: 13vw;
-    height: 15vh;
-    margin: 3vh 0vw 2vh 0vw;
-  }
-  .img1CategoriaUno:hover,
-  .img2CategoriaUno:hover,
-  .img1CategoriaDos:hover,
-  .img2CategoriaDos:hover,
-  .img1CategoriaTres:hover,
-  .img2CategoriaTres:hover,
-  .img1CategoriaCuatro:hover,
-  .img2CategoriaCuatro:hover,
-  .img1CategoriaCinco:hover,
-  .img2CategoriaCinco:hover {
-    width: 14vw;
-  }
-
-
-  /********************Buscador****************/
-
-
-  .barraBuscador{
-    width: 90vw;   
-    max-width: 1000px; 
-    min-height: 6vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #DAC9DF;
-    border-radius: 8px;
+    width: 100vw;
+    height: 6vh;
+    margin-top: 0px;
+    border-radius: 0%;
     padding: 5px;
   }
-  
-  
-  .buscadorConFechas{
-    widows: 80%;    
+
+  .formularioBuscador {
+    display: flex;
+    align-items: center;
+    margin: 0px 10px 0px 10px;
+  }
+  .botonBuscar{
+    margin: 10px;
+    border-radius: 100%;
+  }
+
+  .buscadorConFechas {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .inputSearch {
+    width: 150px;
+  }
+
+  .formCalendarios {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .formCalendarios{
-    display: flex;   
-    justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     width: 45%;
   }
 
-  .formularioBuscador{
-    display: flex;    
-    height: auto;
-    border-radius: 8px;
-  }
-
-  
-  .inputSearch{
-    width: 10vw;
-    min-width: 50px;
-    height: auto;
-    text-align: center;
-    border: none;
-    font-size: 1.1vw;
-    cursor: pointer;
-    background-color: #FFFFFF;
-    color: black;
-    border-radius: 8px;
-     border-style: none;
-     box-sizing: border-box;
-     color: black;
-     cursor: pointer;
-     display: inline-block;
-     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-     font-size: 14px;
-     font-weight: 500;
-     height: 35px;
-     line-height: 20px;
-     list-style: none;
-     outline: none;
-     position: relative;
-     text-align: center;
-     text-decoration: none;
-     transition: color 100ms;
-     vertical-align: baseline;
-     user-select: none;
-     -webkit-user-select: none;
-     touch-action: manipulation;
-  }
-  
-  
-  
-  .inputSearchBuscador{
-    width: 150px;
-    height: 33px;
-    text-align: center;
-    border: none;
-    font-size: 1vw;
-    background-color: #a80808;
-    border-radius: 8px;
-     border-style: none;
-     box-sizing: border-box;
-     color: black;
-     display: inline-block;
-     font-size: 14.5px;
-     font-weight: 500;
-     line-height: 20px;
-     list-style: none;
-     outline: none;
-     position: relative;
-     text-align: left;
-     transition: color 100ms;
-     vertical-align: baseline;
-     user-select: none;
-     -webkit-user-select: none;
-     touch-action: manipulation;
-  }
-  
-  .inputSearchBuscador::placeholder {
-    color: black;
-  }
-  
-  .inputSearchBuscador:focus {
-    border:  solid black;
-    
-  }
-  
-  
-  .bx.bx-calendar {
-    font-size: 3.7vh;
-  }  
-  
-  
-  .calendarioInicio {
-    width: 5vw;
-    min-width: 50px;
-    height: 33px;
-    
-    border-radius: 8px;
-    font-size: 1.68vh;
-    
-  }
-  
-  .calendarioFinalizacion{  
-    width: 5vw;
-    min-width: 50px;
-    height: 33px;    
-    border-radius: 8px;
-    font-size: 1.68vh;
-  }
-  
-  .inputSearch:focus{
-    outline: none;
-  }
-  
-  .botonBuscarFecha{
-    height: 33px;
-    width: auto;
-    border: none;
-    cursor: pointer;
-    background-color: #AC6ABA;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 20px;
-    list-style: none;
-    outline: none;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  
-  .botonBuscarFecha:hover,
-  .botonBuscarFecha:focus {
-    background-color: #F082AC;
-  }
-  
-  .botonBuscar{
-    width: 2vw;
-    height: 2%;
-    border: none;
-    cursor: pointer;
-     background-color: #AC6ABA;
-      border-radius: 8px;
-      border-style: none;
-      box-sizing: border-box;
-      color: #FFFFFF;
-      cursor: pointer;
-      display: inline-block;
-      font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      height: 35px;
-      line-height: 20px;
-      list-style: none;
-      margin: 0;
-      outline: none;
-      padding: 10px 16px;
-      position: relative;
-      text-align: center;
-      text-decoration: none;
-      transition: color 100ms;
-      vertical-align: baseline;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-    }
-  
-    .botonBuscar:hover,
-    .botonBuscar:focus {
-      background-color: #F082AC;
-    }
-
-    
-  /*Estilos para IpadMini, TODAS LAS PANTALLAS MENORES A 768px*/
-  @media screen and (max-width: 768px) {
-    .contenedorProductos{
-      width: 80vw;
-    }  
+  .inputSearchBuscador {
+    width: 100%;
   } 
- 
-  /*Estilos para celular Iphone XR, TODAS LAS PANTALLAS MENORES A 415px*/
-  @media screen and (max-width: 414px) {
-    .formularioBuscador {
-      display: none; 
-    }
+}
 
-    .buscadorConFechas{  
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-    }
 
-    .formCalendarios{
-      display: flex;   
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: nowrap;
-      width: 45%;
-    }
 
-    .inputSearchBuscador{
-      width: 100%;
-    }
 
-    .barraBuscador{
-      width: 100vw;     
-      margin-top: 0px;
-      border-radius: 0%;
-      padding: 5px;
-    }
-  } 
-   
-   
-  
-  
+
+
+/*Estilos para celular Iphone XR, TODAS LAS PANTALLAS MENORES A 415px*/
+@media screen and (max-width: 414px) {
+  .formularioBuscador {
+    display: none;
+  }
+
+  .buscadorConFechas {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .formCalendarios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 45%;
+  }
+
+  .inputSearchBuscador {
+    width: 100%;
+  }
+
+  .barraBuscador {
+    width: 100vw;
+    height: 40px;
+    margin-top: 0px;
+    border-radius: 0%;
+    padding: 5px;
+  }
+}
