@@ -19,34 +19,34 @@ const CalificacionCard = ({ productId }) => {
     fetchData();
   }, [productId]);
 
-  const renderStars = () => {
-    if (calificacionData) {
-      const rating = calificacionData.calificacionPromedio;
-      const totalStars = 5;
-      const stars = [];
+    const renderStars = () => {
+      if (calificacionData) {
+        const rating = calificacionData.calificacionPromedio;
+        const totalStars = 5;
+        const stars = [];
 
-      // Calcular estrellas llenas y medias estrellas
-      let fullStars = Math.floor(rating);
-      let halfStar = rating % 1 >= 0.5 ? 1 : 0;
+        // Calcular estrellas llenas y medias estrellas
+        let fullStars = Math.floor(rating);
+        let halfStar = rating % 1 >= 0.5 ? 1 : 0;
 
-      // Completar con estrellas vacías si es necesario
-      const remainingStars = totalStars - fullStars - halfStar;
-      for (let i = 0; i < remainingStars; i++) {
-        stars.push(<span key={i} style={{ color: 'gold', fontSize: '1.5rem'}}><FaRegStar /></span>);
+        // Completar con estrellas vacías si es necesario
+        const remainingStars = totalStars - fullStars - halfStar;
+        for (let i = 0; i < remainingStars; i++) {
+          stars.push(<span key={i} style={{ color: 'gold', fontSize: '1.5rem'}}><FaRegStar /></span>);
+        }
+
+        // Agregar media estrella si corresponde
+        if (halfStar === 1) {
+          stars.unshift(<span key={fullStars} style={{ color: 'gold', fontSize: '1.5rem'}}><FaStarHalfAlt /></span>);
+        }
+
+        // Agregar estrellas llenas
+        for (let i = 0; i < fullStars; i++) {
+          stars.unshift(<span key={fullStars + halfStar + i} style={{ color: 'gold', fontSize: '1.5rem'}}><FaStar /></span>);
+        }
+
+        return stars;
       }
-
-      // Agregar media estrella si corresponde
-      if (halfStar === 1) {
-        stars.unshift(<span key={fullStars} style={{ color: 'gold', fontSize: '1.5rem'}}><FaStarHalfAlt /></span>);
-      }
-
-      // Agregar estrellas llenas
-      for (let i = 0; i < fullStars; i++) {
-        stars.unshift(<span key={fullStars + halfStar + i} style={{ color: 'gold', fontSize: '1.5rem'}}><FaStar /></span>);
-      }
-
-      return stars;
-    }
   };
 
   return (     

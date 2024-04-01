@@ -79,17 +79,33 @@
   display: flex;
   margin: 1vh 0vw 0vh 0vw;
   width: 100%;
-  justify-content: space-around;/******************************************************************/
+  justify-content: space-around;
 }
 
 .comparteRedes {
   display: flex;
   margin: 1vh 0vw 2vh 0vw;
-
-
 }
 
+/******************************************************************/
+/* Estilos de Calificacion Promedio */
+/******************************************************************/
+
+.cardBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #AC6ABA;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 3px;
+  color: white;
+}
+
+/******************************************************************/
 /* FAVORITOS DENTRO DE DETAIL  */
+/******************************************************************/
+
 
 .contenedorFavorito {
   display: inline-block;

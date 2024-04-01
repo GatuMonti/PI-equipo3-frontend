@@ -19,7 +19,7 @@ const CalificacionPromedioInfo = ({ productId }) => {
   }, [productId]);
 
   return (
-    <div>
+    <div className='contenedorCalificPromedio'>
       {calificacionData ? (
         <div className='cardBottom'>  
         <div>Votos: <span className='cardVotos'>{calificacionData.totalDeCalificaciones !== 0 ? calificacionData.totalDeCalificaciones : 'S/N'}</span></div>       
