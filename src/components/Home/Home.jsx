@@ -9,7 +9,8 @@ import axios from "axios";
 import { format } from 'date-fns';
 import Autosuggest from 'react-autosuggest';
 import { urlBackend } from '../../App';
-import styles from "./home.module.css"
+import styles from "./home.module.css";
+import './suggest.css';
 
 
 const Home = () => {

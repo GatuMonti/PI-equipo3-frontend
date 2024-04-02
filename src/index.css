@@ -195,48 +195,7 @@
 
 
 
-/******************************************************************/
-/* Estilos para las sugerencias del Autosuggest */
-/******************************************************************/
 
-
-.react-autosuggest__suggestions-container {
-  position: absolute;
-  z-index: 10;
-}
-
-.react-autosuggest__suggestions-container--open {
-  display: block;
-  overflow-y: auto;
-  width: calc(100% - 20px);
-  /* Ancho del contenedor (ajustar según sea necesario) */
-  max-height: 200px;
-  /* Altura máxima del contenedor (ajustar según sea necesario) */
-  overflow-y: auto;
-  /* Agregar barra de desplazamiento vertical si es necesario */
-  background-color: white;
-  /* Fondo blanco */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.react-autosuggest__suggestions-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.react-autosuggest__suggestion {
-  padding: 10px;
-  cursor: pointer;
-  color: black;
-  /* Color de texto negro */
-}
-
-.react-autosuggest__suggestion--highlighted {
-  background-color: #f0f0f0;
-}
 
 
 @media(max-width:800px) {
