@@ -137,6 +137,7 @@
   width: 40vw;
   display: flex;
   flex-direction: column;
+  background-color: white;
   /* margin: 2vh 0vw 0vh 10vw; */
 
 }
@@ -161,7 +162,6 @@
   font-size: 1.1vw;
   /* margin: 1vh 0vw 0vh 2vw; */
 }
-
 
 
 .contenedorComprar {
@@ -361,3 +361,69 @@
 }
 
 /* 414 para iphone  */
+
+@media screen  and (max-width: 414px){
+  
+
+  .contenedorDatePicker {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contenedor4imagenes{
+    display: none;
+  }
+
+  .contenedorImagenPrincipal{
+    width: 100%;
+  }
+
+  .detalleProducto{
+    width: 400px;
+  }
+
+  .calendarioFinalizacionDetail .calendarioInicioDetail {
+    display: flex;
+    border-radius: 8px;
+    font-size: large;
+    margin: 0px 5px;
+    
+  }
+  
+  
+    
+  .calendarioCalificaciones{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    width: 400px;
+  }
+
+  .contenedorDetalles{
+    width: 400px;
+  }
+
+  .tituloDetallesDeProducto {
+    
+    font-size: 4vw;
+    
+  }
+  
+  .categoriaProducto {
+    width: 18vw;
+    
+    font-size: 3vw;
+    
+  }
+  
+  .descripcionProducto,
+  .precioProducto {
+   
+    font-size: 3vw;    
+  }
+
+
+
+}

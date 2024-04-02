@@ -7,6 +7,7 @@
   border: 1px solid #ccc; /* Borde para la caja */
   padding: 4px;
   border-radius: 10px;
+  background-color: white;
 }
 
 .container h2{
@@ -52,4 +53,13 @@
   font-size: 20px; /* Tamaño de las estrellas */
 }
 
-  
+@media screen  and (max-width: 414px){
+
+  .container{
+    width: 400px;
+    margin: 20px;
+    background-color: white;
+  }
+
+
+}

@@ -17,7 +17,7 @@
 }
 
 .contenedorProductos h1 {
-  width: 100%;
+  width: 80%;
   text-align: center;
 }
 
@@ -93,12 +93,12 @@
 .barraBuscador {
   width: 90vw;
   max-width: 1000px;
-  min-height: 6vh;
+  height: 9vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: #DAC9DF;
+  background-color: #c8a3d49c;
   border-radius: 8px;
   padding: 5px;
 
@@ -196,8 +196,6 @@
   border: solid black;
 
 }
-
-
 
 
 .calendarioInicio {
@@ -303,7 +301,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    height: 6vh;
+    max-height: 6vh;
     margin-top: 0px;
     border-radius: 0%;
     padding: 5px;
@@ -396,7 +394,7 @@
 
   .barraBuscador {
     width: 100vw;
-    height: 40px;
+    height: 50px;
     margin-top: 0px;
     border-radius: 0%;
     padding: 10px;
