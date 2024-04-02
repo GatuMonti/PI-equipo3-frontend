@@ -1,5 +1,6 @@
 import React from 'react';
 import Avatar from 'react-avatar';
+import styles from './panelDetallesUsuario.module.css'
 
 const PanelDetallesUsuario = () => {
   // Obtener los datos del usuario del localStorage
@@ -9,10 +10,10 @@ const PanelDetallesUsuario = () => {
   const rol = localStorage.getItem('userRole');
 
   return (
-    <main className='panelDetallesDeUsuario'>
-      <h1>Detalles del Usuario</h1>
-      <div className='detallesDeUsuario'>
-      <Avatar name={nombre+" "+apellido} round={true} className='avatarUser' />
+    <main className={styles.panelDetallesDeUsuario}>
+      <h1>Mi Perfil</h1>
+      <div className={styles.detallesDeUsuario}>
+      <Avatar name={nombre+" "+apellido} round={true} className={styles.avatarUser} />
         <p><strong>Email:</strong> {email}</p>
         <p><strong>Nombre:</strong> {nombre}</p>
         <p><strong>Apellido:</strong> {apellido}</p>

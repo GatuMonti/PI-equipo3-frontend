@@ -10,7 +10,7 @@ import { useContextGlobal } from './components/Util/global.context'
 import EditarProducto from './components/AgregarProducto/EditarProducto'
 import FormCrearCuenta from './components/CrearCuenta/FormCrearCuenta'
 import FormLogin from './components/Login/FormLogin'
-import PanelDetallesUsuario from './Routes/PanelDetallesUsuario'
+import PanelDetallesUsuario from './Routes/DetalleUsuario/PanelDetallesUsuario'
 import PanelUsuarios from './Routes/PanelUsuarios'
 import Politicas from './components/Politicas/Politicas'
 import PanelReservas from './Routes/PanelReservas'
@@ -46,4 +46,3 @@ function App() {
 
 export { urlBackend };
 export default App;
-
