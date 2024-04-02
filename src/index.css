@@ -1,6 +1,7 @@
 .app-container {
+  background-image: url('Images/fondoDePantalla2.png');
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
   min-height: 100vh;
   /* Para que la página ocupe al menos el alto de la ventana del navegador */
@@ -8,6 +9,7 @@
 
 
 .content {
+
   margin: 6rem 0rem 0rem 0rem;
   flex: 1;
   /* El contenido ocupará todo el espacio disponible */
@@ -164,6 +166,8 @@
 .contenidoAdmin {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+
 
 }
 
@@ -191,6 +195,14 @@
   ;
   background-color: #FFFFFF;
   box-shadow: 5px 5px 15px rgb(78, 77, 77);
+}
+
+
+.agregarProducto:active,
+.ListarProductos:active,
+.ListarCategorias:active,
+.actualizarProducto:active {
+  transform: scale(0.9);
 }
 
 

@@ -1,78 +1,96 @@
 .contenedorTablaListados {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .tituloTablaListados{
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tituloTablaListados {
+  display: flex;
+  justify-content: center;
+}
 
 
-  .titleListTabla {
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    color: #4867DB;
-    text-align: center;
-    background-color: #FFFFFF;
-  }
-  
-  .imageTableListAdmin {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-  }
-  
-  .botonEditar,
-  .botonEliminar {
-    width: 30xp;
-    height: auto;
-    border: none;
-    border-radius: 5px;
-    margin: 5px;
-  }
+.titleListTabla {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  color: #4867DB;
+  text-align: center;
+  background-color: #FFFFFF;
+}
 
-  .botonAgregar{
-    width: 30xp;
-    height: auto;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-  }
+.imageTableListAdmin {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
 
 
-  /* Estilos tabla bootstrap */
-  
 
-  .tablaListados {
-    width: 100%;
-    border-radius: 24px;;
-  }
-  
-  .tablaListados th,
-  .tablaListados td {
-    text-align:center;
-    vertical-align: middle;
-  }
+.botonEditar,
+.botonEliminar {
+  width: 30xp;
+  height: auto;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
 
-  
-  .tablaListados th {
-    /* background-color: #f2f2f2; */
-    background-color: #b87dbe;
-    color: white;
-    border-bottom: 8px solid white;
-  }
-  
-  .tablaListados tbody tr:hover {
-    transform: scale(1.1); /* Cambia el valor según el nivel de zoom deseado */
-    transition: transform 0.3s ease;
-    background-color: #f5f5f5;
-  }
+.botonEditar:active,
+.botonEliminar:active {
+  transform: scale(0.9);
+}
 
-  .contenedorPaginado{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+
+h5 {
+  color: #4867DB;
+}
+
+.botonAgregar {
+  width: 30xp;
+  height: auto;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.botonAgregar:active{
+  transform: scale(0.9);
+}
+
+
+/* Estilos tabla bootstrap */
+
+
+.tablaListados {
+  width: 100%;
+  border-radius: 24px;
+  ;
+}
+
+.tablaListados th,
+.tablaListados td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.tablaListados th {
+  /* background-color: #f2f2f2; */
+  background-color: #b87dbe;
+  color: white;
+  border-bottom: 8px solid white;
+}
+
+.tablaListados tbody tr:hover {
+  transform: scale(1.1);
+  /* Cambia el valor según el nivel de zoom deseado */
+  transition: transform 0.3s ease;
+  background-color: #f5f5f5;
+}
+
+.contenedorPaginado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

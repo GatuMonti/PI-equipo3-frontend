@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
-import { useContextGlobal } from './Util/global.context';
-import { urlBackend } from '../App';
+import { useContextGlobal } from '../../components/Util/global.context';
+import { urlBackend } from '../../App';
+import styles from '../ListarProductos/listarProductos.module.css';
 
 const EditarCaracteristicaButton = ({ caracteristicaId, toggleFormEditar }) => {
     const { dispatch } = useContextGlobal();
@@ -42,6 +43,7 @@ const EditarCaracteristicaButton = ({ caracteristicaId, toggleFormEditar }) => {
         try {
             await axios.put('http://localhost:8080/characteristics/update', caracteristicaData);
             dispatch({ type: 'update_caracteristica', payload: caracteristicaData });
+            toggleFormEditar();
             Swal.fire({
                 title: 'Característica actualizada',
                 text: 'Los datos de la característica se han actualizado exitosamente',
@@ -69,8 +71,8 @@ const EditarCaracteristicaButton = ({ caracteristicaId, toggleFormEditar }) => {
                     <label htmlFor="description" className="form-label">Descripción</label>
                     <input type="text" className="form-control" id="description" name="description" value={caracteristicaData.description} onChange={handleEditChange} />
                 </div>
-                <Button variant="secondary" onClick={toggleFormEditar}>Cancelar</Button>
-                <Button variant="primary" type="submit">Actualizar</Button>
+                <Button variant="danger" className={styles.botonEliminar}onClick={toggleFormEditar}>Cancelar</Button>
+                <Button variant="primary" className={styles.botonEditar} type="submit">Actualizar</Button>
             </form>
         </div>
     );

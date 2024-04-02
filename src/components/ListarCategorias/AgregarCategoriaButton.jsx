@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios, { toFormData } from 'axios';
 import Swal from 'sweetalert2';
+import { useContextGlobal } from '../../components/Util/global.context';
+import { urlBackend } from '../../App';
 import { Button } from 'react-bootstrap';
-import { useContextGlobal } from './Util/global.context';
-import { urlBackend } from '../App';
+import styles from '../ListarProductos/listarProductos.module.css';
 
 const AgregarCategoriaButton = ({ toggleFormAgregar }) => {
     const { dispatch } = useContextGlobal();
@@ -54,17 +55,11 @@ const AgregarCategoriaButton = ({ toggleFormAgregar }) => {
             });
             return; // Detiene el envío del formulario si el campo imageUrl está vacío
         }
-        console.log("Antes del Try");
-        console.log(categoriaData);
+
         try {
-            /*************************************************/
-            //Hay que ver porque no guarda categoría
-            //************************************************/
-            console.log("Entrando al Try: " + categoriaData);
             const response = await axios.post(urlBackend + "categorias/add-categoria", categoriaData);
-            console.log("Datos del response.data! " + response.data);
             dispatch({ type: 'agregar_categoria', payload: response.data });
-            console.log("Despoues del dispatch " + response.data);
+            toggleFormAgregar();
             
             Swal.fire({
                 title: 'Categoría agregada',
@@ -117,8 +112,8 @@ const AgregarCategoriaButton = ({ toggleFormAgregar }) => {
                     />
                 </div>
                 <div className="d-flex justify-content-center">
-                    <Button variant="secondary" onClick={toggleFormAgregar}>Cancelar</Button>
-                    <Button variant="primary" onClick={handleSubmit} type="submit">Actualizar</Button>
+                    <Button variant="danger" className={styles.botonEliminar} onClick={toggleFormAgregar}>Cancelar</Button>
+                    <Button variant="primary" className={styles.botonEditar} onClick={handleSubmit} type="submit">Agregar</Button>
                 </div>
             </form>
         </div>

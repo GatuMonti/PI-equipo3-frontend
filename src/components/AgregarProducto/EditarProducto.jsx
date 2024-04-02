@@ -255,12 +255,12 @@ const EditarProducto = ({ productId, toggleFormEditar }) => {
 
         {/* Imputs de datos */}
         <div className={styles.contenedorInputDatos}>
-          <input className="inputActualizar" placeholder="Nombre *" value={productoActualizar.name} onChange={handleCambioName} />
+          <input  className={styles.inputName}placeholder="Nombre *" value={productoActualizar.name} onChange={handleCambioName} />
 
           {/* <input className="inputCategoria" placeholder="Id categoria " value={productoNuevo.category.id} onChange={handleOnchangeCategoria}/> */}
 
-          <input className="inputActualizar" placeholder="Precio USD *" value={productoActualizar.price} onChange={handleOnchangePrecio} />
-          <input className="inputActualizar" placeholder="Tipo *" value={productoActualizar.type} onChange={handleOnchangeTipo} />
+          <input className={styles.inputPrecio} placeholder="Precio USD *" value={productoActualizar.price} onChange={handleOnchangePrecio} />
+          <input className={styles.inputTipo} placeholder="Tipo *" value={productoActualizar.type} onChange={handleOnchangeTipo} />
 
           <select onChange={handleOnchangeCategoria} className={styles.inputCategoria} value={productoActualizar.category.id}>
             <option value="">Categoría</option>
