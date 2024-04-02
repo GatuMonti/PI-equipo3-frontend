@@ -21,8 +21,10 @@ const CardUsuario = ({ userRole, setUserRole }) => {
   }
 
   const onClickFavs = () => {
+    console.log("isFavorite Antes!" + state.isFavorite);
     dispatch({ type: "set_isFavorite", payload: true })
     navigate('/');
+    console.log("isFavorite DEspues!" + state.isFavorite);
   }
 
   return (
@@ -36,7 +38,7 @@ const CardUsuario = ({ userRole, setUserRole }) => {
 
         <Dropdown.Menu>
           <Dropdown.Item href="/pageDetallesUsuario">Ver Perfil</Dropdown.Item>
-          <Dropdown.Item onClick={onClickFavs}>Mis favoritos</Dropdown.Item>
+          <Dropdown.Item  onClick={onClickFavs}>Mis favoritos</Dropdown.Item >
           <Dropdown.Item href="/panelReservas">Mis reservas</Dropdown.Item>
           {userRole === "ADMIN" && (
             <Dropdown.Item href="/pageAdmin">Administrar</Dropdown.Item>

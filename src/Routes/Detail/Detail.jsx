@@ -469,6 +469,7 @@ const Detail = () => {
             minDate={fechaHoy}
             onChange={onChangeInicioReserva}
             customDayClassName={customDayClass}
+            value={fechasReservas.fechaInicio}
           />
 
           <DatePicker
@@ -480,6 +481,7 @@ const Detail = () => {
             minDate={fechaHoy}
             onChange={onChangeFinReserva}
             customDayClassName={customDayClass}
+            value={fechasReservas.fechaFin}
           />
         </div>
         <button className={styles.botonComprar} onClick={handleClickVerReserva}>Reservar</button>

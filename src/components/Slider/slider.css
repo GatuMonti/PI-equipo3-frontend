@@ -1,8 +1,8 @@
 .contenedorCarrusel{
   margin: 2vh 0;
-  width: 50%;
-  max-height: 450px;
-  display: flex;
+  /* width: 50%; */
+  height: 450px;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -41,8 +41,13 @@ h5{
 
 .imageCarrusel {
   width: 100%; /* Cambiado a porcentaje */
-  min-width: 300px;
-  height: auto; /* Cambiado a auto */
-  object-fit: cover;
-  
+  height: 450px;
+}
+
+
+@media screen and (max-width: 414px) {
+
+  .imageCarrusel {
+    height: 300px;
+  }
 }

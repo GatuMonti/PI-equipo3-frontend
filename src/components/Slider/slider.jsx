@@ -108,31 +108,9 @@ const Slider = (props) => {
                         )}
                     </div>
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
         </>
-        // <div className="containerSlider">
-        //     <h2>Más Populares</h2>
-        //     <div className="custom-carousel">
-        //     <Carousel
-        //         activeIndex={activeIndex}
-        //         next={next}
-        //         previous={previous}
-        //         className="carousel-content"
-        //     >
-        //         <Carousel.Indicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex}/>
-        //         {slides}
-        //     </Carousel>
-        //     </div>
-        // </div>
         
     );
 }

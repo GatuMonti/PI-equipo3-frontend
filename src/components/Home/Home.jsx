@@ -161,20 +161,19 @@ const Home = () => {
 
   // Filtra y mapea los elementos para mostrar solo los de la página actual
 
-  const productsToShow = !handleOnchangeInputText ? state.productos.slice(startIndex, endIndex).map((producto) => (
-    <Card product={producto} key={producto.id} />))
-    :
-    state.isFavorite ?
-
-      state.favoritos.length <= 0 ?
-        dispatch({ type: 'set_isFavorite', payload: false })
-        :
-        state.favoritos.map((favorito) => (
-          <Card product={favorito} key={favorito.id} />
-        )) :
-      state.productos.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase())).slice(startIndex, endIndex).map((producto) => (
-        <Card product={producto} key={producto.id} />
-      ));
+  const productsToShow = !handleOnchangeInputText ?  state.productos.slice(startIndex, endIndex).map((producto) => (
+    <Card product={producto} key={producto.id} />))  
+    : 
+    state.isFavorite ? 
+   
+    !state.favoritos.length<=0 &&
+    
+    state.favoritos.map((favorito) =>(
+      <Card product={favorito} key={favorito.id} />
+    )):
+    state.productos.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase())) .slice(startIndex, endIndex).map((producto) => (
+    <Card product={producto} key={producto.id} />
+  ));
 
 
   //Filtra el array de los productos disponibles por fecha
@@ -225,22 +224,22 @@ const Home = () => {
 
   return (
     <main className={styles.home} >
-        <div className={styles.barraBuscador}>
-          <form className={styles.formularioBuscador}>
-            <select onChange={handleChangeCategoria} className={styles.inputSearch}>
-              <option value="">Filtrar por categoria</option>
-              {state.categorias.slice(1).map((categoria, index) => (
-                <option key={index} value={categoria.title}>
-                  {categoria.title}
-                </option>
-              ))}
-            </select>
+      <div className={styles.barraBuscador}>
+        <form className={styles.formularioBuscador}>
+          <select onChange={handleChangeCategoria} className={styles.inputSearch}>
+            <option value="">Filtrar por categoria</option>
+            {state.categorias.slice(1).map((categoria, index) => (
+              <option key={index} value={categoria.title}>
+                {categoria.title}
+              </option>
+            ))}
+          </select>
 
-            <button className={styles.botonBuscar} onClick={handleBusquedaCategoria}>
-              <i className="bx bx-search-alt"></i>
-            </button>
-          </form>
-          <div className={styles.buscadorConFechas}>
+          <button className={styles.botonBuscar} onClick={handleBusquedaCategoria}>
+            <i className="bx bx-search-alt"></i>
+          </button>
+        </form>
+        <div className={styles.buscadorConFechas}>
           <Autosuggest className={styles.inputSearchBuscador}
             suggestions={suggestions}
             onSuggestionsFetchRequested={onSuggestionsFetchRequested}
@@ -270,7 +269,6 @@ const Home = () => {
               value={estadosFechas.inicio}
             />
 
-
             <DatePicker className={styles.calendarioFinalizacion}
               selected={estadosFechas.fin}
               onChange={manejarCambioFechaFin}
@@ -285,48 +283,57 @@ const Home = () => {
             <button className={styles.botonBuscarFecha} onClick={handleOnclickBusquedaFechas}> Buscar </button>
 
           </form>
-          </div>
         </div>
+      </div>
 
-        <Slider></Slider>
+      <Slider></Slider>
 
-        {/*Renderizacion de productos*/}
-        {estadosNuevos.buscarPorFechas ?
+      {/*Renderizacion de productos*/}
+      {estadosNuevos.buscarPorFechas ?
+
+        <div className={styles.contenedorProductos}>
+          <h1 className={styles.tituloProductos}> Productos disponibles {estadosNuevos.productosDisponiblesPorFecha.length}</h1>
+          {productsDateToShow}
+
+          {/* Botones para navegar entre las páginas  */}
+
+          {estadosNuevos.productosDisponiblesPorFecha.length > 10 &&
+
+            <div className={styles.botonesPaginado}>
+              <button className={styles.botonPaginadoAtras} onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
+              <button className={styles.botonPaginadoAdelante} onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
+            </div>
+
+          }
+        </div> :
+
+        !estadosNuevos.buscar ?
 
           <div className={styles.contenedorProductos}>
-            <h1 className={styles.tituloProductos}> Productos disponibles {estadosNuevos.productosDisponiblesPorFecha.length}</h1>
-            {productsDateToShow}
-
-            {/* Botones para navegar entre las páginas  */}
-
-            {estadosNuevos.productosDisponiblesPorFecha.length > 10 &&
-
-              <div className={styles.botonesPaginado}>
-                <button className={styles.botonPaginadoAtras} onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
-                <button className={styles.botonPaginadoAdelante} onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
-              </div>
-
-            }
-          </div> :
-
-          !estadosNuevos.buscar ?
-
-            <div className={styles.contenedorProductos}>
-              {state.isFavorite ?
+            {/* {state.isFavorite ?
                 <h1 className={styles.tituloProductos}>Mis favoritos {state.favoritos.length}</h1>
                 : <h1 className={styles.tituloProductos}>Los Mas Recomendados</h1>
-              }
+              } */}
 
-              {productsToShow}
+            {state.isFavorite ?
+              
+              state.favoritos.length > 0 ?
+                <h1 className={styles.tituloProductos}>Mis favoritos {state.favoritos.length}</h1>
+                : <h1 className={styles.tituloProductos}>No hay favoritos</h1>
+              :
+              <h1 className={styles.tituloProductos}>Los Mas Recomendados</h1>
+            }
 
-            </div>
+            {productsToShow}
 
-            :
-            <div className={styles.contenedorProductos}>
-              <h1 className={styles.tituloProductos}> {estadosNuevos.productosDeUnaCategoria[0].category.title}</h1>
-              {estadosNuevos.productosDeUnaCategoria.map((producto) => <Card product={producto} key={producto.id} />)}
-            </div>
-        }
+          </div>
+
+          :
+          <div className={styles.contenedorProductos}>
+            <h1 className={styles.tituloProductos}> {estadosNuevos.productosDeUnaCategoria[0].category.title}</h1>
+            {estadosNuevos.productosDeUnaCategoria.map((producto) => <Card product={producto} key={producto.id} />)}
+          </div>
+      }
     </main>
   );
 };

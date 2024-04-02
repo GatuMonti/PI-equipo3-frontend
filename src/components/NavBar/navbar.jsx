@@ -10,23 +10,19 @@ const navbar = () => {
 
     const{state,dispatch}=useContextGlobal()
 
+    const handleLogo=()=>{
+      useEffect(()=>{
+      },[])
+      navigate('/');
+    }
     
     const [userRole, setUserRole] = useState(localStorage.getItem("userRole")  );
-
-    // console.log({userRole})   
-
-    
-
-    // const handleTheme=(e)=>{
-    //     const newTheme= state.theme==="light" ? state.theme="dark" : state.theme="light";
-    //     dispatch({type: 'change_theme', payload:newTheme})
-    // }
 
 
     return (
         <header className={styles.header}>
         <div className={styles.contenedorLogo}>
-          <Link to={'/'} className={styles.logo}><img  className={styles.imagenLogo} src={logo} alt="logo" /></Link>
+          <Link to={'/'} onClick= {handleLogo} className={styles.logo}><img  className={styles.imagenLogo} src={logo} alt="logo" /></Link>
           <h3 className={styles.lema}>Explora, juega y disfruta</h3>
         </div>
         <div className={styles.botones}>
