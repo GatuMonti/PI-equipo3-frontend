@@ -3,8 +3,8 @@ import { useContextGlobal } from '../Util/global.context';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Pagination, Button, Table } from 'react-bootstrap';
-import AgregarCategoriaButton from '../AgregarCategoriaButton'
-import EditarCategoriaButton from '../EditarCategoriaButton';
+import AgregarCategoriaButton from './AgregarCategoriaButton'
+import EditarCategoriaButton from './EditarCategoriaButton';
 import styles from '../ListarProductos/listarProductos.module.css';
 import { urlBackend } from '../../App';
 

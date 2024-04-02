@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
-import { urlBackend } from '../App';
+import { useContextGlobal } from '../../components/Util/global.context';
+import { urlBackend } from '../../App';
+import { Button } from 'react-bootstrap';
+import styles from '../ListarProductos/listarProductos.module.css';
 
 const EditarCategoriaButton = ({ categoriaId, dispatch, toggleFormEditar }) => {
     const [categoriaData, setCategoriaData] = useState({
@@ -62,6 +64,7 @@ const EditarCategoriaButton = ({ categoriaId, dispatch, toggleFormEditar }) => {
         try {
             await axios.put(urlBackend + 'categorias/update-category', categoriaData);
             dispatch({ type: 'update_categoria', payload: categoriaData });
+            toggleFormEditar();
             Swal.fire({
                 title: 'Categoría actualizada',
                 text: 'Los datos de la categoría se han actualizado exitosamente',
@@ -93,8 +96,8 @@ const EditarCategoriaButton = ({ categoriaId, dispatch, toggleFormEditar }) => {
                     <label htmlFor="imageUrl" className="form-label">URL de la Imagen</label>
                     <input type="text" className="form-control" id="imageUrl" name="image.imageUrl" value={categoriaData.image.imageUrl} onChange={handleEditChange} />
                 </div>
-                <Button variant="secondary" onClick={toggleFormEditar}>Cancelar</Button>
-                <Button variant="primary" onClick={handleEditSubmit} type="submit">Actualizar</Button>
+                <Button variant="danger" className={styles.botonEliminar}  onClick={toggleFormEditar}>Cancelar</Button>
+                <Button variant="primary" className={styles.botonEditar}  onClick={handleEditSubmit} type="submit">Actualizar</Button>
             </form>
         </div>
     );

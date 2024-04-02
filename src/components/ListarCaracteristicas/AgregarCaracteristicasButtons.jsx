@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useContextGlobal } from './Util/global.context';
-import { urlBackend } from '../App';
+import { useContextGlobal } from '../../components/Util/global.context';
+import { urlBackend } from '../../App';
+import { Button } from 'react-bootstrap';
+import styles from '../ListarProductos/listarProductos.module.css';
+
 
 const AgregarCaracteristicaButton = ({ toggleFormAgregar }) => {
     const { dispatch } = useContextGlobal();
@@ -77,8 +80,8 @@ const AgregarCaracteristicaButton = ({ toggleFormAgregar }) => {
                     />
                 </div>
                 <div className="d-flex justify-content-center">
-                    <button type="button" onClick={toggleFormAgregar} className="btn btn-secondary">Cancelar</button>
-                    <button type="submit" className="btn btn-primary mr-2">Agregar</button>
+                <Button variant="danger" className={styles.botonEliminar} onClick={toggleFormAgregar}>Cancelar</Button>
+                <Button variant="primary" className={styles.botonEditar} type="submit" >Agregar</Button>
 
                 </div>
             </form>
