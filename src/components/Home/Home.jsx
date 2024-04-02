@@ -113,7 +113,6 @@ const Home = () => {
   };
 
 
-
   const handleOnclickBusquedaFechas = (e) => {
     e.preventDefault();
     console.log(estadosFechas)
@@ -227,7 +226,9 @@ const Home = () => {
     <main className={styles.home} >
       <div className={styles.barraBuscador}>
         <form className={styles.formularioBuscador}>
+
           <select onChange={handleChangeCategoria} className={styles.inputSearch}>
+
             <option value="">Filtrar por categoria</option>
             {state.categorias.slice(1).map((categoria, index) => (
               <option key={index} value={categoria.title}>
@@ -257,7 +258,7 @@ const Home = () => {
           />
 
           <form className={styles.formCalendarios}>
-            <i className="bx bx-calendar"></i>
+          <i className="bx bx-calendar"></i>
 
             <DatePicker className={styles.calendarioInicio}
               selected={estadosFechas.inicio}

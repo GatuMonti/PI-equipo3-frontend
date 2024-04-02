@@ -101,6 +101,8 @@
   background-color: #DAC9DF;
   border-radius: 8px;
   padding: 5px;
+
+
 }
 
 
@@ -110,6 +112,7 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+
 }
 
 .formCalendarios {
@@ -125,7 +128,6 @@
   height: auto;
   border-radius: 8px;
 }
-
 
 .inputSearch {
   width: 10vw;
@@ -159,8 +161,6 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-
-
 
 .inputSearchBuscador {
   width: 150px;
@@ -198,27 +198,25 @@
 }
 
 
-.bx.bx-calendar {
-  font-size: 3.7vh;
-}
 
 
 .calendarioInicio {
-  width: 5vw;
+  width: 7.2vw;
   min-width: 50px;
   height: 33px;
-
   border-radius: 8px;
   font-size: 1.68vh;
-
+  margin: 3px 0.5vw 0vh 0vw;
 }
 
 .calendarioFinalizacion {
-  width: 5vw;
+  width: 8vw;
   min-width: 50px;
   height: 33px;
   border-radius: 8px;
   font-size: 1.68vh;
+  margin: 3px 0.3vw 0vh 0vw;
+
 }
 
 .inputSearch:focus {
@@ -259,7 +257,7 @@
 }
 
 .botonBuscar {
-  width: 2vw;
+  width: 3vw;
   height: 2%;
   border: none;
   cursor: pointer;
@@ -316,8 +314,11 @@
     align-items: center;
     margin: 0px 10px 0px 10px;
   }
-  .botonBuscar{
+
+  .botonBuscar {
     margin: 10px;
+    height: 3.5vh;
+    width: 4vh;
     border-radius: 100%;
   }
 
@@ -325,10 +326,27 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    margin:  0vh 5vw 0vh 0vw;
+  }
+ 
+
+  .formularioBuscador .inputSearch {
+    appearance: none;
+    width: 150px;
+    font-size: 15px;
+    padding: 10px;
+    
   }
 
-  .inputSearch {
-    width: 150px;
+  .inputSearch option {
+    appearance: none;
+   
+    /* Estilos para las opciones del desplegable */
+    font-size: 10px;
+    background-color: #ffffffe4;
+    color: #333;
+    width: 100px;
+   
   }
 
   .formCalendarios {
@@ -341,7 +359,7 @@
 
   .inputSearchBuscador {
     width: 100%;
-  } 
+  }
 }
 
 
@@ -356,7 +374,7 @@
   }
 
   .buscadorConFechas {
-    width: 100%;
+    width: 95%;
     justify-content: space-between;
     align-items: center;
   }
@@ -373,11 +391,18 @@
     width: 100%;
   }
 
+
+
+
   .barraBuscador {
     width: 100vw;
     height: 40px;
     margin-top: 0px;
     border-radius: 0%;
-    padding: 5px;
+    padding: 10px;
+  }
+
+  .contenedorCarrusel {
+    height: 200px;
   }
 }

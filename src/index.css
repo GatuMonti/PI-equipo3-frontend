@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  
   /* Para que la página ocupe al menos el alto de la ventana del navegador */
 }
 
@@ -12,8 +13,15 @@
   flex: 1;
   /* El contenido ocupará todo el espacio disponible */
   display: flex;
+  
   /* align-items: center; */
   /* Puedes agregar estilos adicionales según necesites */
+}
+
+
+.bx.bx-calendar {
+  font-size: 3.5vh;
+  margin: 0.5vh 0.5vw 0vh 1.5vw;
 }
 
 
@@ -192,10 +200,6 @@
   background-color: #FFFFFF;
   box-shadow: 5px 5px 15px rgb(78, 77, 77);
 }
-
-
-
-
 
 
 @media(max-width:800px) {
