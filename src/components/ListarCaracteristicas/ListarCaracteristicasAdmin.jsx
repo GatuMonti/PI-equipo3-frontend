@@ -84,7 +84,7 @@ const ListarCaracteristicasAdmin = () => {
             {showFormAgregar && ( // Mostrar el formulario si showFormAgregar es verdadero
                 <AgregarCaracteristicaButton toggleFormAgregar={toggleFormAgregar} />
             )}
-            { showFormEditar && (
+            {showFormEditar && (
                 <EditarCaracteristicaButton
                     caracteristicaId={editingCaracteristicaId}
                     dispatch={dispatch}
@@ -113,41 +113,29 @@ const ListarCaracteristicasAdmin = () => {
                                             handleEdit(caracteristica.id)}
                                             className="btn btn-primary">Editar
                                         </Button> */}
-                                        <Button variant="primary" onClick={() =>
+                                        <Button variant="primary" className={styles.botonEditar} onClick={() =>
                                             handleEdit(caracteristica.id)}>Editar</Button>
-                                        <Button variant="danger" onClick={() =>
+                                        <Button variant="danger" className={styles.botonEliminar} onClick={() =>
                                             handleDelete(caracteristica.id)}
-                                            >Eliminar
+                                        >Eliminar
                                         </Button>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </Table>
-                    <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Característica</Button>
+                    <Button onClick={toggleFormAgregar} className={styles.botonAgregar} >Agregar Característica</Button>
+                    
+                    {/* Componente para la paginación */}
+                    <Pagination>
+                        {Array.from({ length: Math.ceil(state.caracteristicas.length / caracteristicasPerPage) }).map((_, index) => (
+                            <Pagination.Item key={index} onClick={() => setCurrentPage(index + 1)} active={index + 1 === currentPage}>
+                                {index + 1}
+                            </Pagination.Item>
+                        ))}
+                    </Pagination>
                 </>
             )}
-
-            {/* {!showForm && ( // Mostrar el botón de agregar característica si showForm es falso
-                <Button onClick={toggleForm} className="btn btn-primary">Agregar Característica</Button>
-            )} */}
-
-            {/* Componente para editar característica */}
-            {/* <EditarCaracteristicaButton
-                caracteristicaId={editingCaracteristicaId}
-                show={showEditModal}
-                handleClose={handleCloseEditModal}
-            /> */}
-
-            {/* Componente para la paginación */}
-            <Pagination>
-                {Array.from({ length: Math.ceil(state.caracteristicas.length / caracteristicasPerPage) }).map((_, index) => (
-                    <Pagination.Item key={index} onClick={() => setCurrentPage(index + 1)} active={index + 1 === currentPage}>
-                        {index + 1}
-                    </Pagination.Item>
-                ))}
-            </Pagination>
-
         </div>
     );
 };

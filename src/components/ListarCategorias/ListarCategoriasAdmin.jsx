@@ -12,7 +12,6 @@ const ListarCategoriasAdmin = () => {
     const { state, dispatch } = useContextGlobal();
     const [currentPage, setCurrentPage] = useState(1);
     const [categoriasPerPage] = useState(5);
-    // const [showEditModal, setShowEditModal] = useState(false);
     const [editingCategoriaId, setEditingCategoriaId] = useState(null);
     const [showFormAgregar, setshowFormAgregar] = useState(false); // Estado para mostrar u ocultar el formulario cuando se aprieta boton agregar 
     const [showFormEditar, setshowFormEditar] = useState(false); // Estado para mostrar u ocultar el formulario cuando se aprieta boton agregar 
@@ -101,7 +100,7 @@ const ListarCategoriasAdmin = () => {
 
             {showFormAgregar && ( // Mostrar el formulario si showFormAgregar es verdadero
                 <AgregarCategoriaButton toggleFormAgregar={toggleFormAgregar} />
-            )  }
+            )}
             {showFormEditar && (
                 <EditarCategoriaButton
                     categoriaId={editingCategoriaId}
@@ -139,41 +138,18 @@ const ListarCategoriasAdmin = () => {
                         </tbody>
 
                     </Table>
-                    <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Categoría</Button>
+                    <Button onClick={toggleFormAgregar} className={styles.botonAgregar} >Agregar Categoría</Button>
+                    
+                    {/* Componente para la paginación */}
+                    <Pagination>
+                        {Array.from({ length: Math.ceil(state.categorias.length / categoriasPerPage) }).map((_, index) => (
+                            <Pagination.Item key={index} onClick={() => paginate(index + 1)} active={index + 1 === currentPage}>
+                                {index + 1}
+                            </Pagination.Item>
+                        ))}
+                    </Pagination>
                 </>
             )}
-
-             {/* {!showFormAgregar ? ( // Mostrar el botón de agregar característica si showFormAgregar es falso
-                <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Categoría</Button>
-            ) : !showFormEditar ? (
-                <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Categoría</Button>
-            ):<p>htsdgsdfgsdfg</p>} */}
-
-            {/* {currentCategorias.map((categoria, index) => (
-                <div key={index} className="contenedorProductosAdmin">
-                    <p className='listId'>ID: {categoria.id}</p>
-                    <p className='listName'>Título: <br />{categoria.title}</p>
-                    <p className='listName'>Descripción: <br />{categoria.description}</p>
-                    <img className="imageProductListAdmin" src={categoria.image.imageUrl} alt="imageProductAdmin" />
-                    <button onClick={() => handleEdit(categoria.id)} className="botonEditar">🖋️</button>
-                    <button onClick={() => handleDelete(categoria.id)} className="botonEliminar" >❎</button>
-                </div>
-            ))} */}
-            <Pagination>
-                {Array.from({ length: Math.ceil(state.categorias.length / categoriasPerPage) }).map((_, index) => (
-                    <Pagination.Item key={index} onClick={() => paginate(index + 1)} active={index + 1 === currentPage}>
-                        {index + 1}
-                    </Pagination.Item>
-                ))}
-            </Pagination>
-
-            {/* Modal de edición */}
-            {/* <EditarCategoriaButton
-                categoriaId={editingCategoriaId}
-                show={showEditModal}
-                handleClose={handleCloseEditModal}
-                dispatch={dispatch}
-            /> */}
         </div>
     );
 };

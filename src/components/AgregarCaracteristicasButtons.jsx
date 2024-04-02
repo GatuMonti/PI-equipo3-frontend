@@ -77,8 +77,9 @@ const AgregarCaracteristicaButton = ({ toggleFormAgregar }) => {
                     />
                 </div>
                 <div className="d-flex justify-content-center">
-                    <button type="submit"  className="btn btn-primary mr-2">Agregar</button>
                     <button type="button" onClick={toggleFormAgregar} className="btn btn-secondary">Cancelar</button>
+                    <button type="submit" className="btn btn-primary mr-2">Agregar</button>
+
                 </div>
             </form>
         </div>

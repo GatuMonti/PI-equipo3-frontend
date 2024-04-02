@@ -27,10 +27,19 @@
   
   .botonEditar,
   .botonEliminar {
-    width: 2vw;
-    height: 2vh;
+    width: 30xp;
+    height: auto;
     border: none;
     border-radius: 5px;
+    margin: 5px;
+  }
+
+  .botonAgregar{
+    width: 30xp;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
   }
 
 
