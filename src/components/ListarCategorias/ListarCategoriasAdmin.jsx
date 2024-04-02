@@ -99,18 +99,16 @@ const ListarCategoriasAdmin = () => {
     return (
         <div className={styles.contenedorTablaListados}>
 
-
-            {showFormAgregar ? ( // Mostrar el formulario si showFormAgregar es verdadero
+            {showFormAgregar && ( // Mostrar el formulario si showFormAgregar es verdadero
                 <AgregarCategoriaButton toggleFormAgregar={toggleFormAgregar} />
-            ) : showFormEditar ? (
+            )  }
+            {showFormEditar && (
                 <EditarCategoriaButton
                     categoriaId={editingCategoriaId}
-                    // show={showEditModal}
-                    // handleClose={handleCloseEditModal}
                     dispatch={dispatch}
                     toggleFormEditar={toggleFormEditar}
                 />
-            ) : (
+            )} {(!showFormAgregar && !showFormEditar) && (
                 <>
                     <h2 className={styles.tituloTablaListados}> Categorías</h2>
                     <Table striped hover variant="light" className={styles.tablaListados}>

@@ -24,7 +24,6 @@ const ListarCaracteristicasAdmin = () => {
 
     const handleEdit = (caracteristicaId) => {
         setEditingCaracteristicaId(caracteristicaId);
-        // setShowEditModal(true);
         setshowFormEditar(true)
     };
 
@@ -82,17 +81,16 @@ const ListarCaracteristicasAdmin = () => {
 
     return (
         <div className={styles.contenedorTablaListados}>
-            {showFormAgregar ? ( // Mostrar el formulario si showFormAgregar es verdadero
+            {showFormAgregar && ( // Mostrar el formulario si showFormAgregar es verdadero
                 <AgregarCaracteristicaButton toggleFormAgregar={toggleFormAgregar} />
-            ) : showFormEditar ? (
+            )}
+            { showFormEditar && (
                 <EditarCaracteristicaButton
                     caracteristicaId={editingCaracteristicaId}
-                    show={showEditModal}
-                    // handleClose={handleCloseEditModal}
                     dispatch={dispatch}
                     toggleFormEditar={toggleFormEditar}
                 />
-            ) : (
+            )}{(!showFormAgregar && !showFormEditar) && (
                 <>
                     <h2 className={styles.tituloTablaListados}>Características</h2>
                     <Table striped hover variant="light" className={styles.tablaListados}>
@@ -126,7 +124,7 @@ const ListarCaracteristicasAdmin = () => {
                             ))}
                         </tbody>
                     </Table>
-                    <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Categoría</Button>
+                    <Button onClick={toggleFormAgregar} className="btn btn-primary">Agregar Característica</Button>
                 </>
             )}
 

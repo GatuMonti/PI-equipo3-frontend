@@ -321,7 +321,7 @@ const Home = () => {
                 <h1 className={styles.tituloProductos}>Mis favoritos {state.favoritos.length}</h1>
                 : <h1 className={styles.tituloProductos}>No hay favoritos</h1>
               :
-              <h1 className={styles.tituloProductos}>Los Mas Recomendados</h1>
+              <h1 className={styles.tituloProductos}>Los mas recomendados</h1>
             }
 
             {productsToShow}

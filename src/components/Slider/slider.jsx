@@ -68,7 +68,7 @@ const Slider = (props) => {
 
     return (
         <>
-        <h2>Pupulares</h2>
+        <h2>Populares</h2>
         <div className='contenedorCarrusel'>
             <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel" >
                 <div className="carousel-indicators">

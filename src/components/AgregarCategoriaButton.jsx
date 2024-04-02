@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios, { toFormData } from 'axios';
 import Swal from 'sweetalert2';
+import { Button } from 'react-bootstrap';
 import { useContextGlobal } from './Util/global.context';
 import { urlBackend } from '../App';
 
-const AgregarCategoriaButton = () => {
+const AgregarCategoriaButton = ({ toggleFormAgregar }) => {
     const { dispatch } = useContextGlobal();
-    const [showForm, setShowForm] = useState(true);
     const [categoriaData, setCategoriaData] = useState({
         title: '',
         description: '',
@@ -33,7 +33,8 @@ const AgregarCategoriaButton = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        console.log("Cuando entra al handle Submit");
+        console.log(categoriaData);
         // Verifica si el título y la descripción están vacíos
         if (!categoriaData.title || !categoriaData.description) {
             Swal.fire({
@@ -53,11 +54,18 @@ const AgregarCategoriaButton = () => {
             });
             return; // Detiene el envío del formulario si el campo imageUrl está vacío
         }
-        
+        console.log("Antes del Try");
+        console.log(categoriaData);
         try {
-            const response = await axios.post(`${urlBackend}categorias/add-categoria`, categoriaData);
+            /*************************************************/
+            //Hay que ver porque no guarda categoría
+            //************************************************/
+            console.log("Entrando al Try: " + categoriaData);
+            const response = await axios.post(urlBackend + "categorias/add-categoria", categoriaData);
+            console.log("Datos del response.data! " + response.data);
             dispatch({ type: 'agregar_categoria', payload: response.data });
-            setShowForm(false); // Cierra el pop-up después de agregar la categoría
+            console.log("Despoues del dispatch " + response.data);
+            
             Swal.fire({
                 title: 'Categoría agregada',
                 text: 'La categoría se ha agregado exitosamente',
@@ -73,54 +81,46 @@ const AgregarCategoriaButton = () => {
         }
     };
 
-    const handleCancel = () => {
-        setShowForm(false); // Cierra el pop-up sin agregar la categoría
-    };
 
     return (
         <div>
-            {!showForm && <button onClick={() => showForm} className="btn btn-primary">Agregar Categoría</button>}
-            {showForm && (
-                <div className="popup">
-                    <h2 className="mb-4">Nueva Categoría</h2>
-                    <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center">
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="title"
-                                placeholder="Título"
-                                value={categoriaData.title}
-                                onChange={handleChange}
-                                className="form-control mb-2"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="description"
-                                placeholder="Descripción"
-                                value={categoriaData.description}
-                                onChange={handleChange}
-                                className="form-control mb-2"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="imageUrl"
-                                placeholder="URL de la imagen"
-                                value={categoriaData.image.imageUrl}
-                                onChange={handleChange}
-                                className="form-control mb-4"
-                            />
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <button type="submit" className="btn btn-primary mr-2">Agregar</button>
-                            <button type="button" onClick={handleCancel} className="btn btn-secondary">Cancelar</button>
-                        </div>
-                    </form>
+            <h2 className="mb-4">Nueva Categoría</h2>
+            <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center">
+                <div className="form-group">
+                    <input
+                        type="text"
+                        name="title"
+                        placeholder="Título"
+                        value={categoriaData.title}
+                        onChange={handleChange}
+                        className="form-control mb-2"
+                    />
                 </div>
-            )}
+                <div className="form-group">
+                    <input
+                        type="text"
+                        name="description"
+                        placeholder="Descripción"
+                        value={categoriaData.description}
+                        onChange={handleChange}
+                        className="form-control mb-2"
+                    />
+                </div>
+                <div className="form-group">
+                    <input
+                        type="text"
+                        name="imageUrl"
+                        placeholder="URL de la imagen"
+                        value={categoriaData.image.imageUrl}
+                        onChange={handleChange}
+                        className="form-control mb-4"
+                    />
+                </div>
+                <div className="d-flex justify-content-center">
+                    <Button variant="secondary" onClick={toggleFormAgregar}>Cancelar</Button>
+                    <Button variant="primary" onClick={handleSubmit} type="submit">Actualizar</Button>
+                </div>
+            </form>
         </div>
     );
 };

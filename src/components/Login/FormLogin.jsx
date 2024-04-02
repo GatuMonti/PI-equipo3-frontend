@@ -94,8 +94,8 @@ const FormLogin = () => {
                 }, 2000)
 
                 Swal.fire({
-                    title: "Logeado",
-                    text: "El usuario se ha logeado",
+                    title: "Logueado",
+                    text: "El usuario se ha logueado",
                     icon: "success",
                     confirmButtonColor: "#008000a9",
                     customClass: {
