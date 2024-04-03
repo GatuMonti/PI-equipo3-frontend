@@ -168,7 +168,6 @@
   text-align: center;
   border: none;
   font-size: 1vw;
-  background-color: #a80808;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -204,6 +203,8 @@
   height: 33px;
   border-radius: 8px;
   font-size: 1.68vh;
+  border: none;
+  margin: 5px;
 }
 
 .calendarioFinalizacion {
@@ -212,7 +213,8 @@
   height: 33px;
   border-radius: 8px;
   font-size: 1.68vh;
-
+  border: none;
+  margin: 5px;
 }
 
 .inputSearch:focus {
@@ -411,18 +413,32 @@
     display: none;
   }
 
+  .inputSearchBuscador {
+    min-width: 200px;
+    background-color: black;
+  }
+
   .buscadorConFechas {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    min-width: 100vw;
     margin: 0px;
   }
 
+  .calendarioInicio {
+    width: 7.2vw;
+    min-width: 120px;
+  }
+  
+  .calendarioFinalizacion {
+    width: 8vw;
+    min-width: 120px;
+  }
 
 
   .formCalendarios {
+    min-width: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
     width: 45%;
@@ -433,7 +449,7 @@
   .barraBuscador {
     flex-direction: row;
     width: 100vw;
-    height: 50px;
+    min-height: 90px;
     margin-top: 0px;
     border-radius: 0%;
     padding: 0px;

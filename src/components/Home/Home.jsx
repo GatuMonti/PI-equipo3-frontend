@@ -246,7 +246,7 @@ const Home = () => {
           </button>
         </form>
         <div className={styles.buscadorConFechas}>
-          <Autosuggest className={styles.inputSearchBuscador}
+          <Autosuggest className="inputSearchBuscador"
             suggestions={suggestions}
             onSuggestionsFetchRequested={onSuggestionsFetchRequested}
             onSuggestionsClearRequested={onSuggestionsClearRequested}

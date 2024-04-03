@@ -1,12 +1,33 @@
 /******************************************************************/
 /* Estilos para las sugerencias del Autosuggest */
 /******************************************************************/
-
+.inputSearchBuscador {
+  width: 200px;
+  height: 33px;
+  text-align: center;
+  border:black;
+  font-size: 1vw;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: black;
+  display: inline-block;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: left;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
 .react-autosuggest__suggestions-container {
     position: absolute; 
     z-index: 10;
-    
   }
   
   .react-autosuggest__suggestions-container--open {
@@ -14,7 +35,6 @@
     overflow-y: auto;
     width: calc(100% - 20px);
     max-width: 190px;
-    
     /* Ancho del contenedor (ajustar según sea necesario) */
     max-height: 200px;
     /* Altura máxima del contenedor (ajustar según sea necesario) */
@@ -43,4 +63,14 @@
   
   .react-autosuggest__suggestion--highlighted {
     background-color: #f0f0f0;
+  }
+
+
+  @media screen and (max-width: 414px) {
+
+    .inputSearchBuscador {
+      width: 345px;
+      margin: 5px;
+    }
+
   }
