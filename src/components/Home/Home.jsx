@@ -97,19 +97,23 @@ const Home = () => {
 
 
   const manejarCambioFechaInicio = (fecha) => {
-    const fechaFormateada = format(fecha, 'yyyy-MM-dd');
-    setStateFechas({
-      ...estadosFechas,
-      inicio: fechaFormateada
-    });
+    if (fecha instanceof Date && !isNaN(fecha)) {
+      const fechaFormateada = format(fecha, 'yyyy-MM-dd');
+      setStateFechas({
+        ...estadosFechas,
+        inicio: fecha
+      });
+    }
   };
 
   const manejarCambioFechaFin = (fecha) => {
-    const fechaFormateada = format(fecha, 'yyyy-MM-dd');
-    setStateFechas({
-      ...estadosFechas,
-      fin: fechaFormateada
-    });
+    if (fecha instanceof Date && !isNaN(fecha)) {
+      const fechaFormateada = format(fecha, 'yyyy-MM-dd');
+      setStateFechas({
+        ...estadosFechas,
+        fin: fecha
+      });
+    }
   };
 
 
@@ -271,16 +275,16 @@ const Home = () => {
               value={estadosFechas.inicio}
             />
 
-            <DatePicker className={styles.calendarioFinalizacion}
-              selected={estadosFechas.fin}
-              onChange={manejarCambioFechaFin}
-              dateFormat="yyyy-MM-dd"
-              placeholderText="Final"
-              type="date"
-              minDate={fechaHoy}
-              value={estadosFechas.fin}
-              name={estadosFechas.fin}
-            />
+<DatePicker
+  className={styles.calendarioFinalizacion}
+  selected={estadosFechas.fin}
+  onChange={manejarCambioFechaFin}
+  dateFormat="yyyy-MM-dd"
+  placeholderText="Final"
+  minDate={estadosFechas.inicio != null ? new Date(estadosFechas.inicio.getTime() + 86400000) : fechaHoy} // Agregamos un día al inicio para evitar el mismo día
+  value={estadosFechas.fin}
+  name={estadosFechas.fin}
+/>
 
             <button className={styles.botonBuscarFecha} onClick={handleOnclickBusquedaFechas}> Buscar </button>
 
