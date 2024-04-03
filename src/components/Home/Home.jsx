@@ -161,19 +161,19 @@ const Home = () => {
 
   // Filtra y mapea los elementos para mostrar solo los de la página actual
 
-  const productsToShow = !handleOnchangeInputText ?  state.productos.slice(startIndex, endIndex).map((producto) => (
-    <Card product={producto} key={producto.id} />))  
-    : 
-    state.isFavorite ? 
-   
-    !state.favoritos.length<=0 &&
-    
-    state.favoritos.map((favorito) =>(
-      <Card product={favorito} key={favorito.id} />
-    )):
-    state.productos.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase())) .slice(startIndex, endIndex).map((producto) => (
-    <Card product={producto} key={producto.id} />
-  ));
+  const productsToShow = !handleOnchangeInputText ? state.productos.slice(startIndex, endIndex).map((producto) => (
+    <Card product={producto} key={producto.id} />))
+    :
+    state.isFavorite ?
+
+      !state.favoritos.length <= 0 &&
+
+      state.favoritos.map((favorito) => (
+        <Card product={favorito} key={favorito.id} />
+      )) :
+      state.productos.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase())).slice(startIndex, endIndex).map((producto) => (
+        <Card product={producto} key={producto.id} />
+      ));
 
 
   //Filtra el array de los productos disponibles por fecha
@@ -258,7 +258,7 @@ const Home = () => {
           />
 
           <form className={styles.formCalendarios}>
-          <i className="bx bx-calendar"></i>
+            <i className="bx bx-calendar"></i>
 
             <DatePicker className={styles.calendarioInicio}
               selected={estadosFechas.inicio}
@@ -312,13 +312,9 @@ const Home = () => {
         !estadosNuevos.buscar ?
 
           <div className={styles.contenedorProductos}>
-            {/* {state.isFavorite ?
-                <h1 className={styles.tituloProductos}>Mis favoritos {state.favoritos.length}</h1>
-                : <h1 className={styles.tituloProductos}>Los Mas Recomendados</h1>
-              } */}
 
             {state.isFavorite ?
-              
+
               state.favoritos.length > 0 ?
                 <h1 className={styles.tituloProductos}>Mis favoritos {state.favoritos.length}</h1>
                 : <h1 className={styles.tituloProductos}>No hay favoritos</h1>
@@ -327,6 +323,12 @@ const Home = () => {
             }
 
             {productsToShow}
+            
+            {/* Botones para navegar entre las páginas  */}
+              <div className={styles.botonesPaginado}>
+                <button className={styles.botonPaginadoAtras} onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
+                <button className={styles.botonPaginadoAdelante} onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
+              </div>
 
           </div>
 
