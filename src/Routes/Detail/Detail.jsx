@@ -168,7 +168,8 @@ const Detail = () => {
     const fechaFormateada = format(fecha, 'yyyy-MM-dd')
     setFechasReservas({
       ...fechasReservas,
-      fechaInicio: fechaFormateada
+      fechaInicio: fechaFormateada,
+      fechaFin: null
     })
   }
 
@@ -466,7 +467,7 @@ const Detail = () => {
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText=" Fecha de Inicio"
-            minDate={fechaHoy}
+            maxDate={fechasReservas.fechaFin}  
             onChange={onChangeInicioReserva}
             customDayClassName={customDayClass}
             value={fechasReservas.fechaInicio}
@@ -478,7 +479,7 @@ const Detail = () => {
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText=" Fecha de Finalización"
-            minDate={fechaHoy}
+            minDate={fechasReservas.fechaInicio != null ? new Date(new Date(fechasReservas.fechaInicio).getTime() + 86400000) : null}
             onChange={onChangeFinReserva}
             customDayClassName={customDayClass}
             value={fechasReservas.fechaFin}
@@ -551,7 +552,7 @@ const Detail = () => {
 
 
         {/*Renderizacion del cuadro que muestra todos los datos de la reserva si el estado dataAlquiler es true*/}
-        <ModalCargaReseva mostrarSpinnerModal={mostrarSpinner}/>      
+        <ModalCargaReseva mostrarSpinnerModal={mostrarSpinner} />
         <Modal show={dataAlquiler} >
           <Modal.Header className={styles.headerPopUp} onClick={handleOnclickCancelarReserva} closeButton>
             <Modal.Title className={styles.tituloPopUp}>Reserva</Modal.Title>
