@@ -17,8 +17,8 @@ const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, userna
   useEffect(() => {
     const obtenerCalificaciones = async () => {
       try {
-        const response = await axios.get(`${urlBackend}calificaciones/calificacionDeUnProducto/${producto.id}`);        
-        setCalificacionesProducto(response.data);        
+        const response = await axios.get(`${urlBackend}calificaciones/calificacionDeUnProducto/${producto.id}`);
+        setCalificacionesProducto(response.data);
         const calificacionUsuario = response.data.find(calificacion => calificacion.username === username);
         if (calificacionUsuario) {
           setYaCalificado(true);
@@ -71,11 +71,14 @@ const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, userna
         valorCalificacion: calificacion.valorCalificacion,
         comentario: calificacion.comentario,
       }));
-      console.log(calificaciones);
+      // console.log('Aca te muestra calificaciones');
+      // console.log(calificaciones);
       // Mostrar el popup con las calificaciones
-      Swal.fire({
-        title: `Calificaciones de ${producto.nombre}`,
-        html: `
+
+      if (calificaciones.length > 0) {
+        Swal.fire({
+          title: `Calificaciones de ${producto.nombre}`,
+          html: `
           <div>
             ${calificaciones.map(calificacion => `
               <p><strong>Usuario:</strong> ${calificacion.username}</p>
@@ -85,8 +88,20 @@ const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, userna
             `).join('')}
           </div>
         `,
-        confirmButtonText: 'Cerrar',
-      });
+          confirmButtonText: 'Cerrar',
+        })
+      } else {
+
+        Swal.fire({
+          title: `Calificaciones de ${producto.nombre}`,
+          html: `
+            <div>
+                <p>El juego todavía no has sido calificado</p>
+            </div>
+          `,
+          confirmButtonText: 'Cerrar',
+        })
+      }
     } catch (error) {
       console.error('Error al obtener las calificaciones del producto:', error.message);
       Swal.fire("Error!", "Error al obtener las calificaciones del producto.", "error");
@@ -107,9 +122,9 @@ const ProductoReservado = ({ producto, reservaFinalizada, estadoRecibido, userna
 
   return (
     <div className='productosClasificar'>
-        <div className='calificarColumna1'>
-      <span>{producto.nombre}</span>
-      <button onClick={verCalificaciones}>Ver Calificaciones</button> {/* Botón para mostrar todas las calificaciones */}
+      <div className='calificarColumna1'>
+        <span>{producto.nombre}</span>
+        <button onClick={verCalificaciones}>Ver Calificaciones</button> {/* Botón para mostrar todas las calificaciones */}
       </div>
       {reservaFinalizada && (
         <div>
