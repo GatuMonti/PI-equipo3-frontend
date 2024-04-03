@@ -511,12 +511,9 @@ const Detail = () => {
           </div>
 
           {/* Contenedor del ver más */}
-          <div>
+          <div className={styles.contenedorDelVerMas}>
             {State.showFeatures && (
               <div className={styles.contenedorMostrarCaracteristicas}>
-                {/* <h2 className={styles.tituloMostarCaracteristicas}>
-                    ¡Caracteristicas Especiales!
-                  </h2> */}
                 <div className={styles.caracteristicas}>
                   {state.producto.characteristics.map((caracteristica) => {
                     return (

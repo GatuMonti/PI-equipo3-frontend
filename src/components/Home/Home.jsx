@@ -264,7 +264,7 @@ const Home = () => {
               selected={estadosFechas.inicio}
               onChange={manejarCambioFechaInicio}
               dateFormat="yyyy-MM-dd"
-              placeholderText=" Fecha de Inicio"
+              placeholderText=" Inicio"
               type="date"
               minDate={fechaHoy}
               name={estadosFechas.inicio}
@@ -275,7 +275,7 @@ const Home = () => {
               selected={estadosFechas.fin}
               onChange={manejarCambioFechaFin}
               dateFormat="yyyy-MM-dd"
-              placeholderText="Fecha de Finalización"
+              placeholderText="Final"
               type="date"
               minDate={fechaHoy}
               value={estadosFechas.fin}

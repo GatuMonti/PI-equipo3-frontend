@@ -67,6 +67,19 @@ h5{
 
 }
 
+
+@media screen and (max-width: 768px) {
+  .populares{
+    display: none;
+  }
+
+  .contenedorCarrusel{
+    margin-top: 70px;
+  }
+
+}
+
+
 @media screen and (max-width: 414px) {
 
   .imageCarrusel {
@@ -75,8 +88,6 @@ h5{
   
   .populares{
     width: 120px;
-    
-    
   }
 
 }

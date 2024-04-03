@@ -194,6 +194,7 @@
 }
 
 .contenedorMostrarCaracteristicas {
+  background-color: white;
   display: flex;
   max-width: 40vw;
   flex-wrap: wrap;
@@ -424,6 +425,18 @@
     font-size: 3vw;    
   }
 
+  .contenedorDelVerMas{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
 
+  .contenedorMostrarCaracteristicas{
+    min-width: 400px;
+  }
+
+  .nombreCaracteristicas{
+    font-size: 3vw;
+  }
 
 }

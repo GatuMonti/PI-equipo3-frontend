@@ -228,3 +228,11 @@
   }
 
 }
+
+@media screen and (max-width: 414px) {
+  .bx.bx-calendar {
+    font-size: 2vh;
+    margin: 0.5vh 0.5vw 0vh 1.5vw;
+  }
+    
+}
