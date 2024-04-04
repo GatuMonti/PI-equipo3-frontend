@@ -142,7 +142,7 @@ const FormCrearCuenta = () => {
     return (
         <div className={styles.pageFormCrearcuenta}>
             <form className={styles.formRegister}>
-                <img className={styles.bannerRegister}  src='../src/Images/imagen_login_3.webp' />
+                <img className={styles.bannerRegister}  src='../../Images/imagen_login_3.webp'/>
                 <img className={styles.logoLoguin} src='../src/Images/fondoblanco.png' />
                 <h2 className={styles.titleFormLoguin}>Bienvenido a Vortex Games</h2>
                 <div className={styles.etiquetaUserName}>
