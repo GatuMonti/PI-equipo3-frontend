@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import styles from './crearCuenta.module.css'
 import { urlBackend } from '../../App';
+import imagenLogin from '../../Images/imagen_login_3.webp';
+import imagenLogo from '../../Images/fondoblanco.png';
+
 
 const FormCrearCuenta = () => {
 
@@ -142,8 +145,8 @@ const FormCrearCuenta = () => {
     return (
         <div className={styles.pageFormCrearcuenta}>
             <form className={styles.formRegister}>
-                <img className={styles.bannerRegister}  src='../../Images/imagen_login_3.webp'/>
-                <img className={styles.logoLoguin} src='../src/Images/fondoblanco.png' />
+                <img className={styles.bannerRegister}  src={imagenLogin}/>
+                <img className={styles.logoLoguin} src={imagenLogo} />
                 <h2 className={styles.titleFormLoguin}>Bienvenido a Vortex Games</h2>
                 <div className={styles.etiquetaUserName}>
                     <label >Email *</label>

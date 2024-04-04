@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import styles from './login.module.css'
 import { urlBackend } from '../../App';
 import imagenLogin from '../../Images/imagen_login_3.webp';
+import imagenLogo from '../../Images/fondoblanco.png';
 
 
 
@@ -143,7 +144,7 @@ const FormLogin = () => {
         <div className={styles.pageFormLogin}>
             <form className={styles.formLogin}>
                 <img className={styles.banner} src={imagenLogin} />
-                <img className={styles.logoLoguin} src='../src/Images/fondoblanco.png' />
+                <img className={styles.logoLoguin} src={imagenLogo} />
 
                 <h2 className={styles.titleFormLogin}>Iniciar sesión en Vortex</h2>
 
