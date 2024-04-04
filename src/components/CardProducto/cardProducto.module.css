@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  color: black    ;
+  color: black;
 }
 
 .tituloProducto {
@@ -34,7 +34,7 @@
   font-size: small;
   display: flex;
   justify-content: space-between;
-  margin-bottom: -43px;
+  margin-bottom: -41px;
   padding:0px 10px 0px 10px;
   background-color: rgb(139 139 139 / 50%);
   border-top-right-radius: 10px;
@@ -69,10 +69,12 @@
 }
 
 .imageProduct {
+  /* opacity:40%; */
   width: 100%;
   height: 30vh;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  margin-top: 5px;
   /* border-radius: 1vh; */
 }
 
@@ -141,5 +143,14 @@ a {
     border-radius: 10px;
   }
 
+  .cardTop {
+    width: 101%;
+    margin-bottom: -40px;
+  }
+
+  .imageProduct {
+    width: 101%;
+    margin-top: 4px;
+  }
 
 }
