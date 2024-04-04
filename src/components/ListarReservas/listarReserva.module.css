@@ -1,0 +1,198 @@
+
+/***************************************************/
+.listaAdmin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  align-self:stretch;
+}
+
+.titleListProducts {
+  color: #4867DB;
+  font-weight: 600;
+  font-size: 2.2vw;
+  text-align: center;
+  padding:20px;
+}
+
+.contenedorListaProductos {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.contenedorReservas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* Agregado */
+  cursor: pointer;
+
+}
+
+.contenedorProductosAdmin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #6269d3;
+  border-radius: 5px;
+}
+
+.listId,
+.listName,
+.listCategoria,
+.listTipo {
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0px;
+  font-size: 1.2vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.contadorProductos{
+  color: #4867DB;
+  font-weight: 600;
+  font-size: 1vw;
+  text-align: center;
+  padding:20px;
+}
+
+/* ///////////Estilos para IpadMini ////////*/
+/* ///////////Estilos para IpadMini ////////*/
+/* ///////////Estilos para IpadMini ////////*/
+
+@media screen and (max-width: 768px) {
+
+
+  .listaAdmin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self:stretch;
+  }
+  
+  .titleListProducts {
+    font-weight: 600;
+    font-size: 3vw;
+    text-align: center;
+    padding:20px;
+  }
+  
+  .contenedorListaProductos {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .contenedorReservas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* Agregado */
+    cursor: pointer;
+  
+  }
+  
+  .contenedorProductosAdmin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #6269d3;
+    border-radius: 5px;
+  }
+  
+  .listId,
+  .listName,
+  .listCategoria,
+  .listTipo {
+    font-size: 1.8vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  
+  .contadorProductos{
+    color: #4867DB;
+    font-weight: 600;
+    font-size: 2vw;
+    text-align: center;
+    padding:20px;
+  }
+
+  .paginationItem span{
+    /* Estilos personalizados para el número de página */
+    /* Por ejemplo: */
+    font-size: x-small;
+
+  }
+  
+  .paginationItem.active {
+    /* Estilos para la página activa */
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+
+}
+
+
+/* ///////////Estilos para IphoneXR ////////*/
+/* ///////////Estilos para IphoneXR  ////////*/
+/* ///////////Estilos para IphoneXR ////////*/
+
+@media screen and (max-width: 414px) {
+
+  
+  .titleListProducts {
+    font-weight: 600;
+    font-size: 4vw;
+
+  }
+  
+  .contenedorListaProductos {
+    width: 95vw;
+  }
+
+  
+  .listId,
+  .listName,
+  .listCategoria,
+  .listTipo {
+    font-size: 2.8vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  
+  .contadorProductos{
+    font-size: 3vw;
+
+  }
+
+  .paginationItem li{
+    /* Estilos personalizados para el número de página */
+    /* Por ejemplo: */
+    display: flex;
+
+
+  }
+
+  .paginationItem span{
+    /* Estilos personalizados para el número de página */
+    /* Por ejemplo: */
+    font-size: xx-small;
+    
+  }
+  
+  .paginationItem.active {
+    /* Estilos para la página activa */
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+
+}

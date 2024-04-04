@@ -1,0 +1,53 @@
+/******************************************************************/
+/************Politicas******************/
+/******************************************************************/
+
+.contenedorPoliticas{
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10vh;
+  }
+  
+  
+  .politicasTitle {
+    width: 100%;
+    text-align: center;
+    color: #6269d3;
+    text-decoration: underline;
+    padding-top: 5vh;
+  }
+  
+  .politicas {
+    padding-top: 5vh;
+    max-width: 60vw;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .politica {
+    justify-content: center;
+    text-align: left;
+    padding: 10px;
+    list-style-type: none;
+  }
+  
+  .contenedorPoliticas h2{
+    font-size: larger;
+  }
+  
+  
+  @media screen and (max-width: 415px) {
+    .contenedorPoliticas{
+      max-width: 90vw;
+    }
+  
+    .politicas {
+      padding-top: 5vh;
+      max-width: 90vw;
+    }
+  } 
+   
+  

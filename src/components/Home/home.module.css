@@ -1,0 +1,461 @@
+.home {
+  min-width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh 0vh;
+
+}
+
+.contenedorProductos {
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedorProductos h1 {
+  width: 80%;
+  text-align: center;
+}
+
+.contenedorCategorias {
+  background-color: #4867DB;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  margin: 15vh 0vw 0vh 0vw;
+}
+
+.tituloCategorias {
+  font-size: 2vw;
+  text-align: center;
+  margin: 3vh 0vw 0vh 0vw;
+  font-weight: 600;
+}
+
+.categoriaUno,
+.categoriaDos,
+.categoriaTres,
+.categoriaCuatro,
+.categoriaCinco {
+  display: flex;
+  flex-direction: column;
+  width: 13vw;
+  align-items: center;
+  margin: 5vh 0vw 0vh 1vw;
+}
+
+.tituloCategoriaUno,
+.tituloCategoriaDos,
+.tituloCategoriaTres,
+.tituloCategoriaCuatro,
+.tituloCategoriaCinco {
+  margin: 0vh 0vw 0vh 0vw;
+  color: #FFFFFF;
+  font-size: 1.2vw;
+}
+
+.img1CategoriaUno,
+.img2CategoriaUno,
+.img1CategoriaDos,
+.img2CategoriaDos,
+.img1CategoriaTres,
+.img2CategoriaTres,
+.img1CategoriaCuatro,
+.img2CategoriaCuatro,
+.img1CategoriaCinco,
+.img2CategoriaCinco {
+  width: 13vw;
+  height: 15vh;
+  margin: 3vh 0vw 2vh 0vw;
+}
+
+.img1CategoriaUno:hover,
+.img2CategoriaUno:hover,
+.img1CategoriaDos:hover,
+.img2CategoriaDos:hover,
+.img1CategoriaTres:hover,
+.img2CategoriaTres:hover,
+.img1CategoriaCuatro:hover,
+.img2CategoriaCuatro:hover,
+.img1CategoriaCinco:hover,
+.img2CategoriaCinco:hover {
+  width: 14vw;
+}
+
+
+/********************Buscador****************/
+
+
+.barraBuscador {
+  width: 90vw;
+  max-width: 1000px;
+  height: 9vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #c8a3d49c;
+  border-radius: 8px;
+  padding: 20px;
+
+
+}
+
+
+.buscadorConFechas {
+  width: 70vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.formCalendarios {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 45%;
+}
+
+.formularioBuscador {
+  display: flex;
+  height: auto;
+  border-radius: 8px;
+}
+
+.inputSearch {
+  width: 10vw;
+  min-width: 50px;
+  height: auto;
+  text-align: center;
+  border: none;
+  font-size: 1.1vw;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: black;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 35px;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.inputSearchBuscador {
+  width: 150px;
+  height: 33px;
+  text-align: center;
+  border: none;
+  font-size: 1vw;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: black;
+  display: inline-block;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: left;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.inputSearchBuscador::placeholder {
+  color: black;
+}
+
+.inputSearchBuscador:focus {
+  border: solid black;
+
+}
+
+
+.calendarioInicio {
+  width: 7.2vw;
+  min-width: 50px;
+  height: 33px;
+  border-radius: 8px;
+  font-size: 1.68vh;
+  border: none;
+  margin: 5px;
+}
+
+.calendarioFinalizacion {
+  width: 8vw;
+  min-width: 50px;
+  height: 33px;
+  border-radius: 8px;
+  font-size: 1.68vh;
+  border: none;
+  margin: 5px;
+}
+
+.inputSearch:focus {
+  outline: none;
+}
+
+.botonBuscarFecha {
+  height: 33px;
+  width: auto;
+  border: none;
+  cursor: pointer;
+  background-color: #AC6ABA;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.botonBuscarFecha:hover,
+.botonBuscarFecha:focus {
+  background-color: #F082AC;
+}
+
+.botonBuscar {
+  width: 3vw;
+  height: 2%;
+  border: none;
+  cursor: pointer;
+  background-color: #AC6ABA;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 35px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.botonBuscar:hover,
+.botonBuscar:focus {
+  background-color: #F082AC;
+}
+
+/* Estilos para los botones de paginación */
+
+.botonesPaginado{
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+/* Estilo base para los botones */
+.botonesPaginado button {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #007bff;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo para el botón "Next" */
+.botonPaginadoAdelante {
+  margin-left: 0.5rem; /* Espacio entre los botones */
+}
+
+/* Estilo para el botón "Back" cuando está deshabilitado */
+.botonesPaginado button:disabled {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* Estilo para el botón "Back" cuando está habilitado */
+.botonesPaginado button:not(:disabled):hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  color: #fff;
+}
+
+/*Estilos para IpadMini, TODAS LAS PANTALLAS MENORES A 768px*/
+@media screen and (max-width: 768px) {
+  .contenedorProductos {
+    width: 80vw;
+  }
+
+  .barraBuscador {
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    max-height: 6vh;
+    margin-top: 0px;
+    border-radius: 0%;
+    padding: 5px;
+  }
+
+  .formularioBuscador {
+    display: flex;
+    align-items: center;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .botonBuscar {
+    margin: 10px;
+    height: 3.5vh;
+    width: 4vh;
+    border-radius: 100%;
+  }
+
+  .buscadorConFechas {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin:  0vh 5vw 0vh 0vw;
+  }
+ 
+
+  .formularioBuscador .inputSearch {
+    appearance: none;
+    width: 150px;
+    font-size: 15px;
+    padding: 10px;
+    
+  }
+
+  .inputSearch option {
+    appearance: none;
+   
+    /* Estilos para las opciones del desplegable */
+    font-size: 10px;
+    background-color: #ffffffe4;
+    color: #333;
+    width: 100px;
+   
+  }
+
+  .formCalendarios {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 45%;
+  }
+
+  .inputSearchBuscador {
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+/*Estilos para celular Iphone XR, TODAS LAS PANTALLAS MENORES A 415px*/
+@media screen and (max-width: 414px) {
+  .formularioBuscador {
+    display: none;
+  }
+
+  .inputSearchBuscador {
+    min-width: 200px;
+    background-color: black;
+  }
+
+  .buscadorConFechas {
+    flex-direction: column;
+    min-width: 100vw;
+    margin: 0px;
+  }
+
+  .calendarioInicio {
+    width: 7.2vw;
+    min-width: 120px;
+  }
+  
+  .calendarioFinalizacion {
+    width: 8vw;
+    min-width: 120px;
+  }
+
+
+  .formCalendarios {
+    min-width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 45%;
+  }
+
+
+
+  .barraBuscador {
+    flex-direction: row;
+    width: 100vw;
+    min-height: 90px;
+    margin-top: 0px;
+    border-radius: 0%;
+    padding: 0px;
+  }
+
+  .contenedorCarrusel {
+    height: 200px;
+  }
+}

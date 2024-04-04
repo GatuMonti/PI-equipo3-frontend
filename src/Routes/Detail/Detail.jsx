@@ -5,15 +5,16 @@ import { useContextGlobal } from "../../components/Util/global.context";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
-import { format , differenceInDays } from "date-fns";
+import { format, differenceInDays } from "date-fns";
 import ComparteRedesSociales from "../../components/ComparteRedesSociales";
 import "boxicons/css/boxicons.min.css";
 import TotalCalificacionesProducto from "../../components/TotalCalificacionesProducto/TotalCalificacionesProducto"
 import Swal from "sweetalert2";
 import { urlBackend } from '../../App';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 import styles from './Detail.module.css'
+import ModalCargaReseva from "../../components/ModalCargaReserva/ModalCargaReseva";
 
 
 const Detail = () => {
@@ -21,9 +22,9 @@ const Detail = () => {
   const { state, dispatch } = useContextGlobal();
   const [usuarioID, setUsuarioID] = useState(localStorage.getItem("username"));
   const [esFavorito, setEsFavorito] = useState(false);
-  const [fechasReservas, setFechasReservas]=useState({
-    fechaInicio:null,
-    fechaFin:null
+  const [fechasReservas, setFechasReservas] = useState({
+    fechaInicio: null,
+    fechaFin: null
   })
   const [estadosFavoritos, setEstadosFavoritos] = useState({
     favorito: false,
@@ -35,13 +36,14 @@ const Detail = () => {
     id: params.id,
   };
 
-//Estado para mostrar la data del producto en alquiler
-const[dataAlquiler, setDataAlquiler]=useState(false)
+  const [mostrarSpinner, setMostrarSpinner] = useState(false);
+  //Estado para mostrar la data del producto en alquiler
+  const [dataAlquiler, setDataAlquiler] = useState(false)
 
-//Estado para calcular el precio total de la reserva
-const[precioTotal, setPrecioTotal]=useState(0)
+  //Estado para calcular el precio total de la reserva
+  const [precioTotal, setPrecioTotal] = useState(0)
 
-const navigate = useNavigate ();
+  const navigate = useNavigate();
 
 
   const endPointDetail = `${urlBackend}products/search-id/${params.id}`;
@@ -65,15 +67,15 @@ const navigate = useNavigate ();
         ...prevState,
         favorito: true,
       }));
-    }else{
+    } else {
       setEstadosFavoritos(prevState => ({
         ...prevState,
         favorito: false,
       }));
-      
+
     }
   }, [state.favoritos, params.id]);
-  
+
 
   const usuario = localStorage.getItem("username");
 
@@ -102,7 +104,7 @@ const navigate = useNavigate ();
                 axios
                   .get(
                     urlBackend + "favorite/listar-favoritos-usuario/" +
-                      usuario
+                    usuario
                   )
                   .then((response) => {
                     console.log(
@@ -136,8 +138,8 @@ const navigate = useNavigate ();
             Swal.fire("El juego ha sido añadido a tus favoritos");
             axios
               .get(
-               urlBackend + "favorite/listar-favoritos-usuario/" +
-                  usuario
+                urlBackend + "favorite/listar-favoritos-usuario/" +
+                usuario
               )
               .then((response) => {
                 console.log(
@@ -161,126 +163,129 @@ const navigate = useNavigate ();
     }
   };
 
-//Onchange para el cambio de valores en los inputs de fechas de reservas
+  //Onchange para el cambio de valores en los inputs de fechas de reservas
 
-const onChangeInicioReserva=(fecha)=>{
-  const fechaFormateada= format(fecha, 'yyyy-MM-dd')
-  setFechasReservas({
-    ...fechasReservas,
-    fechaInicio:fechaFormateada
-  })
-}
-
-//Onchange para el cambio de valores en los inputs de fechas de reservas
-
-const onChangeFinReserva=(fecha)=>{
-const fechaFormateada= format(fecha, 'yyyy-MM-dd')
-setFechasReservas({
-  ...fechasReservas,
-  fechaFin:fechaFormateada
-})
-}
-
-//OnClick para mostrar los datos de la reserva.
-
-const handleClickVerReserva=()=>{
-  if(localStorage.getItem("username")===null){
-    Swal.fire({
-      title: "El usuario debe estar logueado para realizar una reserva",
-      text: "Realiza primero el loguin",
-      icon: "error",
-      confirmButtonColor: "#ff00008f",
-      customClass: {
-          popup: 'textFalla'
-      }
-  });
-    setTimeout(()=>{
-      navigate('/FormLogin/');; // Redirige al loguin si el usuario no esta logueado  
-  },5000)
-  }
-  else if(fechasReservas.fechaInicio==null || fechasReservas.fechaFin==null){
-    Swal.fire({
-      title: "Los campos no pueden estar vacios",
-      text: "Verifique las fechas de reserva",
-      icon: "error",
-      confirmButtonColor: "#ff00008f",
-      customClass: {
-          popup: 'textFalla'
-      }
-  });
-  }
-  else{
-    setDataAlquiler(true) 
-    //Logica para calcular el precio del alquiler
-    let diasAlquilar=differenceInDays(fechasReservas.fechaFin,fechasReservas.fechaInicio)
-    //Condicional que validad si la fecha de inicio es la misma que la fecha de fin, los dias a alquilar sea 1
-    if( diasAlquilar===0){
-      diasAlquilar=1
-    }
-    else{
-      diasAlquilar=diasAlquilar
-    }
-    setPrecioTotal(diasAlquilar* state.producto.price) 
-  }  
-}
-
-// Manejo del onclick para cancelar la reserva
-const handleOnclickCancelarReserva=()=>{
-  setDataAlquiler(false)
-  setFechasReservas({
-    ...fechasReservas,
-    fechaInicio:null,
-    fechaFin:null
-  })
-}
-
-const username = localStorage.getItem("username");
-
-//Objeto para hacer la reserva
-const bookingAEnviar={
-  fechaInicio:fechasReservas.fechaInicio,
-  fechaFin:fechasReservas.fechaFin,
-  usuario:{
-    username:username
-  },
-  productosReservados:[
-    {name:state.producto.name}
-  ],
-}
-//manejo de onclick para hacer reserva
-
-const handleOnclickReserva= async()=>{
-  try {
-    const response= await axios.post(`http://localhost:8080/booking/add-booking`, bookingAEnviar 
-   )
-   Swal.fire("¡Reservado!", "Tu reservada ha sido guardada.", "success");
-    console.log(response.data)
+  const onChangeInicioReserva = (fecha) => {
+    const fechaFormateada = format(fecha, 'yyyy-MM-dd')
     setFechasReservas({
       ...fechasReservas,
-      fechaInicio:null,
-      fechaFin:null
+      fechaInicio: fechaFormateada,
+      fechaFin: null
     })
- } 
- catch (error) {
-   console.log("Error", error)
-   Swal.fire({
-     title: "Error al confirmar la reserva",
-     text: error,
-     icon: "error",
-     confirmButtonColor: "#ff00008f",
-     customClass: {
-         popup: 'textFallaServer'
-     }
-     
-   });
-   setFechasReservas({
-    ...fechasReservas,
-    fechaInicio:null,
-    fechaFin:null
-  })
-  }  
- setDataAlquiler(false)
-}
+  }
+
+  //Onchange para el cambio de valores en los inputs de fechas de reservas
+
+  const onChangeFinReserva = (fecha) => {
+    const fechaFormateada = format(fecha, 'yyyy-MM-dd')
+    setFechasReservas({
+      ...fechasReservas,
+      fechaFin: fechaFormateada
+    })
+  }
+
+  //OnClick para mostrar los datos de la reserva.
+
+  const handleClickVerReserva = () => {
+    if (localStorage.getItem("username") === null) {
+      Swal.fire({
+        title: "El usuario debe estar logueado para realizar una reserva",
+        text: "Realiza primero el loguin",
+        icon: "error",
+        confirmButtonColor: "#ff00008f",
+        customClass: {
+          popup: 'textFalla'
+        }
+      });
+      setTimeout(() => {
+        navigate('/FormLogin/');; // Redirige al loguin si el usuario no esta logueado  
+      }, 5000)
+    }
+    else if (fechasReservas.fechaInicio == null || fechasReservas.fechaFin == null) {
+      Swal.fire({
+        title: "Los campos no pueden estar vacios",
+        text: "Verifique las fechas de reserva",
+        icon: "error",
+        confirmButtonColor: "#ff00008f",
+        customClass: {
+          popup: 'textFalla'
+        }
+      });
+    }
+    else {
+      setDataAlquiler(true)
+      //Logica para calcular el precio del alquiler
+      let diasAlquilar = differenceInDays(fechasReservas.fechaFin, fechasReservas.fechaInicio)
+      //Condicional que validad si la fecha de inicio es la misma que la fecha de fin, los dias a alquilar sea 1
+      if (diasAlquilar === 0) {
+        diasAlquilar = 1
+      }
+      else {
+        diasAlquilar = diasAlquilar
+      }
+      setPrecioTotal(diasAlquilar * state.producto.price)
+    }
+  }
+
+  // Manejo del onclick para cancelar la reserva
+  const handleOnclickCancelarReserva = () => {
+    setDataAlquiler(false)
+    setFechasReservas({
+      ...fechasReservas,
+      fechaInicio: null,
+      fechaFin: null
+    })
+  }
+
+  const username = localStorage.getItem("username");
+
+  //Objeto para hacer la reserva
+  const bookingAEnviar = {
+    fechaInicio: fechasReservas.fechaInicio,
+    fechaFin: fechasReservas.fechaFin,
+    usuario: {
+      username: username
+    },
+    productosReservados: [
+      { name: state.producto.name }
+    ],
+  }
+  //manejo de onclick para hacer reserva
+
+  const handleOnclickReserva = async () => {
+    try {
+      setMostrarSpinner(true);
+      const response = await axios.post(`${urlBackend}booking/add-booking`, bookingAEnviar
+      )
+      Swal.fire("¡Reservado!", "Tu reservada ha sido guardada.", "success");
+      console.log(response.data)
+      setFechasReservas({
+        ...fechasReservas,
+        fechaInicio: null,
+        fechaFin: null
+      })
+    }
+    catch (error) {
+      console.log("Error", error)
+      Swal.fire({
+        title: "Error al confirmar la reserva",
+        text: error,
+        icon: "error",
+        confirmButtonColor: "#ff00008f",
+        customClass: {
+          popup: 'textFallaServer'
+        }
+
+      });
+      setFechasReservas({
+        ...fechasReservas,
+        fechaInicio: null,
+        fechaFin: null
+      })
+    }
+    setMostrarSpinner(false); //Ocultamos el loader
+    setDataAlquiler(false)
+  }
 
 
 
@@ -382,31 +387,34 @@ const handleOnclickReserva= async()=>{
 
   return (
     <div className={styles.detalleProducto}>
-      <Link to={"/"}>
-        <button className={styles.botonRegresar}>Atras</button>
-      </Link>
-      <h3 className={styles.tituloDetail}>{state.producto?.name}</h3>
+      <div className={styles.contenedorTituloBoton}>
+        <h3 className={styles.tituloDetail}>{state.producto?.name}</h3>
+        <Link to={"/"}>
+          <button className={styles.botonRegresar}>Atras</button>
+        </Link>
 
+      </div >
       <div onClick={handleToggleFavorito} className={styles.contenedorFavorito}>
         {usuarioID && (
-           <i
-           className={`bx ${
-             estadosFavoritos.favorito ? "bxs-heart" : "bx-heart"
-           }`}
+          <i
+            className={`bx ${estadosFavoritos.favorito ? "bxs-heart" : "bx-heart"
+              }`}
           ></i>
         )}
       </div>
 
       <div className={styles.contenedorImagenesDetail}>
-        {state.producto &&
-          state.producto.images &&
-          state.producto.images.length > 0 && (
-            <img
-              className={styles.imagen1Producto}
-              src={state.producto.images[0].imageUrl}
-              alt="imagen1"
-            />
-          )}
+        <div className={styles.contenedorImagenPrincipal}>
+          {state.producto &&
+            state.producto.images &&
+            state.producto.images.length > 0 && (
+              <img
+                className={styles.imagen1Producto}
+                src={state.producto.images[0].imageUrl}
+                alt="imagen1"
+              />
+            )}
+        </div>
         <div className={styles.contenedor4imagenes}>
           {state.producto &&
             state.producto.images &&
@@ -446,67 +454,10 @@ const handleOnclickReserva= async()=>{
             )}
         </div>
       </div>
-      {!State.cambiarBoton ? (
-        <button onClick={handleMostarMas} className={styles.verMas}>
-          ver mas
-        </button>
-      ) : (
-        <button onClick={handleOcultar} className={styles.verMas}>
-          Ocultar
-        </button>
-      )}
 
-      {State.showFeatures && (
-        <div className={styles.contenedorMostrarCaracteristicas}>
-          <h2 className={styles.tituloMostarCaracteristicas}>
-            ¡Caracteristicas Especiales!
-          </h2>
-          <div className={styles.caracteristicas}>
-            {state.producto.characteristics.map((caracteristica) => {
-              return (
-                <p className={styles.nombreCaracteristicas}>
-                  <Avatar
-                    name={caracteristica.name}
-                    textMarginRatio=".15"
-                    font-size="2px"
-                    size="30"
-                    round={true}
-                  />
-                  {caracteristica.name}
-                </p>
-              );
-            })}
-          </div>
-          <div className={styles.comparteRedes}>
-            <ComparteRedesSociales location={location.pathname} />
-          </div>
-        </div>
-      )}
-      
-      <div className={styles.calendarioCalificaciones}>
-      <div className={styles.detallesCalendraio}>
-      <div className={styles.contenedorCalendarioDetalles}>
-        <div className={styles.contenedorDetalles}>
-          <h2 className={styles.tituloDetallesDeProducto}>Detalles principales</h2>
-          <h3 className={styles.categoriaProducto}>
-            <b>Categoria:</b>
-            <span>
-              {state.producto.category
-                ? state.producto.category.title
-                : "Sin categoria"}
-            </span>
-          </h3>
-          <h3 className={styles.descripcionProducto}>
-            <b>Descripcion:</b><span>{state.producto.description}</span>
-          </h3>
-          <h3 className={styles.precioProducto}>
-            <b>Precio:</b><span>{state.producto.price} USD</span>
-          </h3>
-        </div>
-      </div>
-
+      {/*contenedor del boton reservar*/}
       <div className={styles.contenedorComprar}>
-        <button className={styles.botonComprar} onClick={handleClickVerReserva}>Reservar</button>
+
 
         <div className={styles.contenedorDatePicker}>
           <i className={styles.calendarEvent} ></i>
@@ -517,9 +468,10 @@ const handleOnclickReserva= async()=>{
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText=" Fecha de Inicio"
-            minDate={fechaHoy}
+            maxDate={fechasReservas.fechaFin}  
             onChange={onChangeInicioReserva}
             customDayClassName={customDayClass}
+            value={fechasReservas.fechaInicio}
           />
 
           <DatePicker
@@ -528,66 +480,127 @@ const handleOnclickReserva= async()=>{
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText=" Fecha de Finalización"
-            minDate={fechaHoy}
+            minDate={fechasReservas.fechaInicio != null ? new Date(new Date(fechasReservas.fechaInicio).getTime() + 86400000) : null}
             onChange={onChangeFinReserva}
             customDayClassName={customDayClass}
+            value={fechasReservas.fechaFin}
           />
         </div>
-        
+        <button className={styles.botonComprar} onClick={handleClickVerReserva}>Reservar</button>
       </div>
 
-      {/*Renderizacion del cuadro que muestra todos los datos de la reserva si el estado dataAlquiler es true*/}
 
-    <Modal  show={dataAlquiler} >
-    <Modal.Header className={styles.headerPopUp} onClick={handleOnclickCancelarReserva} closeButton>
-    <Modal.Title className={styles.tituloPopUp}>Reserva</Modal.Title>
-    </Modal.Header>
-    <Modal.Body className={styles.contenedorPopUp} >
-    <form >
-        <div className="mb-3" >
-        <p className={styles.subtituloPopUp}>Nombre del producto: <span className={styles.valorPopUp}>{state.producto.name}</span></p> 
+      {/*Contenedor detalles principales*/}
+      <div className={styles.calendarioCalificaciones}>
+
+        <div className={styles.contenedorCalendarioDetalles}>
+          <div className={styles.contenedorDetalles}>
+            <h2 className={styles.tituloDetallesDeProducto}>Detalles</h2>
+            <h3 className={styles.categoriaProducto}>
+              <b>Categoria:</b>
+              <span>
+                {state.producto.category
+                  ? state.producto.category.title
+                  : "Sin categoria"}
+              </span>
+            </h3>
+            <h3 className={styles.descripcionProducto}>
+              <b>Descripcion:</b><span>{state.producto.description}</span>
+            </h3>
+            <h3 className={styles.precioProducto}>
+              <b>Precio:</b><span>{state.producto.price} USD</span>
+            </h3>
+          </div>
+
+          {/* Contenedor del ver más */}
+          <div className={styles.contenedorDelVerMas}>
+            {State.showFeatures && (
+              <div className={styles.contenedorMostrarCaracteristicas}>
+                <div className={styles.caracteristicas}>
+                  {state.producto.characteristics.map((caracteristica) => {
+                    return (
+                      <p className={styles.nombreCaracteristicas}>
+                        <Avatar
+                          name={caracteristica.name}
+                          textMarginRatio=".15"
+                          size="1.2vw"
+                          round={true}
+                        />
+                        {caracteristica.name}
+                      </p>
+                    );
+                  })}
+                </div>
+                <div className={styles.comparteRedes}>
+                <ComparteRedesSociales location={location.pathname} />
+                </div>
+              </div>
+            )}
+
+            {!State.cambiarBoton ? (
+              <button onClick={handleMostarMas} className={styles.verMas}>
+                Ver Más
+              </button>
+            ) : (
+              <button onClick={handleOcultar} className={styles.verMas}>
+                Ocultar
+              </button>
+            )}
+          </div>
         </div>
 
-        <div className="mb-3">
-        <p className={styles.subtituloPopUp}>Precio: <span className={styles.valorPopUp}>{precioTotal} USD</span></p> 
-        </div>
-
-        <div className="mb-3">
-        <p className={styles.subtituloPopUp}>Descripcion: <span className={styles.valorPopUp}>{state.producto.description}</span></p>
-        </div>
-
-        <div className="mb-3">
-          <img src={state.producto.images && state.producto.images[0].imageUrl} alt="imageReserva" className={styles.imageReserva}/>
-          <img src={state.producto.images && state.producto.images[1].imageUrl} alt="imageReserva" className={styles.imageReserva} />
-        </div>
-
-        <div className="mb-3">
-        <p className={styles.subtituloPopUp}>Inicio Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaInicio}</span></p>
-        </div>
-
-        <div className="mb-3">
-        <p className={styles.subtituloPopUp}>Fin Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaFin}</span></p>
-        </div>
-
-        <div className="mb-3">
-        <p className={styles.subtituloPopUp}>Nombre de usuario: <span className={styles.valorPopUp}>{localStorage.getItem("nombre") +  " " +localStorage.getItem("apellido")}</span></p>
-        </div>
-
-        <div className="mb-3">
-        <p className={styles.subtituloPopUp}>Email: <span className={styles.valorPopUp}>{localStorage.getItem("username")}</span></p>
-        </div>
-
-        <Button className={styles.botonCancelarReserva} onClick={handleOnclickCancelarReserva} variant="secondary" >Cancelar</Button>
-        <Button  className={styles.botonReservar} onClick={handleOnclickReserva}>Alquilar</Button>
-    </form>
-    </Modal.Body>
-    </Modal>
 
 
 
-      
-      </div>
-      <TotalCalificacionesProducto productId={params.id}/>
+        {/*Renderizacion del cuadro que muestra todos los datos de la reserva si el estado dataAlquiler es true*/}
+        <ModalCargaReseva mostrarSpinnerModal={mostrarSpinner} />
+        <Modal show={dataAlquiler} >
+          <Modal.Header className={styles.headerPopUp} onClick={handleOnclickCancelarReserva} closeButton>
+            <Modal.Title className={styles.tituloPopUp}>Reserva</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className={styles.contenedorPopUp} >
+            <form >
+              <div className="mb-3" >
+                <p className={styles.subtituloPopUp}>Nombre del producto: <span className={styles.valorPopUp}>{state.producto.name}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <img src={state.producto.images && state.producto.images[0].imageUrl} alt="imageReserva" className={styles.imageReserva} />
+                {/* <img src={state.producto.images && state.producto.images[1].imageUrl} alt="imageReserva" className={styles.imageReserva} /> */}
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Precio: <span className={styles.valorPopUp}>{precioTotal} USD</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Descripcion: <span className={styles.valorPopUp}>{state.producto.description}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Inicio Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaInicio}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Fin Reserva: <span className={styles.valorPopUp}>{fechasReservas.fechaFin}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Nombre de usuario: <span className={styles.valorPopUp}>{localStorage.getItem("nombre") + " " + localStorage.getItem("apellido")}</span></p>
+              </div>
+
+              <div className="mb-3">
+                <p className={styles.subtituloPopUp}>Email: <span className={styles.valorPopUp}>{localStorage.getItem("username")}</span></p>
+              </div>
+              <div className="mb-3 d-flex justify-content-center" >
+              <Button className={styles.botonCancelarReserva} onClick={handleOnclickCancelarReserva} variant="secondary" >Cancelar</Button>
+              <Button className={styles.botonReservar} onClick={handleOnclickReserva}>Alquilar</Button>
+              </div>
+              
+            </form>
+          </Modal.Body>
+        </Modal>
+        <TotalCalificacionesProducto productId={params.id} />
       </div>
     </div>
   );

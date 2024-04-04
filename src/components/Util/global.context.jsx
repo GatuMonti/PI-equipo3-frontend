@@ -2,7 +2,7 @@ import { createContext,useContext,useEffect, useState } from "react";
 import { useReducer} from "react";
 import axios from "axios";
 import reducer from '../../reducer/reducer';
-import {urlBackend} from '../../App'
+import { urlBackend } from "../../App";
 
 export const initialState={
     producto:{},
@@ -23,9 +23,9 @@ const ContextProvider=({children})=>{
     const [updatingCaracteristics, setUpdatingCaracteristics] = useState(false);    
     const [updatingProducts, setUpdatingProducts] = useState(false);
 
-    const endPointProducts= urlBackend +"products/list-products";
-    const endPointCategias= urlBackend +"categorias/listar-categorias";
-    const endPointCaracteristicas = urlBackend +"characteristics/list-characteristics";
+    const endPointProducts= urlBackend + "products/list-products";
+    const endPointCategias= urlBackend + "categorias/listar-categorias";
+    const endPointCaracteristicas = urlBackend + "characteristics/list-characteristics";
 
     useEffect(()=>{
         if(!updatingProducts){

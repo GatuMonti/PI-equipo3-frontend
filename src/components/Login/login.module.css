@@ -1,0 +1,119 @@
+.pageFormLogin {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    margin: 2vh;
+  }
+  
+  .formLogin {
+    width: 450px;
+    height: 550px;
+    font-family: "Arial";
+    border-radius: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-y: hidden;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #dde5f4;
+    box-shadow: 5px 5px 15px grey;
+  }
+  
+  .formLogin .banner {
+    width: 100%;
+    height: 240px;
+    padding: 0px;
+    border-radius: 5px;
+  }
+  
+  .logoLoguin {
+    margin-top: -3em;
+  }
+  
+  
+  .titleFormLogin {
+    font-size: large;
+    margin: 10px;
+  }
+  
+  .etiquetaUserNameLogin,
+  .etiquetaPasswordLogin {
+    margin: 6px;
+    background: #dde5f4;
+    width: 70%;
+    height:50px;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0;
+    font-size: medium;
+  }
+  
+  .inputUserNameLogin,
+  .inputPasswordLogin {
+    padding-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: medium;
+  }
+  
+  .botonLogin {
+    padding: 5px 20px;
+    margin: 2rem;
+    background-color: #AC6AB4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: smal;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botonLogin:hover {
+    background-color: #ceb0d1;;
+  
+  }
+  
+  .footerLoguin {
+    display: flex;
+    margin-bottom: 3rem;
+    font-size: 0.7em;
+    color: #5e5e5e;
+    gap: 1em;
+  }
+  
+  .footerLoguin span {
+    cursor: pointer;
+  }
+  
+
+
+
+  /*************************************/
+  /*****************Responsivo********************/
+  /*************************************/
+
+  .pageFormLogin {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 569px) {
+    .formLogin  {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        box-shadow: 0;
+      }
+
+      .formLogin .banner {
+        border-radius: 0;
+      }
+  }
+

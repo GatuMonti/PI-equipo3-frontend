@@ -1,0 +1,286 @@
+/* Esto es lo que estoy pasando desde proctosReservados */
+/***************************************************/
+.productoACalificar {
+    background-color: pink;
+
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 0px;
+
+    transition: 0.4s ease-in-out;
+    padding: .5vw;
+
+  }
+  
+  .invisible {
+    max-height: 0;
+    /* Ocultar el contenido */
+  
+  }
+  
+  .visible {
+    max-height: 500px;
+    margin: 1VW;
+  }
+
+
+
+  /***********************************************************************************/
+/*****************Calificaciones en la pagina de Reservas*******************/
+/*****************Calificaciones en la pagina de Reservas*******************/
+/*****************Calificaciones en la pagina de Reservas*******************/
+/***********************************************************************************/
+
+
+  
+  
+.productosClasificar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 10px;
+    /* border-top: 1px dashed grey; */
+  }
+  
+  .msjsCalificar {
+    display: flex;
+    /* width: 30vw; */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .msjsCalificar p {
+    margin: 0px;
+    margin-right: 10px;
+    color: red;
+    font-weight: bold;
+  }
+  
+  .calificarColumna1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .calificarColumna1 span{
+    padding: 4px;
+  }
+  
+  .contenedorCalificador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contenedorCalificador input{
+    width: 20w;
+    height: 24px;
+    font-size:20px;
+    border: 0;
+    margin: 5px;
+  }
+  
+  .contenedorCalificador select{
+    width: 10vw;
+    height: 24px;
+    font-size: 20px;
+    border: 0;
+    margin: 5px;
+  }
+  
+  .inputCalificacion {
+    width: 35vw;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .productoACalificar button {
+    font-size: large;
+    padding: 5px 10px;
+    background-color: #AC6AB4;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0 0.3rem;
+  }
+  
+  
+  
+  
+  .productoACalificar button:hover {
+    background-color: #ceb0d1;
+  }
+  
+  .productoACalificar button:active {
+    background-color: #ceb0d1;
+  }
+  
+  /*****************IPAD MINI*******************/
+  /*****************IPAD MINI*******************/
+  /*****************IPAD MINI*******************/
+  
+  @media screen and (max-width: 768px) {
+  
+  
+  
+  .productosClasificar {
+    width: 100%;
+    padding: 10px;
+    /* border-top: 1px dashed grey; */
+  }
+  
+  .msjsCalificar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .msjsCalificar p {
+    font-size: x-small;
+    margin: 0px;
+    margin-right: 10px;
+  
+  }
+  
+  
+  .contenedorCalificador input{
+    width: 15vw;
+    height: 20px;
+    font-size:15px;
+    border: 0;
+    margin: 5px;
+  }
+  
+  .contenedorCalificador select{
+    height: 20px;
+    font-size: small;
+    border: 0;
+    margin: 5px;
+  }
+  
+  .contenedorCalificador select:active{
+    border: 0;
+  
+  }
+  
+  .contenedorCalificador option{
+    font-size: x-small;
+    border:none;
+    
+  }
+  
+  .contenedorCalificador option:active{
+    border:none;
+    
+  }
+  
+  .inputCalificacion {
+    width: 25vw;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .productoACalificar button {
+    font-size: small;
+    padding: 5px 10px;
+    background-color: #AC6AB4;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  }
+  
+  
+  /*****************Iphone XR*******************/
+  /*****************Iphone XR*******************/
+  /*****************Iphone XR*******************/
+  
+  @media screen and (max-width: 768px) {
+  
+    .productosClasificar {
+      flex-direction: column;
+      width: 100%;
+      padding: 10px;
+      /* border-top: 1px dashed grey; */
+    }
+    
+    .msjsCalificar {
+      display: flex;
+      margin-top: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .msjsCalificar p {
+      font-size: x-small;
+      margin: 0px;
+      margin-right: 10px;
+    
+    }
+    
+    .contenedorCalificador{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+  margin-top: 10px;
+  width: 300px;
+    }
+    .contenedorCalificador input{
+      width: 30vw;
+      height: 20px;
+      font-size:15px;
+      border: 0;
+      margin: 5px;
+    }
+    
+    .contenedorCalificador select{
+      height: 20px;
+      width: 20vw;
+      font-size: small;
+      border: 0;
+      margin: 5px;
+    }
+    
+    .contenedorCalificador select:active{
+      border: 0;
+    
+    }
+    
+    .contenedorCalificador option{
+      font-size: x-small;
+      border:none;
+      
+    }
+    
+    .contenedorCalificador option:active{
+      border:none;
+      
+    }
+    
+    .inputCalificacion {
+      width: 25vw;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: space-around;
+    }
+    
+    .productoACalificar button {
+      font-size: small;
+      padding: 5px 10px;
+      background-color: #AC6AB4;
+      border-radius: 5px;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    
+    }
+  

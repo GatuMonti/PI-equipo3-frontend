@@ -13,33 +13,37 @@ import {
 } from "react-share";
 
 
-function ComparteRedesSociales({location}) {
-
-
+function ComparteRedesSociales({location }) {
+const mensajePersonalizado = "Mira este nuevo lanzamiento en Vortex games!";
+   
     return (
         <>
             <FacebookShareButton
+                title={mensajePersonalizado}
                 url={location}
                 className="Demo__some-network__share-button">
-                <FacebookIcon size={50} round />
+                <FacebookIcon size={30} round />
             </FacebookShareButton>
 
             <WhatsappShareButton
-                url={location}
+                title={mensajePersonalizado}
+                url={location} 
                 className="Demo__some-network__share-button">
-                <WhatsappIcon size={50} round/>
+                <WhatsappIcon size={30} round/>
             </WhatsappShareButton>
 
             <TwitterShareButton
+                title={mensajePersonalizado}
                 url={location}
                 className="Demo__some-network__share-button">
-                <TwitterIcon size={50} round/>
+                <TwitterIcon size={30} round/>
             </TwitterShareButton>
 
             <EmailShareButton
+                title={mensajePersonalizado}
                 url={location}
                 className="Demo__some-network__share-button">
-                <EmailIcon size={50} round/>
+                <EmailIcon size={30} round/>
             </EmailShareButton>
 
         </>

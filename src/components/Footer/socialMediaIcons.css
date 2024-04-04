@@ -1,0 +1,19 @@
+.bx.bxl-facebook-circle,
+.bxl-whatsapp,
+.bxl-instagram,
+.bxl-twitter {
+  font-size: 2rem;
+  color: white;
+  margin: 1vh 2vw 0vh 0vw;
+}
+
+
+@media screen and (max-width: 414px) {
+  .bx.bxl-facebook-circle,
+  .bxl-whatsapp,
+  .bxl-instagram,
+  .bxl-twitter {
+    font-size: 1.5rem;
+    color: white;
+  }
+} 

@@ -1,0 +1,118 @@
+  /******************************************************/
+  /************Formulario crear cuenta******************/
+  /******************************************************/
+
+  .pageFormCrearcuenta {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .formRegister {
+    margin: 1vh 0;
+    height: 700px;
+    border-radius: 15px;
+    user-select: none;
+    overflow-y: hidden;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #dde5f4;
+    box-shadow: 5px 5px 15px grey;
+  }
+
+  .logoLoguin {
+    margin-top: -3.5em;
+  }
+
+  .titleFormLoguin {
+    font-size:25px;
+  }
+
+  .bannerRegister {
+    width: 100%;
+    height: 240px;
+    padding: 0px;
+    border-radius: 5px;
+  }
+
+  .etiquetaUserName,
+  .etiquetaPassword,
+  .etiquetaName,
+  .etiquetaApellido,
+  .etiquetaEmail {
+    margin: 1.5px;
+    background: #dde5f4;
+    width: 390px;
+    height: 55px;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0;
+    font-size:medium;
+  }
+
+  .inputUserName,
+  .inputPassword,
+  .inputNameRegister,
+  .inputApellido,
+  .inputEmail {
+    padding-left: 8px;
+    align-content: end;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: medium;
+  }
+
+  .crearCuenta {
+    margin: 1rem;
+    padding: 5px 20px;
+    background-color: #AC6AB4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: large;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .crearCuenta:hover {
+    background-color: #ceb0d1;
+    ;
+  }
+
+
+  .footerLoguin {
+    font-size: smaller;
+    display: flex;
+    margin: 0 0 1rem;
+    color: #5e5e5e;
+  }
+
+
+  /*************************************/
+  /*****************Responsivo********************/
+  /*************************************/
+
+  @media screen and (max-width: 414px) {
+
+    .pageFormCrearcuenta {
+      margin: 0;
+    }
+
+
+    .formRegister {
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .bannerRegister {
+      border-radius: 0;
+    }
+  }

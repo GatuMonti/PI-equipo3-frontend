@@ -1,12 +1,20 @@
 /* TotalCalificacionesProducto.module.css */
 
 .container {
-  max-width: 500px; /* Ancho máximo */
-  height: 300px; /* Altura fija */
+  width: 200px; /* Ancho máximo */
+  height: 220px; /* Altura fija */
   overflow-y: auto; /* Agrega barra de desplazamiento vertical cuando el contenido excede la altura */
   border: 1px solid #ccc; /* Borde para la caja */
-  padding: 10px; /* Espaciado interior */
-  margin: 50px;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.container h2{
+  font-size: larger;
+  text-align: center;
+  background-color: rgb(228, 220, 220);
+  border-radius: 10px;
 }
 
 .calificaciones-column {
@@ -14,17 +22,17 @@
   flex-direction: column;
 }
 
-.calificacion-item {
+/* .calificacion-item {
   margin-bottom: 15px;
-}
+} */
 
-.calificacion-item p {
+/* .calificacion-item p {
   margin: 0;
-}
+} */
 
 /* Estilos para la barra lateral de desplazamiento */
 .container::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra de desplazamiento */
+  width: 6px; /* Ancho de la barra de desplazamiento */
 }
 
 .container::-webkit-scrollbar-track {
@@ -45,11 +53,13 @@
   font-size: 20px; /* Tamaño de las estrellas */
 }
 
-@media(max-width:500px){
-.container{
-  height: 100px;
-  
-}
+@media screen  and (max-width: 414px){
+
+  .container{
+    width: 400px;
+    margin: 20px;
+    background-color: white;
+  }
+
 
 }
-  

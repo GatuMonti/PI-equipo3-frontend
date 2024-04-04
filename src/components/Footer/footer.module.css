@@ -1,0 +1,94 @@
+  
+  .piePagina{
+    width: 100%;
+    background-color: #6269d3;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7vw;
+    z-index: 1000;
+  }
+
+  
+  .footerLinks{
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .footerLinks a{
+    margin: 1vw;
+    font-size: 1vw;
+    color: white;
+  }
+  .circuloFooter{
+    width: 28px;
+    margin: 2.3vh 0vw 0vh 0vw;
+  }
+
+  .footerRights{
+    font-size: .5vw;
+  }
+
+/* ###################Responsivo###################### */
+
+
+@media screen and (max-width: 414px) {
+/* Ipad Mini */
+.footerLinks{
+
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.footerLinks a{
+  margin: 1rem;
+  font-size: 1.6vw;
+  color: white;
+}
+.circuloFooter{
+  width: 28px;
+  margin: 2.3vh 0vw 0vh 0vw;
+}
+
+.footerRights{
+  font-size: 1vw;
+}
+}
+
+/* Adaptable IphonXr */
+
+@media screen and (max-width: 414px) {
+  .piePagina {
+      height: 16rem;
+      padding: 30px;
+      justify-content: center;
+  }
+
+  .footerLinks{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+  }
+
+  .footerRedes{
+    padding-top: 20px;
+  }
+  .footerLinks a{
+    margin: 0.6rem;
+    color: white;
+    font-size: 2.5vw;   
+  }
+
+  .footerRights{
+    font-size: 2vw;
+    margin-bottom: 2vh;
+  }
+
+
+}
