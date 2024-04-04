@@ -394,14 +394,16 @@ const Detail = () => {
         </Link>
 
       </div >
+      {usuarioID && (
       <div onClick={handleToggleFavorito} className={styles.contenedorFavorito}>
-        {usuarioID && (
+        
           <i
             className={`bx ${estadosFavoritos.favorito ? "bxs-heart" : "bx-heart"
               }`}
           ></i>
+          </div>
         )}
-      </div>
+      
 
       <div className={styles.contenedorImagenesDetail}>
         <div className={styles.contenedorImagenPrincipal}>
