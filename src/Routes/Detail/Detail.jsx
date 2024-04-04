@@ -564,16 +564,16 @@ const Detail = () => {
               </div>
 
               <div className="mb-3">
+                <img src={state.producto.images && state.producto.images[0].imageUrl} alt="imageReserva" className={styles.imageReserva} />
+                {/* <img src={state.producto.images && state.producto.images[1].imageUrl} alt="imageReserva" className={styles.imageReserva} /> */}
+              </div>
+
+              <div className="mb-3">
                 <p className={styles.subtituloPopUp}>Precio: <span className={styles.valorPopUp}>{precioTotal} USD</span></p>
               </div>
 
               <div className="mb-3">
                 <p className={styles.subtituloPopUp}>Descripcion: <span className={styles.valorPopUp}>{state.producto.description}</span></p>
-              </div>
-
-              <div className="mb-3">
-                <img src={state.producto.images && state.producto.images[0].imageUrl} alt="imageReserva" className={styles.imageReserva} />
-                <img src={state.producto.images && state.producto.images[1].imageUrl} alt="imageReserva" className={styles.imageReserva} />
               </div>
 
               <div className="mb-3">
@@ -591,16 +591,14 @@ const Detail = () => {
               <div className="mb-3">
                 <p className={styles.subtituloPopUp}>Email: <span className={styles.valorPopUp}>{localStorage.getItem("username")}</span></p>
               </div>
-
+              <div className="mb-3 d-flex justify-content-center" >
               <Button className={styles.botonCancelarReserva} onClick={handleOnclickCancelarReserva} variant="secondary" >Cancelar</Button>
               <Button className={styles.botonReservar} onClick={handleOnclickReserva}>Alquilar</Button>
+              </div>
+              
             </form>
           </Modal.Body>
         </Modal>
-
-
-
-
         <TotalCalificacionesProducto productId={params.id} />
       </div>
     </div>

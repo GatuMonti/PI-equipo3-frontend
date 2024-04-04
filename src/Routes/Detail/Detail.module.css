@@ -240,14 +240,18 @@
 .subtituloPopUp,
 .tituloPopUp {
   color: blue;
+  font-weight: bold;
 
 }
 
 .valorPopUp {
   width: 80%;
   color: black;
+  font-weight: 400;
 
 }
+
+
 
 .imageReserva {
   width: 45%;
@@ -303,6 +307,15 @@
   touch-action: manipulation;
 }
 
+.botonCancelarReserva{
+  margin: 10px;
+}
+
+.botonReservar{
+  margin: 10px;
+}
+
+ /* EMPIEZA EL RESPONSIVEEEEEEEEEEEEEEEEEEEEE */
 
 
 @media screen and (max-width: 769px) {
