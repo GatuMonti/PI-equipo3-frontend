@@ -100,14 +100,14 @@
   justify-content: space-around;
   background-color: #c8a3d49c;
   border-radius: 8px;
-  padding: 5px;
+  padding: 20px;
 
 
 }
 
 
 .buscadorConFechas {
-  width: 80%;
+  width: 70vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
