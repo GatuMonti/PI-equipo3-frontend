@@ -84,86 +84,57 @@ const Detail = () => {
   //Manejo del onclick del boton favoritos
 
   const handleToggleFavorito = () => {
+
     if (estadosFavoritos.favorito) {
+
       try {
-        Swal.fire({
-          title: "Seguro que quieres eliminarlo?",
-          text: "El juego sera eliminado de tus favoritos",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonText: "Cancelar!",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Si, quiero eliminarlo!",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            axios
-              .delete(urlBackend + "favorite/delete-favorite", {
-                data: productoFavorito,
+        axios.delete(`${urlBackend}favorite/delete-favorite`, { data: productoFavorito })
+        .then((response) => {
+          console.log(response.data)
+          axios.get(urlBackend + "favorite/listar-favoritos-usuario/" + usuario)
+            .then((response) => {
+              console.log("Favoritos del usuario desde el back", response.data)
+              dispatch({ type: 'get_favorites', payload: response.data })
+              localStorage.setItem(`favorito_${params.id}`, 'false');
+              setEstadosFavoritos({
+                ...estadosFavoritos,
+                favorito: false,
               })
-              .then((response) => {
-                console.log(response.data);
-                axios
-                  .get(
-                    urlBackend + "favorite/listar-favoritos-usuario/" +
-                    usuario
-                  )
-                  .then((response) => {
-                    console.log(
-                      "Favoritos del usuario desde el back",
-                      response.data
-                    );
-                    dispatch({ type: "get_favorites", payload: response.data });
-                    localStorage.setItem(`favorito_${product.id}`, "false");
-                    setEstadosFavoritos({
-                      ...estadosFavoritos,
-                      favorito: false,
-                    });
-                  });
-              });
-            Swal.fire({
-              title: "Eliminado!",
-              text: "El juego ha sido eliminado!",
-              icon: "success",
-            });
-          }
-        });
-      } catch (error) {
-        console.error("Error:", error.message);
+            })
+        })
       }
-    } else {
+      catch (error) {
+        console.error('Error:', error.message);
+      }
+
+    }
+    else {
+
       try {
-        axios
-          .post(`${urlBackend}favorite/add-favorite`, productoFavorito)
+        axios.post(`${urlBackend}favorite/add-favorite`, productoFavorito)
           .then((response) => {
-            console.log(response.data);
-            Swal.fire("El juego ha sido añadido a tus favoritos");
-            axios
-              .get(
-                urlBackend + "favorite/listar-favoritos-usuario/" +
-                usuario
-              )
+            console.log(response.data)
+            axios.get(urlBackend + "favorite/listar-favoritos-usuario/" + usuario)
               .then((response) => {
-                console.log(
-                  "Favoritos del usuario desde el back",
-                  response.data
-                );
-                dispatch({ type: "get_favorites", payload: response.data });
-                localStorage.setItem(`favorito_${product.id}`, "true");
+                console.log("Favoritos del usuario desde el back", response.data)
+                dispatch({ type: 'get_favorites', payload: response.data })
+                localStorage.setItem(`favorito_${params.id}`, 'true');
                 setEstadosFavoritos({
                   ...estadosFavoritos,
                   favorito: true,
-                });
-              });
+                })
+              })
           })
+
           .catch((error) => {
             console.error("Error al obtener favoritos:", error);
           });
-      } catch (error) {
-        console.error("Error:", error.message);
+      }
+      catch (error) {
+        console.error('Error:', error.message);
       }
     }
-  };
+  }
 
   //Onchange para el cambio de valores en los inputs de fechas de reservas
 
