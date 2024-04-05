@@ -165,7 +165,7 @@ const Detail = () => {
     if (localStorage.getItem("username") === null) {
       Swal.fire({
         title: "El usuario debe estar logueado para realizar una reserva",
-        text: "Realiza primero el loguin",
+        text: "Realiza primero el login",
         icon: "error",
         confirmButtonColor: "#ff00008f",
         customClass: {
