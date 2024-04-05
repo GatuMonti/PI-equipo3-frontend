@@ -15,8 +15,8 @@ import PanelUsuarios from './Routes/PanelUsuarios'
 import Politicas from './components/Politicas/Politicas'
 import PanelReservas from './Routes/PanelReservas'
 
-const urlBackend = import.meta.env.VITE_URL_BACKEND;
-//const urlBackend = 'http://localhost:8080/';
+//const urlBackend = import.meta.env.VITE_URL_BACKEND;
+const urlBackend = 'http://localhost:8080/';
 
 function App() {
 

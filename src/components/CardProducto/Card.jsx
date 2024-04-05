@@ -48,38 +48,20 @@ function Card({ product }) {
     if (estadosFavoritos.favorito) {
 
       try {
-        Swal.fire({
-          title: "Seguro que quieres eliminarlo?",
-          text: "El juego sera eliminado de tus favoritos",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonText: "Cancelar!",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Si, quiero eliminarlo!",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            axios.delete(`${urlBackend}favorite/delete-favorite`, { data: productoFavorito })
-              .then((response) => {
-                console.log(response.data)
-                axios.get(urlBackend + "favorite/listar-favoritos-usuario/" + usuario)
-                  .then((response) => {
-                    console.log("Favoritos del usuario desde el back", response.data)
-                    dispatch({ type: 'get_favorites', payload: response.data })
-                    localStorage.setItem(`favorito_${product.id}`, 'false');
-                    setEstadosFavoritos({
-                      ...estadosFavoritos,
-                      favorito: false,
-                    })
-                  })
+        axios.delete(`${urlBackend}favorite/delete-favorite`, { data: productoFavorito })
+        .then((response) => {
+          console.log(response.data)
+          axios.get(urlBackend + "favorite/listar-favoritos-usuario/" + usuario)
+            .then((response) => {
+              console.log("Favoritos del usuario desde el back", response.data)
+              dispatch({ type: 'get_favorites', payload: response.data })
+              localStorage.setItem(`favorito_${product.id}`, 'false');
+              setEstadosFavoritos({
+                ...estadosFavoritos,
+                favorito: false,
               })
-            Swal.fire({
-              title: "Eliminado!",
-              text: "El juego ha sido eliminado!",
-              icon: "success"
-            });
-          }
-        });
+            })
+        })
       }
       catch (error) {
         console.error('Error:', error.message);
@@ -92,7 +74,6 @@ function Card({ product }) {
         axios.post(`${urlBackend}favorite/add-favorite`, productoFavorito)
           .then((response) => {
             console.log(response.data)
-            Swal.fire("El juego ha sido añadido a favorito!");
             axios.get(urlBackend + "favorite/listar-favoritos-usuario/" + usuario)
               .then((response) => {
                 console.log("Favoritos del usuario desde el back", response.data)

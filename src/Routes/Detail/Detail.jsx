@@ -27,6 +27,7 @@ const Detail = () => {
     fechaFin: null
   })
 
+
   const [estadosFavoritos, setEstadosFavoritos] = useState({
     favorito: false,
     isUsuario: false,
@@ -171,7 +172,7 @@ const Detail = () => {
     setFechasReservas({
       ...fechasReservas,
       fechaInicio: fechaFormateada,
-      //fechaInicio: fecha,
+      // fechaInicio: fecha,
       fechaFin: null
     })
   }
@@ -486,7 +487,7 @@ const Detail = () => {
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText="Final"
-            minDate={fechasReservas.fechaInicio ? new Date(new Date(fechasReservas.fechaInicio).getTime() + 106400000) : fechaHoy}
+            minDate={fechasReservas.fechaInicio ? new Date(new Date(fechasReservas.fechaInicio).getTime() + 86400000) : fechaHoy}
             onChange={onChangeFinReserva}
             customDayClassName={customDayClass}
             value={fechasReservas.fechaFin}
