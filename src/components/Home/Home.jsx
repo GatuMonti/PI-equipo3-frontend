@@ -281,7 +281,8 @@ const Home = () => {
               onChange={manejarCambioFechaFin}
               dateFormat="yyyy-MM-dd"
               placeholderText="Final"
-              minDate={estadosFechas.inicio != null ? new Date(estadosFechas.inicio.getTime() + 86400000) : fechaHoy} // Agregamos un día al inicio para evitar el mismo día
+              minDate={estadosFechas.inicio != null ? 
+                new Date(estadosFechas.inicio.getTime() + 86400000) : fechaHoy} // Agregamos un día al inicio para evitar el mismo día
               value={estadosFechas.fin}
               name={estadosFechas.fin}
             />

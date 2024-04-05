@@ -26,6 +26,16 @@ const Detail = () => {
     fechaInicio: null,
     fechaFin: null
   })
+
+
+  console.log("fecha inicio de reserva: ")
+  console.log(fechasReservas.fechaInicio)
+  const fechaCreadaDesdeFechaInicio = new Date(fechasReservas.fechaInicio)
+  const pruebaFechasumada = new Date(new Date(fechasReservas.fechaInicio).getTime() + 86400000)
+  console.log("Fecha Creada a partid de FechaInicio: ")
+  console.log(fechaCreadaDesdeFechaInicio)
+  console.log("Fecha sumada: ")
+  console.log(pruebaFechasumada)
   const [estadosFavoritos, setEstadosFavoritos] = useState({
     favorito: false,
     isUsuario: false,
@@ -170,6 +180,7 @@ const Detail = () => {
     setFechasReservas({
       ...fechasReservas,
       fechaInicio: fechaFormateada,
+      //fechaInicio: fecha,
       fechaFin: null
     })
   }
@@ -182,6 +193,7 @@ const Detail = () => {
       ...fechasReservas,
       fechaFin: fechaFormateada
     })
+
   }
 
   //OnClick para mostrar los datos de la reserva.
@@ -469,7 +481,7 @@ const Detail = () => {
             selected={fechasReservas.fechaInicio}
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
-            placeholderText=" Fecha de Inicio"
+            placeholderText="Inicio"
             maxDate={fechasReservas.fechaFin}  
             onChange={onChangeInicioReserva}
             customDayClassName={customDayClass}
@@ -482,8 +494,8 @@ const Detail = () => {
             selected={fechasReservas.fechaFin}
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
-            placeholderText=" Fecha de Finalización"
-            minDate={fechasReservas.fechaInicio != null ? new Date(new Date(fechasReservas.fechaInicio).getTime() + 86400000) : fechaHoy}
+            placeholderText="Final"
+            minDate={fechasReservas.fechaInicio ? new Date(new Date(fechasReservas.fechaInicio).getTime() + 106400000) : fechaHoy}
             onChange={onChangeFinReserva}
             customDayClassName={customDayClass}
             value={fechasReservas.fechaFin}
