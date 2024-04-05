@@ -172,7 +172,7 @@ const Home = () => {
 
       !state.favoritos.length <= 0 &&
 
-      state.favoritos.map((favorito) => (
+      state.favoritos.slice(startIndex, endIndex).map((favorito) => (
         <Card product={favorito} key={favorito.id} />
       )) :
       state.productos.filter(juego => juego.name.toLowerCase().includes(estadosNuevos.palabraEnElInputBuscador.toLowerCase())).slice(startIndex, endIndex).map((producto) => (
@@ -275,16 +275,16 @@ const Home = () => {
               value={estadosFechas.inicio}
             />
 
-<DatePicker
-  className={styles.calendarioFinalizacion}
-  selected={estadosFechas.fin}
-  onChange={manejarCambioFechaFin}
-  dateFormat="yyyy-MM-dd"
-  placeholderText="Final"
-  minDate={estadosFechas.inicio != null ? new Date(estadosFechas.inicio.getTime() + 86400000) : fechaHoy} // Agregamos un día al inicio para evitar el mismo día
-  value={estadosFechas.fin}
-  name={estadosFechas.fin}
-/>
+            <DatePicker
+              className={styles.calendarioFinalizacion}
+              selected={estadosFechas.fin}
+              onChange={manejarCambioFechaFin}
+              dateFormat="yyyy-MM-dd"
+              placeholderText="Final"
+              minDate={estadosFechas.inicio != null ? new Date(estadosFechas.inicio.getTime() + 86400000) : fechaHoy} // Agregamos un día al inicio para evitar el mismo día
+              value={estadosFechas.fin}
+              name={estadosFechas.fin}
+            />
 
             <button className={styles.botonBuscarFecha} onClick={handleOnclickBusquedaFechas}> Buscar </button>
 
@@ -327,12 +327,25 @@ const Home = () => {
             }
 
             {productsToShow}
-            
+
             {/* Botones para navegar entre las páginas  */}
-              <div className={styles.botonesPaginado}>
+            {/* <div className={styles.botonesPaginado}>
                 <button className={styles.botonPaginadoAtras} onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
                 <button className={styles.botonPaginadoAdelante} onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
+              </div> */}
+
+            {!state.isFavorite ?
+              <div className="botonesPaginado">
+                <button className={state.productos.length <= 10 ? 'botonPaginadoNoMostrar' : 'botonPaginadoAtras'} onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
+                <button className={state.productos.length <= 10 ? 'botonPaginadoNoMostrar' : 'botonPaginadoAdelante'} onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
               </div>
+              :
+
+              <div className="botonesPaginado">
+                <button className={state.favoritos.length <= 10 ? 'botonPaginadoNoMostrar' : 'botonPaginadoAtras'} onClick={handlePreviousPage} disabled={currentPage === 0}>Back</button>
+                <button className={state.favoritos.length <= 10 ? 'botonPaginadoNoMostrar' : 'botonPaginadoAdelante'} onClick={handleNextPage} disabled={endIndex >= state.productos.length}>Next</button>
+              </div>
+            }
 
           </div>
 

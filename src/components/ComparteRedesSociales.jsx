@@ -13,14 +13,14 @@ import {
 } from "react-share";
 
 
-function ComparteRedesSociales({location }) {
+function ComparteRedesSociales({location}) {
 const mensajePersonalizado = "Mira este nuevo lanzamiento en Vortex games!";
    
     return (
         <>
             <FacebookShareButton
                 title={mensajePersonalizado}
-                url={location}
+                url={location} 
                 className="Demo__some-network__share-button">
                 <FacebookIcon size={30} round />
             </FacebookShareButton>

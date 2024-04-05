@@ -8,14 +8,14 @@ const Footer = () => {
   return (
     <footer className={styles.piePagina}>
       <div className={styles.footerRedes}>
-        <a href="#"><i className='bx bxl-facebook-circle'></i></a>
-        <a href="#"><i className='bx bxl-whatsapp'></i></a>
-        <a href="#"><i className='bx bxl-instagram'></i></a>
-        <a href="#"><i className='bx bxl-twitter'></i></a>
+        <a style={{ textDecoration: 'none' }} target='_blank' href="https://www.facebook.com"><i className='bx bxl-facebook-circle'></i></a>
+        <a style={{ textDecoration: 'none' }} target='_blank' href="https://wa.me/+543855889942"><i className='bx bxl-whatsapp'></i></a>
+        <a href="https://www.instagram.com"><i className='bx bxl-instagram'></i></a>
+        <a href="https://www.twitter.com"><i className='bx bxl-twitter'></i></a>
       </div>
       
       <div className={styles.footerLinks}>
-        <Link to="#">Contactanos</Link>
+        <Link to="https://wa.me/+543855889942">Contactanos</Link>
         <Link to="#">Nuestros servicios</Link>
         <Link to="#">Politicas de privacidad</Link>
         <Link to={'/terminosycondiciones'}>Terminos y condiciones</Link>

@@ -66,6 +66,55 @@
   }
 
 
+  /* Estilos para los botones de paginación */
+
+.botonesPaginado{
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+/* Estilo base para los botones */
+.botonesPaginado button {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #007bff;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo para el botón "Next" */
+.botonPaginadoAdelante {
+  margin-left: 0.5rem; /* Espacio entre los botones */
+}
+
+/* Estilo para el botón "Back" cuando está deshabilitado */
+.botonesPaginado button:disabled {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* Estilo para el botón "Back" cuando está habilitado */
+.botonesPaginado button:not(:disabled):hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  color: #fff;
+}
+
+.botonPaginadoNoMostrar{
+  display: none;
+}
+
+
+/*************************************************/
+
   @media screen and (max-width: 414px) {
 
     .inputSearchBuscador {

@@ -16,7 +16,7 @@ import { Modal, Button } from 'react-bootstrap';
 import styles from './Detail.module.css'
 import ModalCargaReseva from "../../components/ModalCargaReserva/ModalCargaReseva";
 
-
+const urlDeploy = "https://pi-equipo3-frontend.vercel.app";
 const Detail = () => {
   const params = useParams();
   const { state, dispatch } = useContextGlobal();
@@ -534,7 +534,7 @@ const Detail = () => {
                   })}
                 </div>
                 <div className={styles.comparteRedes}>
-                <ComparteRedesSociales location={location.pathname} />
+                <ComparteRedesSociales location={`${urlDeploy}${location.pathname}`} />
                 </div>
               </div>
             )}
