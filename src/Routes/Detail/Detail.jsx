@@ -27,15 +27,6 @@ const Detail = () => {
     fechaFin: null
   })
 
-
-  console.log("fecha inicio de reserva: ")
-  console.log(fechasReservas.fechaInicio)
-  const fechaCreadaDesdeFechaInicio = new Date(fechasReservas.fechaInicio)
-  const pruebaFechasumada = new Date(new Date(fechasReservas.fechaInicio).getTime() + 86400000)
-  console.log("Fecha Creada a partid de FechaInicio: ")
-  console.log(fechaCreadaDesdeFechaInicio)
-  console.log("Fecha sumada: ")
-  console.log(pruebaFechasumada)
   const [estadosFavoritos, setEstadosFavoritos] = useState({
     favorito: false,
     isUsuario: false,
