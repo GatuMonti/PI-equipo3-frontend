@@ -473,6 +473,7 @@ const Detail = () => {
             maxDate={fechasReservas.fechaFin}  
             onChange={onChangeInicioReserva}
             customDayClassName={customDayClass}
+            minDate={fechaHoy}
             value={fechasReservas.fechaInicio}
           />
 
@@ -482,7 +483,7 @@ const Detail = () => {
             excludeDates={fechasBloqueadas}
             dateFormat="yyyy-MM-dd"
             placeholderText=" Fecha de Finalización"
-            minDate={fechasReservas.fechaInicio != null ? new Date(new Date(fechasReservas.fechaInicio).getTime() + 86400000) : null}
+            minDate={fechasReservas.fechaInicio != null ? new Date(new Date(fechasReservas.fechaInicio).getTime() + 86400000) : fechaHoy}
             onChange={onChangeFinReserva}
             customDayClassName={customDayClass}
             value={fechasReservas.fechaFin}
