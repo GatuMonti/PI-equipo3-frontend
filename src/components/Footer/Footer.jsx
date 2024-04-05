@@ -17,7 +17,7 @@ const Footer = () => {
       <div className={styles.footerLinks}>
         <Link to="https://wa.me/+543855889942">Contactanos</Link>
         <Link to="#">Nuestros servicios</Link>
-        <Link o={'/terminosycondiciones'}>Politicas de privacidad</Link>
+        <Link to={'/terminosycondiciones'}>Politicas de privacidad</Link>
         <Link to={'/terminosycondiciones'}>Terminos y condiciones</Link>
         <Link to="#">Career</Link>
       </div>
