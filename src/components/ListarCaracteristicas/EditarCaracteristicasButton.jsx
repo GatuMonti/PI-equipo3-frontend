@@ -41,7 +41,7 @@ const EditarCaracteristicaButton = ({ caracteristicaId, toggleFormEditar }) => {
     const handleEditSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put('http://localhost:8080/characteristics/update', caracteristicaData);
+            await axios.put(`${urlBackend}characteristics/update`, caracteristicaData);
             dispatch({ type: 'update_caracteristica', payload: caracteristicaData });
             toggleFormEditar();
             Swal.fire({
